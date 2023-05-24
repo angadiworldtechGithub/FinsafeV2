@@ -1,4 +1,3 @@
-import { addHide } from "../Navbar/Navbar";
 import { MdArrowDropDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 import shortid from "shortid";
@@ -12,12 +11,12 @@ export default function Dropdown({
   subHeaders,
 }) {
   return (
-    <div className="navbar_text navbar_text_mobile">
+    <div className="dropdown_text navbar_text_mobile">
       <Link to={headerLink} className="navbar_link">
         {headerName}
       </Link>
-      <MdArrowDropDown className="icon" onClick={setIsActive} />
-      <div className={isActive ? "dropdown" : addHide("dropdown")}>
+      <MdArrowDropDown className="icon" />
+      <div className="dropdown">
         <ul className="dropdown_list">
           {subHeaders.map((subHeader) => (
             <li key={shortid.generate()} className="sub_heading_text">
