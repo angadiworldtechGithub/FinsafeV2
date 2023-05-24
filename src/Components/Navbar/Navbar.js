@@ -6,6 +6,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "../Dropdown";
 
+export const addHideMobile = (classString) => {
+  return classString + " hide_mobile";
+};
+
 export const addHide = (classString) => {
   return classString + " hide";
 };
@@ -16,13 +20,13 @@ const INITIAL_NAVBAR_STATE = {
 };
 
 function Navbar() {
-  const [collapse, setCollapse] = useState(false);
+  const [collapse, setCollapse] = useState(true);
   const [menu, setMenu] = useState(INITIAL_NAVBAR_STATE);
 
   let headerClass;
 
   if (collapse) {
-    headerClass = addHide("header_section");
+    headerClass = addHideMobile("header_section");
   } else {
     headerClass = "header_section";
   }
@@ -41,7 +45,7 @@ function Navbar() {
 
       <div className="down_header_2 outer_flex">
         <div className={headerClass}>
-          <div className="navbar_text">Home</div>
+          <div className="navbar_text navbar_text_mobile">Home</div>
 
           <Dropdown
             isActive={menu["takeExpAdv"]}
@@ -104,12 +108,18 @@ function Navbar() {
             ]}
           />
 
-          <div className="navbar_text">Accounts & Audit</div>
-          <div className="navbar_text">Loans & Capital</div>
-          <div className="navbar_text">Business legal Services</div>
-          <div className="navbar_text">Statutory Compliances</div>
-          <div className="navbar_text">Personal Services</div>
-          <div className="navbar_text">Contact Us</div>
+          <div className="navbar_text navbar_text_mobile">Accounts & Audit</div>
+          <div className="navbar_text navbar_text_mobile">Loans & Capital</div>
+          <div className="navbar_text navbar_text_mobile">
+            Business legal Services
+          </div>
+          <div className="navbar_text navbar_text_mobile">
+            Statutory Compliances
+          </div>
+          <div className="navbar_text navbar_text_mobile">
+            Personal Services
+          </div>
+          <div className="navbar_text navbar_text_mobile">Contact Us</div>
         </div>
         <MdMenu
           className="navbar_icon"
