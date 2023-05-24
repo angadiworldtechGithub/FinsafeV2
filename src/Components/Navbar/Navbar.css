@@ -33,55 +33,14 @@
   }
 }
 
-
-.topheader
-{
-    background-color:#072F5F;
-    color: #fff;
-    font-Weight:400;
-    font-Size:15px;
-    padding:10px 30px 10px 30px;
-    min-width: 300px;
-    position: relative;
-    height: 20px;
-}
-.whatsapp{
-    color: #fff;
-}
-.linkedin{
+.down_header_2 {
+  background-color: #072f5f;
   color: #fff;
-}
-.mail{
-  color: #fff;
-  font-size: 20px;
-}
-.phone{
-  color:#fff
-}
-.facebook{
-  color: #fff;
-}
-
-
-.midheader {
-  background-color: #fff;
   font-weight: 400;
   font-size: 15px;
   padding: 10px 30px 10px 30px;
   min-width: 300px;
   position: relative;
-  height: 100px;
-}
-
-.down_header_2
-{
-    background-color:#072F5F;
-    color:#fff;
-    font-Weight:400;
-    font-Size:15px;
-    padding:10px 30px 10px 30px;
-    min-width: 300px;
-    position: relative;
 }
 
 .outer_flex {
