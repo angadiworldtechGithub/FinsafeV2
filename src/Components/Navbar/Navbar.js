@@ -1,7 +1,9 @@
 import React from 'react';
 import './Navbar.css';
-import { MdMenu,  MdArrowDropDown } from "react-icons/md";
-import { BsWhatsapp } from "react-icons/bs";
+import { MdMenu } from "react-icons/md";
+import { BsFacebook,BsFillTelephoneFill,BsLinkedin } from "react-icons/bs";
+import { HiMail } from 'react-icons/hi';
+import { IoLogoWhatsapp } from 'react-icons/io';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import Dropdown from '../Dropdown';
@@ -51,6 +53,7 @@ function Navbar() {
       <div className="down_header_2 outer_flex">
         <div className={headerClass}>
           <div className="navbar_text navbar_text_mobile">Home</div>
+          <div className="navbar_text navbar_text_mobile">About Us</div>
 
           <Dropdown
             isActive={menu["takeExpAdv"]}
@@ -114,16 +117,66 @@ function Navbar() {
           />
 
           <div className="navbar_text navbar_text_mobile">Accounts & Audit</div>
-          <div className="navbar_text navbar_text_mobile">Loans & Capital</div>
-          <div className="navbar_text navbar_text_mobile">
-            Business legal Services
-          </div>
+
+          <Dropdown
+            isActive={menu["loanCap"]}
+            setIsActive={() => {
+              setMenu({ ...INITIAL_NAVBAR_STATE, loanCap: !menu["loanCap"] });
+            }}
+            headerName="Loans & Capital"
+            headerLink="/"
+            subHeaders={[
+              { link: "/", title: "Talk to Expert" },
+              { link: "/", title: "Working Capital Loans" },
+              { link: "/", title: "Business Term Loans" },
+              { link: "/", title: "Loans on Assets" },
+              { link: "/", title: "MSME Loans" },
+              { link: "/", title: "Project report preparation" },
+              { link: "/", title: "Loan Documentation Support" },
+            ]}
+          />
+         
+          <Dropdown
+          isActive={menu["busLegSer"]}
+          setIsActive={() => {
+            setMenu({ ...INITIAL_NAVBAR_STATE, busLegSer: !menu["busLegSer"] });
+          }}
+          headerName=" Business legal Services "
+          headerLink="/"
+          subHeaders={[
+            { link: "/", title: "Joint Development & Joint Venture agreement drafting" },
+            { link: "/", title: "Business Legal agreement drafting" },
+            { link: "/", title: "Land title Due diligence" },
+            { link: "/", title: "Land Litigation assistance" },
+            { link: "/", title: "Customer Agreement drafting" },
+            { link: "/", title: "Customer litigation support" },
+        
+          ]}
+        />
+
+
           <div className="navbar_text navbar_text_mobile">
             Statutory Compliances
           </div>
-          <div className="navbar_text navbar_text_mobile">
-            Personal Services
-          </div>
+         
+          <Dropdown
+          isActive={menu["persServ"]}
+          setIsActive={() => {
+            setMenu({ ...INITIAL_NAVBAR_STATE, persServ: !menu["persServ"] });
+          }}
+          headerName="Personal Services"
+          headerLink="/"
+          subHeaders={[
+            { link: "/", title: "Talk to Expert" },
+            { link: "/", title: "Investment planning" },
+            { link: "/", title: "Estate management services" },
+            { link: "/", title: "Tax Planning" },
+            { link: "/", title: "Income tax returns" },
+            { link: "/", title: "Individual Accounts maintenance" },
+        
+          ]}
+        />
+
           <div className="navbar_text navbar_text_mobile">Contact Us</div>
         </div>
         <MdMenu
