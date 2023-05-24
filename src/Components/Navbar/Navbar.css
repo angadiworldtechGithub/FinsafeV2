@@ -23,31 +23,13 @@
   .navbar_icon {
     display: none;
   }
-  .dropdown {
-    z-index: 100;
-    position: absolute;
-    background-color: #003d80;
-    top: 35px;
-    left: 0px;
-    padding-right: 30px;
-  }
 }
 
-.down_header_2 {
+.navbar {
   background-color: #072f5f;
   color: #fff;
   font-weight: 400;
-  font-size: 15px;
-  padding: 10px 30px 10px 30px;
-  min-width: 300px;
-  position: relative;
-}
-
-.down_header_2 {
-  background-color: #072f5f;
-  color: #fff;
-  font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   padding: 10px 30px 10px 30px;
   min-width: 300px;
   position: relative;
