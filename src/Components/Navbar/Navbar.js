@@ -30,6 +30,7 @@ function Navbar() {
   }
 
   return (
+    <>
     <div className="down_header_2 outer_flex">
       <div className={headerClass}>
         <div className="navbar_text navbar_text_mobile">Home</div>
@@ -165,7 +166,7 @@ function Navbar() {
           }}
         />
       </div>
-    </div>
+    </>
   );
 }
 
