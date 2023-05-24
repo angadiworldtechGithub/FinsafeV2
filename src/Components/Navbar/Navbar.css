@@ -24,18 +24,18 @@
     display: none;
   }
 }
+.navbar_icon {
+  font-size: 30px;
+}
 
 .navbar {
   background-color: #072f5f;
   color: #fff;
   font-weight: 400;
-  font-size: 12px;
-  padding: 10px 30px 10px 30px;
+  font-size: 13px;
   min-width: 300px;
+  min-height: 30px;
   position: relative;
-}
-
-.outer_flex {
   display: flex;
   justify-content: space-between;
 }
@@ -46,8 +46,7 @@
 
 .navbar_text {
   white-space: nowrap;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 10px;
   position: relative;
 }
 

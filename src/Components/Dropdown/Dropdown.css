@@ -6,10 +6,17 @@
     z-index: 100;
     position: absolute;
     background-color: #072f5f;
-    top: 15px;
+    top: 25px;
     left: 0px;
     padding-right: 30px;
     display: none;
+  }
+  .dropdown_text:hover .dropdown {
+    display: block;
+  }
+
+  .dropdown:hover {
+    display: block;
   }
 }
 
@@ -18,19 +25,13 @@
     padding-right: 30px;
     display: none;
   }
-}
-
-.dropdown_text:hover .dropdown {
-  display: block;
-}
-
-.dropdown:hover {
-  display: block;
+  .mobile_show {
+    display: block;
+  }
 }
 
 .dropdown_text {
   white-space: nowrap;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 10px;
   position: relative;
 }
