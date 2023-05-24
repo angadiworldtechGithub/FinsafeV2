@@ -1,0 +1,75 @@
+.topheader {
+  background-color: #072f5f;
+  color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px 30px 10px 30px;
+  min-width: 300px;
+  position: relative;
+  height: 20px;
+}
+
+.social_icons {
+  color: #fff;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.whatsapp {
+}
+.linkedin {
+}
+.mail {
+  font-size: 20px;
+}
+.phone {
+}
+.facebook {
+}
+
+.social_icon_box {
+  display: flex;
+  width: 20%;
+  min-width: 100px;
+  justify-content: space-between;
+}
+
+.mid_header {
+  background-color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px 30px 10px 30px;
+  min-width: 200px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  .logo {
+    height: 40%;
+    width: 200px;
+    transition: all 0.5s;
+  }
+
+  .logo:hover {
+    height: 50%;
+    width: 220px;
+  }
+
+  .mid_header {
+    min-height: 50px;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .logo {
+    height: 90%;
+    width: 360px;
+    transition: all 0.5s;
+  }
+
+  .logo:hover {
+    height: 100%;
+    width: 380px;
+  }
+}
