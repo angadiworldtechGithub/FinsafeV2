@@ -16,15 +16,19 @@
 }
 
 .whatsapp {
-}
-.linkedin {
-}
-.mail {
   font-size: 20px;
 }
+.linkedin {
+  font-size: 20px;
+}
+.mail {
+  font-size: 25px;
+}
 .phone {
+  font-size: 20px;
 }
 .facebook {
+  font-size: 20px;
 }
 
 .social_icon_box {
