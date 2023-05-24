@@ -15,6 +15,10 @@ export const addHide = (classString) => {
 const INITIAL_NAVBAR_STATE = {
   takeExpAdv: false,
   startYoBu: false,
+  cfoServ: false,
+  loanCap: false,
+  busLegSer: false,
+  persServ: false,
 };
 
 function Navbar() {
@@ -31,7 +35,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="down_header_2 outer_flex">
+      <div className="navbar">
         <div className={headerClass}>
           <div className="navbar_text navbar_text_mobile">Home</div>
           <div className="navbar_text navbar_text_mobile">About Us</div>
