@@ -4,8 +4,9 @@ import { MdMenu,  MdArrowDropDown } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
+import Dropdown from '../Dropdown';
 
-const addHide = (classString) => {
+export const addHide = (classString) => {
   return classString+' smooth_hide'
 }
 
@@ -41,49 +42,56 @@ function Navbar() {
           <div className={headerClass}>
             <div className='navbar_text' >Home</div>
 
-              <div className="navbar_text">
-                <Link to="/" className='navbar_link'>
-                Take Expert Advice
-                </Link>
-                <MdArrowDropDown className="icon" onClick={()=>{
-                  setMenu({...menu,takeExpAdv:!menu['takeExpAdv']
-                  })}}/>
-              </div>
-        
-              <div className={menu['takeExpAdv'] ? 'dropdown' : addHide('dropdown')}>
-                  <ul>
-                    <li><Link to="/" className='navbar_link'>Talk to Business Advisory Analyst</Link></li>
-                    <li><Link to="/" className='navbar_link'></Link>Talk to Certified Financial Planner</li>
-                    <li><Link to="/" className='navbar_link'></Link>Talk to Chartered Accountant</li>         
-                    <li><Link to="/" className='navbar_link'></Link>Talk to Cost Accountant</li>
-                    <li><Link to="/" className='navbar_link'></Link>Talk to Legal Advisor</li>
-                    <li><Link to="/" className='navbar_link'></Link>Talk to Cyber Crime Expert</li>
-                    <li><Link to="/" className='navbar_link'></Link>Talk to Company Secretory</li>
-                </ul>
-              </div>
-          
-            <div className='navbar_text'>
-              <Link to='/' className='navbar_link'>
-              Start Your Business</Link>
-              <MdArrowDropDown className="icon" onClick={()=>{
-                setMenu({...menu,startYoBu:!menu['startYoBu']
-                })}}/>
-            </div>
+            <Dropdown 
+              isActive={menu['takeExpAdv']} 
+              setIsActive={()=>{
+              setMenu({...menu,takeExpAdv:!menu['takeExpAdv']
+              })}} 
+              headerName='Take Expert Advice' 
+              subHeaders={[{link:'/',title:'Talk to Business Advisory Analyst'},
+                           {link:'/',title:'Talk to Certified Financial Planner'},
+                           {link:'/',title:'Talk to Chartered Accountant'},
+                           {link:'/',title:'Talk to Cost Accountant'},
+                           {link:'/',title:'Talk to Legal Advisor'},
+                           {link:'/',title:'Talk to Cyber Crime Expert'},
+                           {link:'/',title:'Talk to Company Secretory'} ]}
 
-            <div className={menu['startYoBu'] ? 'dropdown' : addHide('dropdown')}>
-                <ul>
-                  <li><Link to="/" className='navbar_link'><b>Incorporation</b></Link></li> 
-                  <li><Link to="/" className='navbar_link'>Company</Link></li>
-                  <li><Link to="/" className='navbar_link'>Limited Liability Partnership(LLP)</Link></li>
-                  <li><Link to="/" className='navbar_link'>Partnership Firm</Link></li>         
-                  <li><Link to="/" className='navbar_link'>Propreitorship</Link></li>
-                  <li><Link to="/" className='navbar_link'>Trust</Link></li>
-                  <li><Link to="/" className='navbar_link'>Co-operative Societies</Link></li>
-               </ul>
-            </div>
+            />
 
+            <Dropdown 
+              isActive={menu['startYoBu']} 
+              setIsActive={()=>{
+              setMenu({...menu,startYoBu:!menu['startYoBu']
+              })}} 
+              headerName='Start Your Business' 
+              subHeaders={[{link:'/',title:'Incorporation'},
+                           {link:'/',title:'Company'},
+                           {link:'/',title:'Limited Liability Partnership(LLP)'},
+                           {link:'/',title:'Partnership Firm'},
+                           {link:'/',title:'Propreitorship'},
+                           {link:'/',title:'Trust'},
+                           {link:'/',title:'Co-operative Societies'} ]}
 
-            <div className='navbar_text'>CFO Services</div>
+            />
+
+            
+            <Dropdown 
+              isActive={menu['cfoServ']} 
+              setIsActive={()=>{
+              setMenu({...menu,cfoServ:!menu['cfoServ']
+              })}} 
+              headerName='CFO Services' 
+              subHeaders={[{link:'/',title:'Business Transaction Advisory'},
+                           {link:'/',title:'Mergers & Acquisitions'},
+                           {link:'/',title:'Joint Ventures'},
+                           {link:'/',title:'Capital Structuring'},
+                           {link:'/',title:'Banking relationship'},
+                           {link:'/',title:'Management Reporting'},
+                           {link:'/',title:'Invenstor relationshop management'},
+                           {link:'/',title:'Internal System & Processes design(SOPs)'} ]}
+
+            />
+            
             <div className='navbar_text'>Accounts & Audit</div>
             <div className='navbar_text'>Loans & Capital</div>
             <div className='navbar_text'>Business legal Services</div>
