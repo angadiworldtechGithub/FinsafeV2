@@ -1,12 +1,12 @@
-import React from 'react';
-import './Navbar.css';
+import React from "react";
+import "./Navbar.css";
 import { MdMenu } from "react-icons/md";
-import { BsFacebook,BsFillTelephoneFill,BsLinkedin } from "react-icons/bs";
-import { HiMail } from 'react-icons/hi';
-import { IoLogoWhatsapp } from 'react-icons/io';
-import { useState } from 'react';
-import { Link } from 'react-router-dom'
-import Dropdown from '../Dropdown';
+import { IoLogoWhatsapp } from "react-icons/io";
+import { BsFacebook, BsLinkedin, BsFillTelephoneFill } from "react-icons/bs";
+import { HiMail } from "react-icons/hi";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Dropdown from "../Dropdown";
 
 export const addHideMobile = (classString) => {
   return classString + " hide_mobile";
@@ -34,22 +34,54 @@ function Navbar() {
   }
 
   return (
-     <div>
-       <div className="topheader">
-         <div className="socialicons" style={{display:'flex',width:'20%',justifyContent:'space-between',marginLeft:"20px"}}> 
-              <div><Link to="#"><IoLogoWhatsapp className="whatsapp"/></Link></div>
-              <div><Link to="#"><BsFacebook className="facebook"/></Link></div>
-              <div><Link to="#"><BsLinkedin className="linkedin"/></Link></div>
-              <div><Link to="#"><HiMail className="mail"/></Link></div>
-              <div><Link to="#"><BsFillTelephoneFill className="phone"/></Link></div>
-         </div>
-       </div>
+    <div>
+      <div className="topheader">
+        <div
+          className="socialicons"
+          style={{
+            display: "flex",
+            width: "20%",
+            justifyContent: "space-between",
+            marginLeft: "20px",
+          }}
+        >
+          <div>
+            <Link to="#">
+              <IoLogoWhatsapp className="whatsapp" />
+            </Link>
+          </div>
+          <div>
+            <Link to="#">
+              <BsFacebook className="facebook" />
+            </Link>
+          </div>
+          <div>
+            <Link to="#">
+              <BsLinkedin className="linkedin" />
+            </Link>
+          </div>
+          <div>
+            <Link to="#">
+              <HiMail className="mail" />
+            </Link>
+          </div>
+          <div>
+            <Link to="#">
+              <BsFillTelephoneFill className="phone" />
+            </Link>
+          </div>
+        </div>
+      </div>
 
-       <div className='midheader'>
-         <img src='assets/images/logo.png' alt='logonot loaded' height='100%' width='380px'/>
-       </div>
-    
-    
+      <div className="midheader">
+        <img
+          src="assets/images/logo.png"
+          alt="logonot loaded"
+          height="100%"
+          width="380px"
+        />
+      </div>
+
       <div className="down_header_2 outer_flex">
         <div className={headerClass}>
           <div className="navbar_text navbar_text_mobile">Home</div>
