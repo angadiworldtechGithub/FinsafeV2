@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Dropdown from "../Dropdown";
 
 export const addHide = (classString) => {
-  return classString + " smooth_hide";
+  return classString + " hide";
 };
 
 const INITIAL_NAVBAR_STATE = {
@@ -52,6 +52,7 @@ function Navbar() {
               });
             }}
             headerName="Take Expert Advice"
+            headerLink="/"
             subHeaders={[
               { link: "/", title: "Talk to Business Advisory Analyst" },
               { link: "/", title: "Talk to Certified Financial Planner" },
@@ -72,6 +73,7 @@ function Navbar() {
               });
             }}
             headerName="Start Your Business"
+            headerLink="/"
             subHeaders={[
               { link: "/", title: "Incorporation" },
               { link: "/", title: "Company" },
@@ -89,6 +91,7 @@ function Navbar() {
               setMenu({ ...INITIAL_NAVBAR_STATE, cfoServ: !menu["cfoServ"] });
             }}
             headerName="CFO Services"
+            headerLink="/"
             subHeaders={[
               { link: "/", title: "Business Transaction Advisory" },
               { link: "/", title: "Mergers & Acquisitions" },
