@@ -1,7 +1,9 @@
 import React from 'react';
 import './Navbar.css';
-import { MdMenu,  MdArrowDropDown } from "react-icons/md";
-import { BsWhatsapp } from "react-icons/bs";
+import { MdMenu } from "react-icons/md";
+import { BsFacebook,BsLinkedin,BsFillTelephoneFill} from "react-icons/bs";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { HiMail } from "react-icons/hi";
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import Dropdown from '../Dropdown';
@@ -29,12 +31,17 @@ function Navbar() {
   return (
      <div>
        <div className="topheader">
-         <div><Link to="#"><BsWhatsapp className="whatsapp"/></Link></div>
+         <div className="socialicons" style={{display:'flex',width:'20%',justifyContent:'space-between',marginLeft:"20px"}}> 
+              <div><Link to="#"><IoLogoWhatsapp className="whatsapp"/></Link></div>
+              <div><Link to="#"><BsFacebook className="facebook"/></Link></div>
+              <div><Link to="#"><BsLinkedin className="linkedin"/></Link></div>
+              <div><Link to="#"><HiMail className="mail"/></Link></div>
+              <div><Link to="#"><BsFillTelephoneFill className="phone"/></Link></div>
+         </div>
        </div>
 
        <div className='midheader'>
-         
-       
+         <img src='assets/images/logo.png' alt='logonot loaded' height='100%' width='380px'/>
        </div>
     
     
@@ -73,7 +80,6 @@ function Navbar() {
                            {link:'/',title:'Co-operative Societies'} ]}
 
             />
-
             
             <Dropdown 
               isActive={menu['cfoServ']} 
@@ -91,6 +97,7 @@ function Navbar() {
                            {link:'/',title:'Internal System & Processes design(SOPs)'} ]}
 
             />
+
             
             <div className='navbar_text'>Accounts & Audit</div>
             <div className='navbar_text'>Loans & Capital</div>
