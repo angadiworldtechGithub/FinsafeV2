@@ -1,4 +1,4 @@
-.topheader {
+.top_header {
   background-color: #072f5f;
   color: #fff;
   font-weight: 400;
@@ -7,6 +7,12 @@
   min-width: 300px;
   position: relative;
   height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_button {
+  color: #fff;
 }
 
 .social_icons {
@@ -76,4 +82,12 @@
     height: 100%;
     width: 380px;
   }
+}
+
+.sign_in_out:hover {
+  cursor: pointer;
+}
+
+.right_button {
+  color: #fff;
 }
