@@ -62,6 +62,7 @@ export default function Home() {
   ];
 
   return (
+    <>
     <Splide aria-label="Home Slide" options={{ autoplay: true, width: "100%" }}>
       {ProjectList.map((project) => {
         return (
@@ -77,23 +78,34 @@ export default function Home() {
         );
       })}
     </Splide>
-    <div>
-    
-    {/* Scrolling text */}
-    <div>
-         <div class="scroll-left">
-            <p>Finsafe is a leading financial solutions provider to focus on MSME Businesses.	Finsafe provides financial planning and mentorship services Individuals and wants to be trusted partner in their sucessful financial journey.</p>
-         </div>
-    </div>
-    
-    </div>
-    /*Card Slider*/
-    /*Text Slider*/
-    /*Card Slider*/
-    /*Logo Slider*/
-  );
-   
-  )
-}
+    {/*Card Slider*/}
+     
+    <div className="container">
+       <h2>Services Silder</h2>
+        <div className="cards">
+             
 
-export default Home
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="scroll-left">
+            <p>Finsafe provides financial planning and mentorship services Individuals and wants to be trusted partner in their sucessful financial journey.</p>
+          </div>
+    {/*card slider*/}
+    {/*cilent silder*/}
+        
+    </>
+   )
+ }
