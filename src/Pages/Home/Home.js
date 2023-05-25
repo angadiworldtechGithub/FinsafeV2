@@ -2,6 +2,7 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "./Home.css";
+import shortid from "shortid";
 
 export default function Home() {
   const ProjectList = [
@@ -66,9 +67,9 @@ export default function Home() {
     <Splide aria-label="Home Slide" options={{ autoplay: true, width: "100%" }}>
       {ProjectList.map((project) => {
         return (
-          <SplideSlide>
+          <SplideSlide key={shortid.generate()}>
             <div className="splider_box">
-              <img src={project.image} alt="" class="slider_image" />
+              <img src={project.image} alt="" className="slider_image" />
               <div className="text_overlay">
                 <h2>{project.title}</h2>
                 <p>{project.description}</p>

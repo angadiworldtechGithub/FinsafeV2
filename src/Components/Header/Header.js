@@ -2,12 +2,78 @@ import "./Header.css";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { BsFacebook, BsLinkedin, BsFillTelephoneFill } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthContext";
+import { ADMIN_EMAILS } from "../../constants";
+
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { auth as firebaseAuth } from "../../firebase";
+
+const provider = new GoogleAuthProvider();
+
+const signInClick = (setAuth) => () => {
+  console.log("SignIn Clicked");
+  signInWithPopup(firebaseAuth, provider)
+    .then((result) => {
+      setAuth(result.user);
+    })
+    .catch((error) => {
+      console.error("Sign In Failed");
+      console.error(
+        error.code,
+        error.message,
+        GoogleAuthProvider.credentialFromError(error)
+      );
+    });
+};
+
+const signOutClick = (setAuth) => () => {
+  console.log("SignOut Clicked");
+  signOut(firebaseAuth)
+    .then((result) => {
+      setAuth(null);
+    })
+    .catch((error) => console.error(error));
+};
+
+const getButton = (auth, location) => {
+  const pageName = location.pathname.split("/")[1];
+  if (auth) {
+    if (["admin", "dashboard"].includes(pageName)) {
+      return {
+        text: "Sign Out",
+        link: null,
+      };
+    }
+    if (ADMIN_EMAILS.includes(auth.email)) {
+      return {
+        text: "Admin",
+        link: "/admin",
+      };
+    } else {
+      return {
+        text: "Dashboard",
+        link: "/dashboard",
+      };
+    }
+  } else {
+    return {
+      text: "Sign In",
+      link: null,
+    };
+  }
+};
 
 export default function Header() {
+  const { auth, setAuth } = useContext(AuthContext);
+  const location = useLocation();
+
+  const rightButton = getButton(auth, location);
+
   return (
     <>
-      <div className="topheader">
+      <div className="top_header">
         <div className="social_icon_box">
           <div>
             <Link to="#">
@@ -35,10 +101,32 @@ export default function Header() {
             </Link>
           </div>
         </div>
+        {!rightButton.link ? (
+          <div
+            className="sign_in_out"
+            onClick={
+              rightButton.text === "Sign In"
+                ? signInClick(setAuth)
+                : rightButton.text === "Sign Out"
+                ? signOutClick(setAuth)
+                : () => {}
+            }
+          >
+            {rightButton.text}
+          </div>
+        ) : (
+          <Link class="right_button" to={rightButton.link}>
+            {rightButton.text}
+          </Link>
+        )}
       </div>
 
       <div className="mid_header">
-        <img src="assets/images/logo.png" alt="logonot loaded" class="logo" />
+        <img
+          src="assets/images/logo.png"
+          alt="logonot loaded"
+          className="logo"
+        />
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { MdMenu } from "react-icons/md";
 import { useState } from "react";
 import Dropdown from "../Dropdown";
+import { Link } from "react-router-dom";
 
 export const addHideMobile = (classString) => {
   return classString + " hide_mobile";
@@ -37,7 +38,11 @@ function Navbar() {
     <>
       <div className="navbar">
         <div className={headerClass}>
-          <div className="navbar_text navbar_text_mobile">Home</div>
+          <div className="navbar_text navbar_text_mobile">
+            <Link to="/" className="navbar_link">
+              Home
+            </Link>
+          </div>
           <div className="navbar_text navbar_text_mobile">About Us</div>
 
           <Dropdown
