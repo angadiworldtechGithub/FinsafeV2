@@ -32,8 +32,9 @@ function Service() {
 
        </div>
     
-       <div className="flex-child">
-       <h1>B2C Services</h1>
+       <div className="flex-child1">
+        <center><h3>B2C Services</h3></center> 
+
               <form action="/">
                        <input className="service_input" type="text" id="name" name="name" placeholder="Name"></input>
                        <input className="service_input" type="email" id="Email" name="email" placeholder="Email"></input>
@@ -41,7 +42,7 @@ function Service() {
                        <input className="service_input" type="text" id="Organization" name="Organization" placeholder="Organization Name"></input>
                        <input className="service_input" type="text" id="Services" name="Services" placeholder="Services"></input>
                        <select className="service_input"type="text" id="state" name="state" placeholder='Select Your State'>
-                            <option value="Select your state"  selected> Select your state</option>
+                            <option value="Select your state"   selected>Select Your State </option>
                             <option value="AN">Andaman and Nicobar Islands</option>
                             <option value="AP">Andhra Pradesh</option>
                             <option value="AR">Arunachal Pradesh</option>
@@ -721,6 +722,14 @@ function Service() {
            <option value="Yavatmal">Yavatmal</option>
            <option value="Zunheboto">Zunheboto</option>
        </select>
+
+   
+       <label>
+             <input type="checkbox" className="checkbox" required/>
+             I authorize Finsafe and its representative to contact me with updates and notifications
+             via Email, SMS, WhatsApp,and call.
+       </label>
+    
                       
                   <input   className="service_submit" type="submit" value="Submit"></input>
              </form>
