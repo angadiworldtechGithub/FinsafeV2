@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import B2CService from "./Pages/B2CService";
+import B2CService from "./Pages/Personalservice";
 import About from "./Pages/About";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";

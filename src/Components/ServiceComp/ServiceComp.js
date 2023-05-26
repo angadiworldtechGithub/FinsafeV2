@@ -33,7 +33,7 @@ export default function ServiceComp({
         </div>
 
         <div className="flex-child1">
-          <h1>{title}</h1>
+         <center><h1>{title}</h1></center> 
           <form action="/">
             {inputList.map((inputObj) => {
               if (inputObj.elementType === "select") {

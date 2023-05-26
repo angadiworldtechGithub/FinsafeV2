@@ -1,10 +1,10 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function B2CService() {
+export default function Personalservice() {
   return (
     <ServiceComp
-      title="B2C Services"
-      description="Our B2C services include investment planning, estate management services, tax planning, and income tax returns. We help individuals achieve their financial goals with expert-level guidance and personalized financial planning."
+      title="Personal Services"
+      description="Our Personal services include investment planning, estate management services, tax planning, and income tax returns. We help individuals achieve their financial goals with expert-level guidance and personalized financial planning."
       bulletPoints={[
         { text: "Investment planning" },
         { text: "Estate management services" },
