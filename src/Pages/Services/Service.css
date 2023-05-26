@@ -1,12 +1,60 @@
-.flex-container {
-    display: flex;
+@media only screen and (max-width: 1100px) {
+    .flex-container {
+        margin: 10px 10px 10px 10px;
+        padding: 10px 10px 10px 10px;
+    }
+
+}
+@media only screen and (min-width: 1100px) {
+    .flex-container {
+        display: flex;
+        margin: 10px 10px 10px 10px;
+        padding: 10px 10px 10px 10px;
+    }
 }
 
 .flex-child {
     flex: 1;
-    border: 2px solid yellow;
+    border: 2px solid;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
 }  
 
-.flex-child:first-child {
+.flex-child:first-child{
     margin-right: 20px;
-} 
+    
+}
+.color_white{
+    text-align: justify;
+}
+.service_list {
+    list-style: none;
+}
+
+
+.service_input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .service_submit {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: lightblue;
+    color: black;
+  }

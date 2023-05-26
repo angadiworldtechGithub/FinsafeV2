@@ -1,28 +1,19 @@
 .footer{
-    width: 100%;
     background: linear-gradient(to right,#00093c,#2d0b00);
     color:#fff;
-    padding: 30px 30px 30px 30px;
     font-size: 15px;
     line-height: 25px;
-    margin-top: 30px;
+    padding-top: 30px;
+    margin-top: 5px;
 }
 .row{
-    width:85%;
+    width:95%;
     margin:auto;
     display:flex;
     flex-wrap: wrap;
     align-items: flex-start;
 }
 .col{
-    flex-basis:25%;
-}
-
-.col:nth-child(2){
-    flex-basis:25%;
-}
-
-.col:nth-child(3){
     flex-basis:25%;
 }
 
@@ -41,47 +32,19 @@
     width:fit-content;
     border-bottom: 1px solid #ccc;
 }
-ul li {
+.footer_list {
+    padding-left: 0px;
+}
+.footer_list li {
     list-style: none;
     margin-bottom: 5px;
-    padding-left: 10px;
     justify-content: center;
 
 }
 
-ul li a{
+.footer_list li a{
     text-decoration: none;
     color: #fff;
-}
-form{
-    padding-bottom: 18px;
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ccc;
-    margin-bottom:50px;
-}
-form .far{
-    font-size: 18px;
-    margin-right:10px;
-}
-
-form input{
-    width:100%;
-    background: transparent;
-    color:#ccc;
-    border:0;
-}
-form button{
-    background: transparent;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-}
-
-form button .fas{
-    font-size: 16px;
-    color:#ccc;
 }
 
 .social-icons .fab{
@@ -94,19 +57,22 @@ form button .fas{
     color:#000;
     background: #fff;
     margin-right:10px;
-
-
 }
 
-hr{
-    width: 90%;
+.social-icons {
+    padding-left: 13px;
+}
+
+.line_break {
+    width:100%;
     border:0;
     border-bottom:1px solid #ccc;
     margin: 20px auto;
 }
 
-.copyright{
+.copyright p{
     text-align: center;
+    padding-bottom: 3px;
 }
 .copyright a{
 
