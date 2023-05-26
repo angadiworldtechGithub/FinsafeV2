@@ -1,6 +1,3 @@
-// import React from "react";
-// import "./B2CService.css";
-
 import ServiceComp from "../../Components/ServiceComp";
 
 export default function B2CService() {
