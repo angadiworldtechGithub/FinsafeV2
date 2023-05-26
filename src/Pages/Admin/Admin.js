@@ -1,7 +1,7 @@
 import "./Admin.css";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FileUpload from "../../Components/FileUpload";
-import { collection, addDoc } from "firebase/firestore";
+import { addDoc, collection, query } from "firebase/firestore";
 import { uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, firestore } from "../../firebase";
 import * as EmailValidator from "email-validator";
@@ -16,8 +16,20 @@ const validateEmail = (email) => {
 };
 
 export default function Admin() {
+  const { auth } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [files, setFiles] = useState([]);
+
+  useEffect(() => {});
+
+  if (!auth)
+    return (
+      <div>
+        <h1>Admin Page</h1>
+        <p>Please Sign In With an admin account</p>
+      </div>
+    );
+
   const onDrop = (innerFiles, event) => {
     setFiles([...innerFiles]);
   };
@@ -25,8 +37,14 @@ export default function Admin() {
   const onUpload = () => {
     if (validateEmail(email)) {
       files.forEach((file) => {
+        const reference = ref(
+          storage,
+          `${file.name.split(".")[0] + shortid.generate()}.${
+            file.name.split(".")[1]
+          }`
+        );
         const metadata = { contentType: file.type };
-        const uploadTask = uploadBytesResumable(storage, file, metadata);
+        const uploadTask = uploadBytesResumable(reference, file, metadata);
         uploadTask.on(
           "state_changed",
           (snapshot) => {
@@ -47,7 +65,7 @@ export default function Admin() {
           () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
               console.log("File available at", downloadURL);
-              addDoc(collection(firestore, "user_data"), {
+              addDoc(collection(firestore, COLLECTION_NAME), {
                 email,
                 fileDownloadUrl: downloadURL,
               })
@@ -74,17 +92,16 @@ export default function Admin() {
       <h1>Admin Page</h1>
       <p>User Email</p>
       <input
-        type="text"
+        type="email"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
       ></input>
-      <h2>User Docs List</h2>
       <FileUpload
         onDrop={onDrop}
         onUpload={onUpload}
         filePreviews={filePreviews}
       />
-      /* List from firebase */
+      <h2>User Docs List</h2>
     </div>
   );
 }
