@@ -2,9 +2,13 @@ import "./Admin.css";
 import { useContext, useEffect, useState } from "react";
 import FileUpload from "../../Components/FileUpload";
 import { addDoc, collection, query } from "firebase/firestore";
-import { uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
 import { storage, firestore } from "../../firebase";
 import * as EmailValidator from "email-validator";
+import { AuthContext } from "../../Context/AuthContext";
+import shortid from "shortid";
+
+const COLLECTION_NAME = "user_data";
 
 const validateEmail = (email) => {
   if (EmailValidator.validate(email)) {
@@ -57,6 +61,8 @@ export default function Admin() {
                 break;
               case "running":
                 console.log("Upload is running");
+                break;
+              case "default":
                 break;
             }
           },
