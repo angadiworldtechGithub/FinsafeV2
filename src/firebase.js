@@ -1,22 +1,24 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getStorage, ref } from "firebase/storage";
+import { getStorage } from "firebase/storage";
+
+console.log(process.env);
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBPe-shFLWB6SYRf20Dg7o-rmlZeDhR8RQ",
+  apiKey: process.env.REACT_APP_API_KEY,
 
-  authDomain: "finsafesitev2.firebaseapp.com",
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
 
-  projectId: "finsafesitev2",
+  projectId: process.env.REACT_APP_PROJECT_ID,
 
-  storageBucket: "finsafesitev2.appspot.com",
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
 
-  messagingSenderId: "336621797304",
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 
-  appId: "1:336621797304:web:7334a3c4567ac60e97594d",
+  appId: process.env.REACT_APP_APP_ID,
 
-  measurementId: "G-05X8CVGR9V",
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
@@ -25,4 +27,4 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const firestore = getFirestore(app);
-export const storage = ref(getStorage(app), "personal_document/");
+export const storage = getStorage(app);
