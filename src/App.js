@@ -5,19 +5,19 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import Service from "./Pages/Services";
+import B2CService from "./Pages/B2CService";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
 
 const Base = () => {
   return (
-      <>
+    <>
       <Header />
       <Navbar />
       <Outlet />
       <Footer />
-      </>
+    </>
   );
 };
 
@@ -39,9 +39,9 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
-        path:"service",
-        element:<Service />,
-      }
+        path: "/b2c_service",
+        element: <B2CService />,
+      },
     ],
   },
 ]);
