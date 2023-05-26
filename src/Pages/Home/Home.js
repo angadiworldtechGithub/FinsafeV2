@@ -8,7 +8,7 @@ export default function Home() {
   const ProjectList = [
     {
       title: "CFO Services",
-      image: "assets/images/25.jpg",
+      image: "assets/images/3.png",
       description:
         "Freelancing Chief Financial Officer services CFO.Finsafe CFO services,strong financial growth just like large MNCs.",
     },

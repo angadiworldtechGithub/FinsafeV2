@@ -6,6 +6,7 @@ import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
 import Service from "./Pages/Services";
+import About from "./Pages/About";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path:"service",
         element:<Service />,
+      },
+      {
+        path:"about",
+        element:<About />,
       }
     ],
   },
