@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import Services from "./Pages/Services";
+import B2CService from "./Pages/B2CService";
 import About from "./Pages/About";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -40,13 +40,13 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
-        path:"service",
-        element:<Service />,
+        path: "/b2c_service",
+        element: <B2CService />,
       },
       {
-        path:"about",
-        element:<About />,
-      }
+        path: "about",
+        element: <About />,
+      },
     ],
   },
 ]);
