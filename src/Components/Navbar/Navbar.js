@@ -159,7 +159,7 @@ function Navbar() {
               setMenu({ ...INITIAL_NAVBAR_STATE, persServ: !menu["persServ"] });
             }}
             headerName="Personal Services"
-            headerLink="/"
+            headerLink="/b2c_service"
             subHeaders={[
               { link: "/", title: "Talk to Expert" },
               { link: "/", title: "Investment planning" },
