@@ -2,6 +2,7 @@
     .flex-container {
         margin: 10px 10px 10px 10px;
         padding: 10px 10px 10px 10px;
+        background: #e6e6e6;
     }
 
 }
@@ -10,21 +11,37 @@
         display: flex;
         margin: 10px 10px 10px 10px;
         padding: 10px 10px 10px 10px;
+        background: #e6e6e6;
     }
 }
 
 .flex-child {
-    flex: 1;
-    border: 2px solid;
+    flex: 2;
+   /* border: 2px solid;*/
     margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
+    /*padding: 10px 10px 10px 10px;*/
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 200px;
     border-radius: 20px;
+    background: #e6e6e6;
 }  
 
-.flex-child:first-child{
+.flex-child1 {
+    flex: 1.5;
+    border: 2px solid;
+    /*margin: 10px 10px 10px 10px;*/
+    padding: 10px 10px 10px 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 20px;
+    background: #e6e6e6;
+} 
+
+/*.flex-child:first-child{
     margin-right: 20px;
     
-}
+}*/
 .color_white{
     text-align: justify;
 }
@@ -45,7 +62,7 @@
 
   .service_submit {
     width: 100%;
-    background-color: blue;
+    background-color:  #072f5f;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -54,7 +71,40 @@
     cursor: pointer;
   }
 
-  input[type=submit]:hover {
+ /* input[type=submit]:hover {
     background-color: lightblue;
     color: black;
-  }
+  }*/
+
+  label {
+    /* position: absolute; */
+    margin-top: 20px;
+    bottom: 0;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: justify;
+    display: block;
+    z-index: 9999;
+}
+
+.checkbox {
+    margin-top: 20px;
+    height: 15px !important;
+    width: 50px !important;
+    accent-color:  #072f5f;
+    margin-right: 15px;
+   
+}
+
+.flex-child input {
+    font-size: 15px;
+    height: 40px;
+    padding: 5px 10px;
+    color:  #fff;
+    border-color:  #072f5f;
+    border: 1px solid;
+    border-radius: 5px;
+    text-transform: capitalize;
+    
+}

@@ -40,8 +40,11 @@ function Service() {
           </p>
         </div>
 
-        <div className="flex-child">
-          <h1>B2C Services</h1>
+        <div className="flex-child1">
+          <center>
+            <h3>B2C Services</h3>
+          </center>
+
           <form action="/">
             <input
               className="service_input"
@@ -86,8 +89,7 @@ function Service() {
               placeholder="Select Your State"
             >
               <option value="Select your state" selected>
-                {" "}
-                Select your state
+                Select Your State{" "}
               </option>
               <option value="AN">Andaman and Nicobar Islands</option>
               <option value="AP">Andhra Pradesh</option>
@@ -789,6 +791,12 @@ function Service() {
               <option value="Yavatmal">Yavatmal</option>
               <option value="Zunheboto">Zunheboto</option>
             </select>
+
+            <label>
+              <input type="checkbox" className="checkbox" required />I authorize
+              Finsafe and its representative to contact me with updates and
+              notifications via Email, SMS, WhatsApp,and call.
+            </label>
 
             <input
               className="service_submit"
