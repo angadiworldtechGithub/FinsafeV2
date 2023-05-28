@@ -11,7 +11,7 @@ export default function About() {
       <div className="banner_section">
         <div className="banner_text">
           <h1 style={{ textAlign: "left" }}>
-            Revealing the Inner<br></br> Workings of Our Success
+            Revealing the Inner Workings <br></br>of Our Success
           </h1>
         </div>
         <div className="banner_text1">
