@@ -5,8 +5,9 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import PersonalService from "./Pages/PersonalService";
+import Personalservice from "./Pages/Personalservice";
 import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
@@ -40,13 +41,17 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
-        path: "/personal_service",
-        element: <PersonalService />,
+        path: "/personalservice",
+        element: <Personalservice />,
       },
       {
         path: "about",
         element: <About />,
       },
+      {
+        path: "Contact",
+        element: <Contact />,
+      }
     ],
   },
 ]);
