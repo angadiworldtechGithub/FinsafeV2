@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import B2CService from "./Pages/Personalservice";
+import PersonalService from "./Pages/PersonalService";
 import About from "./Pages/About";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -40,8 +40,8 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
-        path: "/b2c_service",
-        element: <B2CService />,
+        path: "/personal_service",
+        element: <PersonalService />,
       },
       {
         path: "about",
