@@ -98,9 +98,8 @@ function Navbar() {
               {
                 link: "/",
                 title: "Limited Liability Partnership(LLP)",
-                subHeaders: [], // Add {link: "",title: ""} object here
               },
-              { link: "/", title: "Partnership Firm" },
+              { link: "/", title: "Partnership Firm", subHeaders: [] }, // Add {link: "",title: ""} object here
               { link: "/", title: "Propreitorship" },
               { link: "/", title: "Trust" },
               { link: "/", title: "Co-operative Societies" },
