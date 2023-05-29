@@ -5,14 +5,14 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import PersonalService from "./Pages/PersonalService";
+import Personalservice from "./Pages/Personalservice";
 import {
   Investment,
   Estate,
   Tax,
   Individual,
   IncomeTax,
-} from "./Pages/PersonalService";
+} from "./Pages/Personalservice";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
