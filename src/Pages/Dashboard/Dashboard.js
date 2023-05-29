@@ -2,6 +2,7 @@ import "./Dashboard.css";
 
 import { useContext, useEffect, useState } from "react";
 import { collection, query, getDocs, where } from "firebase/firestore";
+import shortid from "shortid";
 
 import { AuthContext } from "../../Context/AuthContext";
 import { firestore } from "../../firebase";
@@ -9,22 +10,24 @@ import { USER_DATA_COLL_NAME } from "../../constants";
 
 export default function Dashboard() {
   const { auth } = useContext(AuthContext);
-  const { documents, setDocuments } = useState([]);
+  const [documents, setDocuments] = useState([]);
 
   useEffect(() => {
-    getDocs(
-      query(
-        collection(firestore, USER_DATA_COLL_NAME),
-        where("email", "==", auth.email)
-      )
-    ).then((querySnapshot) => {
-      const docs = [];
-      querySnapshot.forEach((doc) => {
-        docs.push({ ...doc.data() });
+    if (auth) {
+      getDocs(
+        query(
+          collection(firestore, USER_DATA_COLL_NAME),
+          where("email", "==", auth.email)
+        )
+      ).then((querySnapshot) => {
+        const docs = [];
+        querySnapshot.forEach((doc) => {
+          docs.push({ ...doc.data() });
+        });
+        setDocuments(docs);
       });
-      setDocuments(docs);
-    });
-  }, []);
+    }
+  }, [auth]);
 
   if (!auth) {
     return (
@@ -49,7 +52,7 @@ export default function Dashboard() {
         <tbody>
           {documents.map((document) => {
             return (
-              <tr>
+              <tr key={shortid.generate()}>
                 <td>{document.fileName}</td>
                 <td>
                   <a

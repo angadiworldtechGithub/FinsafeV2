@@ -60,6 +60,7 @@ function Navbar() {
             headerName="Take Expert Advice"
             headerLink="/Take_Expert_Advice"
             subHeaders={[
+<<<<<<< HEAD
               { link: "/Business_Advisory", title: "Talk to Business Advisory Analyst" },
               { link: "/Certified_Financial ", title: "Talk to Certified Financial Planner" },
               { link: "/Chartered_Accountant", title: "Talk to Chartered Accountant" },
@@ -67,6 +68,22 @@ function Navbar() {
               { link: "/Legal_Advisor", title: "Talk to Legal Advisor" },
               { link: "/Cyber_Crime ", title: "Talk to Cyber Crime Expert" },
               { link: "/Company_Secretory", title: "Talk to Company Secretory" },
+=======
+              {
+                link: "/",
+                title: "Talk to Business Advisory Analyst",
+                subHeaders: [
+                  { link: "/", title: "Inner 1" },
+                  { link: "/", title: "Inner 2" },
+                ],
+              },
+              { link: "/", title: "Talk to Certified Financial Planner" },
+              { link: "/", title: "Talk to Chartered Accountant" },
+              { link: "/", title: "Talk to Cost Accountant" },
+              { link: "/", title: "Talk to Legal Advisor" },
+              { link: "/", title: "Talk to Cyber Crime Expert" },
+              { link: "/", title: "Talk to Company Secretory" },
+>>>>>>> 012bc7e9be0f76694710a24bb6a72b91501f0c18
             ]}
           />
 

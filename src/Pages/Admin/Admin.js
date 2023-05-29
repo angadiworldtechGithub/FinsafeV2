@@ -9,7 +9,7 @@ import "./Admin.css";
 import FileUpload from "../../Components/FileUpload";
 import { storage, firestore } from "../../firebase";
 import { AuthContext } from "../../Context/AuthContext";
-import { USER_DATA_COLL_NAME } from "../../constants";
+import { USER_DATA_COLL_NAME, ADMIN_EMAILS } from "../../constants";
 
 const validateEmail = (email) => {
   return EmailValidator.validate(email);
@@ -40,7 +40,7 @@ export default function Admin() {
     );
   }, []);
 
-  if (!auth)
+  if (!auth || (auth && !ADMIN_EMAILS.includes(auth.email)))
     return (
       <div style={{ textAlign: "center" }}>
         <h1>Admin Page</h1>
@@ -144,7 +144,7 @@ export default function Admin() {
         <tbody>
           {userFiles.map((userFile) => {
             return (
-              <tr>
+              <tr key={shortid.generate()}>
                 <td>{userFile.email}</td>
                 <td>{userFile.fileName}</td>
                 <td>
