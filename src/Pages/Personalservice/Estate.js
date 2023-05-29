@@ -4,14 +4,10 @@ export default function Estate() {
   return (
     <ServiceComp
       title="Estate Management Services"
-      description="Our Personal services include investment planning, estate management services, tax planning, and income tax returns. We help individuals achieve their financial goals with expert-level guidance and personalized financial planning."
+      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
       bulletPoints={[
-        { text: "Talk to Expert" },
-        { text: "Investment planning" },
-        { text: "Estate management services" },
-        { text: "Tax Planning" },
-        { text: "Income tax returns" },
-        { text: "Individual Accounts maintenance" },
+        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
+        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

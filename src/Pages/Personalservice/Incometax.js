@@ -4,14 +4,8 @@ export default function IncomeTax() {
   return (
     <ServiceComp
       title="Income Tax Returns"
-      description="Our Personal services include investment planning, estate management services, tax planning, and income tax returns. We help individuals achieve their financial goals with expert-level guidance and personalized financial planning."
+      description="Finsafe Solutions assists individuals in preparing and filing their income tax returns. They stay updated with the latest tax laws and regulations to ensure accurate and timely filing. Their team of tax professionals can help you maximize deductions and credits while ensuring compliance with tax laws."
       bulletPoints={[
-        { text: "Talk to Expert" },
-        { text: "Investment planning" },
-        { text: "Estate management services" },
-        { text: "Tax Planning" },
-        { text: "Income tax returns" },
-        { text: "Individual Accounts maintenance" },
       ]}
       inputList={[
         {

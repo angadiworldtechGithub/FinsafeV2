@@ -1,9 +1,9 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Tax() {
+export default function Take_Expert_Advice() {
   return (
     <ServiceComp
-      title="Tax Planning"
+      title="Take Expert Advice"
       description="Our tax experts provide expert-level guidance for tax planning and return filings.
        We understand the complexities of tax laws and regulations and help you optimize your tax planning to minimize your tax liabilities."
       bulletPoints={[

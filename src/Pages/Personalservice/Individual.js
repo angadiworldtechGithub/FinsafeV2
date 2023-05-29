@@ -4,14 +4,9 @@ export default function Individual() {
   return (
     <ServiceComp
       title="Individual Accounts Maintenance"
-      description="Our Personal services include investment planning, estate management services, tax planning, and income tax returns. We help individuals achieve their financial goals with expert-level guidance and personalized financial planning."
+      description="Finsafe Solutions offers individual accounts maintenance services, which involve managing and organizing financial records, transactions, and statements for individuals. They can help you keep track of your income, expenses, investments, and other financial activities, providing you with a clear picture of your financial health."
       bulletPoints={[
-        { text: "Talk to Expert" },
-        { text: "Investment planning" },
-        { text: "Estate management services" },
-        { text: "Tax Planning" },
-        { text: "Income tax returns" },
-        { text: "Individual Accounts maintenance" },
+       
       ]}
       inputList={[
         {
