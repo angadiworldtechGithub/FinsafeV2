@@ -58,8 +58,17 @@ function Navbar() {
               });
             }}
             headerName="Take Expert Advice"
-            headerLink="/"
+            headerLink="/Take_Expert_Advice"
             subHeaders={[
+<<<<<<< HEAD
+              { link: "/Business_Advisory", title: "Talk to Business Advisory Analyst" },
+              { link: "/Certified_Financial ", title: "Talk to Certified Financial Planner" },
+              { link: "/Chartered_Accountant", title: "Talk to Chartered Accountant" },
+              { link: "/Cost_Accountant", title: "Talk to Cost Accountant" },
+              { link: "/Legal_Advisor", title: "Talk to Legal Advisor" },
+              { link: "/Cyber_Crime ", title: "Talk to Cyber Crime Expert" },
+              { link: "/Company_Secretory", title: "Talk to Company Secretory" },
+=======
               {
                 link: "/",
                 title: "Talk to Business Advisory Analyst",
@@ -74,6 +83,7 @@ function Navbar() {
               { link: "/", title: "Talk to Legal Advisor" },
               { link: "/", title: "Talk to Cyber Crime Expert" },
               { link: "/", title: "Talk to Company Secretory" },
+>>>>>>> 012bc7e9be0f76694710a24bb6a72b91501f0c18
             ]}
           />
 

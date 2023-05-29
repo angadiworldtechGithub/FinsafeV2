@@ -52,6 +52,10 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
+        path: "/Take_Expert_Advice",
+        element: <Take_Expert_Advice />,
+      },
+      {
         path: "/personal_service",
         element: <PersonalService />,
       },

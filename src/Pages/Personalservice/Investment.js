@@ -4,14 +4,10 @@ export default function Investment() {
   return (
     <ServiceComp
       title="Investment planning"
-      description="Our Personal services include investment planning, estate management services, tax planning, and income tax returns. We help individuals achieve their financial goals with expert-level guidance and personalized financial planning."
+      description="At Finsafe, we understand the importance of investment planning for individuals."
       bulletPoints={[
-        { text: "Talk to Expert" },
-        { text: "Investment planning" },
-        { text: "Estate management services" },
-        { text: "Tax Planning" },
-        { text: "Income tax returns" },
-        { text: "Individual Accounts maintenance" },
+        { text: "We offer comprehensive investment planning services, including retirement planning, Financial planning, tax planning, and risk management." },
+        { text: "Our certified planners work with you to understand your financial goals, analyze your current financial situation, and create a personalized investment plan that will help you achieve those goals."}
       ]}
       inputList={[
         {
