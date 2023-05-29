@@ -115,7 +115,7 @@ export default function Header() {
             {rightButton.text}
           </div>
         ) : (
-          <Link class="right_button" to={rightButton.link}>
+          <Link className="right_button" to={rightButton.link}>
             {rightButton.text}
           </Link>
         )}

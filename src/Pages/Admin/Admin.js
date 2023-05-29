@@ -1,7 +1,7 @@
 import "./Admin.css";
 import { useContext, useEffect, useState } from "react";
 import FileUpload from "../../Components/FileUpload";
-import { addDoc, collection, query } from "firebase/firestore";
+import { addDoc, collection, query, getDocs } from "firebase/firestore";
 import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
 import { storage, firestore } from "../../firebase";
 import * as EmailValidator from "email-validator";
@@ -11,21 +11,33 @@ import shortid from "shortid";
 const COLLECTION_NAME = "user_data";
 
 const validateEmail = (email) => {
-  if (EmailValidator.validate(email)) {
-    return email.split("@")[1] === "gmail.com";
-    // Check if user exists
-  } else {
-    return false;
-  }
+  return EmailValidator.validate(email);
 };
 
 export default function Admin() {
   const { auth } = useContext(AuthContext);
+  const [isUploading, setIsUploading] = useState(false);
   const [email, setEmail] = useState("");
   const [files, setFiles] = useState([]);
   const [userFiles, setUserFiles] = useState([]);
 
-  useEffect(() => {});
+  const resetPage = () => {
+    setFiles([]);
+    setIsUploading(false);
+    setEmail("");
+  };
+
+  useEffect(() => {
+    getDocs(query(collection(firestore, COLLECTION_NAME))).then(
+      (querySnapshot) => {
+        const userFiles = [];
+        querySnapshot.forEach((doc) => {
+          userFiles.push({ ...doc.data() });
+        });
+        setUserFiles(userFiles);
+      }
+    );
+  }, []);
 
   if (!auth)
     return (
@@ -41,15 +53,17 @@ export default function Admin() {
 
   const onUpload = () => {
     if (validateEmail(email)) {
+      setIsUploading(true);
       files.forEach((file) => {
         const reference = ref(
           storage,
-          `${file.name.split(".")[0] + shortid.generate()}.${
+          `${file.name.split(".")[0]}_${shortid.generate()}.${
             file.name.split(".")[1]
           }`
         );
         const metadata = { contentType: file.type };
         const uploadTask = uploadBytesResumable(reference, file, metadata);
+        // promisify this and wait for all the tasks to be uploaded.
         uploadTask.on(
           "state_changed",
           (snapshot) => {
@@ -63,7 +77,7 @@ export default function Admin() {
               case "running":
                 console.log("Upload is running");
                 break;
-              case "default":
+              default:
                 break;
             }
           },
@@ -71,10 +85,12 @@ export default function Admin() {
 
           () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              console.log("File available at", downloadURL);
+              alert("Upload Complete");
+              resetPage();
               addDoc(collection(firestore, COLLECTION_NAME), {
                 email,
                 fileDownloadUrl: downloadURL,
+                fileName: file.name,
               })
                 .then((docRef) => console.log(docRef))
                 .catch((error) => console.error(error));
@@ -82,10 +98,8 @@ export default function Admin() {
           }
         );
       });
-
-      setFiles([]);
     } else {
-      if (!email.length) {
+      if (email.length) {
         console.info("Invalid Email");
         alert("Invalid Email");
       } else {
@@ -115,8 +129,37 @@ export default function Admin() {
         onDrop={onDrop}
         onUpload={onUpload}
         filePreviews={filePreviews}
+        loading={isUploading}
       />
       <h2>User Docs List</h2>
+      <table className="auto_align">
+        <thead>
+          <tr>
+            <th>User Email</th>
+            <th>File Name</th>
+            <th>Download Url</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userFiles.map((userFile) => {
+            return (
+              <tr>
+                <td>{userFile.email}</td>
+                <td>{userFile.fileName}</td>
+                <td>
+                  <a
+                    href={userFile.fileDownloadUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Click To Download
+                  </a>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
