@@ -18,6 +18,7 @@ import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
+import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
 
 const Base = () => {
   return (
@@ -52,8 +53,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/Take_Expert_Advice",
-        element: <Take_Expert_Advice />,
+        path: "/take_expert_advice",
+        element: <TakeExpertAdvice />,
       },
       {
         path: "/personal_service",
