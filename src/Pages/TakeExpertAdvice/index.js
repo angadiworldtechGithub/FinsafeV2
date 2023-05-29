@@ -5,6 +5,7 @@ import Chartered_Accountant from "./Chartered_Accountant";
 import Company_Secretory from "./Company_Secretory";
 import Cost_Accountant from "./Cost_Accountant";
 import Cyber_crime from "./Cyber_crime";
+import Legal_Advisor from "./Legal_Advisor";
 
 export default TakeExpertAdvice;
 export {
@@ -14,4 +15,5 @@ export {
   Company_Secretory,
   Cost_Accountant,
   Cyber_crime,
+  Legal_Advisor,
 };
