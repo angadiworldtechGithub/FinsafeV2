@@ -1,22 +1,12 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Cfo_Services() {
+export default function Business_Transaction () {
   return (
     <ServiceComp
-      title="CFO Services"
-      description ="Our experienced team ensures your organization is always compliant with GST, RERA, Income tax, and Companies Act. We offer GST advisory and regular returns filing, income tax planning & ITR filing, and TDS returns."
+      title="Business Transaction Advisory"
+      description ="Finsafe Solutions provides guidance and expertise in managing various types of business transactions. This may include strategic advice on buying or selling businesses, evaluating investment opportunities, and structuring deals. "
       bulletPoints={[
-       {text: "Business Transaction Advisory"},
-       {text:"Mergers & Acquisitions"},
-       {text:"Joint Ventures"},
-       {text:"Capital Structuring"},
-       {text:"Banking relationship"},
-       {text:"Business Planning & Forcasting"},
-       {text:"Working Capital Management"},
-       {text:"Management Reporting"},
-       {text:"Invenstor relationshop management"},
-       {text:"Internal System & Processes design(SOPs)"}
-
+       
       ]}
       inputList={[
         {

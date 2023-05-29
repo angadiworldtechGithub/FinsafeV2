@@ -126,6 +126,10 @@ const router = createBrowserRouter([
         element: <Internal_System/>,
       },
       {
+         path: "/Business_Planning",
+         element:<Business_Planning/>,
+      },
+      {
         path: "/Investor_relationship",
         element: <Investor_relationship/>,
       },

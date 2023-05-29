@@ -1,22 +1,12 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Cfo_Services() {
+export default function Capital_Structuring() {
   return (
     <ServiceComp
-      title="CFO Services"
-      description ="Our experienced team ensures your organization is always compliant with GST, RERA, Income tax, and Companies Act. We offer GST advisory and regular returns filing, income tax planning & ITR filing, and TDS returns."
+      title="Capital Structuring"
+      description ="Finsafe Solutions helps businesses determine the most effective capital structure for their needs. This involves analyzing the company's financial position, identifying suitable sources of capital (debt or equity), and optimizing the mix to achieve financial objectives. "
       bulletPoints={[
-       {text: "Business Transaction Advisory"},
-       {text:"Mergers & Acquisitions"},
-       {text:"Joint Ventures"},
-       {text:"Capital Structuring"},
-       {text:"Banking relationship"},
-       {text:"Business Planning & Forcasting"},
-       {text:"Working Capital Management"},
-       {text:"Management Reporting"},
-       {text:"Invenstor relationshop management"},
-       {text:"Internal System & Processes design(SOPs)"}
-
+       
       ]}
       inputList={[
         {

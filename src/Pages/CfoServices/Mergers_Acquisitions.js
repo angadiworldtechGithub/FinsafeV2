@@ -1,22 +1,12 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Cfo_Services() {
+export default function Mergers_Acquisitions () {
   return (
     <ServiceComp
-      title="CFO Services"
-      description ="Our experienced team ensures your organization is always compliant with GST, RERA, Income tax, and Companies Act. We offer GST advisory and regular returns filing, income tax planning & ITR filing, and TDS returns."
+      title="Mergers & Acquisitions "
+      description =" Finsafe Solutions assists clients in navigating the complex process of mergers and acquisitions. They may provide services such as conducting due diligence, negotiating deals, and facilitating the integration of acquired businesses. "
       bulletPoints={[
-       {text: "Business Transaction Advisory"},
-       {text:"Mergers & Acquisitions"},
-       {text:"Joint Ventures"},
-       {text:"Capital Structuring"},
-       {text:"Banking relationship"},
-       {text:"Business Planning & Forcasting"},
-       {text:"Working Capital Management"},
-       {text:"Management Reporting"},
-       {text:"Invenstor relationshop management"},
-       {text:"Internal System & Processes design(SOPs)"}
-
+       
       ]}
       inputList={[
         {

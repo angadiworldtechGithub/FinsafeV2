@@ -76,7 +76,7 @@ function Navbar() {
               { link: "/legal_advisor", title: "Talk to Legal Advisor" },
               { link: "/cyber_crime ", title: "Talk to Cyber Crime Expert" },
               {
-                link: "/company_secretary",
+                link: "/Company_Secretory",
                 title: "Talk to Company Secretory",
               },
             ]}
@@ -116,7 +116,7 @@ function Navbar() {
             headerLink="/Cfo_Services"
             subHeaders={[
               { link: "/Business_Transaction", title: "Business Transaction Advisory" },
-              { link: "/Merger_Acquisitions", title: "Mergers & Acquisitions" },
+              { link: "/Mergers_Acquisitions", title: "Mergers & Acquisitions" },
               { link: "/Joint_Ventures", title: "Joint Ventures" },
               { link: "/Capital_Structuring", title: "Capital Structuring" },
               { link: "/Banking_relationship", title: "Banking relationship" },
