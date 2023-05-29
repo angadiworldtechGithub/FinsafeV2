@@ -14,15 +14,41 @@ export default function Contact() {
 
       <div className="contact_section">
         <div className="box_text">
-         
+          <div
+            style={{
+              paddingBottom: "0",
+              paddingTop: "0px",
+              marginBottom: "30px",
+            }}
+          >
+            <i className="fa fa-map-marker" aria-hidden="true"></i>
+          </div>
+          <p>
+            Address :<br></br> Opp : Court Complex,<br></br>(PVR Associates)
+            RAJAMPET-516115<br></br>,YSR Kadapa Dist,A.P.{" "}
+          </p>
         </div>
 
         <div className="box_text1">
-         
+          <div>
+            <i className="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+          <p>
+            <a href="mailto:support@finsafe.in">
+              <h3>support@finsafe.in</h3>
+            </a>
+          </p>
         </div>
 
         <div className="box_text2">
-          
+          <div>
+            <i className="fa fa-mobile" aria-hidden="true"></i>
+          </div>
+          <p>
+            <a href="tel:+91-90000-90000">
+              <h3>+91 0000000000</h3>
+            </a>
+          </p>
         </div>
       </div>
 
@@ -40,15 +66,15 @@ export default function Contact() {
                 Associates)<br></br>RAJAMPET-516115,YSR Kadapa Dist,A.P.
               </p>
             </address>
-            <div class="mail_box">
-              <div class="icon">
+            <div className="mail_box">
+              <div className="icon">
                 <i
-                  class="fa fa-envelope"
+                  className="fa fa-envelope"
                   aria-hidden="true"
                   style={{ fontsize: "25px" }}
                 ></i>{" "}
               </div>
-              <div class="text_mail">
+              <div className="text_mail">
                 <p>
                   <a href="mailto:support@finsafe.in"> support@finsafe.in</a>
                 </p>

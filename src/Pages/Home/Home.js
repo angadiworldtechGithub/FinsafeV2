@@ -137,7 +137,7 @@ export default function Home() {
         })}
       </Splide>
 
-      <div class="scroll-left">
+      <div className="scroll-left">
         <p>
           Finsafe provides financial planning and mentorship services
           Individuals and wants to be trusted partner in their sucessful

@@ -2,8 +2,14 @@ import React from "react";
 import { FileDrop } from "react-file-drop";
 import "./FileUpload.css";
 import shortid from "shortid";
+import { AiOutlineLoading } from "react-icons/ai";
 
-export default function FileUpload({ onDrop, onUpload, filePreviews }) {
+export default function FileUpload({
+  onDrop,
+  onUpload,
+  filePreviews,
+  loading,
+}) {
   return (
     <div className="file_drop_box">
       <FileDrop onDrop={onDrop}>
@@ -24,7 +30,7 @@ export default function FileUpload({ onDrop, onUpload, filePreviews }) {
         </ul>
       </FileDrop>
       <button className="upload_button" onClick={onUpload}>
-        Upload
+        {loading ? <AiOutlineLoading className="loading" /> : "Upload"}
       </button>
     </div>
   );

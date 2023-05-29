@@ -33,7 +33,9 @@ export default function ServiceComp({
         </div>
 
         <div className="flex-child1">
-         <center><h1>{title}</h1></center> 
+          <center>
+            <h1>{title}</h1>
+          </center>
           <form action="/">
             {inputList.map((inputObj) => {
               if (inputObj.elementType === "select") {
@@ -65,7 +67,7 @@ export default function ServiceComp({
                 );
               }
             })}
-            <label class="service_label">
+            <label className="service_label">
               <input type="checkbox" className="checkbox" required />I authorize
               Finsafe and its representative to contact me with updates and
               notifications via Email, SMS, WhatsApp,and call.
