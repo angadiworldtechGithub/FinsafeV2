@@ -5,7 +5,6 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import Take_Expert_Advice from "./Pages/TakeExpertAdvice/Take_Expert_Advice";
 import {
   Business_Advisory,
   Certified_Financial,
@@ -75,24 +74,24 @@ const router = createBrowserRouter([
         element: <Certified_Financial />,
       },
       {
-        path:"/Chartered_Accountant",
-        element:<Chartered_Accountant/>
+        path: "/Chartered_Accountant",
+        element: <Chartered_Accountant />,
       },
       {
-        path:"/Company_Secretory",
-        element:<Company_Secretory/>
+        path: "/Company_Secretory",
+        element: <Company_Secretory />,
       },
       {
-        path:"/Cost_Accountant",
-        element:<Cost_Accountant/>
+        path: "/Cost_Accountant",
+        element: <Cost_Accountant />,
       },
       {
-        path:"/Cyber_crime",
-        element:<Cyber_crime/>
+        path: "/Cyber_crime",
+        element: <Cyber_crime />,
       },
       {
-        path:"/Legal_Advisor",
-        element:<Legal_Advisor/>
+        path: "/Legal_Advisor",
+        element: <Legal_Advisor />,
       },
       {
         path: "/personal_service",
