@@ -44,7 +44,7 @@ function Navbar() {
             </Link>
           </div>
           <div className="navbar_text navbar_text_mobile">
-            <Link to="/About" className="navbar_link">
+            <Link to="/about" className="navbar_link">
               About Us
             </Link>
           </div>
@@ -61,19 +61,24 @@ function Navbar() {
             headerLink="/Take_Expert_Advice"
             subHeaders={[
               {
-                link: "/",
+                link: "/Business_Advisory",
                 title: "Talk to Business Advisory Analyst",
-                subHeaders: [
-                  { link: "/", title: "Inner 1" },
-                  { link: "/", title: "Inner 2" },
-                ],
               },
-              { link: "/", title: "Talk to Certified Financial Planner" },
-              { link: "/", title: "Talk to Chartered Accountant" },
-              { link: "/", title: "Talk to Cost Accountant" },
-              { link: "/", title: "Talk to Legal Advisor" },
-              { link: "/", title: "Talk to Cyber Crime Expert" },
-              { link: "/", title: "Talk to Company Secretory" },
+              {
+                link: "/Certified_Financial ",
+                title: "Talk to Certified Financial Planner",
+              },
+              {
+                link: "/Chartered_Accountant",
+                title: "Talk to Chartered Accountant",
+              },
+              { link: "/Cost_Accountant", title: "Talk to Cost Accountant" },
+              { link: "/Legal_Advisor", title: "Talk to Legal Advisor" },
+              { link: "/Cyber_Crime ", title: "Talk to Cyber Crime Expert" },
+              {
+                link: "/Company_Secretory",
+                title: "Talk to Company Secretory",
+              },
             ]}
           />
 
