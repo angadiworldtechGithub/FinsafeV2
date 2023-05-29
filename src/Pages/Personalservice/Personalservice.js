@@ -1,6 +1,6 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Personalservice() {
+export default function PersonalService() {
   return (
     <ServiceComp
       title="Personal Services"

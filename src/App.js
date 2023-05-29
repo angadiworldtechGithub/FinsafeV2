@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import Personalservice from "./Pages/Personalservice";
+import PersonalService from "./Pages/PersonalService";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -41,8 +41,8 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
-        path: "/personalservice",
-        element: <Personalservice />,
+        path: "/personal_service",
+        element: <PersonalService />,
       },
       {
         path: "about",
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: "Contact",
         element: <Contact />,
-      }
+      },
     ],
   },
 ]);

@@ -1,8 +1,17 @@
 import React from "react";
+import shortid from "shortid";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import ServiceCard from "../../Components/ServiceCard";
+import { GrBusinessService, GrServices, GrServicePlay } from "react-icons/gr";
+import { FcServices, FcServiceMark } from "react-icons/fc";
+import { FaServicestack } from "react-icons/fa";
+import {
+  MdMiscellaneousServices,
+  MdOutlineHomeRepairService,
+} from "react-icons/md";
+
 import "@splidejs/react-splide/css";
 import "./Home.css";
-import shortid from "shortid";
 
 const ProjectList = [
   {
@@ -61,6 +70,41 @@ const ProjectList = [
   },
 ];
 
+const SERVICE_CARDS = [
+  {
+    title: "test1",
+    icon: GrBusinessService,
+  },
+  {
+    title: "test2",
+    icon: FcServices,
+  },
+  {
+    title: "test1",
+    icon: GrServices,
+  },
+  {
+    title: "test2",
+    icon: FaServicestack,
+  },
+  {
+    title: "test1",
+    icon: GrServicePlay,
+  },
+  {
+    title: "test2",
+    icon: MdMiscellaneousServices,
+  },
+  {
+    title: "test1",
+    icon: MdOutlineHomeRepairService,
+  },
+  {
+    title: "test2",
+    icon: FcServiceMark,
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -82,12 +126,15 @@ export default function Home() {
           );
         })}
       </Splide>
-      {/*Card Slider*/}
-
-      <div className="container">
-        <h2>Services Silder</h2>
-        <div className="cards"></div>
-      </div>
+      <Splide options={{ perPage: 4 }}>
+        {SERVICE_CARDS.map((serviceCard) => {
+          return (
+            <SplideSlide key={shortid.generate()}>
+              <ServiceCard title={serviceCard.title} ICON={serviceCard.icon} />
+            </SplideSlide>
+          );
+        })}
+      </Splide>
 
       <div class="scroll-left">
         <p>
@@ -101,4 +148,3 @@ export default function Home() {
     </>
   );
 }
-
