@@ -1,2 +1,2 @@
-import PersonalService from "./PersonalService";
-export default PersonalService;
+import Personalservice from "./Personalservice";
+export default Personalservice;

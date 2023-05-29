@@ -44,7 +44,7 @@ function Navbar() {
             </Link>
           </div>
           <div className="navbar_text navbar_text_mobile">
-            <Link to="/about" className="navbar_link">
+            <Link to="/About" className="navbar_link">
               About Us
             </Link>
           </div>
@@ -163,14 +163,14 @@ function Navbar() {
               setMenu({ ...INITIAL_NAVBAR_STATE, persServ: !menu["persServ"] });
             }}
             headerName="Personal Services"
-            headerLink="/personal_service"
+            headerLink="/personalservice"
             subHeaders={[
               { link: "/", title: "Talk to Expert" },
-              { link: "/", title: "Investment planning" },
-              { link: "/", title: "Estate management services" },
-              { link: "/", title: "Tax Planning" },
-              { link: "/", title: "Income tax returns" },
-              { link: "/", title: "Individual Accounts maintenance" },
+              { link: "/Investment", title: "Investment planning" },
+              { link: "/Estate", title: "Estate management services" },
+              { link: "/Tax", title: "Tax Planning" },
+              { link: "/Incometax", title: "Income tax returns" },
+              { link: "/Individual", title: "Individual Accounts maintenance" },
             ]}
           />
 

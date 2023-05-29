@@ -10,11 +10,11 @@ export default function ServiceComp({
     <div>
       <div className="flex-container">
         <div className="flex-child">
-          <h3 className="color_white" style={{ fontWeight: "600" }}>
+          <h1 className="color_white" style={{ fontWeight: "600" }}>
             <center>
               <b>{title}</b>
             </center>
-          </h3>
+          </h1>
 
           <p className="color_white">{description}</p>
 
@@ -70,11 +70,12 @@ export default function ServiceComp({
               Finsafe and its representative to contact me with updates and
               notifications via Email, SMS, WhatsApp,and call.
             </label>
-            <input
+            <center><input
               className="service_submit"
               type="submit"
               value="Submit"
             ></input>
+            </center>
           </form>
         </div>
       </div>

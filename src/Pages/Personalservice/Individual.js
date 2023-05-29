@@ -1,9 +1,9 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Personalservice() {
+export default function Individual() {
   return (
     <ServiceComp
-      title="Personal Services"
+      title="Individual Accounts Maintenance"
       description="Our Personal services include investment planning, estate management services, tax planning, and income tax returns. We help individuals achieve their financial goals with expert-level guidance and personalized financial planning."
       bulletPoints={[
         { text: "Talk to Expert" },
