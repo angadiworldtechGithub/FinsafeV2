@@ -43,7 +43,11 @@ function Navbar() {
               Home
             </Link>
           </div>
-          <div className="navbar_text navbar_text_mobile">About Us</div>
+          <div className="navbar_text navbar_text_mobile">
+            <Link to="/about" className="navbar_link">
+              About Us
+            </Link>
+          </div>
 
           <Dropdown
             isActive={menu["takeExpAdv"]}
@@ -170,7 +174,11 @@ function Navbar() {
             ]}
           />
 
-          <div className="navbar_text navbar_text_mobile">Contact Us</div>
+          <div className="navbar_text navbar_text_mobile">
+            <Link to="/contact" className="navbar_link">
+              Contact Us
+            </Link>
+          </div>
         </div>
         <MdMenu
           className="navbar_icon"
