@@ -5,12 +5,14 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import Personalservice from "./Pages/Personalservice";
-import Investment from "./Pages/Personalservice/Investment";
-import Estate from "./Pages/Personalservice/Estate";
-import Tax from "./Pages/Personalservice/Tax";
-import Individual from "./Pages/Personalservice/Individual";
-import Incometax from "./Pages/Personalservice/Incometax";
+import PersonalService from "./Pages/PersonalService";
+import {
+  Investment,
+  Estate,
+  Tax,
+  Individual,
+  IncomeTax,
+} from "./Pages/PersonalService";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -33,7 +35,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <Base />,
     children: [
-     
       {
         path: "/dashboard",
         element: <Dashboard />,
@@ -51,8 +52,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/personalservice",
-        element: <Personalservice />,
+        path: "/personal_service",
+        element: <PersonalService />,
       },
       {
         path: "/investment",
@@ -63,8 +64,8 @@ const router = createBrowserRouter([
         element: <Estate />,
       },
       {
-        path: "/incometax",
-        element: <Incometax />,
+        path: "/income_tax",
+        element: <IncomeTax />,
       },
       {
         path: "/tax",

@@ -1,14 +1,15 @@
-import "./Admin.css";
-import { useContext, useEffect, useState } from "react";
-import FileUpload from "../../Components/FileUpload";
 import { addDoc, collection, query, getDocs } from "firebase/firestore";
 import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
-import { storage, firestore } from "../../firebase";
+import { useContext, useEffect, useState } from "react";
 import * as EmailValidator from "email-validator";
-import { AuthContext } from "../../Context/AuthContext";
 import shortid from "shortid";
 
-const COLLECTION_NAME = "user_data";
+import "./Admin.css";
+
+import FileUpload from "../../Components/FileUpload";
+import { storage, firestore } from "../../firebase";
+import { AuthContext } from "../../Context/AuthContext";
+import { USER_DATA_COLL_NAME } from "../../constants";
 
 const validateEmail = (email) => {
   return EmailValidator.validate(email);
@@ -28,7 +29,7 @@ export default function Admin() {
   };
 
   useEffect(() => {
-    getDocs(query(collection(firestore, COLLECTION_NAME))).then(
+    getDocs(query(collection(firestore, USER_DATA_COLL_NAME))).then(
       (querySnapshot) => {
         const userFiles = [];
         querySnapshot.forEach((doc) => {
@@ -87,7 +88,7 @@ export default function Admin() {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
               alert("Upload Complete");
               resetPage();
-              addDoc(collection(firestore, COLLECTION_NAME), {
+              addDoc(collection(firestore, USER_DATA_COLL_NAME), {
                 email,
                 fileDownloadUrl: downloadURL,
                 fileName: file.name,

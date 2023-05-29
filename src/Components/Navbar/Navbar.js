@@ -163,14 +163,14 @@ function Navbar() {
               setMenu({ ...INITIAL_NAVBAR_STATE, persServ: !menu["persServ"] });
             }}
             headerName="Personal Services"
-            headerLink="/personalservice"
+            headerLink="/personal_service"
             subHeaders={[
               { link: "/", title: "Talk to Expert" },
-              { link: "/Investment", title: "Investment planning" },
-              { link: "/Estate", title: "Estate management services" },
-              { link: "/Tax", title: "Tax Planning" },
-              { link: "/Incometax", title: "Income tax returns" },
-              { link: "/Individual", title: "Individual Accounts maintenance" },
+              { link: "/investment", title: "Investment planning" },
+              { link: "/estate", title: "Estate management services" },
+              { link: "/tax", title: "Tax Planning" },
+              { link: "/income_tax", title: "Income tax returns" },
+              { link: "/individual", title: "Individual Accounts maintenance" },
             ]}
           />
 

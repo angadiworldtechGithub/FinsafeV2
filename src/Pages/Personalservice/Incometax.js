@@ -1,6 +1,6 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Incometax() {
+export default function IncomeTax() {
   return (
     <ServiceComp
       title="Income Tax Returns"
