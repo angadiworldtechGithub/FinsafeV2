@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
+import Take_Expert_Advice from "./Pages/TakeExpertAdvice/Take_Expert_Advice";
 import PersonalService from "./Pages/PersonalService";
 import {
   Investment,
