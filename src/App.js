@@ -17,7 +17,6 @@ import{
   Business_Planning,
   Management_Reporting,
   Mergers_Acquisitions} from "./Pages/CfoServices";
-import Take_Expert_Advice from "./Pages/TakeExpertAdvice/Take_Expert_Advice";
 import {
   Business_Advisory,
   Certified_Financial,
@@ -40,6 +39,7 @@ import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
+import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
 
 const Base = () => {
   return (
@@ -74,8 +74,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/Take_Expert_Advice",
-        element: <Take_Expert_Advice />,
+        path: "/Take_expert_advice",
+        element: <TakeExpertAdvice />,
       },
       {
         path: "/Business_Advisory",
@@ -86,24 +86,24 @@ const router = createBrowserRouter([
         element: <Certified_Financial />,
       },
       {
-        path:"/Chartered_Accountant",
-        element:<Chartered_Accountant/>
+        path: "/Chartered_Accountant",
+        element: <Chartered_Accountant />,
       },
       {
-        path:"/Company_Secretory",
-        element:<Company_Secretory/>
+        path: "/Company_Secretory",
+        element: <Company_Secretory />,
       },
       {
-        path:"/Cost_Accountant",
-        element:<Cost_Accountant/>
+        path: "/Cost_Accountant",
+        element: <Cost_Accountant />,
       },
       {
-        path:"/Cyber_crime",
-        element:<Cyber_crime/>
+        path: "/Cyber_crime",
+        element: <Cyber_crime />,
       },
       {
-        path:"/Legal_Advisor",
-        element:<Legal_Advisor/>
+        path: "/Legal_Advisor",
+        element: <Legal_Advisor />,
       },
       {
         path:"/Cfo_Services",

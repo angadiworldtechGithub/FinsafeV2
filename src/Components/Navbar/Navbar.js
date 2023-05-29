@@ -58,31 +58,25 @@ function Navbar() {
               });
             }}
             headerName="Take Expert Advice"
-            headerLink="/Take_Expert_Advice"
+            headerLink="/take_expert_advice"
             subHeaders={[
               {
-                link: "/Business_Advisory",
+                link: "/business_advisory",
                 title: "Talk to Business Advisory Analyst",
               },
               {
-                link: "/Certified_Financial ",
+                link: "/certified_financial ",
                 title: "Talk to Certified Financial Planner",
               },
               {
-                link: "/Chartered_Accountant",
+                link: "/chartered_accountant",
                 title: "Talk to Chartered Accountant",
               },
-              { link: "/Cost_Accountant", 
-              title: "Talk to Cost Accountant",
-              },
-              { link: "/Legal_Advisor", 
-              title: "Talk to Legal Advisor",
-              },
-              { link: "/Cyber_Crime ", 
-              title: "Talk to Cyber Crime Expert" ,
-              },
+              { link: "/cost_accountant", title: "Talk to Cost Accountant" },
+              { link: "/legal_advisor", title: "Talk to Legal Advisor" },
+              { link: "/cyber_crime ", title: "Talk to Cyber Crime Expert" },
               {
-                link: "/Company_Secretory",
+                link: "/company_secretary",
                 title: "Talk to Company Secretory",
               },
             ]}
@@ -101,7 +95,11 @@ function Navbar() {
             subHeaders={[
               { link: "/", title: "Incorporation" },
               { link: "/", title: "Company" },
-              { link: "/", title: "Limited Liability Partnership(LLP)" },
+              {
+                link: "/",
+                title: "Limited Liability Partnership(LLP)",
+                subHeaders: [], // Add {link: "",title: ""} object here
+              },
               { link: "/", title: "Partnership Firm" },
               { link: "/", title: "Propreitorship" },
               { link: "/", title: "Trust" },
