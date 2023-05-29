@@ -112,16 +112,18 @@ function Navbar() {
               setMenu({ ...INITIAL_NAVBAR_STATE, cfoServ: !menu["cfoServ"] });
             }}
             headerName="CFO Services"
-            headerLink="/"
+            headerLink="/Cfo_Services"
             subHeaders={[
-              { link: "/", title: "Business Transaction Advisory" },
-              { link: "/", title: "Mergers & Acquisitions" },
-              { link: "/", title: "Joint Ventures" },
-              { link: "/", title: "Capital Structuring" },
-              { link: "/", title: "Banking relationship" },
-              { link: "/", title: "Management Reporting" },
-              { link: "/", title: "Invenstor relationshop management" },
-              { link: "/", title: "Internal System & Processes design(SOPs)" },
+              { link: "/Business_Transaction", title: "Business Transaction Advisory" },
+              { link: "/Merger_Acquisitions", title: "Mergers & Acquisitions" },
+              { link: "/Joint_Ventures", title: "Joint Ventures" },
+              { link: "/Capital_Structuring", title: "Capital Structuring" },
+              { link: "/Banking_relationship", title: "Banking relationship" },
+              { link: "/Business_Planning",title: "Business Planning & Forcasting"},
+              { link: "/Working_Capital",title:"Working Capital Management"},
+              { link: "/Management_Reporting", title: "Management Reporting" },
+              { link: "/Investor_relationship", title: "Investor relationship management" },
+              { link: "/Internal_System", title: "Internal System & Processes design(SOPs)" },
             ]}
           />
 
