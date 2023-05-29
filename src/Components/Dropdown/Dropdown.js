@@ -58,6 +58,7 @@ export default function Dropdown({
             if (subHeader.subHeaders) {
               return (
                 <Dropdown
+                  key={shortid.generate()}
                   isActive={menu[x(subHeader.title)]}
                   setIsActive={() => {
                     setMenu({
