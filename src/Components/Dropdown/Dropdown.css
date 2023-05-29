@@ -1,5 +1,6 @@
 .sub_heading_text {
   border-bottom: solid 1px;
+  padding: 10px;
 }
 @media only screen and (min-width: 1100px) {
   .dropdown {
@@ -11,7 +12,11 @@
     padding-right: 30px;
     display: none;
   }
-  .dropdown_text:hover .dropdown {
+  .dropdown_text:hover > .dropdown {
+    display: block;
+  }
+
+  .dropdown_text:hover > .dropdown_nested {
     display: block;
   }
 
@@ -34,4 +39,14 @@
   white-space: nowrap;
   padding: 10px;
   position: relative;
+}
+
+.dropdown_link {
+  display: flex;
+  cursor: pointer;
+}
+
+.dropdown_nested {
+  padding-right: 30px;
+  display: none;
 }

@@ -60,7 +60,14 @@ function Navbar() {
             headerName="Take Expert Advice"
             headerLink="/"
             subHeaders={[
-              { link: "/", title: "Talk to Business Advisory Analyst" },
+              {
+                link: "/",
+                title: "Talk to Business Advisory Analyst",
+                subHeaders: [
+                  { link: "/", title: "Inner 1" },
+                  { link: "/", title: "Inner 2" },
+                ],
+              },
               { link: "/", title: "Talk to Certified Financial Planner" },
               { link: "/", title: "Talk to Chartered Accountant" },
               { link: "/", title: "Talk to Cost Accountant" },

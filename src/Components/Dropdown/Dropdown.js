@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import shortid from "shortid";
 import "./Dropdown.css";
 
+import { getShortForm } from "../../utility";
+import { useCallback, useMemo, useState } from "react";
+
 export const addMobileShow = (classString) => {
   return classString + " mobile_show";
 };
@@ -13,22 +16,71 @@ export default function Dropdown({
   headerName,
   headerLink,
   subHeaders,
+  isNested = false,
 }) {
+  const x = useCallback(getShortForm);
+  const initialNavbarState = useMemo(
+    () =>
+      subHeaders.reduce((init, subHeader) => {
+        if (subHeader.subHeaders) {
+          const key = x(subHeader.title); // could be a collision
+          init[key] = false;
+          return init;
+        } else {
+          return init;
+        }
+      }, {}),
+    [subHeaders]
+  );
+  const [menu, setMenu] = useState(initialNavbarState);
   return (
     <div className="dropdown_text navbar_text_mobile">
-      <Link to={headerLink} className="navbar_link" onClick={setIsActive}>
-        {headerName}
-      </Link>
-      <MdArrowDropDown className="icon" />
-      <div className={isActive ? addMobileShow("dropdown") : "dropdown"}>
+      <div onClick={setIsActive} className="dropdown_link">
+        <Link to={headerLink} className="navbar_link">
+          {headerName}
+        </Link>
+        <MdArrowDropDown className="icon" />
+      </div>
+
+      <div
+        className={
+          isNested
+            ? isActive
+              ? addMobileShow("dropdown_nested")
+              : "dropdown_nested"
+            : isActive
+            ? addMobileShow("dropdown")
+            : "dropdown"
+        }
+      >
         <ul className="dropdown_list">
-          {subHeaders.map((subHeader) => (
-            <li key={shortid.generate()} className="sub_heading_text">
-              <Link to={subHeader.link} className="navbar_link">
-                {subHeader.title}
-              </Link>
-            </li>
-          ))}
+          {subHeaders.map((subHeader) => {
+            if (subHeader.subHeaders) {
+              return (
+                <Dropdown
+                  isActive={menu[x(subHeader.title)]}
+                  setIsActive={() => {
+                    setMenu({
+                      ...initialNavbarState,
+                      [x(subHeader.title)]: !menu[x(subHeader.title)],
+                    });
+                  }}
+                  headerName={subHeader.title}
+                  headerLink={subHeader.link}
+                  subHeaders={subHeader.subHeaders}
+                  isNested={true}
+                />
+              );
+            } else {
+              return (
+                <li key={shortid.generate()} className="sub_heading_text">
+                  <Link to={subHeader.link} className="navbar_link">
+                    {subHeader.title}
+                  </Link>
+                </li>
+              );
+            }
+          })}
         </ul>
       </div>
     </div>
