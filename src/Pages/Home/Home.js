@@ -127,6 +127,7 @@ export default function Home() {
         })}
       </Splide>
       <Splide options={{ perPage: 4 }}>
+        {/* Add Breakpoints to the perPage property */}
         {SERVICE_CARDS.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>

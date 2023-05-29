@@ -5,7 +5,11 @@ export default function Contact() {
   return (
     <div>
       <div style={{ position: "relative", backgroundColor: "#e6e6e6" }}>
-        <img src="assets/images/contact.png" width="100%" />
+        <img
+          src="assets/images/contact.png"
+          alt="contact_us_image"
+          width="100%"
+        />
       </div>
 
       <div className="contact_section">

@@ -1,5 +1,5 @@
 .card {
-  border: solid grey 1px;
+  position: relative;
   text-align: center;
   height: 200px;
   border-radius: 20px;
@@ -7,5 +7,28 @@
   margin-bottom: 20px;
   margin-left: 40px;
   margin-right: 40px;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  transition: all 1s;
+}
+
+.card:hover {
+  cursor: pointer;
+  height: 220px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.right_icon {
+  font-size: 50px;
+  color: black;
+}
+
+.right_icon_box {
+  position: absolute;
+  bottom: 30px;
+  left: 40%;
 }

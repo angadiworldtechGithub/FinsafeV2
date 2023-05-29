@@ -23,12 +23,13 @@ export default function Admin() {
   const { auth } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [files, setFiles] = useState([]);
+  const [userFiles, setUserFiles] = useState([]);
 
   useEffect(() => {});
 
   if (!auth)
     return (
-      <div>
+      <div style={{ textAlign: "center" }}>
         <h1>Admin Page</h1>
         <p>Please Sign In With an admin account</p>
       </div>
@@ -84,7 +85,13 @@ export default function Admin() {
 
       setFiles([]);
     } else {
-      console.error("Invalid Email");
+      if (!email.length) {
+        console.info("Invalid Email");
+        alert("Invalid Email");
+      } else {
+        console.info("No User Email");
+        alert("No User Email");
+      }
     }
   };
 
@@ -94,15 +101,17 @@ export default function Admin() {
   }));
 
   return (
-    <div>
+    <div className="admin_container">
       <h1>Admin Page</h1>
       <p>User Email</p>
       <input
+        className="auto_align admin_input"
         type="email"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
       ></input>
       <FileUpload
+        className="auto_align"
         onDrop={onDrop}
         onUpload={onUpload}
         filePreviews={filePreviews}

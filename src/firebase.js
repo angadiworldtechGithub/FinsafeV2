@@ -3,8 +3,6 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-console.log(process.env);
-
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
 
