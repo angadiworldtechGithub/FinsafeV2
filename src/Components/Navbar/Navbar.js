@@ -44,7 +44,7 @@ function Navbar() {
             </Link>
           </div>
           <div className="navbar_text navbar_text_mobile">
-            <Link to="/About" className="navbar_link">
+            <Link to="/about" className="navbar_link">
               About Us
             </Link>
           </div>
