@@ -5,6 +5,18 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
+import Cfo_Services from "./Pages/CfoServices/Cfo_Services";
+import{
+  Banking_relationship,
+  Business_Transaction,
+  Capital_Structuring,
+  Internal_System,
+  Investor_relationship,
+  Joint_Ventures,
+  Working_Capital,
+  Business_Planning,
+  Management_Reporting,
+  Mergers_Acquisitions} from "./Pages/CfoServices";
 import Take_Expert_Advice from "./Pages/TakeExpertAdvice/Take_Expert_Advice";
 import {
   Business_Advisory,
@@ -94,12 +106,52 @@ const router = createBrowserRouter([
         element:<Legal_Advisor/>
       },
       {
-        path: "/personal_service",
-        element: <PersonalService />,
+        path:"/Cfo_Services",
+        element:<Cfo_Services/>
       },
       {
-        path: "/investment",
-        element: <Investment />,
+        path:"/Banking_relationship",
+        element:<Banking_relationship/>
+      },
+      {
+        path: "/Business_Transaction",
+        element: <Business_Transaction />,
+      },
+      {
+        path: "/Capital_Structuring",
+        element: <Capital_Structuring />,
+      },
+      {
+        path: "/Internal_System",
+        element: <Internal_System/>,
+      },
+      {
+        path: "/Investor_relationship",
+        element: <Investor_relationship/>,
+      },
+      {
+          path: "/Working_Capital",
+          element: <Working_Capital/>,
+      },
+      {
+        path: "/Joint_Ventures",
+        element: <Joint_Ventures/>,
+      },
+      {
+        path: "/Management_Reporting",
+        element: <Management_Reporting/>,
+      },
+      {
+        path: "/Mergers_Acquisitions",
+        element: <Mergers_Acquisitions/>,
+      },
+      {
+        path: "/PersonalService",
+        element:<PersonalService/>
+      },
+      {
+        path: "/Investment",
+        element:<Investment />
       },
       {
         path: "/estate",
