@@ -1,10 +1,10 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Certified_Financial() {
+export default function CompanySecretory() {
   return (
     <ServiceComp
-      title="Talk to Certified Financial Planner"
-      description="They have certified financial planners who can assist individuals and businesses in creating comprehensive financial plans, managing investments, retirement planning, and other financial matters."
+      title="Talk to Company Secretory"
+      description="Finsafe Solutions provides access to company secretaries who can assist businesses in fulfilling their statutory compliance requirements, corporate governance, board meetings, and other company secretarial matters."
       bulletPoints={[
       ]}
       inputList={[

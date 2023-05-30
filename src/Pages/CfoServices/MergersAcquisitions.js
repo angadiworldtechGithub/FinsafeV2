@@ -1,10 +1,10 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Joint_Ventures() {
+export default function MergersAcquisitions () {
   return (
     <ServiceComp
-      title="Joint Ventures "
-      description ="Finsafe Solutions helps clients establish and manage joint ventures, which involve collaboration between two or more businesses to pursue mutual goals. They may offer expertise in structuring joint venture agreements, assessing risks, and optimizing partnerships."
+      title="Mergers & Acquisitions "
+      description =" Finsafe Solutions assists clients in navigating the complex process of mergers and acquisitions. They may provide services such as conducting due diligence, negotiating deals, and facilitating the integration of acquired businesses. "
       bulletPoints={[
        
       ]}

@@ -1,12 +1,12 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Mergers_Acquisitions () {
+export default function WorkingCapital() {
   return (
     <ServiceComp
-      title="Mergers & Acquisitions "
-      description =" Finsafe Solutions assists clients in navigating the complex process of mergers and acquisitions. They may provide services such as conducting due diligence, negotiating deals, and facilitating the integration of acquired businesses. "
+      title="Working Capital Management"
+      description ="Finsafe Solutions helps businesses effectively manage their working capital, which involves optimizing cash flow, managing inventory, and balancing receivables and payables. This ensures that the company has sufficient liquidity for day-to-day operations."
       bulletPoints={[
-       
+
       ]}
       inputList={[
         {

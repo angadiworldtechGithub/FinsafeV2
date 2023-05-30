@@ -1,6 +1,6 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Business_Transaction () {
+export default function BusinessTransaction () {
   return (
     <ServiceComp
       title="Business Transaction Advisory"

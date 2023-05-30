@@ -1,11 +1,12 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Company_Secretory() {
+export default function Bankingrelationship() {
   return (
     <ServiceComp
-      title="Talk to Company Secretory"
-      description="Finsafe Solutions provides access to company secretaries who can assist businesses in fulfilling their statutory compliance requirements, corporate governance, board meetings, and other company secretarial matters."
+      title="Banking Relationship"
+      description ="Finsafe Solutions assists clients in managing their banking relationships. This may involve negotiating favorable terms with banks, optimizing cash management practices, and obtaining financing solutions tailored to the client's requirements. "
       bulletPoints={[
+       
       ]}
       inputList={[
         {

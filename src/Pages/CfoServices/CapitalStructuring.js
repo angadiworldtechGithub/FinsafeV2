@@ -1,6 +1,6 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Capital_Structuring() {
+export default function CapitalStructuring() {
   return (
     <ServiceComp
       title="Capital Structuring"

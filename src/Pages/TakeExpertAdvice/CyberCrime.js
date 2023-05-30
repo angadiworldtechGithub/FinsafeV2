@@ -1,10 +1,10 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Business_Advisory() {
+export default function CyberCrime() {
   return (
     <ServiceComp
-      title="Talk to Business Advisory Analyst"
-      description ="Finsafe Solutions provides access to business advisory analysts who can offer expert guidance and advice on various aspects of business operations, strategy, and growth."
+      title="Talk to Cyber Crime Expert"
+      description="With the increasing threat of cybercrime, Finsafe Solutions has experts who can provide advice on cybersecurity measures, data protection, incident response, and risk mitigation to help individuals and businesses safeguard their digital assets."
       bulletPoints={[
       ]}
       inputList={[

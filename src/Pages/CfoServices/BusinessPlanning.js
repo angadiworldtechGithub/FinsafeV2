@@ -1,11 +1,12 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Chartered_Accountant() {
+export default function BusinessPlanning() {
   return (
     <ServiceComp
-      title="Talk to Chartered Accountant"
-      description="Finsafe Solutions has chartered accountants who can provide expertise in accounting, auditing, tax planning, and compliance-related issues for businesses and individuals."
+      title="Business Planning & Forecasting"
+      description ="Finsafe Solutions aids businesses in developing comprehensive business plans and financial forecasts. This includes assessing market dynamics, setting strategic objectives, and creating financial projections to guide decision-making and attract investors. "
       bulletPoints={[
+       
       ]}
       inputList={[
         {

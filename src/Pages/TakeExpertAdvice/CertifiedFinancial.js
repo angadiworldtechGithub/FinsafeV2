@@ -1,12 +1,11 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Business_Planning() {
+export default function CertifiedFinancial() {
   return (
     <ServiceComp
-      title="Business Planning & Forecasting"
-      description ="Finsafe Solutions aids businesses in developing comprehensive business plans and financial forecasts. This includes assessing market dynamics, setting strategic objectives, and creating financial projections to guide decision-making and attract investors. "
+      title="Talk to Certified Financial Planner"
+      description="They have certified financial planners who can assist individuals and businesses in creating comprehensive financial plans, managing investments, retirement planning, and other financial matters."
       bulletPoints={[
-       
       ]}
       inputList={[
         {

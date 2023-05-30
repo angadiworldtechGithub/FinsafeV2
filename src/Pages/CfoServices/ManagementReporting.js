@@ -1,22 +1,13 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Cfo_Services() {
+export default function ManagementReporting() {
   return (
     <ServiceComp
-      title="CFO Services"
-      description ="Our experienced team ensures your organization is always compliant with GST, RERA, Income tax, and Companies Act. We offer GST advisory and regular returns filing, income tax planning & ITR filing, and TDS returns."
+      title="Management Reporting"
+      description ="Finsafe Solutions provides management reporting services to help businesses monitor their financial performance. This involves generating regular reports, analyzing key performance indicators (KPIs), and providing insights to support decision-making.
+      "
       bulletPoints={[
-       {text: "Business Transaction Advisory"},
-       {text:"Mergers & Acquisitions"},
-       {text:"Joint Ventures"},
-       {text:"Capital Structuring"},
-       {text:"Banking relationship"},
-       {text:"Business Planning & Forcasting"},
-       {text:"Working Capital Management"},
-       {text:"Management Reporting"},
-       {text:"Invenstor relationshop management"},
-       {text:"Internal System & Processes design(SOPs)"}
-
+       
       ]}
       inputList={[
         {

@@ -5,35 +5,35 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
-import Cfo_Services from "./Pages/CfoServices/Cfo_Services";
+import CfoServices from "./Pages/CfoServices/CfoServices";
 import{
-  Banking_relationship,
-  Business_Transaction,
-  Capital_Structuring,
-  Internal_System,
-  Investor_relationship,
-  Joint_Ventures,
-  Working_Capital,
-  Business_Planning,
-  Management_Reporting,
-  Mergers_Acquisitions} from "./Pages/CfoServices";
+  Bankingrelationship,
+  BusinessTransaction,
+  CapitalStructuring,
+  InternalSystem,
+  Investorrelationship,
+  JointVentures,
+  WorkingCapital,
+  BusinessPlanning,
+  ManagementReporting,
+  MergersAcquisitions} from "./Pages/CfoServices";
 import {
-  Business_Advisory,
-  Certified_Financial,
-  Chartered_Accountant,
-  Company_Secretory,
-  Cost_Accountant,
-  Cyber_crime,
-  Legal_Advisor,
+  BusinessAdvisory,
+  CertifiedFinancial,
+  CharteredAccountant,
+  CompanySecretory,
+  CostAccountant,
+  CyberCrime,
+  LegalAdvisor,
 } from "./Pages/TakeExpertAdvice";
-import PersonalService from "./Pages/PersonalService";
+import PersonalService from "./Pages/Personalservice";
 import {
   Investment,
   Estate,
   Tax,
   Individual,
   IncomeTax,
-} from "./Pages/PersonalService";
+} from "./Pages/Personal_Service";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -74,80 +74,80 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/Take_expert_advice",
+        path: "/Takeexpertadvice",
         element: <TakeExpertAdvice />,
       },
       {
-        path: "/Business_Advisory",
-        element: <Business_Advisory />,
+        path: "/BusinessAdvisory",
+        element: <BusinessAdvisory />,
       },
       {
-        path: "/Certified_Financial",
-        element: <Certified_Financial />,
+        path: "/CertifiedFinancial",
+        element: <CertifiedFinancial />,
       },
       {
-        path: "/Chartered_Accountant",
-        element: <Chartered_Accountant />,
+        path: "/CharteredAccountant",
+        element: <CharteredAccountant />,
       },
       {
-        path: "/Company_Secretory",
-        element: <Company_Secretory />,
+        path: "/CompanySecretory",
+        element: <CompanySecretory />,
       },
       {
-        path: "/Cost_Accountant",
-        element: <Cost_Accountant />,
+        path: "/CostAccountant",
+        element: <CostAccountant />,
       },
       {
-        path: "/Cyber_crime",
-        element: <Cyber_crime />,
+        path: "/CyberCrime",
+        element: <CyberCrime />,
       },
       {
-        path: "/Legal_Advisor",
-        element: <Legal_Advisor />,
+        path: "/LegalAdvisor",
+        element: <LegalAdvisor />,
       },
       {
-        path:"/Cfo_Services",
-        element:<Cfo_Services/>
+        path:"/CfoServices",
+        element:<CfoServices/>
       },
       {
-        path:"/Banking_relationship",
-        element:<Banking_relationship/>
+        path:"/Bankingrelationship",
+        element:<Bankingrelationship/>
       },
       {
-        path: "/Business_Transaction",
-        element: <Business_Transaction />,
+        path: "/BusinessTransaction",
+        element: <BusinessTransaction />,
       },
       {
-        path: "/Capital_Structuring",
-        element: <Capital_Structuring />,
+        path: "/CapitalStructuring",
+        element: <CapitalStructuring />,
       },
       {
-        path: "/Internal_System",
-        element: <Internal_System/>,
+        path: "/InternalSystem",
+        element: <InternalSystem/>,
       },
       {
-         path: "/Business_Planning",
-         element:<Business_Planning/>,
+         path: "/BusinessPlanning",
+         element:<BusinessPlanning/>,
       },
       {
-        path: "/Investor_relationship",
-        element: <Investor_relationship/>,
+        path: "/Investorrelationship",
+        element: <Investorrelationship/>,
       },
       {
-          path: "/Working_Capital",
-          element: <Working_Capital/>,
+          path: "/WorkingCapital",
+          element: <WorkingCapital/>,
       },
       {
-        path: "/Joint_Ventures",
-        element: <Joint_Ventures/>,
+        path: "/JointVentures",
+        element: <JointVentures/>,
       },
       {
-        path: "/Management_Reporting",
-        element: <Management_Reporting/>,
+        path: "/ManagementReporting",
+        element: <ManagementReporting/>,
       },
       {
-        path: "/Mergers_Acquisitions",
-        element: <Mergers_Acquisitions/>,
+        path: "/MergersAcquisitions",
+        element: <MergersAcquisitions/>,
       },
       {
         path: "/PersonalService",
@@ -162,7 +162,7 @@ const router = createBrowserRouter([
         element: <Estate />,
       },
       {
-        path: "/income_tax",
+        path: "/incometax",
         element: <IncomeTax />,
       },
       {

@@ -1,12 +1,11 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Internal_System() {
+export default function CharteredAccountant() {
   return (
     <ServiceComp
-      title="Internal Systems & Processes Design (SOPs)"
-      description ="Finsafe Solutions helps businesses establish efficient internal systems and processes, including designing standard operating procedures (SOPs). This enhances operational efficiency, improves risk management, and supports scalability. "
+      title="Talk to Chartered Accountant"
+      description="Finsafe Solutions has chartered accountants who can provide expertise in accounting, auditing, tax planning, and compliance-related issues for businesses and individuals."
       bulletPoints={[
-       
       ]}
       inputList={[
         {

@@ -1,10 +1,10 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Banking_relationship() {
+export default function InternalSystem() {
   return (
     <ServiceComp
-      title="Banking Relationship"
-      description ="Finsafe Solutions assists clients in managing their banking relationships. This may involve negotiating favorable terms with banks, optimizing cash management practices, and obtaining financing solutions tailored to the client's requirements. "
+      title="Internal Systems & Processes Design (SOPs)"
+      description ="Finsafe Solutions helps businesses establish efficient internal systems and processes, including designing standard operating procedures (SOPs). This enhances operational efficiency, improves risk management, and supports scalability. "
       bulletPoints={[
        
       ]}

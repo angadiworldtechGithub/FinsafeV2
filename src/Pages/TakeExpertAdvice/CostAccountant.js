@@ -1,10 +1,10 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Cyber_crime() {
+export default function CostAccountant() {
   return (
     <ServiceComp
-      title="Talk to Cyber Crime Expert"
-      description="With the increasing threat of cybercrime, Finsafe Solutions has experts who can provide advice on cybersecurity measures, data protection, incident response, and risk mitigation to help individuals and businesses safeguard their digital assets."
+      title="Talk to Cost Accountant"
+      description="Cost accountants at Finsafe Solutions specialize in analyzing and managing costs within a business, providing insights into cost control, budgeting, pricing, and profitability."
       bulletPoints={[
       ]}
       inputList={[

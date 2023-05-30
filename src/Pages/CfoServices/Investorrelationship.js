@@ -1,12 +1,12 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Working_Capital() {
+export default function Investorrelationship() {
   return (
     <ServiceComp
-      title="Working Capital Management"
-      description ="Finsafe Solutions helps businesses effectively manage their working capital, which involves optimizing cash flow, managing inventory, and balancing receivables and payables. This ensures that the company has sufficient liquidity for day-to-day operations."
+      title="Investor Relationship Management "
+      description ="Finsafe Solutions assists companies in managing their relationships with investors. They may help develop investor communication strategies, prepare presentations, and provide ongoing support to strengthen investor confidence. "
       bulletPoints={[
-
+       
       ]}
       inputList={[
         {

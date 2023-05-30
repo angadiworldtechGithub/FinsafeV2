@@ -1,13 +1,11 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Management_Reporting() {
+export default function LegalAdvisor() {
   return (
     <ServiceComp
-      title="Management Reporting"
-      description ="Finsafe Solutions provides management reporting services to help businesses monitor their financial performance. This involves generating regular reports, analyzing key performance indicators (KPIs), and providing insights to support decision-making.
-      "
+      title="Talk to Legal Advisor"
+      description="Finsafe Solutions offers access to legal advisors who can provide guidance on legal matters related to businesses, such as company law, contracts, intellectual property, and regulatory compliance."
       bulletPoints={[
-       
       ]}
       inputList={[
         {

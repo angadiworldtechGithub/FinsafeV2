@@ -1,10 +1,10 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Cost_Accountant() {
+export default function BusinessAdvisory() {
   return (
     <ServiceComp
-      title="Talk to Cost Accountant"
-      description="Cost accountants at Finsafe Solutions specialize in analyzing and managing costs within a business, providing insights into cost control, budgeting, pricing, and profitability."
+      title="Talk to Business Advisory Analyst"
+      description ="Finsafe Solutions provides access to business advisory analysts who can offer expert guidance and advice on various aspects of business operations, strategy, and growth."
       bulletPoints={[
       ]}
       inputList={[

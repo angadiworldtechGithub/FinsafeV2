@@ -1,11 +1,22 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Legal_Advisor() {
+export default function CfoServices() {
   return (
     <ServiceComp
-      title="Talk to Legal Advisor"
-      description="Finsafe Solutions offers access to legal advisors who can provide guidance on legal matters related to businesses, such as company law, contracts, intellectual property, and regulatory compliance."
+      title="CFO Services"
+      description ="Our experienced team ensures your organization is always compliant with GST, RERA, Income tax, and Companies Act. We offer GST advisory and regular returns filing, income tax planning & ITR filing, and TDS returns."
       bulletPoints={[
+       {text: "Business Transaction Advisory"},
+       {text:"Mergers & Acquisitions"},
+       {text:"Joint Ventures"},
+       {text:"Capital Structuring"},
+       {text:"Banking relationship"},
+       {text:"Business Planning & Forcasting"},
+       {text:"Working Capital Management"},
+       {text:"Management Reporting"},
+       {text:"Invenstor relationshop management"},
+       {text:"Internal System & Processes design(SOPs)"}
+
       ]}
       inputList={[
         {

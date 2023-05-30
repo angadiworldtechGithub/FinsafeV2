@@ -1,10 +1,10 @@
 import ServiceComp from "../../Components/ServiceComp";
 
-export default function Investor_relationship() {
+export default function JointVentures() {
   return (
     <ServiceComp
-      title="Investor Relationship Management "
-      description ="Finsafe Solutions assists companies in managing their relationships with investors. They may help develop investor communication strategies, prepare presentations, and provide ongoing support to strengthen investor confidence. "
+      title="Joint Ventures "
+      description ="Finsafe Solutions helps clients establish and manage joint ventures, which involve collaboration between two or more businesses to pursue mutual goals. They may offer expertise in structuring joint venture agreements, assessing risks, and optimizing partnerships."
       bulletPoints={[
        
       ]}
