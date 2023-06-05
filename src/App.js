@@ -6,7 +6,7 @@ import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
 import CfoServices from "./Pages/CfoServices/CfoServices";
-import{
+import {
   Bankingrelationship,
   BusinessTransaction,
   CapitalStructuring,
@@ -16,7 +16,8 @@ import{
   WorkingCapital,
   BusinessPlanning,
   ManagementReporting,
-  MergersAcquisitions} from "./Pages/CfoServices";
+  MergersAcquisitions,
+} from "./Pages/CfoServices";
 import {
   BusinessAdvisory,
   CertifiedFinancial,
@@ -26,14 +27,14 @@ import {
   CyberCrime,
   LegalAdvisor,
 } from "./Pages/TakeExpertAdvice";
-import PersonalService from "./Pages/Personalservice";
+import PersonalService from "./Pages/PersonalService";
 import {
   Investment,
   Estate,
   Tax,
   Individual,
   IncomeTax,
-} from "./Pages/Personal_Service";
+} from "./Pages/PersonalService";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -74,95 +75,95 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/Takeexpertadvice",
+        path: "/take_expert_advice",
         element: <TakeExpertAdvice />,
       },
       {
-        path: "/BusinessAdvisory",
+        path: "/business_advisory",
         element: <BusinessAdvisory />,
       },
       {
-        path: "/CertifiedFinancial",
+        path: "/certified_financial",
         element: <CertifiedFinancial />,
       },
       {
-        path: "/CharteredAccountant",
+        path: "/chartered_accountant",
         element: <CharteredAccountant />,
       },
       {
-        path: "/CompanySecretory",
+        path: "/company_secretory",
         element: <CompanySecretory />,
       },
       {
-        path: "/CostAccountant",
+        path: "/cost_accountant",
         element: <CostAccountant />,
       },
       {
-        path: "/CyberCrime",
+        path: "/cyber_crime",
         element: <CyberCrime />,
       },
       {
-        path: "/LegalAdvisor",
+        path: "/legal_advisor",
         element: <LegalAdvisor />,
       },
       {
-        path:"/CfoServices",
-        element:<CfoServices/>
+        path: "/cfo_services",
+        element: <CfoServices />,
       },
       {
-        path:"/Bankingrelationship",
-        element:<Bankingrelationship/>
+        path: "/banking_relationship",
+        element: <Bankingrelationship />,
       },
       {
-        path: "/BusinessTransaction",
+        path: "/business_transaction",
         element: <BusinessTransaction />,
       },
       {
-        path: "/CapitalStructuring",
+        path: "/capital_structuring",
         element: <CapitalStructuring />,
       },
       {
-        path: "/InternalSystem",
-        element: <InternalSystem/>,
+        path: "/internal_system",
+        element: <InternalSystem />,
       },
       {
-         path: "/BusinessPlanning",
-         element:<BusinessPlanning/>,
+        path: "/business_planning",
+        element: <BusinessPlanning />,
       },
       {
-        path: "/Investorrelationship",
-        element: <Investorrelationship/>,
+        path: "/investor_relationship",
+        element: <Investorrelationship />,
       },
       {
-          path: "/WorkingCapital",
-          element: <WorkingCapital/>,
+        path: "/working_capital",
+        element: <WorkingCapital />,
       },
       {
-        path: "/JointVentures",
-        element: <JointVentures/>,
+        path: "/jointventures",
+        element: <JointVentures />,
       },
       {
-        path: "/ManagementReporting",
-        element: <ManagementReporting/>,
+        path: "/management_reporting",
+        element: <ManagementReporting />,
       },
       {
-        path: "/MergersAcquisitions",
-        element: <MergersAcquisitions/>,
+        path: "/mergers_acquisitions",
+        element: <MergersAcquisitions />,
       },
       {
-        path: "/PersonalService",
-        element:<PersonalService/>
+        path: "/personal_service",
+        element: <PersonalService />,
       },
       {
-        path: "/Investment",
-        element:<Investment />
+        path: "/investment",
+        element: <Investment />,
       },
       {
         path: "/estate",
         element: <Estate />,
       },
       {
-        path: "/incometax",
+        path: "/income_tax",
         element: <IncomeTax />,
       },
       {
