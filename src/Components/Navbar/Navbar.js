@@ -58,25 +58,25 @@ function Navbar() {
               });
             }}
             headerName="Take Expert Advice"
-            headerLink="/take_expert_advice"
+            headerLink="/takeexpertadvice"
             subHeaders={[
               {
-                link: "/business_advisory",
+                link: "/businessadvisory",
                 title: "Talk to Business Advisory Analyst",
               },
               {
-                link: "/certified_financial ",
+                link: "/certifiedfinancial ",
                 title: "Talk to Certified Financial Planner",
               },
               {
-                link: "/chartered_accountant",
+                link: "/charteredaccountant",
                 title: "Talk to Chartered Accountant",
               },
-              { link: "/cost_accountant", title: "Talk to Cost Accountant" },
-              { link: "/legal_advisor", title: "Talk to Legal Advisor" },
-              { link: "/cyber_crime ", title: "Talk to Cyber Crime Expert" },
+              { link: "/costaccountant", title: "Talk to Cost Accountant" },
+              { link: "/legaladvisor", title: "Talk to Legal Advisor" },
+              { link: "/cyberCrime ", title: "Talk to Cyber Crime Expert" },
               {
-                link: "/Company_Secretory",
+                link: "/CompanySecretory",
                 title: "Talk to Company Secretory",
               },
             ]}
@@ -112,18 +112,18 @@ function Navbar() {
               setMenu({ ...INITIAL_NAVBAR_STATE, cfoServ: !menu["cfoServ"] });
             }}
             headerName="CFO Services"
-            headerLink="/Cfo_Services"
+            headerLink="/CfoServices"
             subHeaders={[
-              { link: "/Business_Transaction", title: "Business Transaction Advisory" },
-              { link: "/Mergers_Acquisitions", title: "Mergers & Acquisitions" },
-              { link: "/Joint_Ventures", title: "Joint Ventures" },
-              { link: "/Capital_Structuring", title: "Capital Structuring" },
-              { link: "/Banking_relationship", title: "Banking relationship" },
-              { link: "/Business_Planning",title: "Business Planning & Forcasting"},
-              { link: "/Working_Capital",title:"Working Capital Management"},
-              { link: "/Management_Reporting", title: "Management Reporting" },
-              { link: "/Investor_relationship", title: "Investor relationship management" },
-              { link: "/Internal_System", title: "Internal System & Processes design(SOPs)" },
+              { link: "/BusinessTransaction", title: "Business Transaction Advisory" },
+              { link: "/MergersAcquisitions", title: "Mergers & Acquisitions" },
+              { link: "/JointVentures", title: "Joint Ventures" },
+              { link: "/CapitalStructuring", title: "Capital Structuring" },
+              { link: "/Bankingrelationship", title: "Banking relationship" },
+              { link: "/BusinessPlanning",title: "Business Planning & Forcasting"},
+              { link: "/WorkingCapital",title:"Working Capital Management"},
+              { link: "/ManagementReporting", title: "Management Reporting" },
+              { link: "/Investorrelationship", title: "Investor relationship management" },
+              { link: "/InternalSystem", title: "Internal System & Processes design(SOPs)" },
             ]}
           />
 

@@ -26,14 +26,14 @@ import {
   CyberCrime,
   LegalAdvisor,
 } from "./Pages/TakeExpertAdvice";
-import PersonalService from "./Pages/Personalservice";
+import PersonalService from "./Pages/PersonalService";
 import {
   Investment,
   Estate,
   Tax,
   Individual,
   IncomeTax,
-} from "./Pages/Personal_Service";
+} from "./Pages/PersonalService";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";

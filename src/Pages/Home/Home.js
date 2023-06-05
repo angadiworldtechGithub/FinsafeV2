@@ -144,7 +144,8 @@ export default function Home() {
           financial journey.
         </p>
       </div>
-      {/*card slider*/}
+      
+
       {/*cilent silder*/}
     </>
   );
