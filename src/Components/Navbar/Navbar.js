@@ -58,14 +58,14 @@ function Navbar() {
               });
             }}
             headerName="Take Expert Advice"
-            headerLink="/takeexpertadvice"
+            headerLink="/take_expert_advice"
             subHeaders={[
               {
-                link: "/businessadvisory",
+                link: "/business_advisory",
                 title: "Talk to Business Advisory Analyst",
               },
               {
-                link: "/certifiedfinancial ",
+                link: "/certified_financial",
                 title: "Talk to Certified Financial Planner",
               },
               {
@@ -114,16 +114,28 @@ function Navbar() {
             headerName="CFO Services"
             headerLink="/CfoServices"
             subHeaders={[
-              { link: "/BusinessTransaction", title: "Business Transaction Advisory" },
+              {
+                link: "/BusinessTransaction",
+                title: "Business Transaction Advisory",
+              },
               { link: "/MergersAcquisitions", title: "Mergers & Acquisitions" },
               { link: "/JointVentures", title: "Joint Ventures" },
               { link: "/CapitalStructuring", title: "Capital Structuring" },
               { link: "/Bankingrelationship", title: "Banking relationship" },
-              { link: "/BusinessPlanning",title: "Business Planning & Forcasting"},
-              { link: "/WorkingCapital",title:"Working Capital Management"},
+              {
+                link: "/BusinessPlanning",
+                title: "Business Planning & Forcasting",
+              },
+              { link: "/WorkingCapital", title: "Working Capital Management" },
               { link: "/ManagementReporting", title: "Management Reporting" },
-              { link: "/Investorrelationship", title: "Investor relationship management" },
-              { link: "/InternalSystem", title: "Internal System & Processes design(SOPs)" },
+              {
+                link: "/Investorrelationship",
+                title: "Investor relationship management",
+              },
+              {
+                link: "/InternalSystem",
+                title: "Internal System & Processes design(SOPs)",
+              },
             ]}
           />
 
