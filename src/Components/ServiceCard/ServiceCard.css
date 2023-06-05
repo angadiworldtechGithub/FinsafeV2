@@ -1,7 +1,7 @@
 .card {
   position: relative;
   text-align: center;
-  background: linear-gradient(to right,#2d0b00,#00093c);
+  background: linear-gradient(to right,#BB710D,#CC4922);
   color: #fff;
   height: 200px;
   border-radius: 20px;
@@ -25,8 +25,8 @@
 }
 
 .right_icon {
-  font-size: 50px;
-  color: black;
+  font-size: 80px;
+  color: #fff;
 }
 
 .right_icon_box {
