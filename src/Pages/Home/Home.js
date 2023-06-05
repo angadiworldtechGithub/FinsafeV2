@@ -105,10 +105,7 @@ const SERVICE_CARDS = [
   },
 ];
 
-
-
-
-const SERVICE_CARD= [
+const SERVICE_CARD = [
   {
     title: "test3",
     icon: GrBusinessService,
@@ -164,8 +161,22 @@ export default function Home() {
           );
         })}
       </Splide>
-
-      <Splide options={{ perPage: 4 }}>
+      <Splide
+        options={{
+          perPage: 4,
+          breakpoints: {
+            380: {
+              perPage: 1,
+            },
+            640: {
+              perPage: 2,
+            },
+            840: {
+              perPage: 3,
+            },
+          },
+        }}
+      >
         {/* Add Breakpoints to the perPage property */}
         {SERVICE_CARDS.map((serviceCard) => {
           return (
@@ -183,20 +194,6 @@ export default function Home() {
           financial journey.
         </p>
       </div>
-
-
-      <Splide options={{ perPage: 4 }}>
-      {/* Add Breakpoints to the perPage property */}
-      {SERVICE_CARD.map((serviceCard) => {
-        return (
-          <SplideSlide key={shortid.generate()}>
-            <ServiceCard title={serviceCard.title} ICON={serviceCard.icon} />
-          </SplideSlide>
-        );
-      })}
-    </Splide>
-
-      
 
       {/*cilent silder*/}
     </>
