@@ -61,11 +61,11 @@ function Navbar() {
             headerLink="/take_expert_advice"
             subHeaders={[
               {
-                link: "/business_advisory",
+                link: "/businessadvisory",
                 title: "Talk to Business Advisory Analyst",
               },
               {
-                link: "/certified_financial",
+                link: "/certifiedfinancial",
                 title: "Talk to Certified Financial Planner",
               },
               {
@@ -99,7 +99,13 @@ function Navbar() {
                 link: "/",
                 title: "Limited Liability Partnership(LLP)",
               },
-              { link: "/", title: "Partnership Firm", subHeaders: [{link: "/incorporation",title: "Incorporation"}] }, // Add {link: "",title: ""} object here
+              {
+                link: "/",
+                title: "Partnership Firm",
+                subHeaders: [
+                  { link: "/incorporation", title: "Incorporation" },
+                ],
+              }, // Add {link: "",title: ""} object here
               { link: "/", title: "Propreitorship" },
               { link: "/", title: "Trust" },
               { link: "/", title: "Co-operative Societies" },
@@ -139,20 +145,18 @@ function Navbar() {
             ]}
           />
 
-        
           <Dropdown
-          isActive={menu["accAud"]}
-          setIsActive={() => {
-            setMenu({ ...INITIAL_NAVBAR_STATE, accAud: !menu["AccAud"] });
-          }}
-          headerName="Accounts & Audit"
-          headerLink="/accountsaudit"
-          subHeaders={[
-            { link: "/accounts", title: "Accounts" },
-            { link: "/audit", title: "Audit" },
-            
-          ]}
-        />
+            isActive={menu["accAud"]}
+            setIsActive={() => {
+              setMenu({ ...INITIAL_NAVBAR_STATE, accAud: !menu["AccAud"] });
+            }}
+            headerName="Accounts & Audit"
+            headerLink="/accountsaudit"
+            subHeaders={[
+              { link: "/accounts", title: "Accounts" },
+              { link: "/audit", title: "Audit" },
+            ]}
+          />
 
           <Dropdown
             isActive={menu["loanCap"]}
@@ -167,8 +171,14 @@ function Navbar() {
               { link: "/businesstermloans", title: "Business Term Loans" },
               { link: "/loansassets", title: "Loans on Assets" },
               { link: "/msmeloans", title: "MSME Loans" },
-              { link: "/projectreportspreparation", title: "Project report preparation" },
-              { link: "/loandocumentationsupport", title: "Loan Documentation Support" },
+              {
+                link: "/projectreportspreparation",
+                title: "Project report preparation",
+              },
+              {
+                link: "/loandocumentationsupport",
+                title: "Loan Documentation Support",
+              },
             ]}
           />
 
@@ -187,11 +197,20 @@ function Navbar() {
                 link: "/jointventure",
                 title: "Joint Development & Joint Venture agreement drafting",
               },
-              { link: "/businesslegaldrafting", title: "Business Legal agreement drafting" },
+              {
+                link: "/businesslegaldrafting",
+                title: "Business Legal agreement drafting",
+              },
               { link: "/landtitle", title: "Land Title Due diligence" },
               { link: "/landlitigation", title: "Land Litigation assistance" },
-              { link: "/customeragreement", title: "Customer Agreement drafting" },
-              { link: "/customerlitigation", title: "Customer litigation support" },
+              {
+                link: "/customeragreement",
+                title: "Customer Agreement drafting",
+              },
+              {
+                link: "/customerlitigation",
+                title: "Customer litigation support",
+              },
             ]}
           />
 
@@ -211,7 +230,7 @@ function Navbar() {
               { link: "/investment", title: "Investment planning" },
               { link: "/estate", title: "Estate management services" },
               { link: "/tax", title: "Tax Planning" },
-              { link: "/income_tax", title: "Income tax returns" },
+              { link: "/incometax", title: "Income tax returns" },
               { link: "/individual", title: "Individual Accounts maintenance" },
             ]}
           />
