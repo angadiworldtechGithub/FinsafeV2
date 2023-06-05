@@ -99,7 +99,7 @@ function Navbar() {
                 link: "/",
                 title: "Limited Liability Partnership(LLP)",
               },
-              { link: "/", title: "Partnership Firm", subHeaders: [] }, // Add {link: "",title: ""} object here
+              { link: "/", title: "Partnership Firm", subHeaders: [{link: "/incorporation",title: "Incorporation"}] }, // Add {link: "",title: ""} object here
               { link: "/", title: "Propreitorship" },
               { link: "/", title: "Trust" },
               { link: "/", title: "Co-operative Societies" },
@@ -127,7 +127,20 @@ function Navbar() {
             ]}
           />
 
-          <div className="navbar_text navbar_text_mobile">Accounts & Audit</div>
+        
+          <Dropdown
+          isActive={menu["accAud"]}
+          setIsActive={() => {
+            setMenu({ ...INITIAL_NAVBAR_STATE, accAud: !menu["AccAud"] });
+          }}
+          headerName="Accounts & Audit"
+          headerLink="/accountsaudit"
+          subHeaders={[
+            { link: "/accounts", title: "Accounts" },
+            { link: "/audit", title: "Audit" },
+            
+          ]}
+        />
 
           <Dropdown
             isActive={menu["loanCap"]}
@@ -135,15 +148,15 @@ function Navbar() {
               setMenu({ ...INITIAL_NAVBAR_STATE, loanCap: !menu["loanCap"] });
             }}
             headerName="Loans & Capital"
-            headerLink="/"
+            headerLink="/loanscapital"
             subHeaders={[
-              { link: "/", title: "Talk to Expert" },
-              { link: "/", title: "Working Capital Loans" },
-              { link: "/", title: "Business Term Loans" },
-              { link: "/", title: "Loans on Assets" },
-              { link: "/", title: "MSME Loans" },
-              { link: "/", title: "Project report preparation" },
-              { link: "/", title: "Loan Documentation Support" },
+              { link: "/talktoexperts", title: "Talk to Expert" },
+              { link: "/workingcapitalloans", title: "Working Capital Loans" },
+              { link: "/businesstermloans", title: "Business Term Loans" },
+              { link: "/loansassets", title: "Loans on Assets" },
+              { link: "/msmeloans", title: "MSME Loans" },
+              { link: "/projectreportspreparation", title: "Project report preparation" },
+              { link: "/loandocumentationsupport", title: "Loan Documentation Support" },
             ]}
           />
 
@@ -156,17 +169,17 @@ function Navbar() {
               });
             }}
             headerName=" Business legal Services "
-            headerLink="/"
+            headerLink="/businesslegalservices"
             subHeaders={[
               {
-                link: "/",
+                link: "/jointventure",
                 title: "Joint Development & Joint Venture agreement drafting",
               },
-              { link: "/", title: "Business Legal agreement drafting" },
-              { link: "/", title: "Land title Due diligence" },
-              { link: "/", title: "Land Litigation assistance" },
-              { link: "/", title: "Customer Agreement drafting" },
-              { link: "/", title: "Customer litigation support" },
+              { link: "/businesslegaldrafting", title: "Business Legal agreement drafting" },
+              { link: "/landtitle", title: "Land Title Due diligence" },
+              { link: "/landlitigation", title: "Land Litigation assistance" },
+              { link: "/customeragreement", title: "Customer Agreement drafting" },
+              { link: "/customerlitigation", title: "Customer litigation support" },
             ]}
           />
 
@@ -180,7 +193,7 @@ function Navbar() {
               setMenu({ ...INITIAL_NAVBAR_STATE, persServ: !menu["persServ"] });
             }}
             headerName="Personal Services"
-            headerLink="/personal_service"
+            headerLink="/personalservice"
             subHeaders={[
               { link: "/", title: "Talk to Expert" },
               { link: "/investment", title: "Investment planning" },

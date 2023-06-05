@@ -18,6 +18,18 @@ import {
   ManagementReporting,
   MergersAcquisitions,
 } from "./Pages/CfoServices";
+import LoansCapital from "./Pages/LoansCapital/LoansCapital";
+
+import {
+  BusinessTermLoans,
+  LoanAssets,
+  LoanDocumentationSupport,
+  MsmeLoans,
+  ProjectReportsPreparation,
+  TalkToExperts,
+  WorkingCapitalLoans
+} from "./Pages/LoansCapital";
+
 import {
   BusinessAdvisory,
   CertifiedFinancial,
@@ -27,6 +39,15 @@ import {
   CyberCrime,
   LegalAdvisor,
 } from "./Pages/TakeExpertAdvice";
+import BusinessLegalServices from "./Pages/BusinessLegalServices";
+import{
+     BusinessLegalDrafting,
+     CustomerAgreement,
+     CustomerLitigation,
+     JointVenture,
+     LandLitigation,
+     LandTitle,
+} from "./Pages/BusinessLegalServices";
 import PersonalService from "./Pages/PersonalService";
 import {
   Investment,
@@ -75,83 +96,115 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/take_expert_advice",
+        path: "/takeexpertadvice",
         element: <TakeExpertAdvice />,
       },
       {
-        path: "/business_advisory",
+        path: "/businessadvisory",
         element: <BusinessAdvisory />,
       },
       {
-        path: "/certified_financial",
+        path: "/certifiedfinancial",
         element: <CertifiedFinancial />,
       },
       {
-        path: "/chartered_accountant",
+        path: "/charteredaccountant",
         element: <CharteredAccountant />,
       },
       {
-        path: "/company_secretory",
+        path: "/companysecretory",
         element: <CompanySecretory />,
       },
       {
-        path: "/cost_accountant",
+        path: "/costaccountant",
         element: <CostAccountant />,
       },
       {
-        path: "/cyber_crime",
+        path: "/cybercrime",
         element: <CyberCrime />,
       },
       {
-        path: "/legal_advisor",
+        path: "/legaladvisor",
         element: <LegalAdvisor />,
       },
       {
-        path: "/cfo_services",
+        path: "/cfoservices",
         element: <CfoServices />,
       },
       {
-        path: "/banking_relationship",
+        path: "/bankingrelationship",
         element: <Bankingrelationship />,
       },
       {
-        path: "/business_transaction",
+        path: "/businesstransaction",
         element: <BusinessTransaction />,
       },
       {
-        path: "/capital_structuring",
+        path: "/loanscapital",
+        element: <LoansCapital/>,
+      },
+      {
+        path: "/businesstermloans",
+        element: < BusinessTermLoans/>,
+      },
+      {
+        path: "/talktoexperts",
+        element: < TalkToExperts/>,
+      },
+      {
+        path: "/loandocumentationsupport",
+        element: <LoanDocumentationSupport/>,
+      },
+      {
+         path: "/loansassets",
+         element:<LoanAssets/>
+      },
+      {
+        path: "/msmeloans",
+        element: <MsmeLoans />,
+      },
+      {
+        path: "/projectreportspreparation",
+        element: <ProjectReportsPreparation />,
+      },
+      {
+        path: "/capitalstructuring",
         element: <CapitalStructuring />,
       },
       {
-        path: "/internal_system",
+        path: "/internalsystem",
         element: <InternalSystem />,
       },
       {
-        path: "/business_planning",
+        path: "/businessplanning",
         element: <BusinessPlanning />,
       },
       {
-        path: "/investor_relationship",
+        path: "/investorrelationship",
         element: <Investorrelationship />,
       },
       {
-        path: "/working_capital",
+        path: "/workingcapital",
         element: <WorkingCapital />,
+      }, 
+      {
+        path: "/workingcapitalloans",
+        element: <WorkingCapitalLoans />,
       },
       {
         path: "/jointventures",
         element: <JointVentures />,
       },
       {
-        path: "/management_reporting",
+        path: "/managementreporting",
         element: <ManagementReporting />,
       },
       {
-        path: "/mergers_acquisitions",
+        path: "/mergersacquisitions",
         element: <MergersAcquisitions />,
       },
       {
-        path: "/personal_service",
+        path: "/personalservice",
         element: <PersonalService />,
       },
       {
@@ -163,7 +216,7 @@ const router = createBrowserRouter([
         element: <Estate />,
       },
       {
-        path: "/income_tax",
+        path: "/incometax",
         element: <IncomeTax />,
       },
       {
@@ -181,6 +234,34 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/businesslegalservices",
+        element: <BusinessLegalServices />,
+      },
+      {
+        path: "/businesslegaldrafting",
+        element: <BusinessLegalDrafting/>,
+      },
+      {
+        path: "/customeragreement",
+        element: <CustomerAgreement />,
+      },
+      {
+        path: "/customerlitigation",
+        element: <CustomerLitigation />,
+      },
+      {
+        path: "/jointventure",
+       element: <JointVenture />,
+      },
+      {
+        path: "/landlitigation",
+        element: <LandLitigation />,
+      },
+      {
+        path: "/landTitle",
+        element: <LandTitle />,
       },
     ],
   },
