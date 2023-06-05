@@ -1,6 +1,8 @@
 .card {
   position: relative;
   text-align: center;
+  background: linear-gradient(to right,#2d0b00,#00093c);
+  color: #fff;
   height: 200px;
   border-radius: 20px;
   margin-top: 20px;

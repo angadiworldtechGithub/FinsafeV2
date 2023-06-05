@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1100px) {
     .contact_section{
-        background: #e6e6e6;
+        background-color: #e6e6e6;
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 20px;
@@ -12,11 +12,12 @@
 @media only screen and (min-width: 1100px) {
     .contact_section {
         display: flex;
-        background: #e6e6e6;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
+        background-color: #e6e6e6;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
         padding-top: 10px;
+        justify-content: space-around;
     }
 }
 
@@ -32,13 +33,14 @@
 }
 .box_text,.box_text1,.box_text2{
     border: 2px solid #000;
-    background-color: #7C96AB;
+    background-color: #fff;
     height: 100%;
     padding: 15px 35px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 30px;
+    justify-content: space-around;
 }
 
 .contact_text{
@@ -46,6 +48,7 @@
     font-size: 30px;
     font-weight: 80px;
     background: #e6e6e6;
+    justify-content: space-around;
 }  
 
 
@@ -94,3 +97,37 @@
 .mail_box .text_mail {
     width: 80%;
 }
+
+/*@media only screen and (max-width: 1100px) {
+.contact1{
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: 4rem;
+}
+}*/
+
+.contact1{
+    background-color: white;
+    border : 3px solid black;
+    color: black;
+    padding: 1rem;
+    padding-top: 30px;
+    height: 4rem;
+}
+
+.contact{
+    background: #e6e6e6;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-radius: 3px;
+    padding-top: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+  

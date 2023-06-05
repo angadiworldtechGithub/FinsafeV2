@@ -72,35 +72,35 @@ const ProjectList = [
 
 const SERVICE_CARDS = [
   {
-    title: "test1",
+    title: "Business Legal Services",
     icon: GrBusinessService,
   },
   {
-    title: "test2",
+    title: "CFO Services",
     icon: FcServices,
   },
   {
-    title: "test1",
+    title: "Loans & Capital",
     icon: GrServices,
   },
   {
-    title: "test2",
+    title: "Personal Services",
     icon: FaServicestack,
   },
   {
-    title: "test1",
+    title: "Income Tax",
     icon: GrServicePlay,
   },
   {
-    title: "test2",
+    title: "Working Capital Loans",
     icon: MdMiscellaneousServices,
   },
   {
-    title: "test1",
+    title: "Land title Due diligence",
     icon: MdOutlineHomeRepairService,
   },
   {
-    title: "test2",
+    title: "Business Term Loans",
     icon: FcServiceMark,
   },
 ];

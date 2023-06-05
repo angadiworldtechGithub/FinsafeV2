@@ -4,7 +4,32 @@ import "./Contact.css";
 export default function Contact() {
   return (
     <div>
-      <div style={{ position: "relative", backgroundColor: "#e6e6e6" }}>
+
+
+    <div style={{ position: "relative", backgroundColor: "#e6e6e6" }}>
+        <img
+          src="assets/images/contact.png"
+          alt="contact_us_image"
+          width="100%"
+        />
+      </div>
+    <div className="contact_section">
+    <div class="contact"  
+    style={{
+      paddingBottom: "0",
+      paddingTop: "0px",
+      marginBottom: "30px",
+    }}>
+      <div class="contact1">ONE</div>
+      <div class="contact1">TWO</div>
+      <div class="contact1">THREE</div>
+   </div>
+   </div>
+
+
+
+
+     {/*<div style={{ position: "relative", backgroundColor: "#e6e6e6" }}>
         <img
           src="assets/images/contact.png"
           alt="contact_us_image"
@@ -21,12 +46,8 @@ export default function Contact() {
               marginBottom: "30px",
             }}
           >
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            <h1 align="center"><i className="fa fa-map-marker" aria-hidden="true"></i></h1> 
           </div>
-          <p>
-            Address :<br></br> Opp : Court Complex,<br></br>(PVR Associates)
-            RAJAMPET-516115<br></br>,YSR Kadapa Dist,A.P.{" "}
-          </p>
         </div>
 
         <div className="box_text1">
@@ -34,9 +55,8 @@ export default function Contact() {
             <i className="fa fa-envelope-o" aria-hidden="true"></i>
           </div>
           <p>
-            <a href="mailto:support@finsafe.in">
-              <h3>support@finsafe.in</h3>
-            </a>
+           
+  
           </p>
         </div>
 
@@ -50,7 +70,7 @@ export default function Contact() {
             </a>
           </p>
         </div>
-      </div>
+          </div> */}
 
       <div className="contact_section">
         <div className="contact_text">
