@@ -165,13 +165,13 @@ export default function Home() {
         options={{
           perPage: 4,
           breakpoints: {
-            380: {
+            500: {
               perPage: 1,
             },
-            640: {
+            840: {
               perPage: 2,
             },
-            840: {
+            1000: {
               perPage: 3,
             },
           },
