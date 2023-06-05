@@ -105,6 +105,41 @@ const SERVICE_CARDS = [
   },
 ];
 
+const SERVICE_CARD = [
+  {
+    title: "test3",
+    icon: GrBusinessService,
+  },
+  {
+    title: "test4",
+    icon: FcServices,
+  },
+  {
+    title: "test3",
+    icon: GrServices,
+  },
+  {
+    title: "test4",
+    icon: FaServicestack,
+  },
+  {
+    title: "test3",
+    icon: GrServicePlay,
+  },
+  {
+    title: "test4",
+    icon: MdMiscellaneousServices,
+  },
+  {
+    title: "test3",
+    icon: MdOutlineHomeRepairService,
+  },
+  {
+    title: "test4",
+    icon: FcServiceMark,
+  },
+];
+
 export default function Home() {
   return (
     <>
