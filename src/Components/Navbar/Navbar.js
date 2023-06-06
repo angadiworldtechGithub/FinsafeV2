@@ -91,7 +91,7 @@ function Navbar() {
               });
             }}
             headerName="Start Your Business"
-            headerLink="/"
+            headerLink="/startyourbusiness"
             subHeaders={[
               {
                 link: "/",
