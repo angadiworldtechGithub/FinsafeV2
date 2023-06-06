@@ -178,18 +178,49 @@ function Navbar() {
             ]}
           />
 
+         
           <Dropdown
             isActive={menu["accAud"]}
             setIsActive={() => {
-              setMenu({ ...INITIAL_NAVBAR_STATE, accAud: !menu["AccAud"] });
+              setMenu({
+                ...INITIAL_NAVBAR_STATE,
+                accAud: !menu["accAud"],
+              });
             }}
+ 
             headerName="Accounts & Audit"
             headerLink="/accountsaudit"
             subHeaders={[
-              { link: "/accounts", title: "Accounts" },
-              { link: "/audit", title: "Audit" },
+              {
+                link: "/accounts",
+                title: "Accounts",
+                subHeaders: [
+                  { link: "/bookkeeping", title: "Bookkeeping & Record maintenance" },
+                  { link: "/payroll", title: "Payroll Management"},
+                  { link: "/vendor", title: "Vendor Payable Management" },
+                  { link: "/receivable", title: "Accounts Receivable Management" },
+                  { link: "/assetaccounting", title: "Asset Accounting & Management" },
+                  { link: "/hrfunction ", title: "HR Function Suppport" },
+                  { link: "/quarterly", title: "Quarterly & Yearly Financials Preparation" },
+                  { link: "/regulartax ", title: "Regular Tax returns filing" },
+                  { link: "/secretarial", title: "Company Secretarial Services" },
+                ],
+              },
+              {
+                link: "/audit",
+                title: "Audit",
+                subHeaders: [
+                  { link: "/statutoryauditsupport", title: "Statutory audit Support" },
+                  { link: "/taxaudit", title: "Tax Audit Management"},
+                  { link: "/internalaudits", title: "Internal Audits" },
+                  { link: "/forensicaudits", title: "Forensic Audits" },
+                  { link: "/stockaudit", title: "Stock Audit" },
+                ]
+              },
             ]}
-          />
+
+            />
+
 
           <Dropdown
             isActive={menu["loanCap"]}

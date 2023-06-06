@@ -79,6 +79,18 @@ import {
   LegalAdvisor,
 } from "./Pages/TakeExpertAdvice";
 
+import{
+AssetsAccounting,
+Bookkeeping,
+HrFunction,
+Payroll,
+Quarterly,
+Receivable,
+Regulartax,
+Secretarial,
+Vendor
+} from "./Pages/AccountsAudit";
+
 
 import BusinessLegalServices from "./Pages/BusinessLegalServices";
 import{
@@ -132,7 +144,7 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
-        path: "",
+        path: "/",
         element: <Home />,
       },
       {
@@ -414,7 +426,43 @@ const router = createBrowserRouter([
       {
         path:"/incorporation",
         element:<InCorporation/>
-      }
+      },
+      {
+        path:"/assetsaccounting",
+        element:<AssetsAccounting/>
+      },
+      {
+        path: "/bookkeepting",
+        element: <Bookkeeping/>,
+      },
+      {
+        path: "/hrfunction",
+        element: <HrFunction/>,
+      },
+      {
+        path: "/Payroll",
+        element: <Payroll/>,
+      },
+      {
+        path: "/quarterly",
+        element: <Quarterly/>,
+      },
+      {
+        path: "/Receivable",
+        element: <Receivable/>,
+      },
+      {
+        path: "/Regulartax",
+        element: <Regulartax/>,
+      },
+      {
+        path: "/secretarial",
+        element: <Secretarial/>,
+      },
+      {
+        path: "/vendor",
+        element: <Vendor/>,
+      },
     ],
   },
 ]);
