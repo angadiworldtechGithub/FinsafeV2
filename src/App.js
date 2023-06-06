@@ -18,6 +18,45 @@ import {
   ManagementReporting,
   MergersAcquisitions,
 } from "./Pages/CfoServices";
+
+import StartYourBusiness from "./Pages/StartYourBusiness";
+
+import{
+ DormantCompany,
+ NidhiCompany,
+ OnePersonCompany,
+ PrivateLimitedCompany,
+ ProducerCompany,
+ PublicLimitedCompany,
+ SectionCompany,
+ CompanyServices
+} from "./Pages/StartYourBusiness/CompanyServices";
+
+import{
+  Fssai,
+  Gst,
+  IecCode,
+  Msme,
+  Pan,
+  Patent,
+  Pf,
+  Tan,
+  Trademark,
+  StatutoryRegistration,
+  Professional
+ } from "./Pages/StartYourBusiness/StatutoryRegistration";
+
+
+ import{
+  Company,
+  InCorporation,
+  Llp,
+  Partnership,
+  Propreitorship,
+  Societies,
+  Trust
+ } from "./Pages/StartYourBusiness/Incorporation";
+ 
 import LoansCapital from "./Pages/LoansCapital/LoansCapital";
 
 import {
@@ -39,6 +78,8 @@ import {
   CyberCrime,
   LegalAdvisor,
 } from "./Pages/TakeExpertAdvice";
+
+
 import BusinessLegalServices from "./Pages/BusinessLegalServices";
 import{
      BusinessLegalDrafting,
@@ -48,7 +89,8 @@ import{
      LandLitigation,
      LandTitle,
 } from "./Pages/BusinessLegalServices";
-import PersonalService from "./Pages/PersonalService";
+import PersonalService from "./Pages/PersonalService"
+
 import {
   Investment,
   Estate,
@@ -56,12 +98,14 @@ import {
   Individual,
   IncomeTax,
 } from "./Pages/PersonalService";
+
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
 import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
+
 
 const Base = () => {
   return (
@@ -263,6 +307,114 @@ const router = createBrowserRouter([
         path: "/landTitle",
         element: <LandTitle />,
       },
+      {
+        path: "/dormantcompany",
+        element: <DormantCompany />,
+      },
+      {
+        path: "/nidhicompany",
+        element: <NidhiCompany />,
+      },
+      {
+        path: "/onepersoncompany",
+        element: <OnePersonCompany/>,
+      },
+      {
+        path: "/privatelimitedcompany",
+        element: <PrivateLimitedCompany/>,
+      },
+      {
+        path: "/producercompany",
+        element: <ProducerCompany/>,
+      },
+      {
+        path: "/Publiclimitedcompany",
+        element: <PublicLimitedCompany/>,
+      },
+      {
+        path: "/sectioncompany",
+        element: <SectionCompany/>,
+      },
+      {
+        path: "/startyourbusiness",
+        element: <StartYourBusiness/>,
+      },
+      {
+        path: "/companyservices",
+        element: <CompanyServices/>,
+      },
+      {
+        path: "/trademark",
+        element: <Trademark/>,
+      },
+      {
+        path: "/tan",
+        element: <Tan/>,
+      },
+      {
+        path: "/statutoryregistration",
+        element:<StatutoryRegistration/>,
+      },
+      {
+        path: "/pf",
+        element: <Pf/>,
+      },
+      {
+        path: "/patent",
+        element: <Patent/>,
+      },
+      {
+        path: "/pan",
+        element: <Pan/>,
+      },
+      {
+        path: "/Msme",
+        element: <Msme/>,
+      },
+      {
+        path: "/ieccode",
+        element: <IecCode/>,
+      },
+      {
+        path: "/gst",
+        element: <Gst/>,
+      },
+      {
+        path: "/fssai",
+        element: <Fssai/>,
+      },
+      {
+        path: "/company",
+        element: <Company/>,
+      },
+      {
+        path: "/llp",
+        element: <Llp/>,
+      },
+      {
+        path: "/professional",
+        element: <Professional/>,
+      },
+      {
+        path: "/partnership",
+        element:<Partnership/>,
+      },
+      {
+        path: "/propreitorship",
+        element: <Propreitorship/>,
+      },
+      {
+        path: "/societies",
+        element: <Societies/>,
+      },
+      {
+        path: "/trust",
+        element: <Trust/>,
+      },
+      {
+        path:"/incorporation",
+        element:<InCorporation/>
+      }
     ],
   },
 ]);

@@ -1,9 +1,9 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function NidhiCompany() {
+export default function Msme() {
   return (
     <ServiceComp
-      title="Nidhi Company"
+      title="Msme"
       description= " Finsafe Solutions can help individuals with various aspects of estate management :"
       bulletPoints={[
         { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
