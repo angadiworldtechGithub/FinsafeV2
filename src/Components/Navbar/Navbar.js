@@ -95,20 +95,55 @@ function Navbar() {
             subHeaders={[
               {
                 link: "/",
-                title: "Partnership Firm",
+                title: "Incorporation",
                 subHeaders: [
-                  { link: "/incorporation", title: "Incorporation" },
-                  { link: "/incorporation", title: "Incorporation" },
-                  { link: "/incorporation", title: "Incorporation" },
-                  { link: "/incorporation", title: "Incorporation" },
-                  { link: "/incorporation", title: "Incorporation" },
-                  { link: "/incorporation", title: "Incorporation" },
+                  { link: "/incorporation", title: "Company" },
+                  {
+                    link: "/incorporation",
+                    title: "Limited Liability Partnership(LLP)",
+                  },
+                  { link: "/incorporation", title: "Partnership Firm" },
+                  { link: "/incorporation", title: "Propreitorship" },
+                  { link: "/incorporation", title: "Trust" },
+                  { link: "/incorporation", title: "Co-operative Societies" },
                 ],
-              }, // Add {link: "",title: ""} object here
-              
+              },
+
+              {
+                link: "/",
+                title: "Statutory Registration/Licenses",
+                subHeaders: [
+                  { link: "/incorporation", title: "GST" },
+                  { link: "/incorporation", title: "Professional Tax" },
+                  { link: "/incorporation", title: "PAN" },
+                  { link: "/incorporation", title: "TAN" },
+                  { link: "/incorporation", title: "IEC Code" },
+                  {
+                    link: "/incorporation",
+                    title: "MSME Registration(Udayam)",
+                  },
+                  { link: "/incorporation", title: "PF ESI" },
+                  { link: "/incorporation", title: "FSSAI License" },
+                  { link: "/incorporation", title: "Trademark/Copyright" },
+                  { link: "/incorporation", title: "Patent Registration" },
+                ],
+              },
+
+              {
+                link: "/",
+                title: "Company Services",
+                subHeaders: [
+                  { link: "/incorporation", title: "Private Limited Company" },
+                  { link: "/incorporation", title: "Public Limited Company" },
+                  { link: "/incorporation", title: "Section 8(NGO) Company" },
+                  { link: "/incorporation", title: "One Person Company" },
+                  { link: "/incorporation", title: "Nidhi Company" },
+                  { link: "/incorporation", title: "Producer Company" },
+                  { link: "/incorporation", title: "Dormant Company" },
+                ],
+              },
             ]}
           />
-
 
           <Dropdown
             isActive={menu["cfoServ"]}

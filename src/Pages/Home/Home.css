@@ -63,6 +63,9 @@
     height: 200px;
     width: 100%;
   }
+  .overlay_text {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (min-width: 700px) {
@@ -103,6 +106,6 @@
   z-index: 40;
   position: absolute;
   padding: 10px;
-  bottom: 40%;
+  bottom: 20%;
   opacity: 60%;
 }
