@@ -3,11 +3,10 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function Receivable() {
   return (
     <ServiceComp
-      title="Dormant Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="  Accounts Receivable Management"
+      description= "Finsafe Solutions helps businesses in managing their accounts receivable, including issuing invoices, tracking customer payments, and following up on overdue payments."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+       
       ]}
       inputList={[
         {

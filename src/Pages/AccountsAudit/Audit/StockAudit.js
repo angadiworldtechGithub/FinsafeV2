@@ -4,10 +4,8 @@ export default function StockAudit() {
   return (
     <ServiceComp
       title="Stock Audit"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      description= "Stock audit, also known as inventory audit, involves verifying and valuing a company's physical inventory or stock holdings. Finsafe Solutions provides stock audit services, conducting detailed examinations of a company's inventory records, physical counts, and valuation methods to ensure accuracy and compliance with accounting standards."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

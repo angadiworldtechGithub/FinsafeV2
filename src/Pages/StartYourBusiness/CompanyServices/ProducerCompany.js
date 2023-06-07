@@ -4,10 +4,9 @@ export default function ProducerCompany() {
   return (
     <ServiceComp
       title="Producer Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      description= " Finsafe Solutions provides services related to company formation, structuring, and compliance. They can assist with the incorporation of various types of companies, such as private limited companies, public limited companies, and one-person companies. Additionally, they can help with annual compliance, filing of financial statements, and other regulatory requirements"      
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+       
       ]}
       inputList={[
         {

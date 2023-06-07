@@ -1,4 +1,4 @@
-import Company from "./Company";
+
 import Llp from "./Llp"
 import Partnership from "./Partnership"
 import Propreitorship from "./Propreitorship"
@@ -8,4 +8,4 @@ import InCorporation from "./InCorporation";
 
 
 export default InCorporation;
-export { Company, Llp, Partnership, Propreitorship,InCorporation,Societies,Trust};
+export {  Llp, Partnership, Propreitorship,InCorporation,Societies,Trust};

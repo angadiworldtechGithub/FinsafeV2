@@ -97,7 +97,6 @@ function Navbar() {
                 link: "/incorporation",
                 title: "InCorporation",
                 subHeaders: [
-                  { link: "/company", title: "Company" },
                   {
                     link: "/llp",
                     title: "Limited Liability Partnership(LLP)",

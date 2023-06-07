@@ -4,10 +4,8 @@ export default function internalAudits() {
   return (
     <ServiceComp
       title="Internal Audits"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      description= "Internal audits are conducted by organizations to assess and evaluate their internal controls, risk management practices, and overall operational efficiency. Finsafe Solutions offers internal audit services, conducting independent reviews of a company's internal processes and controls to identify areas for improvement and ensure adherence to best practices."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

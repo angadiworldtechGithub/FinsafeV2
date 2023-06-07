@@ -3,11 +3,10 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function AssetsAccounting() {
   return (
     <ServiceComp
-      title="Assets Accounting"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Asset Accounting & Management"
+      description= "Finsafe Solutions provides services related to asset accounting and management, which involve tracking and recording assets, calculating depreciation, and ensuring compliance with accounting standards."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+       
       ]}
       inputList={[
         {

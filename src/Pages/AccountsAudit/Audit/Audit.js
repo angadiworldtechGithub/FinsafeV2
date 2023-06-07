@@ -3,11 +3,10 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function Audit() {
   return (
     <ServiceComp
-      title="Audit"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Statutory Audit Support"
+      description= "Statutory audit refers to the independent examination of a company's financial records and statements to ensure compliance with applicable laws and regulations. Finsafe Solutions provides support for companies undergoing statutory audits, helping them prepare for the audit process and ensuring compliance with the required standards."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+        
       ]}
       inputList={[
         {

@@ -3,11 +3,10 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function Vendor() {
   return (
     <ServiceComp
-      title="Dormant Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Vendor Payable Management"
+      description= "Finsafe Solutions assists businesses in managing their vendor payments, including invoice processing, payment scheduling, and maintaining records of outstanding payables."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+       
       ]}
       inputList={[
         {

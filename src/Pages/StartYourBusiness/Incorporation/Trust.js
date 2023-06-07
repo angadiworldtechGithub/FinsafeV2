@@ -1,14 +1,11 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function DormantCompany() {
+export default function Trust() {
   return (
     <ServiceComp
-      title="Dormant Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
-      bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
-      ]}
+      title="Trust"
+      description= "Finsafe Solutions can provide services related to the creation and registration of trusts. A trust is a legal entity that holds and manages assets on behalf of beneficiaries according to the terms and conditions outlined in a trust deed."
+      bulletPoints={[]}
       inputList={[
         {
           elementType: "input",

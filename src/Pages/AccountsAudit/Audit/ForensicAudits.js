@@ -3,11 +3,9 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function ForensicAudits() {
   return (
     <ServiceComp
-      title="ForensicAudits"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Forensic Audits"
+      description= " Forensic audits involve investigating and examining financial records, transactions, and other evidence to uncover fraud, financial misconduct, or other irregularities. Finsafe Solutions conducts forensic audits, employing specialized techniques and methodologies to detect and investigate potential financial fraud or misconduct within organizations."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

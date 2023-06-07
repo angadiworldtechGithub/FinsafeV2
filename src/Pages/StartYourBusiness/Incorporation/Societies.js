@@ -1,14 +1,11 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function DormantCompany() {
+export default function Societies() {
   return (
     <ServiceComp
-      title="Dormant Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
-      bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
-      ]}
+      title="Co-operative Societies"
+      description= "Finsafe Solutions can help in the formation and registration of co-operative societies. Co-operative societies are voluntary associations of individuals who come together to promote their common economic, social, and cultural interests, with democratic control and equal participation."
+      bulletPoints={[]}
       inputList={[
         {
           elementType: "input",

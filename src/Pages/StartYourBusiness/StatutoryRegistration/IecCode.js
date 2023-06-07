@@ -1,13 +1,11 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function LecCode() {
+export default function IecCode() {
   return (
     <ServiceComp
-      title="LecCode"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="IEC Code (Import Export Code): "
+      description= "Finsafe Solutions assists businesses in obtaining the Import Export Code, which is mandatory for importers and exporters in India."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

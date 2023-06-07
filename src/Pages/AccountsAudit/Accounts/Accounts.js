@@ -3,11 +3,9 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function Accounts() {
   return (
     <ServiceComp
-      title="Accounts"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Bookkeeping & Record Maintenance"
+      description= "Finsafe Solutions helps businesses maintain accurate and up-to-date financial records, including recording transactions, organizing receipts, and reconciling accounts."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

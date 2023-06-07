@@ -4,7 +4,7 @@ export default function StatutoryCompliances() {
   return (
     <ServiceComp
       title="Statutory Compliances"
-      description= " "
+      description= "Statutory compliances typically refer to adhering to laws, regulations, and reporting obligations set by the government or relevant authorities."
       bulletPoints={[
       
       ]}

@@ -1,13 +1,11 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function DormantCompany() {
+export default function Partnership() {
   return (
     <ServiceComp
-      title="Dormant Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Partnership Firm"
+      description= " Finsafe Solutions can aid in the establishment of partnership firms. A partnership firm is an association of two or more individuals who come together to carry out a business venture and share profits or losses according to a mutually agreed-upon partnership deed."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

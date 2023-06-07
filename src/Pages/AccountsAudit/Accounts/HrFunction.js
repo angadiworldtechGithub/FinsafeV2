@@ -3,11 +3,9 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function HrFunction() {
   return (
     <ServiceComp
-      title="Hr Function"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="HR Function Support"
+      description= "Finsafe Solutions offers support for various HR functions, such as employee onboarding, managing employee records, leave management, and compliance with labor laws"
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

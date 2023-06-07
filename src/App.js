@@ -49,7 +49,6 @@ import{
 
 
  import{
-  Company,
   InCorporation,
   Llp,
   Partnership,
@@ -450,10 +449,6 @@ const router = createBrowserRouter([
       {
         path: "/fssai",
         element: <Fssai/>,
-      },
-      {
-        path: "/company",
-        element: <Company/>,
       },
       {
         path: "/llp",

@@ -3,11 +3,9 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function InCorporation() {
   return (
     <ServiceComp
-      title="Incorporation"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Incorporation of Company"
+      description= " Finsafe Solutions can assist in the process of incorporating a company. This includes guiding clients through the legal and regulatory requirements, helping with the preparation and filing of necessary documents, and ensuring compliance with relevant laws."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

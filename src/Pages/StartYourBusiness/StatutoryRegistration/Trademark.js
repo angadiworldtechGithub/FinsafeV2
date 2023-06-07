@@ -3,11 +3,9 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function Trademark() {
   return (
     <ServiceComp
-      title="TradeMark"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Trademark/Copyright"
+      description= " Finsafe Solutions provides assistance in trademark and copyright registration. They help businesses protect their intellectual property rights by facilitating the registration process."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

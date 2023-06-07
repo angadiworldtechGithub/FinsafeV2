@@ -3,11 +3,10 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function Gst() {
   return (
     <ServiceComp
-      title="Gst"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title=" GST (Goods and Services Tax)"
+      description= " Finsafe Solutions helps businesses comply with GST regulations. They provide assistance in GST registration, GST return filing, GST audit, and other related services."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+        
       ]}
       inputList={[
         {

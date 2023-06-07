@@ -1,13 +1,11 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function Pf() {
+export default function pf() {
   return (
     <ServiceComp
-      title="PF"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="PF (Provident Fund) and ESI (Employee State Insurance)"
+      description= " Finsafe Solutions offers guidance on PF and ESI compliance for businesses. They assist in the registration process, calculation of contributions, and filing of related returns."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

@@ -4,10 +4,8 @@ export default function PrivateLimitedCompany() {
   return (
     <ServiceComp
       title="Private Limited Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      description= " Finsafe Solutions offers services related to the establishment and management of private limited companies. They can assist in company formation, drafting the necessary documents such as the Memorandum of Association (MOA) and Articles of Association (AOA), and complying with statutory requirements."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

@@ -3,11 +3,10 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function Secretarial() {
   return (
     <ServiceComp
-      title="Dormant Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Company Secretarial Services"
+      description= " Finsafe Solutions provides company secretarial services, which involve maintaining statutory records, preparing board meeting minutes, filing required forms with regulatory authorities, and ensuring compliance with corporate governance requirements.      "
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+       
       ]}
       inputList={[
         {

@@ -3,11 +3,9 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function StatutoryRegistration() {
   return (
     <ServiceComp
-      title="Statutory Registration"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Statutory Registration/Licenses"
+      description= " Finsafe Solutions assists individuals and businesses in obtaining various statutory registrations and licenses required to operate legally. This includes registrations such as company incorporation, partnership firm registration, proprietorship registration, and more."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {
