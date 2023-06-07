@@ -22,18 +22,18 @@ import {
 
 import StartYourBusiness from "./Pages/StartYourBusiness";
 
-import{
- DormantCompany,
- NidhiCompany,
- OnePersonCompany,
- PrivateLimitedCompany,
- ProducerCompany,
- PublicLimitedCompany,
- SectionCompany,
- CompanyServices
+import {
+  DormantCompany,
+  NidhiCompany,
+  OnePersonCompany,
+  PrivateLimitedCompany,
+  ProducerCompany,
+  PublicLimitedCompany,
+  SectionCompany,
+  CompanyServices,
 } from "./Pages/StartYourBusiness/CompanyServices";
 
-import{
+import {
   Fssai,
   Gst,
   IecCode,
@@ -44,8 +44,8 @@ import{
   Tan,
   Trademark,
   StatutoryRegistration,
-  Professional
- } from "./Pages/StartYourBusiness/StatutoryRegistration";
+  Professional,
+} from "./Pages/StartYourBusiness/StatutoryRegistration";
 
 
  import{
@@ -54,9 +54,9 @@ import{
   Partnership,
   Propreitorship,
   Societies,
-  Trust
- } from "./Pages/StartYourBusiness/Incorporation";
- 
+  Trust,
+} from "./Pages/StartYourBusiness/Incorporation";
+
 import LoansCapital from "./Pages/LoansCapital/LoansCapital";
 
 import {
@@ -66,7 +66,7 @@ import {
   MsmeLoans,
   ProjectReportsPreparation,
   TalkToExperts,
-  WorkingCapitalLoans
+  WorkingCapitalLoans,
 } from "./Pages/LoansCapital";
 
 import {
@@ -87,35 +87,35 @@ import {
   InternalAudits,
   StatutoryauditSupport,
   StockAudit,
-  TaxAudit
+  TaxAudit,
 } from "./Pages/AccountsAudit/Audit";
 
-import{
-Accounts,
-AssetsAccounting,
-Bookkeeping,
-HrFunction,
-Payroll,
-Quarterly,
-Receivable,
-RegularTax,
-Secretarial,
-Vendor
+import {
+  Accounts,
+  AssetsAccounting,
+  Bookkeeping,
+  HrFunction,
+  Payroll,
+  Quarterly,
+  Receivable,
+  RegularTax,
+  Secretarial,
+  Vendor,
 } from "./Pages/AccountsAudit/Accounts";
 
 import StatutoryCompliances from "./Pages/StatutoryCompliances";
 import {
-GSTaudits,
-IncomeTaxAssesments,
-Noticehandling,
-Assesments
-} from  "./Pages/StatutoryCompliances/Assesments"
+  GSTaudits,
+  IncomeTaxAssesments,
+  Noticehandling,
+  Assesments,
+} from "./Pages/StatutoryCompliances/Assesments";
 
 import {
   LlpProprietorship,
   RegularCompliance,
   YearlyReturnsfiling,
-  CompanyLawServices
+  CompanyLawServices,
 } from "./Pages/StatutoryCompliances/CompanyLawServices";
 
 import {
@@ -125,38 +125,39 @@ import {
   PropertyTax,
   TaxAuditSupport,
   TdsTcsReturns,
-  TransferPricingAudit} from "./Pages/StatutoryCompliances/DirectTax";
+  TransferPricingAudit,
+} from "./Pages/StatutoryCompliances/DirectTax";
 
-  import {
-     Customs,
-     GSTAdvisory,
-     GSTEInvoice,
-     GSTEwaybill,
-     GSTmonthlyReturnsfiling,
-     GSTYearlyreturns,
-     IECcompliance,
-     IndirectTax
-  } from "./Pages/StatutoryCompliances/IndirectTax";
+import {
+  Customs,
+  GSTAdvisory,
+  GSTEInvoice,
+  GSTEwaybill,
+  GSTmonthlyReturnsfiling,
+  GSTYearlyreturns,
+  IECcompliance,
+  IndirectTax,
+} from "./Pages/StatutoryCompliances/IndirectTax";
 
-  import {
-    ESICompliance,
-    LLCServices,
-    Pfcompliance,
-    ProfessionalTax,
-    Rera,
-    Others
-  } from "./Pages/StatutoryCompliances/Others";
+import {
+  ESICompliance,
+  LLCServices,
+  Pfcompliance,
+  ProfessionalTax,
+  Rera,
+  Others,
+} from "./Pages/StatutoryCompliances/Others";
 
 import BusinessLegalServices from "./Pages/BusinessLegalServices";
-import{
-     BusinessLegalDrafting,
-     CustomerAgreement,
-     CustomerLitigation,
-     JointVenture,
-     LandLitigation,
-     LandTitle,
+import {
+  BusinessLegalDrafting,
+  CustomerAgreement,
+  CustomerLitigation,
+  JointVenture,
+  LandLitigation,
+  LandTitle,
 } from "./Pages/BusinessLegalServices";
-import PersonalService from "./Pages/PersonalService"
+import PersonalService from "./Pages/PersonalService";
 
 import {
   Investment,
@@ -172,7 +173,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
 import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
-
 
 const Base = () => {
   return (
@@ -252,23 +252,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/loanscapital",
-        element: <LoansCapital/>,
+        element: <LoansCapital />,
       },
       {
         path: "/businesstermloans",
-        element: < BusinessTermLoans/>,
+        element: <BusinessTermLoans />,
       },
       {
         path: "/talktoexperts",
-        element: < TalkToExperts/>,
+        element: <TalkToExperts />,
       },
       {
         path: "/loandocumentationsupport",
-        element: <LoanDocumentationSupport/>,
+        element: <LoanDocumentationSupport />,
       },
       {
-         path: "/loansassets",
-         element:<LoanAssets/>
+        path: "/loansassets",
+        element: <LoanAssets />,
       },
       {
         path: "/msmeloans",
@@ -297,7 +297,7 @@ const router = createBrowserRouter([
       {
         path: "/workingcapital",
         element: <WorkingCapital />,
-      }, 
+      },
       {
         path: "/workingcapitalloans",
         element: <WorkingCapitalLoans />,
@@ -352,7 +352,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/businesslegaldrafting",
-        element: <BusinessLegalDrafting/>,
+        element: <BusinessLegalDrafting />,
       },
       {
         path: "/customeragreement",
@@ -364,7 +364,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/jointventure",
-       element: <JointVenture />,
+        element: <JointVenture />,
       },
       {
         path: "/landlitigation",
@@ -384,295 +384,292 @@ const router = createBrowserRouter([
       },
       {
         path: "/onepersoncompany",
-        element: <OnePersonCompany/>,
+        element: <OnePersonCompany />,
       },
       {
         path: "/privatelimitedcompany",
-        element: <PrivateLimitedCompany/>,
+        element: <PrivateLimitedCompany />,
       },
       {
         path: "/producercompany",
-        element: <ProducerCompany/>,
+        element: <ProducerCompany />,
       },
       {
         path: "/Publiclimitedcompany",
-        element: <PublicLimitedCompany/>,
+        element: <PublicLimitedCompany />,
       },
       {
         path: "/sectioncompany",
-        element: <SectionCompany/>,
+        element: <SectionCompany />,
       },
       {
         path: "/startyourbusiness",
-        element: <StartYourBusiness/>,
+        element: <StartYourBusiness />,
       },
       {
         path: "/companyservices",
-        element: <CompanyServices/>,
+        element: <CompanyServices />,
       },
       {
         path: "/trademark",
-        element: <Trademark/>,
+        element: <Trademark />,
       },
       {
         path: "/tan",
-        element: <Tan/>,
+        element: <Tan />,
       },
       {
         path: "/statutoryregistration",
-        element:<StatutoryRegistration/>,
+        element: <StatutoryRegistration />,
       },
       {
         path: "/pf",
-        element: <Pf/>,
+        element: <Pf />,
       },
       {
         path: "/patent",
-        element: <Patent/>,
+        element: <Patent />,
       },
       {
         path: "/pan",
-        element: <Pan/>,
+        element: <Pan />,
       },
       {
         path: "/Msme",
-        element: <Msme/>,
+        element: <Msme />,
       },
       {
         path: "/ieccode",
-        element: <IecCode/>,
+        element: <IecCode />,
       },
       {
         path: "/gst",
-        element: <Gst/>,
+        element: <Gst />,
       },
       {
         path: "/fssai",
-        element: <Fssai/>,
+        element: <Fssai />,
       },
       {
         path: "/llp",
-        element: <Llp/>,
+        element: <Llp />,
       },
       {
         path: "/professional",
-        element: <Professional/>,
+        element: <Professional />,
       },
       {
         path: "/partnership",
-        element:<Partnership/>,
+        element: <Partnership />,
       },
       {
         path: "/propreitorship",
-        element: <Propreitorship/>,
+        element: <Propreitorship />,
       },
       {
         path: "/societies",
-        element: <Societies/>,
+        element: <Societies />,
       },
       {
         path: "/trust",
-        element: <Trust/>,
+        element: <Trust />,
       },
       {
-        path:"/incorporation",
-        element:<InCorporation/>
+        path: "/incorporation",
+        element: <Incorporation />,
       },
       {
-        path:"/assetsaccounting",
-        element:<AssetsAccounting/>
+        path: "/assetsaccounting",
+        element: <AssetsAccounting />,
       },
       {
         path: "/bookkeeping",
-        element: <Bookkeeping/>,
+        element: <Bookkeeping />,
       },
       {
         path: "/hrfunction",
-        element: <HrFunction/>,
+        element: <HrFunction />,
       },
       {
         path: "/Payroll",
-        element: <Payroll/>,
+        element: <Payroll />,
       },
       {
         path: "/quarterly",
-        element: <Quarterly/>,
+        element: <Quarterly />,
       },
       {
         path: "/Receivable",
-        element: <Receivable/>,
+        element: <Receivable />,
       },
       {
         path: "/regulartax",
-        element: <RegularTax/>,
+        element: <RegularTax />,
       },
       {
         path: "/secretarial",
-        element: <Secretarial/>,
+        element: <Secretarial />,
       },
       {
         path: "/vendor",
-        element: <Vendor/>,
+        element: <Vendor />,
       },
       {
         path: "/accountsaudit",
-        element: <AccountsAudit/>,
+        element: <AccountsAudit />,
       },
       {
         path: "/accounts",
-        element: <Accounts/>,
+        element: <Accounts />,
       },
       {
         path: "/audit",
-        element: <Audit/>,
+        element: <Audit />,
       },
       {
         path: "/forensicaudits",
-        element: <ForensicAudits/>,
+        element: <ForensicAudits />,
       },
       {
         path: "/internalaudits",
-        element: <InternalAudits/>,
+        element: <InternalAudits />,
       },
       {
         path: "/statutoryauditsupport",
-        element: < StatutoryauditSupport/>,
+        element: <StatutoryauditSupport />,
       },
       {
         path: "/stockaudit",
-        element: <StockAudit/>,
+        element: <StockAudit />,
       },
       {
         path: "/taxaudit",
-        element: <TaxAudit/>,
+        element: <TaxAudit />,
       },
       {
         path: "/statutorycompliances",
-        element: <StatutoryCompliances/>,
+        element: <StatutoryCompliances />,
       },
       {
         path: "/gstaudits",
-        element: <GSTaudits/>,
+        element: <GSTaudits />,
       },
       {
         path: "/incometaxassesments",
-        element: <IncomeTaxAssesments/>,
+        element: <IncomeTaxAssesments />,
       },
       {
         path: "/noticehandling",
-        element: <Noticehandling/>,
+        element: <Noticehandling />,
       },
       {
         path: "/llpproprietorship",
-        element: <LlpProprietorship/>,
+        element: <LlpProprietorship />,
       },
       {
         path: "/regularcompliance",
-        element: <RegularCompliance/>,
+        element: <RegularCompliance />,
       },
       {
         path: "/yearlyreturnsfiling",
-        element: <YearlyReturnsfiling/>,
+        element: <YearlyReturnsfiling />,
       },
       {
         path: "/advancetax",
-        element: <AdvanceTax/>,
+        element: <AdvanceTax />,
       },
       {
         path: "/directtax",
-        element: <DirectTax/>,
+        element: <DirectTax />,
       },
       {
         path: "/incometaxreturns",
-        element: <IncomeTaxReturns/>,
+        element: <IncomeTaxReturns />,
       },
       {
         path: "/propertytax",
-        element: <PropertyTax/>,
+        element: <PropertyTax />,
       },
       {
         path: "/taxauditsupport",
-        element: <TaxAuditSupport/>,
+        element: <TaxAuditSupport />,
       },
       {
         path: "/tdstcsReturns",
-        element: <TdsTcsReturns/>,
+        element: <TdsTcsReturns />,
       },
       {
         path: "/transferpricingaudit",
-        element: <TransferPricingAudit/>,
+        element: <TransferPricingAudit />,
       },
       {
         path: "/customs",
-        element: <Customs/>,
+        element: <Customs />,
       },
       {
         path: "/gstadvisory",
-        element: <GSTAdvisory/>,
+        element: <GSTAdvisory />,
       },
       {
         path: "/gsteinvoice",
-        element: <GSTEInvoice/>,
+        element: <GSTEInvoice />,
       },
       {
         path: "/gstewaybill",
-        element: <GSTEwaybill/>,
+        element: <GSTEwaybill />,
       },
       {
         path: "/gstmonthlyreturnsfiling",
-        element: <GSTmonthlyReturnsfiling/>,
+        element: <GSTmonthlyReturnsfiling />,
       },
       {
         path: "/gstyearlyreturns",
-        element: <GSTYearlyreturns/>,
+        element: <GSTYearlyreturns />,
       },
       {
         path: "/ieccompliance",
-        element: <IECcompliance/>,
+        element: <IECcompliance />,
       },
       {
         path: "/ESICompliance",
-        element: <ESICompliance/>,
+        element: <ESICompliance />,
       },
       {
         path: "/llcservices",
-        element: <LLCServices/>,
+        element: <LLCServices />,
       },
       {
         path: "/pfcompliance",
-        element: <Pfcompliance/>,
+        element: <Pfcompliance />,
       },
       {
         path: "/professionaltax",
-        element: <ProfessionalTax/>,
+        element: <ProfessionalTax />,
       },
       {
         path: "/rera",
-        element: <Rera/>,
+        element: <Rera />,
       },
       {
         path: "/assesments",
-        element: <Assesments/>,
+        element: <Assesments />,
       },
       {
-          path: "/indirecttax",
-          element: <IndirectTax/>,
+        path: "/indirecttax",
+        element: <IndirectTax />,
       },
       {
         path: "/directtax",
-        element: <DirectTax/>,
+        element: <DirectTax />,
       },
       {
         path: "/companylawservices",
-        element: <CompanyLawServices/>,
+        element: <CompanyLawServices />,
       },
       {
         path: "/others",
-        element: <Others/>,
+        element: <Others />,
       },
-      
-
-
     ],
   },
 ]);

@@ -18,7 +18,7 @@ export default function Dropdown({
   subHeaders,
   isNested = false,
 }) {
-  const x = useCallback(getShortForm);
+  const x = useCallback(getShortForm, []);
   const initialNavbarState = useMemo(
     () =>
       subHeaders.reduce((init, subHeader) => {
@@ -33,6 +33,16 @@ export default function Dropdown({
     [subHeaders]
   );
   const [menu, setMenu] = useState(initialNavbarState);
+  const count = useMemo(
+    () =>
+      subHeaders.reduce((c, subHeader) => {
+        if (subHeader.subHeaders) {
+          c += 1;
+        }
+        return c;
+      }, 0),
+    [subHeaders]
+  );
   return (
     <div className="dropdown_text navbar_text_mobile">
       <div onClick={setIsActive} className="dropdown_link">
@@ -53,7 +63,7 @@ export default function Dropdown({
             : "dropdown"
         }
       >
-        <ul className="dropdown_list">
+        <ul className={`${count > 1 ? "dropdown_list_flex" : "dropdown_list"}`}>
           {subHeaders.map((subHeader) => {
             if (subHeader.subHeaders) {
               return (
