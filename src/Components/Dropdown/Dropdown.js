@@ -18,7 +18,7 @@ export default function Dropdown({
   subHeaders,
   isNested = false,
 }) {
-  const x = useCallback(getShortForm);
+  const x = useCallback(getShortForm, []);
   const initialNavbarState = useMemo(
     () =>
       subHeaders.reduce((init, subHeader) => {

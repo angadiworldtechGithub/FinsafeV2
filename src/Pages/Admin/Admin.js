@@ -35,7 +35,7 @@ export default function Admin() {
         querySnapshot.forEach((doc) => {
           userFiles.push({ ...doc.data() });
         });
-        setUserFiles(userFiles);
+        setUserFiles([...userFiles]);
       }
     );
   }, []);
