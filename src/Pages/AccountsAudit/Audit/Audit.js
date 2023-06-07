@@ -1,9 +1,9 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function Bookkeeping() {
+export default function Audit() {
   return (
     <ServiceComp
-      title="Bookkeeping"
+      title="Audit"
       description= " Finsafe Solutions can help individuals with various aspects of estate management :"
       bulletPoints={[
         { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},

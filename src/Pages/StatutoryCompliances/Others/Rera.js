@@ -1,13 +1,12 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function Bookkeeping() {
+export default function Rera() {
   return (
     <ServiceComp
-      title="Bookkeeping"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="RERA Compliance"
+      description= "Finsafe Solutions helps real estate developers and agents comply with the regulations set forth by the Real Estate Regulatory Authority. This includes assistance in registering projects, filing necessary documents, and ensuring compliance with RERA guidelines."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+        
       ]}
       inputList={[
         {

@@ -1,13 +1,12 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function Bookkeeping() {
+export default function TaxAuditSupport() {
   return (
     <ServiceComp
-      title="Bookkeeping"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Tax Audit Support"
+      description= "In case of tax audits initiated by tax authorities, Finsafe Solutions provides support and assistance to individuals and businesses in responding to audit queries, preparing necessary documentation, and ensuring compliance with tax audit requirements."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+        
       ]}
       inputList={[
         {

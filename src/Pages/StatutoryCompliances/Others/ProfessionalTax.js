@@ -1,13 +1,11 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function Bookkeeping() {
+export default function ProfessionalTax() {
   return (
     <ServiceComp
-      title="Bookkeeping"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="  Professional Tax"
+      description= "Finsafe Solutions offers services related to Professional Tax compliance. Professional Tax is a state-level tax imposed on individuals engaged in certain professions, trades, or employment. The company assists in registration, computation of tax liabilities, filing returns, and ensuring compliance with Professional Tax laws."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

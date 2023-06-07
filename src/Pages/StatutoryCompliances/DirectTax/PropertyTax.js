@@ -1,13 +1,12 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function Bookkeeping() {
+export default function PropertyTax() {
   return (
     <ServiceComp
-      title="Bookkeeping"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Property Tax"
+      description= " Finsafe Solutions assists individuals and property owners in understanding and managing their property tax obligations, including computation and payment of property taxes."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+        
       ]}
       inputList={[
         {

@@ -1,13 +1,12 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function Bookkeeping() {
+export default function Customs() {
   return (
     <ServiceComp
-      title="Bookkeeping"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Customs and Import-Export Code (IEC) Compliance"
+      description= " Finsafe Solutions assists businesses in complying with customs regulations and requirements. They help in matters related to customs duties, import/export documentation, and obtaining and maintaining an Import-Export Code (IEC) from the relevant authorities."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+        
       ]}
       inputList={[
         {

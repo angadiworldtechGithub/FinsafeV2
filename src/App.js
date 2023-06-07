@@ -6,6 +6,7 @@ import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
 import CfoServices from "./Pages/CfoServices/CfoServices";
+
 import {
   Bankingrelationship,
   BusinessTransaction,
@@ -79,18 +80,73 @@ import {
   LegalAdvisor,
 } from "./Pages/TakeExpertAdvice";
 
+import AccountsAudit from "./Pages/AccountsAudit";
+
+import {
+  Audit,
+  ForensicAudits,
+  InternalAudits,
+  StatutoryauditSupport,
+  StockAudit,
+  TaxAudit
+} from "./Pages/AccountsAudit/Audit";
+
 import{
+Accounts,
 AssetsAccounting,
 Bookkeeping,
 HrFunction,
 Payroll,
 Quarterly,
 Receivable,
-Regulartax,
+RegularTax,
 Secretarial,
 Vendor
-} from "./Pages/AccountsAudit";
+} from "./Pages/AccountsAudit/Accounts";
 
+import StatutoryCompliances from "./Pages/StatutoryCompliances";
+import {
+GSTaudits,
+IncomeTaxAssesments,
+Noticehandling,
+Assesments
+} from  "./Pages/StatutoryCompliances/Assesments"
+
+import {
+  LlpProprietorship,
+  RegularCompliance,
+  YearlyReturnsfiling,
+  CompanyLawServices
+} from "./Pages/StatutoryCompliances/CompanyLawServices";
+
+import {
+  DirectTax,
+  AdvanceTax,
+  IncomeTaxReturns,
+  PropertyTax,
+  TaxAuditSupport,
+  TdsTcsReturns,
+  TransferPricingAudit} from "./Pages/StatutoryCompliances/DirectTax";
+
+  import {
+     Customs,
+     GSTAdvisory,
+     GSTEInvoice,
+     GSTEwaybill,
+     GSTmonthlyReturnsfiling,
+     GSTYearlyreturns,
+     IECcompliance,
+     IndirectTax
+  } from "./Pages/StatutoryCompliances/IndirectTax";
+
+  import {
+    ESICompliance,
+    LLCServices,
+    Pfcompliance,
+    ProfessionalTax,
+    Rera,
+    Others
+  } from "./Pages/StatutoryCompliances/Others";
 
 import BusinessLegalServices from "./Pages/BusinessLegalServices";
 import{
@@ -432,7 +488,7 @@ const router = createBrowserRouter([
         element:<AssetsAccounting/>
       },
       {
-        path: "/bookkeepting",
+        path: "/bookkeeping",
         element: <Bookkeeping/>,
       },
       {
@@ -452,8 +508,8 @@ const router = createBrowserRouter([
         element: <Receivable/>,
       },
       {
-        path: "/Regulartax",
-        element: <Regulartax/>,
+        path: "/regulartax",
+        element: <RegularTax/>,
       },
       {
         path: "/secretarial",
@@ -463,6 +519,165 @@ const router = createBrowserRouter([
         path: "/vendor",
         element: <Vendor/>,
       },
+      {
+        path: "/accountsaudit",
+        element: <AccountsAudit/>,
+      },
+      {
+        path: "/accounts",
+        element: <Accounts/>,
+      },
+      {
+        path: "/audit",
+        element: <Audit/>,
+      },
+      {
+        path: "/forensicaudits",
+        element: <ForensicAudits/>,
+      },
+      {
+        path: "/internalaudits",
+        element: <InternalAudits/>,
+      },
+      {
+        path: "/statutoryauditsupport",
+        element: < StatutoryauditSupport/>,
+      },
+      {
+        path: "/stockaudit",
+        element: <StockAudit/>,
+      },
+      {
+        path: "/taxaudit",
+        element: <TaxAudit/>,
+      },
+      {
+        path: "/statutorycompliances",
+        element: <StatutoryCompliances/>,
+      },
+      {
+        path: "/gstaudits",
+        element: <GSTaudits/>,
+      },
+      {
+        path: "/incometaxassesments",
+        element: <IncomeTaxAssesments/>,
+      },
+      {
+        path: "/noticehandling",
+        element: <Noticehandling/>,
+      },
+      {
+        path: "/llpproprietorship",
+        element: <LlpProprietorship/>,
+      },
+      {
+        path: "/regularcompliance",
+        element: <RegularCompliance/>,
+      },
+      {
+        path: "/yearlyreturnsfiling",
+        element: <YearlyReturnsfiling/>,
+      },
+      {
+        path: "/advancetax",
+        element: <AdvanceTax/>,
+      },
+      {
+        path: "/directtax",
+        element: <DirectTax/>,
+      },
+      {
+        path: "/incometaxreturns",
+        element: <IncomeTaxReturns/>,
+      },
+      {
+        path: "/propertytax",
+        element: <PropertyTax/>,
+      },
+      {
+        path: "/taxauditsupport",
+        element: <TaxAuditSupport/>,
+      },
+      {
+        path: "/tdstcsReturns",
+        element: <TdsTcsReturns/>,
+      },
+      {
+        path: "/transferpricingaudit",
+        element: <TransferPricingAudit/>,
+      },
+      {
+        path: "/customs",
+        element: <Customs/>,
+      },
+      {
+        path: "/gstadvisory",
+        element: <GSTAdvisory/>,
+      },
+      {
+        path: "/gsteinvoice",
+        element: <GSTEInvoice/>,
+      },
+      {
+        path: "/gstewaybill",
+        element: <GSTEwaybill/>,
+      },
+      {
+        path: "/gstmonthlyreturnsfiling",
+        element: <GSTmonthlyReturnsfiling/>,
+      },
+      {
+        path: "/gstyearlyreturns",
+        element: <GSTYearlyreturns/>,
+      },
+      {
+        path: "/ieccompliance",
+        element: <IECcompliance/>,
+      },
+      {
+        path: "/ESICompliance",
+        element: <ESICompliance/>,
+      },
+      {
+        path: "/llcservices",
+        element: <LLCServices/>,
+      },
+      {
+        path: "/pfcompliance",
+        element: <Pfcompliance/>,
+      },
+      {
+        path: "/professionaltax",
+        element: <ProfessionalTax/>,
+      },
+      {
+        path: "/rera",
+        element: <Rera/>,
+      },
+      {
+        path: "/assesments",
+        element: <Assesments/>,
+      },
+      {
+          path: "/indirecttax",
+          element: <IndirectTax/>,
+      },
+      {
+        path: "/directtax",
+        element: <DirectTax/>,
+      },
+      {
+        path: "/companylawservices",
+        element: <CompanyLawServices/>,
+      },
+      {
+        path: "/others",
+        element: <Others/>,
+      },
+      
+
+
     ],
   },
 ]);

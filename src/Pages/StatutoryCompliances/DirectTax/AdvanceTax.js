@@ -1,13 +1,12 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function Bookkeeping() {
+export default function AdvanceTax() {
   return (
     <ServiceComp
-      title="Bookkeeping"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
+      title="Advance Tax"
+      description= " Finsafe Solutions provides guidance on advance tax, which is the payment of income tax in installments during the financial year, based on the estimated income. They assist individuals and businesses in calculating the advance tax liability and making timely payments."
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+        
       ]}
       inputList={[
         {
