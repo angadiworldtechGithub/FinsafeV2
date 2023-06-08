@@ -49,7 +49,7 @@ import {
 
 
  import{
-  InCorporation,
+  Incorporation,
   Llp,
   Partnership,
   Propreitorship,

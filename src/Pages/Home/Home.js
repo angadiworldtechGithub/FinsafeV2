@@ -161,6 +161,8 @@ export default function Home() {
           );
         })}
       </Splide>
+
+      <h1> Our Popular Services</h1>
       <Splide
         options={{
           perPage: 4,
