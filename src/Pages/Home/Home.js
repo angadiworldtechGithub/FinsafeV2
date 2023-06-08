@@ -74,6 +74,7 @@ const SERVICE_CARDS_1 = [
   {
     title: "Business Legal Services",
     icon: GrBusinessService,
+    link: "/businesslegalservices",
   },
   {
     title: "CFO Services",
@@ -182,7 +183,11 @@ export default function Home() {
         {SERVICE_CARDS_1.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>
-              <ServiceCard title={serviceCard.title} ICON={serviceCard.icon} />
+              <ServiceCard
+                title={serviceCard.title}
+                ICON={serviceCard.icon}
+                link={serviceCard.link}
+              />
             </SplideSlide>
           );
         })}
@@ -214,7 +219,11 @@ export default function Home() {
         {SERVICE_CARDS_2.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>
-              <ServiceCard title={serviceCard.title} ICON={serviceCard.icon} />
+              <ServiceCard
+                title={serviceCard.title}
+                ICON={serviceCard.icon}
+                link={serviceCard.link}
+              />
             </SplideSlide>
           );
         })}
