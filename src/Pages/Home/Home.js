@@ -74,7 +74,7 @@ const SERVICE_CARDS_1 = [
   {
     title: "Start Your Business",
     icon: GrBusinessService,
-    Link:"/startyourbusiness"
+    link: "/businesslegalservices",
   },
   {
     title: "Get Expert Financial advice",
@@ -183,7 +183,11 @@ export default function Home() {
         {SERVICE_CARDS_1.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>
-              <ServiceCard title={serviceCard.title} ICON={serviceCard.icon} />
+              <ServiceCard
+                title={serviceCard.title}
+                ICON={serviceCard.icon}
+                link={serviceCard.link}
+              />
             </SplideSlide>
           );
         })}
@@ -217,7 +221,11 @@ export default function Home() {
         {SERVICE_CARDS_2.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>
-              <ServiceCard title={serviceCard.title} ICON={serviceCard.icon} />
+              <ServiceCard
+                title={serviceCard.title}
+                ICON={serviceCard.icon}
+                link={serviceCard.link}
+              />
             </SplideSlide>
           );
         })}
