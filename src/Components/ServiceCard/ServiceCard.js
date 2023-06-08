@@ -5,7 +5,7 @@ export default function ServiceCard({ title, ICON, link }) {
   return (
     <div className="card">
       <h2>{title}</h2>
-      <ICON />
+      <ICON className="middle_icon" />
       <div className="right_icon_box">
         <Link to={link}>
           <AiOutlineDoubleRight className="right_icon" />

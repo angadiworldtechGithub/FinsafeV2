@@ -132,8 +132,14 @@ function Navbar() {
                 link: "/companyservices",
                 title: "Company Services",
                 subHeaders: [
-                  { link: "/privatelimitedcompany", title: "Private Limited Company" },
-                  { link: "/publiclimitedcompany", title: "Public Limited Company" },
+                  {
+                    link: "/privatelimitedcompany",
+                    title: "Private Limited Company",
+                  },
+                  {
+                    link: "/publiclimitedcompany",
+                    title: "Public Limited Company",
+                  },
                   { link: "/sectioncompany", title: "Section 8(NGO) Company" },
                   { link: "/onepersoncompany", title: "One Person Company" },
                   { link: "/nidhicompany", title: "Nidhi Company" },
@@ -177,7 +183,98 @@ function Navbar() {
             ]}
           />
 
-         
+          <Dropdown
+            isActive={menu["staCom"]}
+            setIsActive={() => {
+              setMenu({
+                ...INITIAL_NAVBAR_STATE,
+                staCom: !menu["staCom"],
+              });
+            }}
+            headerName="Statutory Compliances"
+            headerLink="/statutorycompliances"
+            subHeaders={[
+              {
+                link: "/directtax",
+                title: "Direct Tax",
+                subHeaders: [
+                  { link: "/incometaxreturns", title: "Income Tax returns" },
+                  { link: "/taxauditsupport", title: "Tax Audit Support" },
+                  {
+                    link: "/transferpricingaudit",
+                    title: "Transfer Pricing Audit",
+                  },
+                  { link: "/propertytax", title: "Property Tax" },
+                  { link: "/tdstcsreturns", title: "TDS & TCS Returns" },
+                  { link: "/advancetax ", title: "Advance tax" },
+                ],
+              },
+              {
+                link: "/indirecttax",
+                title: "Indirect Tax",
+                subHeaders: [
+                  { link: "/gstadvisory", title: "GST Advisory" },
+                  {
+                    link: "/gstmonthlyreturnsfiling",
+                    title: "GST monthly Returns filing",
+                  },
+                  {
+                    link: "/gstYearlyreturns",
+                    title: "GST Yearly returns & audits",
+                  },
+                  { link: "/customs", title: "Customs" },
+                  { link: "/ieccompliance", title: "IEC compliance" },
+                  { link: "/gstEwaybill", title: "GST E-way bill" },
+                  { link: "/gsteinvoice", title: "GST E-Invoice" },
+                ],
+              },
+              {
+                link: "/companylawservices",
+                title: "Company Law Services",
+                subHeaders: [
+                  {
+                    link: "/yearlyreturnsfiling",
+                    title: "Yearly Returns filing",
+                  },
+                  { link: "/regularcompliance", title: "Regular Compliance" },
+                  {
+                    link: "/llpProprietorship",
+                    title: "LLP/Proprietorship to Company Conversion",
+                  },
+                ],
+              },
+              {
+                link: "/assesments",
+                title: "Assesments & Litigations",
+                subHeaders: [
+                  { link: "/gstaudits", title: "GST audits" },
+                  {
+                    link: "/incometaxassesments",
+                    title: "Income Tax Assesments",
+                  },
+                  {
+                    link: "/noticehandling",
+                    title: "Notice handling from GST & Income tax",
+                  },
+                ],
+              },
+              {
+                link: "/rera",
+                title: "Others",
+                subHeaders: [
+                  { link: "/rera", title: "RERA" },
+                  {
+                    link: "/llcservices",
+                    title: "Labour Law compliance services",
+                  },
+                  { link: "/pfcompliance", title: "PF Compliance" },
+                  { link: "/esicompliance", title: "ESI Compliance" },
+                  { link: "/professionaltax", title: "Professional Tax" },
+                ],
+              },
+            ]}
+          />
+
           <Dropdown
             isActive={menu["accAud"]}
             setIsActive={() => {
@@ -186,7 +283,6 @@ function Navbar() {
                 accAud: !menu["accAud"],
               });
             }}
- 
             headerName="Accounts & Audit"
             headerLink="/accountsaudit"
             subHeaders={[
@@ -194,53 +290,45 @@ function Navbar() {
                 link: "/accounts",
                 title: "Accounts",
                 subHeaders: [
-                  { link: "/bookkeeping", title: "Bookkeeping & Record maintenance" },
-                  { link: "/payroll", title: "Payroll Management"},
+                  {
+                    link: "/bookkeeping",
+                    title: "Bookkeeping & Record maintenance",
+                  },
+                  { link: "/payroll", title: "Payroll Management" },
                   { link: "/vendor", title: "Vendor Payable Management" },
-                  { link: "/receivable", title: "Accounts Receivable Management" },
-                  { link: "/assetsaccounting", title: "Asset Accounting & Management" },
+                  {
+                    link: "/receivable",
+                    title: "Accounts Receivable Management",
+                  },
+                  {
+                    link: "/assetsaccounting",
+                    title: "Asset Accounting & Management",
+                  },
                   { link: "/hrfunction ", title: "HR Function Suppport" },
-                  { link: "/quarterly", title: "Quarterly & Yearly Financials Preparation" },
+                  {
+                    link: "/quarterly",
+                    title: "Quarterly & Yearly Financials Preparation",
+                  },
                   { link: "/regulartax ", title: "Regular Tax returns filing" },
-                  { link: "/secretarial", title: "Company Secretarial Services" },
+                  {
+                    link: "/secretarial",
+                    title: "Company Secretarial Services",
+                  },
                 ],
               },
               {
                 link: "/audit",
                 title: "Audit",
                 subHeaders: [
-                  { link: "/statutoryauditsupport", title: "Statutory audit Support" },
-                  { link: "/taxaudit", title: "Tax Audit Management"},
+                  {
+                    link: "/statutoryauditsupport",
+                    title: "Statutory audit Support",
+                  },
+                  { link: "/taxaudit", title: "Tax Audit Management" },
                   { link: "/internalaudits", title: "Internal Audits" },
                   { link: "/forensicaudits", title: "Forensic Audits" },
                   { link: "/stockaudit", title: "Stock Audit" },
-                ]
-              },
-            ]}
-
-            />
-
-
-          <Dropdown
-            isActive={menu["loanCap"]}
-            setIsActive={() => {
-              setMenu({ ...INITIAL_NAVBAR_STATE, loanCap: !menu["loanCap"] });
-            }}
-            headerName="Loans & Capital"
-            headerLink="/loanscapital"
-            subHeaders={[
-              { link: "/talktoexperts", title: "Talk to Expert" },
-              { link: "/workingcapitalloans", title: "Working Capital Loans" },
-              { link: "/businesstermloans", title: "Business Term Loans" },
-              { link: "/loansassets", title: "Loans on Assets" },
-              { link: "/msmeloans", title: "MSME Loans" },
-              {
-                link: "/projectreportspreparation",
-                title: "Project report preparation",
-              },
-              {
-                link: "/loandocumentationsupport",
-                title: "Loan Documentation Support",
+                ],
               },
             ]}
           />
@@ -277,76 +365,29 @@ function Navbar() {
             ]}
           />
 
-           
           <Dropdown
-            isActive={menu["staCom"]}
+            isActive={menu["loanCap"]}
             setIsActive={() => {
-              setMenu({
-                ...INITIAL_NAVBAR_STATE,
-                staCom: !menu["staCom"],
-              });
+              setMenu({ ...INITIAL_NAVBAR_STATE, loanCap: !menu["loanCap"] });
             }}
- 
-            headerName="Statutory Compliances"
-            headerLink="/statutorycompliances"
+            headerName="Loans & Capital"
+            headerLink="/loanscapital"
             subHeaders={[
+              { link: "/talktoexperts", title: "Talk to Expert" },
+              { link: "/workingcapitalloans", title: "Working Capital Loans" },
+              { link: "/businesstermloans", title: "Business Term Loans" },
+              { link: "/loansassets", title: "Loans on Assets" },
+              { link: "/msmeloans", title: "MSME Loans" },
               {
-                link: "/directtax",
-                title: "Direct Tax",
-                subHeaders: [
-                  { link: "/incometaxreturns", title: "Income Tax returns" },
-                  { link: "/taxauditsupport", title: "Tax Audit Support"},
-                  { link: "/transferpricingaudit", title: "Transfer Pricing Audit" },
-                  { link: "/propertytax", title: "Property Tax" },
-                  { link: "/tdstcsreturns", title: "TDS & TCS Returns" },
-                  { link: "/advancetax ", title: "Advance tax" }
-                ],
+                link: "/projectreportspreparation",
+                title: "Project report preparation",
               },
               {
-                link: "/indirecttax",
-                title: "Indirect Tax",
-                subHeaders: [
-                  { link: "/gstadvisory", title: "GST Advisory" },
-                  { link: "/gstmonthlyreturnsfiling", title: "GST monthly Returns filing"},
-                  { link: "/gstYearlyreturns", title: "GST Yearly returns & audits" },
-                  { link: "/customs", title: "Customs" },
-                  { link: "/ieccompliance", title: "IEC compliance" },
-                  { link: "/gstEwaybill", title: "GST E-way bill"},
-                  { link: "/gsteinvoice", title: "GST E-Invoice" }
-                ]
-              },
-              {
-                link: "/companylawservices",
-                title: "Company Law Services",
-                subHeaders: [
-                  { link: "/yearlyreturnsfiling", title: "Yearly Returns filing" },
-                  { link: "/regularcompliance", title: "Regular Compliance"},
-                  { link: "/llpProprietorship", title: "LLP/Proprietorship to Company Conversion" }
-                ]
-              },
-              {
-                link: "/assesments",
-                title: "Assesments & Litigations",
-                subHeaders: [
-                  { link: "/gstaudits", title: "GST audits" },
-                  { link: "/incometaxassesments", title: "Income Tax Assesments"},
-                  { link: "/noticehandling", title: "Notice handling from GST & Income tax" },
-                ]
-              },
-              {
-                link: "/rera",
-                title: "Others",
-                subHeaders: [
-                  { link: "/rera", title: "RERA" },
-                  { link: "/llcservices", title: "Labour Law compliance services"},
-                  { link: "/pfcompliance", title: "PF Compliance" },
-                  { link: "/esicompliance", title: "ESI Compliance" },
-                  { link: "/professionaltax", title: "Professional Tax" },
-                ]
+                link: "/loandocumentationsupport",
+                title: "Loan Documentation Support",
               },
             ]}
-
-            />
+          />
 
           <Dropdown
             isActive={menu["persServ"]}
