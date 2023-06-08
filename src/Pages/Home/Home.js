@@ -72,35 +72,36 @@ const ProjectList = [
 
 const SERVICE_CARDS_1 = [
   {
-    title: "Business Legal Services",
+    title: "Start Your Business",
     icon: GrBusinessService,
+    Link:"/startyourbusiness"
   },
   {
-    title: "CFO Services",
+    title: "Get Expert Financial advice",
     icon: FcServices,
   },
   {
-    title: "Loans & Capital",
+    title: "Raise Capital - Loans & Equity",
     icon: GrServices,
   },
   {
-    title: "Personal Services",
+    title: "File your Income tax returns",
     icon: FaServicestack,
   },
   {
-    title: "Income Tax",
+    title: "GST compliances",
     icon: GrServicePlay,
   },
   {
-    title: "Working Capital Loans",
+    title: "Personal Financial planner",
     icon: MdMiscellaneousServices,
   },
   {
-    title: "Land title Due diligence",
+    title: "Virtual CFO services",
     icon: MdOutlineHomeRepairService,
   },
   {
-    title: "Business Term Loans",
+    title: " Business Transaction Advisory",
     icon: FcServiceMark,
   },
 ];
@@ -162,7 +163,7 @@ export default function Home() {
         })}
       </Splide>
 
-      <h1> Our Popular Services</h1>
+      <h1><center> Our Popular Services</center></h1>
       <Splide
         options={{
           perPage: 4,
@@ -195,6 +196,8 @@ export default function Home() {
           financial journey.
         </p>
       </div>
+
+      <h1><center>Frequently Used Services</center></h1>
       <Splide
         options={{
           perPage: 4,
