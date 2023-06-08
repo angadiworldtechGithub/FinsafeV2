@@ -24,6 +24,7 @@
     display: none;
   }
 }
+
 .navbar_icon {
   font-size: 30px;
 }
@@ -55,10 +56,12 @@
   text-decoration: none;
   list-style-type: none;
 }
+
 .icon {
   position: relative;
   top: 3px;
 }
+
 .dropdown_list {
   list-style: none;
   padding-left: 15px;
