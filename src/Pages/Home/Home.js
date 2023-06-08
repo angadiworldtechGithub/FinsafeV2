@@ -70,7 +70,7 @@ const ProjectList = [
   },
 ];
 
-const SERVICE_CARDS = [
+const SERVICE_CARDS_1 = [
   {
     title: "Business Legal Services",
     icon: GrBusinessService,
@@ -105,37 +105,37 @@ const SERVICE_CARDS = [
   },
 ];
 
-const SERVICE_CARD = [
+const SERVICE_CARDS_2 = [
   {
-    title: "test3",
+    title: "Test2",
     icon: GrBusinessService,
   },
   {
-    title: "test4",
+    title: "Test3",
     icon: FcServices,
   },
   {
-    title: "test3",
+    title: "Test3",
     icon: GrServices,
   },
   {
-    title: "test4",
+    title: "Test3",
     icon: FaServicestack,
   },
   {
-    title: "test3",
+    title: "Test3",
     icon: GrServicePlay,
   },
   {
-    title: "test4",
+    title: "Test3",
     icon: MdMiscellaneousServices,
   },
   {
-    title: "test3",
+    title: "Test3",
     icon: MdOutlineHomeRepairService,
   },
   {
-    title: "test4",
+    title: "Test3",
     icon: FcServiceMark,
   },
 ];
@@ -177,8 +177,7 @@ export default function Home() {
           },
         }}
       >
-        {/* Add Breakpoints to the perPage property */}
-        {SERVICE_CARDS.map((serviceCard) => {
+        {SERVICE_CARDS_1.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>
               <ServiceCard title={serviceCard.title} ICON={serviceCard.icon} />
@@ -194,6 +193,30 @@ export default function Home() {
           financial journey.
         </p>
       </div>
+      <Splide
+        options={{
+          perPage: 4,
+          breakpoints: {
+            500: {
+              perPage: 1,
+            },
+            840: {
+              perPage: 2,
+            },
+            1000: {
+              perPage: 3,
+            },
+          },
+        }}
+      >
+        {SERVICE_CARDS_2.map((serviceCard) => {
+          return (
+            <SplideSlide key={shortid.generate()}>
+              <ServiceCard title={serviceCard.title} ICON={serviceCard.icon} />
+            </SplideSlide>
+          );
+        })}
+      </Splide>
 
       {/*cilent silder*/}
     </>

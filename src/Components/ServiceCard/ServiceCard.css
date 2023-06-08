@@ -1,7 +1,7 @@
 .card {
   position: relative;
   text-align: center;
-  background: linear-gradient(to right,#BB710D,#CC4922);
+  background: linear-gradient(to right, #bb710d, #cc4922);
   color: #fff;
   width: 85%;
   height: 200px;
@@ -35,4 +35,8 @@
   position: absolute;
   bottom: 30px;
   left: 40%;
+}
+
+.middle_icon {
+  font-size: 45px;
 }
