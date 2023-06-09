@@ -115,27 +115,27 @@ const SERVICE_CARDS_1 = [
 
 const SERVICE_CARDS_2 = [
   {
-    title: "Test2",
+    title: "Loan Documentation Support",
     icon: GrBusinessService,
     link: "/businesslegalservices",
   },
   {
-    title: "Test3",
+    title: "Joint Ventures",
     icon: FcServices,
     link: "/businesslegalservices",
   },
   {
-    title: "Test3",
+    title: "Investment planning",
     icon: GrServices,
     link: "/businesslegalservices",
   },
   {
-    title: "Test3",
+    title: "Payroll Management",
     icon: FaServicestack,
     link: "/businesslegalservices",
   },
   {
-    title: "Test3",
+    title: "GST E-Way Bill",
     icon: GrServicePlay,
     link: "/businesslegalservices",
   },
