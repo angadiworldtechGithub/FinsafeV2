@@ -29,9 +29,9 @@ export default function FileUpload({
           )}
         </ul>
       </FileDrop>
-      <button className="upload_button" onClick={onUpload}>
+      <button className="upload_button" onClick={onUpload}><b>
         {loading ? <AiOutlineLoading className="loading" /> : "Upload"}
-      </button>
+        </b> </button>
     </div>
   );
 }

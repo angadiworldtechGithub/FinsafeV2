@@ -136,21 +136,23 @@ export default function Admin() {
 
   return (
     <div className="admin_container">
-      <h1>Admin Page</h1>
-      <p>User Email</p>
-      <input
+     <div className="admin_text">
+      <h1 style={{color:"#072f5f"}}>Admin Page</h1>
+      <p><b>Enter User Email</b></p>
+      <input style={{background:"#e6e6e6"}}
         className="auto_align admin_input"
         type="email"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
       ></input>
-      <FileUpload
+      <FileUpload 
         className="auto_align"
         onDrop={onDrop}
         onUpload={onUpload}
         filePreviews={filePreviews}
         loading={isUploading}
       />
+      </div>
       <h2>User Docs List</h2>
       <table className="auto_align">
         <thead>
