@@ -108,7 +108,7 @@ export default function Dashboard() {
   }));
 
   const downloadAllFiles = () => {
-    files.map((userFile) => window.open(userFile.fileDownloadUrl));
+    documents.map((userFile) => window.open(userFile.fileDownloadUrl));
   };
 
   return (

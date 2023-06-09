@@ -25,7 +25,7 @@ export default function FileUpload({
         onChange={onFileInputChange}
         ref={fileInputRef}
         type="file"
-        className="hidden"
+        style={{ display: "none" }}
         multiple
       />
       <FileDrop onDrop={onDrop} onTargetClick={onTargetClick}>
