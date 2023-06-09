@@ -9,7 +9,7 @@
     background: #e6e6e6;
   }
 }
-h1{
+h1 {
   line-height: 35px;
 }
 
@@ -65,28 +65,17 @@ h1{
   color: #000;
   font-size: 20px;
   font-weight: 600;
-  padding:14px 20px;
+  padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 30px;
   cursor: pointer;
 }
 
-/* input[type=submit]:hover {
-      background-color: lightblue;
-      color: black;
-    }*/
-
 .service_label {
-  /* position: absolute; */
-  margin-top: 20px;
-  bottom: 0;
   font-size: 16px;
-  margin-top: -10px;
   margin-bottom: 10px;
   text-align: justify;
-  display: block;
-  z-index: 9999;
 }
 
 .checkbox {
@@ -94,7 +83,6 @@ h1{
   height: 15px !important;
   width: 50px !important;
   accent-color: #072f5f;
-  margin-right: 15px;
 }
 
 .flex-child input {

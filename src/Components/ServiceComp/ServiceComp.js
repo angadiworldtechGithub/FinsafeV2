@@ -1,4 +1,8 @@
 import "./ServiceComp.css";
+import { useState, useContext, useRef } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { firestore } from "../../firebase";
+import { AuthContext } from "../../Context/AuthContext";
 
 export default function ServiceComp({
   title,
@@ -6,6 +10,51 @@ export default function ServiceComp({
   bulletPoints,
   inputList,
 }) {
+  const [inputs, setInputs] = useState(
+    inputList.reduce((initialState, input) => {
+      initialState[input.name] = "";
+      return initialState;
+    }, {})
+  );
+
+  const [submitting, setSubmitting] = useState(false);
+
+  const formRef = useRef(null);
+
+  const { auth } = useContext(AuthContext);
+
+  const onSubmit = (e) => {
+    if (auth) {
+      if (
+        Object.values(formRef.current.elements)
+          .map((input) => input.validity.valid)
+          .every(Boolean)
+      ) {
+        setSubmitting(true);
+        addDoc(collection(firestore, title), {
+          emailAuth: auth.email,
+          ...inputs,
+        })
+          .then((docRef) => {
+            console.log(docRef);
+            alert("Form submitted");
+            setInputs((inputs) => {
+              Object.keys(inputs).forEach((key) => {
+                inputs[key] = "";
+              });
+              return { ...inputs };
+            });
+            setSubmitting(false);
+          })
+          .catch((error) => console.error(error));
+      } else {
+        alert("Form invalid");
+      }
+    } else {
+      alert("Cannot submit without logging in");
+    }
+  };
+
   return (
     <div>
       <div className="flex-container">
@@ -36,7 +85,7 @@ export default function ServiceComp({
           <center>
             <h1>{title}</h1>
           </center>
-          <form action="/">
+          <form ref={formRef}>
             {inputList.map((inputObj) => {
               if (inputObj.elementType === "select") {
                 return (
@@ -46,6 +95,12 @@ export default function ServiceComp({
                     id={inputObj.id}
                     name={inputObj.name}
                     placeholder={inputObj.placeholder}
+                    value={inputs[inputObj.name]}
+                    onChange={(e) => {
+                      setInputs((inputs) => {
+                        return { ...inputs, [inputObj.name]: e.target.value };
+                      });
+                    }}
                   >
                     <option value={inputObj.placeholder}>
                       {inputObj.placeholder}
@@ -63,6 +118,12 @@ export default function ServiceComp({
                     id={inputObj.id}
                     name={inputObj.name}
                     placeholder={inputObj.placeholder}
+                    value={inputs[inputObj.name]}
+                    onChange={(e) => {
+                      setInputs((inputs) => {
+                        return { ...inputs, [inputObj.name]: e.target.value };
+                      });
+                    }}
                   ></input>
                 );
               }
@@ -72,11 +133,14 @@ export default function ServiceComp({
               Finsafe and its representative to contact me with updates and
               notifications via Email, SMS, WhatsApp,and call.
             </label>
-            <center><input
-              className="service_submit"
-              type="submit"
-              value="Submit"
-            ></input>
+            <center>
+              <input
+                className="service_submit"
+                type="button"
+                value={submitting ? "Submitting..." : "Submit"}
+                disabled={submitting}
+                onClick={onSubmit}
+              ></input>
             </center>
           </form>
         </div>
