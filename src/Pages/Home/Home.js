@@ -161,8 +161,8 @@ const SERVICE_CARDS_2 = [
     title: "Trademark/Copyright",
     icon: FcServiceMark,
     link: "/businesslegalservices",
-    color1: "#bb710d",
-    color2: "#cc4922",
+    color1: "#24bf4e",
+    color2: "#2c332e",
   },
 ];
 

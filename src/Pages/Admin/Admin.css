@@ -6,6 +6,7 @@
   text-align: center;
   padding: 20px;
   background-color: #e6e6e6;
+ 
 }
 
 .admin_input {
@@ -30,4 +31,12 @@
 
 .download_all {
   text-decoration: underline;
+}
+.admin_text{
+  background-color: #fff;
+  padding: 20px 20px 20px 20px;
+  border-radius: 30px;
+  width: 50%;
+  margin-left: 25%;
+  border: 4px Solid #072f5f;
 }
