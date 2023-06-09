@@ -6,7 +6,7 @@ import shortid from "shortid";
 
 import { AuthContext } from "../../Context/AuthContext";
 import { firestore } from "../../firebase";
-import { USER_DATA_COLL_NAME } from "../../constants";
+import { USER_DATA_COLL_NAME, ADMIN_EMAILS } from "../../constants";
 
 export default function Dashboard() {
   const { auth } = useContext(AuthContext);
@@ -29,14 +29,15 @@ export default function Dashboard() {
     }
   }, [auth]);
 
-  if (!auth) {
+  if (!auth || (auth && ADMIN_EMAILS.includes(auth.email))) {
     return (
       <div className="dashboard_container">
         <h1>Dashboard</h1>
-        <h1>Please Login To View this page.</h1>
+        <h1>Please Login with a non admin account to View this page.</h1>
       </div>
     );
   }
+
   return (
     <div className="dashboard_container">
       <h1>Dashboard</h1>

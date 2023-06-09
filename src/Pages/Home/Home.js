@@ -74,37 +74,31 @@ const SERVICE_CARDS_1 = [
   {
     title: "Start Your Business",
     icon: GrBusinessService,
-    link: "/startyourbusiness",
+    link: "/businesslegalservices",
   },
   {
     title: "Get Expert Financial advice",
     icon: FcServices,
-    link: "/businesslegalservices",
   },
   {
     title: "Raise Capital - Loans & Equity",
     icon: GrServices,
-    link: "/loanscapital",
   },
   {
     title: "File your Income tax returns",
     icon: FaServicestack,
-    link: "/incometaxreturns",
   },
   {
     title: "GST compliances",
     icon: GrServicePlay,
-    link: "/gst",
   },
   {
     title: "Personal Financial planner",
     icon: MdMiscellaneousServices,
-    link: "/businesslegalservices",
   },
   {
     title: "Virtual CFO services",
     icon: MdOutlineHomeRepairService,
-    link: "/cfoservices",
   },
   {
     title: " Business Transaction Advisory",
@@ -117,42 +111,58 @@ const SERVICE_CARDS_2 = [
   {
     title: "Loan Documentation Support",
     icon: GrBusinessService,
+    color1: "#bb710d",
+    color2: "#cc4922",
     link: "/businesslegalservices",
   },
   {
     title: "Joint Ventures",
     icon: FcServices,
+    color1: "#bb710d",
+    color2: "#cc4922",
     link: "/businesslegalservices",
   },
   {
     title: "Investment planning",
     icon: GrServices,
     link: "/businesslegalservices",
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Payroll Management",
     icon: FaServicestack,
     link: "/businesslegalservices",
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "GST E-Way Bill",
     icon: GrServicePlay,
     link: "/businesslegalservices",
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Investor Relationship Management",
     icon: MdMiscellaneousServices,
     link: "/businesslegalservices",
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Land Title Due Diligence",
     icon: MdOutlineHomeRepairService,
     link: "/businesslegalservices",
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Trademark/Copyright",
     icon: FcServiceMark,
     link: "/businesslegalservices",
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
 ];
 
@@ -178,7 +188,9 @@ export default function Home() {
         })}
       </Splide>
 
-      <h1><center> Our Popular Services</center></h1>
+      <h1>
+        <center> Our Popular Services</center>
+      </h1>
       <Splide
         options={{
           perPage: 4,
@@ -202,6 +214,8 @@ export default function Home() {
                 title={serviceCard.title}
                 ICON={serviceCard.icon}
                 link={serviceCard.link}
+                color1={serviceCard.color1}
+                color2={serviceCard.color2}
               />
             </SplideSlide>
           );
@@ -216,7 +230,9 @@ export default function Home() {
         </p>
       </div>
 
-      <h1><center><u>Frequently Used Services</u></center></h1>
+      <h1>
+        <center>Frequently Used Services</center>
+      </h1>
       <Splide
         options={{
           perPage: 4,
@@ -240,6 +256,8 @@ export default function Home() {
                 title={serviceCard.title}
                 ICON={serviceCard.icon}
                 link={serviceCard.link}
+                color1={serviceCard.color1}
+                color2={serviceCard.color2}
               />
             </SplideSlide>
           );

@@ -23,3 +23,11 @@
     width: 80%;
   }
 }
+
+.download_all:hover {
+  cursor: pointer;
+}
+
+.download_all {
+  text-decoration: underline;
+}
