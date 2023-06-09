@@ -38,28 +38,28 @@ export default function Footer() {
           </h3>
           <ul className="footer_list">
             <li>
-              <Link to="">Take Expert Advice</Link>
+              <Link to="/takeexpertadvice">Take Expert Advice</Link>
             </li>
             <li>
-              <Link to="">Start Your Business</Link>
+              <Link to="/startyourbusiness">Start Your Business</Link>
             </li>
             <li>
-              <Link to="">CFO Services</Link>
+              <Link to="/CfoServices">CFO Services</Link>
             </li>
             <li>
-              <Link to="">Accounts & Audit</Link>
+              <Link to="/accountsaudit">Accounts & Audit</Link>
             </li>
             <li>
-              <Link to="">Loans & Capital</Link>
+              <Link to="/loanscapital">Loans & Capital</Link>
             </li>
             <li>
-              <Link to="">Business Legal Services</Link>
+              <Link to="/businesslegalservices">Business Legal Services</Link>
             </li>
             <li>
-              <Link to="">Statutory Compliances</Link>
+              <Link to="/statutorycompliances">Statutory Compliances</Link>
             </li>
             <li>
-              <Link to=""></Link>Pesonal Services
+              <Link to="/personalservice"></Link>Pesonal Services
             </li>
           </ul>
         </div>
@@ -72,13 +72,13 @@ export default function Footer() {
           </h3>
           <ul className="footer_list">
             <li>
-              <Link to="">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="">About Us</Link>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
-              <Link to="">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -91,10 +91,10 @@ export default function Footer() {
           </h3>
           <ul className="footer_list">
             <li>
-              <Link to="">Privacy Policy</Link>
+              <Link to="/">Privacy Policy</Link>
             </li>
             <li>
-              <Link to="">Terms & Conditions</Link>
+              <Link to="/">Terms & Conditions</Link>
             </li>
           </ul>
         </div>

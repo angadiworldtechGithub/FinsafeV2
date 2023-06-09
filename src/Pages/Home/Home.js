@@ -74,35 +74,42 @@ const SERVICE_CARDS_1 = [
   {
     title: "Start Your Business",
     icon: GrBusinessService,
-    link: "/businesslegalservices",
+    link: "/startyourbusiness",
   },
   {
     title: "Get Expert Financial advice",
     icon: FcServices,
+    link: "/businesslegalservices",
   },
   {
     title: "Raise Capital - Loans & Equity",
     icon: GrServices,
+    link: "/loanscapital",
   },
   {
     title: "File your Income tax returns",
     icon: FaServicestack,
+    link: "/incometaxreturns",
   },
   {
     title: "GST compliances",
     icon: GrServicePlay,
+    link: "/gst",
   },
   {
     title: "Personal Financial planner",
     icon: MdMiscellaneousServices,
+    link: "/businesslegalservices",
   },
   {
     title: "Virtual CFO services",
     icon: MdOutlineHomeRepairService,
+    link: "/cfoservices",
   },
   {
     title: " Business Transaction Advisory",
     icon: FcServiceMark,
+    link: "/BusinessTransaction",
   },
 ];
 
@@ -110,34 +117,42 @@ const SERVICE_CARDS_2 = [
   {
     title: "Test2",
     icon: GrBusinessService,
+    link: "/businesslegalservices",
   },
   {
     title: "Test3",
     icon: FcServices,
+    link: "/businesslegalservices",
   },
   {
     title: "Test3",
     icon: GrServices,
+    link: "/businesslegalservices",
   },
   {
     title: "Test3",
     icon: FaServicestack,
+    link: "/businesslegalservices",
   },
   {
     title: "Test3",
     icon: GrServicePlay,
+    link: "/businesslegalservices",
   },
   {
     title: "Test3",
     icon: MdMiscellaneousServices,
+    link: "/businesslegalservices",
   },
   {
     title: "Test3",
     icon: MdOutlineHomeRepairService,
+    link: "/businesslegalservices",
   },
   {
     title: "Test3",
     icon: FcServiceMark,
+    link: "/businesslegalservices",
   },
 ];
 
@@ -201,7 +216,7 @@ export default function Home() {
         </p>
       </div>
 
-      <h1><center>Frequently Used Services</center></h1>
+      <h1><center><u>Frequently Used Services</u></center></h1>
       <Splide
         options={{
           perPage: 4,
