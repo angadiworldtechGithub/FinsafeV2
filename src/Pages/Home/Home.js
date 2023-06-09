@@ -75,34 +75,50 @@ const SERVICE_CARDS_1 = [
     title: "Start Your Business",
     icon: GrBusinessService,
     link: "/businesslegalservices",
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Get Expert Financial advice",
     icon: FcServices,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Raise Capital - Loans & Equity",
     icon: GrServices,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "File your Income tax returns",
     icon: FaServicestack,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "GST compliances",
     icon: GrServicePlay,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Personal Financial planner",
     icon: MdMiscellaneousServices,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Virtual CFO services",
     icon: MdOutlineHomeRepairService,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: " Business Transaction Advisory",
     icon: FcServiceMark,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
 ];
 
@@ -110,34 +126,50 @@ const SERVICE_CARDS_2 = [
   {
     title: "Test2",
     icon: GrBusinessService,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Test3",
     icon: FcServices,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Test3",
     icon: GrServices,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Test3",
     icon: FaServicestack,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Test3",
     icon: GrServicePlay,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Test3",
     icon: MdMiscellaneousServices,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Test3",
     icon: MdOutlineHomeRepairService,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
   {
     title: "Test3",
     icon: FcServiceMark,
+    color1: "#bb710d",
+    color2: "#cc4922",
   },
 ];
 
@@ -163,7 +195,9 @@ export default function Home() {
         })}
       </Splide>
 
-      <h1><center> Our Popular Services</center></h1>
+      <h1>
+        <center> Our Popular Services</center>
+      </h1>
       <Splide
         options={{
           perPage: 4,
@@ -187,6 +221,8 @@ export default function Home() {
                 title={serviceCard.title}
                 ICON={serviceCard.icon}
                 link={serviceCard.link}
+                color1={serviceCard.color1}
+                color2={serviceCard.color2}
               />
             </SplideSlide>
           );
@@ -201,7 +237,9 @@ export default function Home() {
         </p>
       </div>
 
-      <h1><center>Frequently Used Services</center></h1>
+      <h1>
+        <center>Frequently Used Services</center>
+      </h1>
       <Splide
         options={{
           perPage: 4,
@@ -225,6 +263,8 @@ export default function Home() {
                 title={serviceCard.title}
                 ICON={serviceCard.icon}
                 link={serviceCard.link}
+                color1={serviceCard.color1}
+                color2={serviceCard.color2}
               />
             </SplideSlide>
           );
