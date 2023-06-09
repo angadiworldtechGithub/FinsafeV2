@@ -140,17 +140,17 @@ const SERVICE_CARDS_2 = [
     link: "/businesslegalservices",
   },
   {
-    title: "Test3",
+    title: "Investor Relationship Management",
     icon: MdMiscellaneousServices,
     link: "/businesslegalservices",
   },
   {
-    title: "Test3",
+    title: "Land Title Due Diligence",
     icon: MdOutlineHomeRepairService,
     link: "/businesslegalservices",
   },
   {
-    title: "Test3",
+    title: "Trademark/Copyright",
     icon: FcServiceMark,
     link: "/businesslegalservices",
   },
