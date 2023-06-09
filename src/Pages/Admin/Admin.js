@@ -11,7 +11,7 @@ import { storage, firestore } from "../../firebase";
 import { AuthContext } from "../../Context/AuthContext";
 import { USER_DATA_COLL_NAME, ADMIN_EMAILS } from "../../constants";
 
-const validateEmail = (email) => {
+export const validateEmail = (email) => {
   return EmailValidator.validate(email);
 };
 
@@ -69,51 +69,55 @@ export default function Admin() {
 
   const onUpload = () => {
     if (validateEmail(email)) {
-      setIsUploading(true);
-      files.forEach((file) => {
-        const reference = ref(
-          storage,
-          `${file.name.split(".")[0]}_${shortid.generate()}.${
-            file.name.split(".")[1]
-          }`
-        );
-        const metadata = { contentType: file.type };
-        const uploadTask = uploadBytesResumable(reference, file, metadata);
-        // promisify this and wait for all the tasks to be uploaded.
-        uploadTask.on(
-          "state_changed",
-          (snapshot) => {
-            const progress =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log("Upload is " + progress + "% done");
-            switch (snapshot.state) {
-              case "paused":
-                console.log("Upload is paused");
-                break;
-              case "running":
-                console.log("Upload is running");
-                break;
-              default:
-                break;
-            }
-          },
-          (error) => console.error(error),
+      if (files.length) {
+        setIsUploading(true);
+        files.forEach((file) => {
+          const reference = ref(
+            storage,
+            `${file.name.split(".")[0]}_${shortid.generate()}.${
+              file.name.split(".")[1]
+            }`
+          );
+          const metadata = { contentType: file.type };
+          const uploadTask = uploadBytesResumable(reference, file, metadata);
+          // promisify this and wait for all the tasks to be uploaded.
+          uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+              const progress =
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              console.log("Upload is " + progress + "% done");
+              switch (snapshot.state) {
+                case "paused":
+                  console.log("Upload is paused");
+                  break;
+                case "running":
+                  console.log("Upload is running");
+                  break;
+                default:
+                  break;
+              }
+            },
+            (error) => console.error(error),
 
-          () => {
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              alert("Upload Complete");
-              resetPage();
-              addDoc(collection(firestore, USER_DATA_COLL_NAME), {
-                email,
-                fileDownloadUrl: downloadURL,
-                fileName: file.name,
-              })
-                .then((docRef) => console.log(docRef))
-                .catch((error) => console.error(error));
-            });
-          }
-        );
-      });
+            () => {
+              getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                alert("Upload Complete");
+                resetPage();
+                addDoc(collection(firestore, USER_DATA_COLL_NAME), {
+                  email,
+                  fileDownloadUrl: downloadURL,
+                  fileName: file.name,
+                })
+                  .then((docRef) => console.log(docRef))
+                  .catch((error) => console.error(error));
+              });
+            }
+          );
+        });
+      } else {
+        alert("No files added");
+      }
     } else {
       if (email.length) {
         console.info("Invalid Email");

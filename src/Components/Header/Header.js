@@ -22,11 +22,7 @@ const signInClick = (setAuth, setIsClicked) => () => {
     })
     .catch((error) => {
       console.error("Sign In Failed");
-      console.error(
-        error.code,
-        error.message,
-        GoogleAuthProvider.credentialFromError(error)
-      );
+      setIsClicked(false);
     });
 };
 
