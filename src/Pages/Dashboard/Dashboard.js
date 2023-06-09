@@ -33,7 +33,7 @@ export default function Dashboard() {
     return (
       <div className="dashboard_container">
         <h1>Dashboard</h1>
-        <h1>Please Login with a non admin account to View this page.</h1>
+        <h1>Please login with a non admin account to view this page.</h1>
       </div>
     );
   }
