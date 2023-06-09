@@ -9,7 +9,17 @@
   padding: 60px;
   background-color: #e6e6e6;
 }
-
+@media only screen and (max-width: 400px) {
+  .file_drop_box {
+    border: 2px solid black;
+    color: black;
+    border-radius: 30px;
+    overflow: auto;
+    height: auto;
+    width: 10%;
+    background-color: #e6e6e6;
+  }
+}
 .file-drop {
   /* relatively position the container bc the contents are absolute */
   position: relative;
@@ -73,6 +83,23 @@
   box-shadow: 0 0 13px 3px #ff6e40;
 }
 
+@media only screen and (max-width: 400px) {
+  .upload_button {
+    background-color: #072f5f; /* Green */
+    border: 5px solid #072f5f;
+    color: hsl(0, 0%, 100%);
+    padding: 6px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+}
 .upload_button {
   background-color: #072f5f; /* Green */
   border: 5px solid #072f5f;
@@ -87,6 +114,7 @@
   cursor: pointer;
   border-radius: 20px;
 }
+
 
 .upload_button:hover {
   background-color: white;
