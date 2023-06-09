@@ -1,6 +1,6 @@
 import { addDoc, collection, query, getDocs } from "firebase/firestore";
 import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useMemo } from "react";
 import * as EmailValidator from "email-validator";
 import shortid from "shortid";
 
@@ -39,6 +39,21 @@ export default function Admin() {
       }
     );
   }, []);
+
+  const process = useMemo(() => {
+    return userFiles.reduce((o, file) => {
+      if (o[file.email]) {
+        o[file.email].push(file);
+      } else {
+        o[file.email] = [file];
+      }
+      return o;
+    }, {});
+  }, [userFiles]);
+
+  const downloadAllFiles = (email) => () => {
+    process[email].map((userFile) => window.open(userFile.fileDownloadUrl));
+  };
 
   if (!auth || (auth && !ADMIN_EMAILS.includes(auth.email)))
     return (
@@ -142,22 +157,34 @@ export default function Admin() {
           </tr>
         </thead>
         <tbody>
-          {userFiles.map((userFile) => {
-            return (
-              <tr key={shortid.generate()}>
-                <td>{userFile.email}</td>
-                <td>{userFile.fileName}</td>
-                <td>
-                  <a
-                    href={userFile.fileDownloadUrl}
-                    target="_blank"
-                    rel="noreferrer"
+          {Object.keys(process).map((email) => {
+            return process[email].map((userFile, index) => {
+              return (
+                <tr key={shortid.generate()}>
+                  <td
+                    onClick={index === 1 ? downloadAllFiles(email) : () => {}}
+                    className={index === 1 ? "download_all" : ""}
                   >
-                    Click To Download
-                  </a>
-                </td>
-              </tr>
-            );
+                    {index === 0
+                      ? userFile.email
+                      : index === 1
+                      ? "Download all files"
+                      : ""}
+                  </td>
+                  <td>{userFile.fileName}</td>
+                  <td>
+                    <a
+                      href={userFile.fileDownloadUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      download
+                    >
+                      Click To Download
+                    </a>
+                  </td>
+                </tr>
+              );
+            });
           })}
         </tbody>
       </table>
