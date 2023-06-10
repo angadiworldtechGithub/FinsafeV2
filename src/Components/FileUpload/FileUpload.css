@@ -1,12 +1,12 @@
 .file_drop_box {
   border: 2px solid black;
   color: black;
-  border-radius: 30px;
-  overflow: auto;
-  height: auto;
-  width: 50%;
+  border-radius: 5px;
+  overflow: none;
+  height: 30px;
+  width: 49%;
   margin-left: 16%;
-  padding: 60px;
+  padding : 60px;
   background-color: #e6e6e6;
 }
 @media only screen and (max-width: 400px) {
@@ -109,7 +109,8 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  /*margin: 4px 2px;*/
+  margin-bottom: 5px;
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 20px;

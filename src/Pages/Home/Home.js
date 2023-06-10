@@ -3,11 +3,13 @@ import shortid from "shortid";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import ServiceCard from "../../Components/ServiceCard";
 import { GrBusinessService, GrServices, GrServicePlay } from "react-icons/gr";
+import {RiCopyrightFill} from "react-icons/ri"
 import { FcServices, FcServiceMark } from "react-icons/fc";
 import { FaServicestack } from "react-icons/fa";
 import {
   MdMiscellaneousServices,
   MdOutlineHomeRepairService,
+  MdOutlineBusiness
 } from "react-icons/md";
 
 import "@splidejs/react-splide/css";
@@ -74,35 +76,57 @@ const SERVICE_CARDS_1 = [
   {
     title: "Start Your Business",
     icon: GrBusinessService,
+    color1: "#BB710D",
+    color2: "#BB710D",
     link: "/businesslegalservices",
   },
   {
     title: "Get Expert Financial advice",
     icon: FcServices,
+    color1: "#BF570D",
+    color2: "#BF570D",
+    link:"/businesslegalservices"
   },
   {
     title: "Raise Capital - Loans & Equity",
     icon: GrServices,
+    color1:"#CC4922",
+    color2:"#CC4922",
+    link:"/loanscapital"
   },
   {
     title: "File your Income tax returns",
     icon: FaServicestack,
+    color1:"#BC331C",
+    color2:"#BC331C",
+    link:"/incometax"
   },
   {
     title: "GST compliances",
     icon: GrServicePlay,
+    color1:"#C2701C",
+    color2:"#C2701C",
+    link:"/ieccompliance"
   },
   {
     title: "Personal Financial planner",
     icon: MdMiscellaneousServices,
+    color1:"#BC331C",
+    color2:"#C2701C",
+    link:""
   },
   {
     title: "Virtual CFO services",
     icon: MdOutlineHomeRepairService,
+    color1:"#BF570D",
+    color2: "#BF570D",
+    link:"/CfoServices"
   },
   {
     title: " Business Transaction Advisory",
-    icon: FcServiceMark,
+    icon: MdOutlineBusiness,
+    color1:"#CC4922",
+    color2:"#CC4922",
     link: "/BusinessTransaction",
   },
 ];
@@ -111,58 +135,58 @@ const SERVICE_CARDS_2 = [
   {
     title: "Loan Documentation Support",
     icon: GrBusinessService,
-    color1: "#bb710d",
-    color2: "#cc4922",
-    link: "/businesslegalservices",
+    color1: "#CC4922",
+    color2: "#CC4922",
+    link: "/loandocumentationsupport",
   },
   {
     title: "Joint Ventures",
     icon: FcServices,
-    color1: "#bb710d",
-    color2: "#cc4922",
-    link: "/businesslegalservices",
+    color1: "#BF4827",
+    color2: "#BF4827",
+    link: "/JointVentures",
   },
   {
     title: "Investment planning",
     icon: GrServices,
-    link: "/businesslegalservices",
-    color1: "#bb710d",
-    color2: "#cc4922",
+    link: "/investment",
+    color1: "#BF570D",
+    color2: "#BF570D",
   },
   {
     title: "Payroll Management",
     icon: FaServicestack,
-    link: "/businesslegalservices",
-    color1: "#bb710d",
-    color2: "#cc4922",
+    link: "/payroll",
+    color1: "#BB710D",
+    color2: "#BB710D",
   },
   {
     title: "GST E-Way Bill",
     icon: GrServicePlay,
-    link: "/businesslegalservices",
-    color1: "#bb710d",
-    color2: "#cc4922",
+    link: "/gstEwaybill",
+    color1: "#BC331C",
+    color2: "#BC331C",
   },
   {
     title: "Investor Relationship Management",
     icon: MdMiscellaneousServices,
-    link: "/businesslegalservices",
-    color1: "#bb710d",
-    color2: "#cc4922",
+    link: "/Investorrelationship",
+    color1: "#BF570D",
+    color2: "#BF570D",
   },
   {
     title: "Land Title Due Diligence",
     icon: MdOutlineHomeRepairService,
-    link: "/businesslegalservices",
-    color1: "#bb710d",
-    color2: "#cc4922",
+    link: "/landlittle",
+    color1: "#CC4922",
+    color2: "#CC4922",
   },
   {
     title: "Trademark/Copyright",
-    icon: FcServiceMark,
-    link: "/businesslegalservices",
-    color1: "#24bf4e",
-    color2: "#2c332e",
+    icon: RiCopyrightFill,
+    link: "/trademark",
+    color1: "#E29513",
+    color2: "#E29513",
   },
 ];
 
