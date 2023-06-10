@@ -3,10 +3,9 @@
   color: black;
   border-radius: 5px;
   overflow: none;
-  height: 30px;
-  width: 49%;
-  margin-left: 16%;
-  padding : 60px;
+  height: auto;
+  width: 70%;
+  margin-left: 14.5%;
   background-color: #e6e6e6;
 }
 @media only screen and (max-width: 400px) {
@@ -93,7 +92,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
-    margin: 4px 2px;
+    margin :2px 4px;
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 20px;
