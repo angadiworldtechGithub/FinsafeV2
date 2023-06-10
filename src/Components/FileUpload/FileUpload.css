@@ -23,7 +23,7 @@
 .file-drop {
   /* relatively position the container bc the contents are absolute */
   position: relative;
-  height: 20px;
+  height: 200px;
   width: 100%;
 }
 
@@ -124,7 +124,7 @@
 
 .loading {
   animation: rotation 2s infinite linear;
-  font-size: 20px;
+  font-size: 50px;
 }
 
 @keyframes rotation {

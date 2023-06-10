@@ -1,5 +1,5 @@
 import "./Dashboard.css";
-
+import { AiOutlineLoading } from "react-icons/ai";
 import { useContext, useEffect, useState } from "react";
 import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
 import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
@@ -107,6 +107,10 @@ export default function Dashboard() {
     size: file.size,
   }));
 
+  const downloadAllFiles = () => {
+    documents.map((userFile) => window.open(userFile.fileDownloadUrl));
+  };
+
   return (
     <div className="dashboard_container">
       <h1>Dashboard</h1>
@@ -119,6 +123,9 @@ export default function Dashboard() {
         loading={isUploading}
       />
       <h2>Documents Uploaded</h2>
+      <h4 class="download_all" onClick={downloadAllFiles}>
+        Download All Documents
+      </h4>
       <table className="auto_align">
         <thead>
           <tr>
@@ -126,23 +133,30 @@ export default function Dashboard() {
             <th>Download Url</th>
           </tr>
         </thead>
-        <tbody>
-          {documents.map((document) => {
-            return (
-              <tr key={shortid.generate()}>
-                <td>{document.fileName}</td>
-                <td>
-                  <a
-                    href={document.fileDownloadUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Click To Download
-                  </a>
-                </td>
-              </tr>
-            );
-          })}
+        <tbody style={{ position: "relative", minHeight: "100px" }}>
+          {documents.length ? (
+            documents.map((document) => {
+              return (
+                <tr key={shortid.generate()}>
+                  <td>{document.fileName}</td>
+                  <td>
+                    <a
+                      href={document.fileDownloadUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      download
+                    >
+                      Click To Download
+                    </a>
+                  </td>
+                </tr>
+              );
+            })
+          ) : (
+            <tr>
+              <AiOutlineLoading className="loading table_loading" />
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

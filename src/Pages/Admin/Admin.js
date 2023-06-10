@@ -3,9 +3,8 @@ import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
 import { useContext, useEffect, useState, useMemo } from "react";
 import * as EmailValidator from "email-validator";
 import shortid from "shortid";
-
+import { AiOutlineLoading } from "react-icons/ai";
 import "./Admin.css";
-
 import FileUpload from "../../Components/FileUpload";
 import { storage, firestore } from "../../firebase";
 import { AuthContext } from "../../Context/AuthContext";
@@ -136,22 +135,25 @@ export default function Admin() {
 
   return (
     <div className="admin_container">
-     <div className="admin_text">
-      <h1 style={{color:"#072f5f"}}>Admin Page</h1>
-      <p><b>Enter User Email</b></p>
-      <input style={{background:"#e6e6e6"}}
-        className="auto_align admin_input"
-        type="email"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-      ></input>
-      <FileUpload 
-        className="auto_align"
-        onDrop={onDrop}
-        onUpload={onUpload}
-        filePreviews={filePreviews}
-        loading={isUploading}
-      />
+      <div className="admin_text">
+        <h1 style={{ color: "#072f5f" }}>Admin Page</h1>
+        <p>
+          <b>Enter User Email</b>
+        </p>
+        <input
+          style={{ background: "#e6e6e6" }}
+          className="auto_align admin_input"
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        ></input>
+        <FileUpload
+          className="auto_align"
+          onDrop={onDrop}
+          onUpload={onUpload}
+          filePreviews={filePreviews}
+          loading={isUploading}
+        />
       </div>
       <h2>User Docs List</h2>
       <table className="auto_align">
@@ -163,35 +165,39 @@ export default function Admin() {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(process).map((email) => {
-            return process[email].map((userFile, index) => {
-              return (
-                <tr key={shortid.generate()}>
-                  <td
-                    onClick={index === 1 ? downloadAllFiles(email) : () => {}}
-                    className={index === 1 ? "download_all" : ""}
-                  >
-                    {index === 0
-                      ? userFile.email
-                      : index === 1
-                      ? "Download all files"
-                      : ""}
-                  </td>
-                  <td>{userFile.fileName}</td>
-                  <td>
-                    <a
-                      href={userFile.fileDownloadUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      download
+          {Object.keys(process).length ? (
+            Object.keys(process).map((email) => {
+              return process[email].map((userFile, index) => {
+                return (
+                  <tr key={shortid.generate()}>
+                    <td
+                      onClick={index === 1 ? downloadAllFiles(email) : () => {}}
+                      className={index === 1 ? "download_all" : ""}
                     >
-                      Click To Download
-                    </a>
-                  </td>
-                </tr>
-              );
-            });
-          })}
+                      {index === 0
+                        ? userFile.email
+                        : index === 1
+                        ? "Download all files"
+                        : ""}
+                    </td>
+                    <td>{userFile.fileName}</td>
+                    <td>
+                      <a
+                        href={userFile.fileDownloadUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        download
+                      >
+                        Click To Download
+                      </a>
+                    </td>
+                  </tr>
+                );
+              });
+            })
+          ) : (
+            <AiOutlineLoading className="loading" />
+          )}
         </tbody>
       </table>
     </div>

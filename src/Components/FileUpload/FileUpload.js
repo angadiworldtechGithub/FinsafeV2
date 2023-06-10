@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef } from "react";
 import { FileDrop } from "react-file-drop";
 import "./FileUpload.css";
 import shortid from "shortid";
@@ -10,9 +10,25 @@ export default function FileUpload({
   filePreviews,
   loading,
 }) {
+  const fileInputRef = useRef(null);
+  const onFileInputChange = (event) => {
+    const { files } = event.target;
+    onDrop(files, event);
+  };
+  const onTargetClick = () => {
+    fileInputRef.current.click();
+  };
+
   return (
     <div className="file_drop_box">
-      <FileDrop onDrop={onDrop}>
+      <input
+        onChange={onFileInputChange}
+        ref={fileInputRef}
+        type="file"
+        style={{ display: "none" }}
+        multiple
+      />
+      <FileDrop onDrop={onDrop} onTargetClick={onTargetClick}>
         {!filePreviews.length
           ? "Upload documents here"
           : "Check list before uploading docs."}
@@ -29,9 +45,9 @@ export default function FileUpload({
           )}
         </ul>
       </FileDrop>
-      <button className="upload_button" onClick={onUpload}><b>
-        {loading ? <AiOutlineLoading className="loading" /> : "Upload"}
-        </b> </button>
+      <button className="upload_button" onClick={onUpload}>
+        <b>{loading ? <AiOutlineLoading className="loading" /> : "Upload"}</b>{" "}
+      </button>
     </div>
   );
 }
