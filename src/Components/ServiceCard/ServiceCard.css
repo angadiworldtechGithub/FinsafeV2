@@ -19,7 +19,8 @@
 
 .card:hover {
   cursor: pointer;
-  height: 240px;
+  height: 220px;
+  width: 90%;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 30px;

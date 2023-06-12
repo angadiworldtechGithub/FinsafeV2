@@ -104,6 +104,7 @@ const SERVICE_CARDS_1 = [
   {
     title: "GST compliances",
     icon: GrServicePlay,
+    image: "assets/images/banner_10.png",
     color1: "#C2701C",
     color2: "#C2701C",
     link: "/ieccompliance",
@@ -240,6 +241,7 @@ export default function Home() {
                 link={serviceCard.link}
                 color1={serviceCard.color1}
                 color2={serviceCard.color2}
+                image={serviceCard.image}
               />
             </SplideSlide>
           );
@@ -282,6 +284,7 @@ export default function Home() {
                 link={serviceCard.link}
                 color1={serviceCard.color1}
                 color2={serviceCard.color2}
+                image={serviceCard.image}
               />
             </SplideSlide>
           );
