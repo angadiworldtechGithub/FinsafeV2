@@ -58,8 +58,11 @@ const getButton = (auth, location) => {
     }
   } else {
     return {
-      text: "Sign In",
-      link: null,
+      headerName: "Sign In Options",
+      subHeaders: [
+        { title: "Google sign in" },
+        { title: "Sign in with email and password", to: "/login" },
+      ],
     };
   }
 };

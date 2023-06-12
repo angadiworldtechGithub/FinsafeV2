@@ -1,0 +1,25 @@
+.login_box {
+  margin: 0 auto;
+  width: 20%;
+  padding: 10px;
+}
+
+.center_text {
+  text-align: center;
+}
+
+.input_login {
+  height: 25px;
+  width: 100%;
+}
+
+.button_login {
+  background-color: blue;
+  border: none;
+}
+
+.button_login:hover {
+  background-color: white;
+  border: solid blue;
+  cursor: pointer;
+}
