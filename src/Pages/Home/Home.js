@@ -3,13 +3,13 @@ import shortid from "shortid";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import ServiceCard from "../../Components/ServiceCard";
 import { GrBusinessService, GrServices, GrServicePlay } from "react-icons/gr";
-import {RiCopyrightFill} from "react-icons/ri"
-import { FcServices, FcServiceMark } from "react-icons/fc";
+import { RiCopyrightFill } from "react-icons/ri";
+import { FcServices } from "react-icons/fc";
 import { FaServicestack } from "react-icons/fa";
 import {
   MdMiscellaneousServices,
   MdOutlineHomeRepairService,
-  MdOutlineBusiness
+  MdOutlineBusiness,
 } from "react-icons/md";
 
 import "@splidejs/react-splide/css";
@@ -85,48 +85,48 @@ const SERVICE_CARDS_1 = [
     icon: FcServices,
     color1: "#BF570D",
     color2: "#BF570D",
-    link:"/businesslegalservices"
+    link: "/businesslegalservices",
   },
   {
     title: "Raise Capital - Loans & Equity",
     icon: GrServices,
-    color1:"#CC4922",
-    color2:"#CC4922",
-    link:"/loanscapital"
+    color1: "#CC4922",
+    color2: "#CC4922",
+    link: "/loanscapital",
   },
   {
     title: "File your Income tax returns",
     icon: FaServicestack,
-    color1:"#BC331C",
-    color2:"#BC331C",
-    link:"/incometax"
+    color1: "#BC331C",
+    color2: "#BC331C",
+    link: "/incometax",
   },
   {
     title: "GST compliances",
     icon: GrServicePlay,
-    color1:"#C2701C",
-    color2:"#C2701C",
-    link:"/ieccompliance"
+    color1: "#C2701C",
+    color2: "#C2701C",
+    link: "/ieccompliance",
   },
   {
     title: "Personal Financial planner",
     icon: MdMiscellaneousServices,
-    color1:"#BC331C",
-    color2:"#C2701C",
-    link:""
+    color1: "#BC331C",
+    color2: "#C2701C",
+    link: "",
   },
   {
     title: "Virtual CFO services",
     icon: MdOutlineHomeRepairService,
-    color1:"#BF570D",
+    color1: "#BF570D",
     color2: "#BF570D",
-    link:"/CfoServices"
+    link: "/CfoServices",
   },
   {
     title: " Business Transaction Advisory",
     icon: MdOutlineBusiness,
-    color1:"#CC4922",
-    color2:"#CC4922",
+    color1: "#CC4922",
+    color2: "#CC4922",
     link: "/BusinessTransaction",
   },
 ];
