@@ -8,10 +8,9 @@ export default function Adminv2() {
           <li class="flex-item">
             <input
               style={{ background: "#e6e6e6" }}
-              className="auto_align admin_input"
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              className="input-admin"
+              type="text"
+              placeholder="User Name"
             ></input>
           </li>
           <li class="flex-item">Email :</li>
