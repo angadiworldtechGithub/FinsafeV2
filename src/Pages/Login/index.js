@@ -26,7 +26,6 @@ export default function Login() {
   };
 
   const onLogin = () => {
-    console.log(auth);
     if (email !== "" && password !== "") {
       setLoading(true);
       signInWithEmailAndPassword(firebaseAuth, email, password)

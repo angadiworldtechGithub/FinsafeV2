@@ -65,6 +65,7 @@ const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
           onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
         },
         { text: "Sign in with email and password", to: "/login" },
+        { text: "Phone number login", to: "/phonelogin" },
       ],
     };
   }
