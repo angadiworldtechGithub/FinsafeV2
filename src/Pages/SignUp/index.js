@@ -4,18 +4,18 @@ import {
   AiFillEye,
   AiFillEyeInvisible,
 } from "react-icons/ai";
-import { Link } from "react-router-dom";
 import { auth as firebaseAuth } from "../../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { usePreventAuthUser } from "../../Hooks/redirect.js";
-
-import "./Login.css";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { AuthContext } from "../../Context/AuthContext";
+import { usePreventAuthUser } from "../../Hooks/redirect";
 
-export default function Login() {
+import "./SignUp.css";
+
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
 
@@ -25,30 +25,34 @@ export default function Login() {
     setShowPassword((bool) => !bool);
   };
 
-  const onLogin = () => {
-    console.log(auth);
+  const onSignUp = () => {
     if (email !== "" && password !== "") {
-      setLoading(true);
-      signInWithEmailAndPassword(firebaseAuth, email, password)
-        .then((userCredential) => {
-          setAuth(userCredential.user);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error(error);
-          alert("Could not sign in.");
-          setLoading(false);
-        });
+      if (password === confirmPassword) {
+        setLoading(true);
+        createUserWithEmailAndPassword(firebaseAuth, email, password)
+          .then((userCredential) => {
+            setAuth(userCredential.user);
+            alert("User created and signed In");
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error(error);
+            alert("Could not sign in.");
+            setLoading(false);
+          });
+      } else {
+        alert("Passwords does not match");
+      }
     }
   };
 
   return (
     <div>
       <div className="header_text">
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
       </div>
       <div className="login_box">
-        <div>
+        <div className="center_text">
           <label>Email</label>
         </div>
         <input
@@ -60,7 +64,7 @@ export default function Login() {
         ></input>
       </div>
       <div className="login_box">
-        <div>
+        <div className="center_text">
           <label>Password</label>
         </div>
         <div style={{ display: "flex" }}>
@@ -83,17 +87,26 @@ export default function Login() {
         </div>
       </div>
       <div className="login_box">
+        <div className="center_text">
+          <label>Confirm Password</label>
+        </div>
+        <input
+          value={confirmPassword}
+          type={showPassword ? "text" : "password"}
+          onChange={(e) => {
+            setConfirmPassword(e.target.value);
+          }}
+          className="input_login"
+        ></input>
+      </div>
+      <div className="login_box">
         <button
           className="button_login"
           style={{ width: "100%", height: "40px" }}
-          onClick={onLogin}
+          onClick={onSignUp}
         >
-          {loading ? <AiOutlineLoading className="loading" /> : "Login"}
+          {loading ? <AiOutlineLoading className="loading" /> : "Sign Up"}
         </button>
-      </div>
-      <div className="bottom_text">Forgot Password ?</div>
-      <div className="bottom_text">
-        <Link to="/signup">No account, please create an account</Link>
       </div>
     </div>
   );

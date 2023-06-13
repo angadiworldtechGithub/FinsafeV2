@@ -12,6 +12,7 @@ export function AuthContextProvider({ children }) {
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) {
+        console.log("Use Effect user", user);
         setAuth(user);
       }
     });

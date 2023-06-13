@@ -174,6 +174,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
 import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
+import SignUp from "./Pages/SignUp";
+import PhoneLogin from "./Pages/PhoneLogin";
 
 const Base = () => {
   return (
@@ -211,7 +213,8 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
-
+      { path: "/signup", element: <SignUp /> },
+      { path: "/phonelogin", element: <PhoneLogin /> },
       {
         path: "/takeexpertadvice",
         element: <TakeExpertAdvice />,
