@@ -76,7 +76,7 @@ const SERVICE_CARDS_1 = [
   {
     title: "Start Your Business",
     icon: GrBusinessService,
-    image: "assets/images/banner_10.png",
+    image: "assets/images/income1.png",
     color1: "#BB710D",
     color2: "#BB710D",
     link: "/businesslegalservices",

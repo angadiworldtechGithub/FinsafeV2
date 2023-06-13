@@ -9,6 +9,7 @@ export default function ServiceComp({
   description,
   bulletPoints,
   inputList,
+  imageSource
 }) {
   const [inputs, setInputs] = useState(
     inputList.reduce((initialState, input) => {
@@ -66,6 +67,7 @@ export default function ServiceComp({
           </h1>
 
           <p className="color_white">{description}</p>
+          <img src={imageSource} />
 
           <p className="color_white">
             <ul className="service_list">
