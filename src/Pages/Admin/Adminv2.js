@@ -1,234 +1,49 @@
 import "./Adminv2.css";
+import{ MdOutlineDownloadForOffline } from "react-icons/md";
 export default function Adminv2() {
   return (
     <div>
-      <h1>User Profile</h1>
-
-      <ul class="admin-container">
-        <li class="flex-item">
-          <label>User Name:</label>
-          <input
-            className="input-admin"
-            type="text"
-            placeholder="User Name"
-          ></input>
-        </li>
-        <li class="flex-item">
-          <label>Email:</label>
-          <input
-            className="input-admin"
-            type="Email"
-            placeholder="User Email"
-          ></input>
-        </li>
-        <li class="flex-item">
-          <label>Phone Number:</label>
-          <input
-            className="input-admin"
-            type="phonenumber"
-            placeholder="Phone Number"
-          ></input>
-        </li>
-        <li class="flex-item">
-          <label>Date:</label>
-          <br></br>
-          <input className="input-admin" type="Date" placeholder="Date"></input>
-        </li>
-      </ul>
-
-      <ul class="admin-container">
-        <li class="flex-item">
-          <label>Director 1</label>
-          <form>
-            <label>Director Name :</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Director Name"
-              value=""
-            ></input>
-            <label>Director Email:</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Director Email"
-              value=""
-            ></input>
-            <label>PhoneNumber:</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Phone Number"
-              value=""
-            ></input>
-            <div>
-              <label>Pan Card :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <div>
-              <label>Aadhar Card :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <div>
-              <label>Director Photo :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <label>Address</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Address"
-              value=""
-            ></input>
-          </form>
-        </li>
-
-        <li class="flex-item">
-          <label>Director 2</label>
-          <form>
-            <label>Director Name :</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Director Name"
-              value=""
-            ></input>
-            <label>Director Email:</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Director Email"
-              value=""
-            ></input>
-            <label>PhoneNumber:</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Phone Number"
-              value=""
-            ></input>
-            <div>
-              <label>Pan Card :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <div>
-              <label>Aadhar Card :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <div>
-              <label>Director Photo :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <label>Address</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Address"
-              value=""
-            ></input>
-          </form>
-        </li>
-
-        <li class="flex-item">
-          <label>Director 3</label>
-          <form>
-            <label>Director Name :</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Director Name"
-              value=""
-            ></input>
-            <label>Director Email:</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Director Email"
-              value=""
-            ></input>
-            <label>PhoneNumber:</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Phone Number"
-              value=""
-            ></input>
-            <div>
-              <label>Pan Card :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <div>
-              <label>Aadhar Card :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <div>
-              <label>Director Photo :</label>
-              <input
-                className="input-admin"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-              ></input>
-            </div>
-            <label>Address</label>
-            <input
-              className="input-admin"
-              type="text"
-              placeholder="Address"
-              value=""
-            ></input>
-          </form>
-        </li>
-      </ul>
+      <div className="admin-container">
+        <div className="flex-item-left">Company Details</div>
+        {/* <div class="flex-item-right">Finsafe</div>*/}
+      </div>
+      
+      <div className="admin-container">
+         <div className="admin-item-left">
+           <div className="admin-item1">
+            <h3 className="admin1-text">Company Name</h3> 
+            <p className="admin1-address">Address</p>
+            <h3 className="admin1-text">Phone Number</h3>
+            <h3 className="admin1-text">Email ID</h3>
+           </div>
+           <div className="admin-item2">
+             <input className="admin-text"></input>
+             <input className="admin-address"></input>
+             <input className="admin-text"></input>
+             <input className="admin-text"></input>
+           </div>
+         </div>
+      
+         <div className="admin-item-right">
+          <div className="admin-item3">
+          <h3 className="admin1-text">GST Number</h3> 
+          <h3 className="admin1-text">PAN Number</h3>
+          <p className="admin1-address">Company InCorporation Certificate</p>
+          <h3>Add Documents</h3>
+          </div>
+           <div className="admin-item4">
+           <input className="admin-text4"></input><button className="button-upload">Upload</button><button className="upload-file">Gst Pdf.pdf</button><i className="upload-icon"><MdOutlineDownloadForOffline/></i>
+           <input className="admin-text4"></input><button className="button-upload">Upload</button><button className="upload-file">pan Pdf.pdf</button><i className="upload-icon"><MdOutlineDownloadForOffline/></i>
+           <input className="admin-address4"></input><button className="button-upload">Upload</button><button className="upload-file">Gst Pdf.pdf</button><i className="upload-icon"><MdOutlineDownloadForOffline/></i>
+           <select className="dropdown">
+           <option>GST Number</option>
+           <option>PAN Number</option>
+           <option>Company Incorporation Certificate</option>
+           </select>
+           
+           </div>
+         </div>
     </div>
+  </div>
   );
 }
