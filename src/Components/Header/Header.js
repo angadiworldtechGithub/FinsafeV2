@@ -36,7 +36,7 @@ const signOutClick = (setAuth, setIsClicked) => () => {
     .catch((error) => console.error(error));
 };
 
-const getButton = (auth, location) => {
+const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
   const pageName = location.pathname.split("/")[1];
   if (auth) {
     if (["admin", "dashboard"].includes(pageName)) {
@@ -58,8 +58,15 @@ const getButton = (auth, location) => {
     }
   } else {
     return {
-      text: "Sign In",
-      link: null,
+      text: "Sign In Options",
+      subHeaders: [
+        {
+          text: "Google sign in",
+          onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
+        },
+        { text: "Sign in with email and password", to: "/login" },
+        { text: "Phone number login", to: "/phonelogin" },
+      ],
     };
   }
 };
@@ -69,7 +76,13 @@ export default function Header() {
   const [isClicked, setIsClicked] = useState(false);
   const location = useLocation();
 
-  const rightButton = getButton(auth, location);
+  const rightButton = getButton(
+    auth,
+    setAuth,
+    location,
+    isClicked,
+    setIsClicked
+  );
 
   return (
     <>
@@ -105,14 +118,37 @@ export default function Header() {
           <div
             className="sign_in_out"
             onClick={
-              rightButton.text === "Sign In" && !isClicked
-                ? signInClick(setAuth, setIsClicked)
-                : rightButton.text === "Sign Out"
+              rightButton.text === "Sign Out"
                 ? signOutClick(setAuth, setIsClicked)
                 : () => {}
             }
           >
             {rightButton.text}
+            {rightButton.subHeaders ? (
+              rightButton.subHeaders.length ? (
+                <div className="dropdown_sign_in">
+                  <ul className="sign_in_list">
+                    {rightButton.subHeaders.map((subHeader) => {
+                      return (
+                        <li onClick={subHeader.onClick}>
+                          {subHeader.to ? (
+                            <Link style={{ color: "white" }} to={subHeader.to}>
+                              {subHeader.text}
+                            </Link>
+                          ) : (
+                            subHeader.text
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ) : (
+                <></>
+              )
+            ) : (
+              <></>
+            )}
           </div>
         ) : (
           <Link className="right_button" to={rightButton.link}>

@@ -23,6 +23,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
+const auth = getAuth(app);
+auth.languageCode = "en";
+export { auth };
 export const firestore = getFirestore(app);
 export const storage = getStorage(app);

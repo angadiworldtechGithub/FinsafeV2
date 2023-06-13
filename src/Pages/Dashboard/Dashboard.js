@@ -111,10 +111,12 @@ export default function Dashboard() {
     documents.map((userFile) => window.open(userFile.fileDownloadUrl));
   };
 
+  console.log(auth);
+
   return (
     <div className="dashboard_container">
       <h1>Dashboard</h1>
-      <h1>{auth.email}</h1>
+      <h1>{auth.email ? auth.email : auth.phoneNumber}</h1>
       <FileUpload
         className="auto_align"
         onDrop={onDrop}

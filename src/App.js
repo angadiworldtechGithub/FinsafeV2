@@ -7,6 +7,8 @@ import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
 import CfoServices from "./Pages/CfoServices/CfoServices";
 
+import Login from "./Pages/Login";
+
 import {
   Bankingrelationship,
   BusinessTransaction,
@@ -47,8 +49,7 @@ import {
   Professional,
 } from "./Pages/StartYourBusiness/StatutoryRegistration";
 
-
- import{
+import {
   Incorporation,
   Llp,
   Partnership,
@@ -173,6 +174,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
 import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
+import SignUp from "./Pages/SignUp";
+import PhoneLogin from "./Pages/PhoneLogin";
 
 const Base = () => {
   return (
@@ -206,6 +209,12 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      { path: "/signup", element: <SignUp /> },
+      { path: "/phonelogin", element: <PhoneLogin /> },
       {
         path: "/takeexpertadvice",
         element: <TakeExpertAdvice />,
