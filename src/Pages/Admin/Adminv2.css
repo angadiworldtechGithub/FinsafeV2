@@ -1,6 +1,8 @@
+/*Header */
 .flex-container{
   flex : 1;
 }
+
 .flex-item-left{
   float: left;
   margin-top: 20px;
@@ -9,6 +11,19 @@
   color: #072f5f;
   padding: 10px 10px 10px 10px;
 }
+.flex-item-right{
+  float: right;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 30px;
+  color: #072f5f;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 520px
+}
+
+/*Company Details */
+
 .admin-container{
   display: flex;
 }
@@ -26,6 +41,7 @@
   float:right;
   border: 2px solid #e6e6e6;
 }
+
 .admin-box1{
   width: 28%;
   height: 270px;
@@ -96,6 +112,8 @@
   border: 2px solid #000;
   border-radius: 3px;
 }
+
+/*admin right box */
 .admin1-address{
   font-size: 20px;
   font-weight: 700;
@@ -166,6 +184,9 @@
 .label-name{
   font-size: 15px;
 }
+
+
+/*Summary */
 .summary-container{
   display: flex;
 }
@@ -189,18 +210,123 @@
   font-weight: 700;
   padding: 20px 10px 10px 30px;
 }
-h1{
+
+
+.download-heading{
   text-align: center;
   color: #072f5f;
 }
-h2{
-  font-weight: 700;
-  font-size:30px;
-}
+
 .download-icon{
   font-size: 40px;
   font-weight: 700;
   border-radius: 40px;
   padding-top: 30px;
   padding-right: 20px;
+}
+
+/*Director Box*/
+
+.Director-box{
+  font-weight: 700;
+  font-size:30px;
+  color: #072f5f;
+  padding-top: 60px;
+  padding-left: 30px;
+}
+
+.director-container{
+  display: flex;
+}
+
+.director-item-left{
+  width : 50%;
+  height: 550px;
+  float:right;
+  border: 2px solid #e6e6e6;
+}
+.director-box1{
+  width: 25%;
+  height: 495px;
+  padding-left: 20px;
+  margin: 5px 5px 5px 5px;
+  float: left;
+  border: 2px solid #e6e6e6;
+}
+.director-box2{
+  width: 65%;
+  height: 500px;
+  margin: 5px 5px 5px 5px;
+  float: right;
+  border-radius: 4px;
+  padding-top: 16px;
+  padding-left: 10px;
+  border: 2px solid #e6e6e6;
+}
+.director-name{
+  padding-top: 10px;
+}
+.director-address{
+  padding-bottom: 50px;
+}
+.director-num{
+  padding-top: 10px;
+}
+.director-gst{
+  padding-bottom: 10px;
+}
+.director-pan{
+  padding-top: 20px;
+}
+.director-documents{
+  padding-top: 20px;
+}
+.upload-directorfile{
+  margin-left: 180px;
+}
+
+.director-item-right{
+  width : 50%;
+  height: 550px;
+  float:  right;
+  border: 2px solid #e6e6e6;
+}
+.director-box3{
+  width: 90%;
+  height: 450px;
+  padding-left: 20px;
+  margin: 5px 5px 5px 5px;
+  float: left;
+  border: 2px solid #e6e6e6;
+}
+.director-addonbox{
+  margin-top: 90px;
+  margin-left: 160px;
+  height: 250px;
+  width: 40%;
+  border: 2px solid black;
+  background-color: #e6e6e6;
+}
+.director-icon{
+  align-items: center;
+  padding-left: 70px;
+  font-size: 100px;
+}
+.director-para{
+  font-size: 30px;
+  font-weight: 600;
+  padding-left: 60px;
+  padding-bottom: 20px;
+  font-style: normal;
+}
+.director-download{
+  font-size: 20px;
+}
+.line{
+  height: 500;
+  width: 2px;
+  color: #000;
+  border-radius: 2px;
+  border: 2px solid #000;
+  background-color: #000;
 }
