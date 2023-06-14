@@ -1,4 +1,3 @@
-import { addDoc, collection, query, getDocs } from "firebase/firestore";
 import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
 import { useContext, useEffect, useState, useMemo } from "react";
 import * as EmailValidator from "email-validator";
@@ -6,9 +5,11 @@ import shortid from "shortid";
 import { AiOutlineLoading } from "react-icons/ai";
 import "./Admin.css";
 import FileUpload from "../../Components/FileUpload";
-import { storage, firestore } from "../../firebase";
+import { storage } from "../../firebase";
 import { AuthContext } from "../../Context/AuthContext";
 import { USER_DATA_COLL_NAME, ADMIN_EMAILS } from "../../constants";
+import { addData } from "../../API/createDoc";
+import { getDocs } from "../../API/readDoc";
 
 export const validateEmail = (email) => {
   return EmailValidator.validate(email);
@@ -28,15 +29,9 @@ export default function Admin() {
   };
 
   useEffect(() => {
-    getDocs(query(collection(firestore, USER_DATA_COLL_NAME))).then(
-      (querySnapshot) => {
-        const userFiles = [];
-        querySnapshot.forEach((doc) => {
-          userFiles.push({ ...doc.data() });
-        });
-        setUserFiles([...userFiles]);
-      }
-    );
+    (async () => {
+      setUserFiles(...(await getDocs(USER_DATA_COLL_NAME)));
+    })();
   }, []);
 
   const process = useMemo(() => {
@@ -98,19 +93,18 @@ export default function Admin() {
               }
             },
             (error) => console.error(error),
-
             () => {
-              getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                alert("Upload Complete");
-                resetPage();
-                addDoc(collection(firestore, USER_DATA_COLL_NAME), {
-                  email,
-                  fileDownloadUrl: downloadURL,
-                  fileName: file.name,
-                })
-                  .then((docRef) => console.log(docRef))
-                  .catch((error) => console.error(error));
-              });
+              getDownloadURL(uploadTask.snapshot.ref).then(
+                async (downloadURL) => {
+                  alert("Upload Complete");
+                  resetPage();
+                  await addData(USER_DATA_COLL_NAME, {
+                    email,
+                    fileDownloadUrl: downloadURL,
+                    fileName: file.name,
+                  });
+                }
+              );
             }
           );
         });

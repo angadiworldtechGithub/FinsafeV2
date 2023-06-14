@@ -1,15 +1,17 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import "./ServiceComp.css";
 import { useState, useContext, useRef } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { AuthContext } from "../../Context/AuthContext";
+import { addData } from "../../API/createDoc";
 
 export default function ServiceComp({
   title,
   description,
   bulletPoints,
   inputList,
-  imageSource
+  imageSource,
 }) {
   const [inputs, setInputs] = useState(
     inputList.reduce((initialState, input) => {
@@ -24,7 +26,7 @@ export default function ServiceComp({
 
   const { auth } = useContext(AuthContext);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     if (auth) {
       if (
         Object.values(formRef.current.elements)
@@ -32,12 +34,13 @@ export default function ServiceComp({
           .every(Boolean)
       ) {
         setSubmitting(true);
-        addDoc(collection(firestore, title), {
-          emailAuth: auth.email,
-          ...inputs,
-        })
-          .then((docRef) => {
-            console.log(docRef);
+        await addData(
+          title,
+          {
+            emailAuth: auth.email,
+            ...inputs,
+          },
+          () => {
             alert("Form submitted");
             setInputs((inputs) => {
               Object.keys(inputs).forEach((key) => {
@@ -46,8 +49,8 @@ export default function ServiceComp({
               return { ...inputs };
             });
             setSubmitting(false);
-          })
-          .catch((error) => console.error(error));
+          }
+        );
       } else {
         alert("Form invalid");
       }
@@ -67,7 +70,7 @@ export default function ServiceComp({
           </h1>
 
           <p className="color_white">{description}</p>
-          <img src={imageSource} />
+          <img src={imageSource} alt="No image found." />
 
           <p className="color_white">
             <ul className="service_list">

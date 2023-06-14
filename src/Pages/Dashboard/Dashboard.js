@@ -1,7 +1,8 @@
 import "./Dashboard.css";
 import { AiOutlineLoading } from "react-icons/ai";
 import { useContext, useEffect, useState } from "react";
-import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
+import { getDocs } from "../../API/readDoc";
 import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
 import shortid from "shortid";
 import { storage, firestore } from "../../firebase";
@@ -22,18 +23,11 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (auth) {
-      getDocs(
-        query(
-          collection(firestore, USER_DATA_COLL_NAME),
-          where("email", "==", auth.email)
-        )
-      ).then((querySnapshot) => {
-        const docs = [];
-        querySnapshot.forEach((doc) => {
-          docs.push({ ...doc.data() });
-        });
-        setDocuments(docs);
-      });
+      (async () => {
+        setDocuments([
+          ...(await getDocs(USER_DATA_COLL_NAME, { email: auth.email })),
+        ]);
+      })();
     }
   }, [auth]);
 
@@ -83,17 +77,17 @@ export default function Dashboard() {
           (error) => console.error(error),
 
           () => {
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              alert("Upload Complete");
-              resetPage();
-              addDoc(collection(firestore, USER_DATA_COLL_NAME), {
-                email: auth.email,
-                fileDownloadUrl: downloadURL,
-                fileName: file.name,
-              })
-                .then((docRef) => console.log(docRef))
-                .catch((error) => console.error(error));
-            });
+            getDownloadURL(uploadTask.snapshot.ref).then(
+              async (downloadURL) => {
+                alert("Upload Complete");
+                resetPage();
+                await addDoc(USER_DATA_COLL_NAME, {
+                  email: auth.email,
+                  fileDownloadUrl: downloadURL,
+                  fileName: file.name,
+                });
+              }
+            );
           }
         );
       });
