@@ -154,11 +154,6 @@
   padding-left: 10px;
   
 }
-.dropdown{
-  width: 50%;
-  height: 20px;
-  border: 2px solid #000;
-}
 .admin-number{
   width: 22%;
   height: 20px;
@@ -197,6 +192,10 @@
 h1{
   text-align: center;
   color: #072f5f;
+}
+h2{
+  font-weight: 700;
+  font-size:30px;
 }
 .download-icon{
   font-size: 40px;

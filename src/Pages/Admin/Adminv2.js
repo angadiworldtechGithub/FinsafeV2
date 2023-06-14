@@ -56,6 +56,26 @@ export default function Adminv2() {
     <div>
     <h1><i className="download-icon"><MdOutlineDownloadForOffline/></i>Download Complete Company Profile</h1>
     </div>
+
+        
+     <h2>Director #1</h2>
+    
+        <div className="admin-container">
+         <div className="admin-item-left">
+           <div className="admin-box1">
+            <h3 className="admin1-text">Company Name</h3> 
+            <p className="admin1-address">Address</p>
+            <h3 className="admin1-text">Phone Number</h3>
+            <h3 className="admin1-text">Email ID</h3>
+           </div>
+           <div className="admin-box2">
+             <input className="admin-text"></input>
+             <input className="admin-address"></input>
+             <input className="admin-text"></input>
+             <input className="admin-text"></input>
+           </div>
+         </div>
+        </div>
   </div>
   );
 }
