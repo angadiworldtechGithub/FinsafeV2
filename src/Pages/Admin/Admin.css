@@ -16,16 +16,16 @@
 }
 .company-left{
     float: left;
-    width: 45%;
-    height: 470px;
-    border: 2px solid #e6e6e6;
+    width: 46%;
+    height: 600px;
+    border: 2px solid #000;
     margin: 20px 20px 20px 20px ;
 }
 .company-right{
     float: right;
-    width:48%;
-    height: 470px;
-    border: 2px solid #e6e6e6;
+    width: 46%;
+    height: 600px;
+    border: 2px solid #000;
     margin: 20px 20px 20px 20px ;
 }
 .company-button{
@@ -48,7 +48,7 @@
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
 .company-container{
-    height: 1300px;
+    height: 1200px;
     border: 2px solid #e6e6e6;
 }
 }
@@ -56,12 +56,14 @@
 @media screen and (max-width: 600px) {
     .company-left {
         width: 90%;
+        height: 500px;
         margin-right: 5px;
     }
 }
 @media screen and (max-width: 600px) {
     .company-right {
         width: 90%;
+        height: 500px;
         margin-left:5px
     }
 }
