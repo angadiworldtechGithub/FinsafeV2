@@ -1,11 +1,11 @@
 import "./Dashboard.css";
 import { AiOutlineLoading } from "react-icons/ai";
 import { useContext, useEffect, useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { addDoc } from "firebase/firestore";
 import { getDocs } from "../../API/readDoc";
 import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
 import shortid from "shortid";
-import { storage, firestore } from "../../firebase";
+import { storage } from "../../firebase";
 import FileUpload from "../../Components/FileUpload";
 import { AuthContext } from "../../Context/AuthContext";
 import { USER_DATA_COLL_NAME, ADMIN_EMAILS } from "../../constants";

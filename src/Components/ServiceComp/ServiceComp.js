@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import "./ServiceComp.css";
 import { useState, useContext, useRef } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { firestore } from "../../firebase";
 import { AuthContext } from "../../Context/AuthContext";
 import { addData } from "../../API/createDoc";
 
