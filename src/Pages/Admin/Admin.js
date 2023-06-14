@@ -9,7 +9,7 @@ import { storage } from "../../firebase";
 import { AuthContext } from "../../Context/AuthContext";
 import { USER_DATA_COLL_NAME, ADMIN_EMAILS } from "../../constants";
 import { addData } from "../../API/createDoc";
-import { getDocs } from "../../API/readDoc";
+import { getAllDocs } from "../../API/readDoc";
 
 export const validateEmail = (email) => {
   return EmailValidator.validate(email);
@@ -30,7 +30,7 @@ export default function Admin() {
 
   useEffect(() => {
     (async () => {
-      setUserFiles(...(await getDocs(USER_DATA_COLL_NAME)));
+      setUserFiles([...(await getAllDocs(USER_DATA_COLL_NAME))]);
     })();
   }, []);
 

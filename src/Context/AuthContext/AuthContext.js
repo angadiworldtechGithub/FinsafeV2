@@ -5,18 +5,16 @@ import { onAuthStateChanged } from "firebase/auth";
 
 export const AuthContext = createContext();
 
-// May have to change the AuthContext
 export function AuthContextProvider({ children }) {
   const [auth, setAuth] = useState(null);
 
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) {
-        console.log("Use Effect user", user);
         setAuth(user);
       }
     });
-  });
+  }, []);
 
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
