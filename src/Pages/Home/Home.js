@@ -83,6 +83,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "Get Expert Financial advice",
+    image: "assets/images/income.png",
     icon: FcServices,
     color1: "#BF570D",
     color2: "#BF570D",

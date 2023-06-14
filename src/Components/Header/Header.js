@@ -48,7 +48,7 @@ const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
     if (ADMIN_EMAILS.includes(auth.email)) {
       return {
         text: "Admin",
-        link: "/admin",
+        link: "/adminv2",
       };
     } else {
       return {

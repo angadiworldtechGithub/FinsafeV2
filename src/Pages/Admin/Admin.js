@@ -141,6 +141,7 @@ export default function Admin() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         ></input>
+
         <FileUpload
           className="auto_align"
           onDrop={onDrop}

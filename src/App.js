@@ -2,7 +2,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
-import Admin from "./Pages/Admin";
+import Adminv2 from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
 import CfoServices from "./Pages/CfoServices/CfoServices";
@@ -198,8 +198,8 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/admin",
-        element: <Admin />,
+        path: "/adminv2",
+        element: <Adminv2 />,
       },
       {
         path: "/",
