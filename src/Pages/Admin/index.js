@@ -1,2 +1,2 @@
-import Admin from "./Adminv2";
+import Admin from "./Adminv2.js";
 export default Admin;
