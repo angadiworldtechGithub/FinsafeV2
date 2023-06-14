@@ -15,29 +15,29 @@
 
 .admin-item-left{
   width : 40%;
-  height: 300px;
+  height: 350px;
   float: left;
   border: 2px solid #e6e6e6;
 }
 
 .admin-item-right{
   width : 60%;
-  height: 300px;
+  height: 350px;
   float:right;
   border: 2px solid #e6e6e6;
 }
-.admin-item1{
+.admin-box1{
   width: 28%;
-  height: 250px;
+  height: 270px;
   padding-left: 20px;
   margin: 5px 5px 5px 5px;
   float: left;
   border: 2px solid #e6e6e6;
 }
 
-.admin-item2{
+.admin-box2{
   width: 60%;
-  height: 250px;
+  height: 270px;
   margin: 5px 5px 5px 5px;
   float: right;
   border-radius: 4px;
@@ -46,9 +46,9 @@
   border: 2px solid #e6e6e6;
 }
 
-.admin-item3{
+.admin-box3{
   width: 20%;
-  height: 280px;
+  height: 270px;
   padding-left: 20px;
   margin: 5px 5px 5px 5px;
   float: left;
@@ -56,7 +56,7 @@
 }
 
 
-.admin-item4{
+.admin-box4{
   width: 72%;
   height: 250px;
   margin: 5px 5px 5px 5px;
@@ -115,6 +115,16 @@
   border-radius: 3px;
 }
 
+.admin-select {
+  width: 53%;
+  height: 35px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
 .admin-address4{
   width: 50%;
   height: 80px;
@@ -146,6 +156,52 @@
 }
 .dropdown{
   width: 50%;
-  height: 30px;
+  height: 20px;
   border: 2px solid #000;
+}
+.admin-number{
+  width: 22%;
+  height: 20px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+.label-name{
+  font-size: 15px;
+}
+.summary-container{
+  display: flex;
+}
+.summary-right{
+  float: right;
+}
+.summary-right{
+  width: 80%;
+  height: 100px;
+  padding: 5px 5px 5px 5px;
+  margin: 20px 20px 20px 20px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+.summary-left{
+  float:left;
+}
+.summary-left{
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 10px 10px 30px;
+}
+h1{
+  text-align: center;
+  color: #072f5f;
+}
+.download-icon{
+  font-size: 40px;
+  font-weight: 700;
+  border-radius: 40px;
+  padding-top: 30px;
+  padding-right: 20px;
 }
