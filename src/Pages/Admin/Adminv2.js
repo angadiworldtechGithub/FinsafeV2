@@ -1,6 +1,7 @@
 import "./Adminv2.css";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
+import {BiRightArrow} from "react-icons/bi";
 export default function Adminv2() {
   return (
     <div>
@@ -255,6 +256,53 @@ export default function Adminv2() {
           </div>
         </div>
       </div>
+
+      <div className="date-container">
+        <p className="date-para"> Choose Date - <input  className="date" type="date"></input></p>
+
+        <button className="date-button">ROC</button><i className="date-icon"><BiRightArrow/></i><br></br>
+        <button className="date-button">Income Tax</button><i className="date-icon"><BiRightArrow/></i><br></br>
+        <button className="date-button">Form 16</button><i className="date-icon"><BiRightArrow/></i>
+        
+        <div className="date-flex">
+         
+           <div className="date-flex-left">
+           
+               <div className="date-roc">
+                   <p className="date-para">ROC <i className="date-icon"><BiRightArrow/></i></p>
+               </div>
+            </div>
+
+
+          <div className="date-flex-right">
+           <div className="date-right1">
+             <div className="date-flex1"> 
+              Company Name - what ever user enter in company Details it comes in this box
+             </div>
+             <div className="date-flex1"> 
+              Name -
+             </div>
+           </div>
+           <div className="date-right1">
+             <div className="date-flex1"> 
+              Name -
+             </div>
+             <div className="date-flex1"> 
+             Name -
+             </div>
+           </div>
+
+           <div className="date-right1">
+            <div className="date-flex1"> 
+               Name -
+           </div>
+            <div className="date-flex1"> 
+            Name -
+            </div>
+          </div>
+          </div>
+        </div>
+     </div>
     </div>
   );
 }
