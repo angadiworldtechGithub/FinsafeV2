@@ -1,0 +1,53 @@
+.dashboard_container {
+  text-align: center;
+}
+
+.auto_align {
+  margin: 0 auto;
+  border: 2px solid #072f5f;
+  padding: 30px 30px 30px 30px;
+  margin-left: 20%;
+}
+
+.admin_container {
+  text-align: center;
+  padding: 20px;
+  background-color: #e6e6e6;
+}
+
+.admin_input {
+  width: 68%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 400px) {
+  .admin_input {
+    width: 100%;
+  }
+}
+
+.download_all:hover {
+  cursor: pointer;
+}
+
+.download_all {
+  text-decoration: underline;
+}
+.admin_text {
+  background-color: #fff;
+  padding: 20px 20px 20px 20px;
+  border-radius: 30px;
+  width: 50%;
+  margin-left: 25%;
+  border: 4px Solid #072f5f;
+}
+
+.table_loading {
+  position: absolute;
+  left: 40px;
+}

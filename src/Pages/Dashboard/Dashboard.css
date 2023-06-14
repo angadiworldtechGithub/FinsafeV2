@@ -1,53 +1,407 @@
-.dashboard_container {
-  text-align: center;
+/*Header */
+.flex-container{
+  flex : 1;
 }
 
-.auto_align {
-  margin: 0 auto;
-  border: 2px solid #072f5f;
-  padding: 30px 30px 30px 30px;
-  margin-left: 20%;
+.flex-item-left{
+  float: left;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 30px;
+  color: #072f5f;
+  padding: 10px 10px 10px 10px;
+}
+.flex-item-right{
+  float: right;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 30px;
+  color: #072f5f;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 520px
 }
 
-.admin_container {
+/*Company Details */
+
+.admin-container{
+  display: flex;
+}
+
+.admin-item-left{
+  width : 40%;
+  height: 350px;
+  float: left;
+  border: 2px solid #e6e6e6;
+}
+
+.admin-item-right{
+  width : 60%;
+  height: 350px;
+  float:right;
+  border: 2px solid #e6e6e6;
+}
+
+.admin-box1{
+  width: 28%;
+  height: 270px;
+  padding-left: 20px;
+  margin: 5px 5px 5px 5px;
+  float: left;
+  border: 2px solid #e6e6e6;
+}
+
+.admin-box2{
+  width: 60%;
+  height: 270px;
+  margin: 5px 5px 5px 5px;
+  float: right;
+  border-radius: 4px;
+  padding-top: 16px;
+  padding-left: 10px;
+  border: 2px solid #e6e6e6;
+}
+
+.admin-box3{
+  width: 20%;
+  height: 270px;
+  padding-left: 20px;
+  margin: 5px 5px 5px 5px;
+  float: left;
+  border: 2px solid #e6e6e6;
+}
+
+
+.admin-box4{
+  width: 72%;
+  height: 250px;
+  margin: 5px 5px 5px 5px;
+  float: right;
+  border-radius: 4px;
+  padding-top: 16px;
+  padding-left: 10px;
+  border: 2px solid #e6e6e6;
+}
+
+.admin-text:focus{
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.admin-address:focus{
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.admin-text {
+  width: 90%;
+  height: 20px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.admin-address{
+  width: 90%;
+  height: 80px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*admin right box */
+.admin1-address{
+  font-size: 20px;
+  font-weight: 700;
+
+}
+.admin1-text{
+  padding-top: 5px;
+}
+
+.admin-text4 {
+  width: 50%;
+  height: 20px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.admin-select {
+  width: 53%;
+  height: 35px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.admin-address4{
+  width: 50%;
+  height: 80px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+.button-upload{
+  width: 80px;
+  height: 30px; 
+  margin-left: 5px;
+  border-radius: 10px;
+  background-color: #072f5f;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+.upload-file{
+  width: 100px;
+  height: 20px; 
+  margin-left: 5px;
+}
+.upload-icon{
+  font-size: 30px;
+  padding-left: 10px;
+  
+}
+.admin-number{
+  width: 22%;
+  height: 20px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+.label-name{
+  font-size: 15px;
+}
+
+
+/*Summary */
+.summary-container{
+  display: flex;
+}
+.summary-right{
+  float: right;
+}
+.summary-right{
+  width: 80%;
+  height: 100px;
+  padding: 5px 5px 5px 5px;
+  margin: 20px 20px 20px 20px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+.summary-left{
+  float:left;
+}
+.summary-left{
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 10px 10px 30px;
+}
+
+
+.download-heading{
   text-align: center;
-  padding: 20px;
+  color: #072f5f;
+}
+
+.download-icon{
+  font-size: 40px;
+  font-weight: 700;
+  border-radius: 40px;
+  padding-top: 30px;
+  padding-right: 20px;
+}
+
+/*Director Box*/
+
+.Director-box{
+  font-weight: 700;
+  font-size:30px;
+  color: #072f5f;
+  padding-top: 60px;
+  padding-left: 30px;
+}
+
+.director-container{
+  display: flex;
+}
+
+.director-item-left{
+  width : 50%;
+  height: 550px;
+  float:right;
+  border: 2px solid #e6e6e6;
+}
+.director-box1{
+  width: 25%;
+  height: 495px;
+  padding-left: 20px;
+  margin: 5px 5px 5px 5px;
+  float: left;
+  border: 2px solid #e6e6e6;
+}
+.director-box2{
+  width: 65%;
+  height: 500px;
+  margin: 5px 5px 5px 5px;
+  float: right;
+  border-radius: 4px;
+  padding-top: 16px;
+  padding-left: 10px;
+  border: 2px solid #e6e6e6;
+}
+.director-name{
+  padding-top: 10px;
+}
+.director-address{
+  padding-bottom: 50px;
+}
+.director-num{
+  padding-top: 10px;
+}
+.director-gst{
+  padding-bottom: 10px;
+}
+.director-pan{
+  padding-top: 20px;
+}
+.director-documents{
+  padding-top: 20px;
+}
+.upload-directorfile{
+  margin-left: 180px;
+}
+
+.director-item-right{
+  width : 50%;
+  height: 550px;
+  float:  right;
+  border: 2px solid #e6e6e6;
+}
+.director-box3{
+  width: 90%;
+  height: 450px;
+  padding-left: 20px;
+  margin: 5px 5px 5px 5px;
+  float: left;
+  border: 2px solid #e6e6e6;
+}
+.director-addonbox{
+  margin-top: 90px;
+  margin-left: 160px;
+  height: 250px;
+  width: 40%;
+  border: 2px solid black;
   background-color: #e6e6e6;
 }
-
-.admin_input {
-  width: 68%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+.director-icon{
+  align-items: center;
+  padding-left: 70px;
+  font-size: 100px;
+}
+.director-para{
+  font-size: 30px;
+  font-weight: 600;
+  padding-left: 60px;
+  padding-bottom: 20px;
+  font-style: normal;
+}
+.director-download{
+  font-size: 20px;
+}
+.line{
+  height: 500;
+  width: 2px;
+  color: #000;
+  border-radius: 2px;
+  border: 2px solid #000;
+  background-color: #000;
+}
+/*Date container */
+.date-container{
+  border: 2px solid #e6e6e6;
+  height: 800px;
+  width: 100%;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-right: 30px;
+}
+.date{
+  border: 3px solid #000;
+  font-size: 20px;
+  font-weight: 600;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.date-para{
+  font-size: 40px;
+  font-weight: 700;
+  padding-left: 20px;
 }
 
-@media only screen and (max-width: 400px) {
-  .admin_input {
-    width: 100%;
-  }
+.date-icon{
+  font-size: 40px;
+  color: #072f5f;
 }
-
-.download_all:hover {
-  cursor: pointer;
-}
-
-.download_all {
-  text-decoration: underline;
-}
-.admin_text {
-  background-color: #fff;
-  padding: 20px 20px 20px 20px;
+.date-flex{
+  width: 95%;
+  border: 2px solid #000;
+  height: 320px;
+  background-color: #e6e6e6;
   border-radius: 30px;
-  width: 50%;
-  margin-left: 25%;
-  border: 4px Solid #072f5f;
+}
+.date-flex-left{
+ width: 20%;
+ float: left;
+ border: 2px solid #e6e6e6;
+
+}
+.date-flex-right{
+  width: 75%;
+  height: 300px;
+ float: right;
+ border: 2px solid #e6e6e6;
+ display: flex;
+}
+.date-right1{
+  height: 290px;
+  width: 95%;
+  border: 2px solid #e6e6e6;
+  flex-direction: column;
 }
 
-.table_loading {
-  position: absolute;
-  left: 40px;
+.date-flex1{
+  background-color: #fff;
+  height: 120px;
+  width: 80%;
+  border: 2px solid #000;
+  float: column;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.date-button{
+  height: 50px;
+   width: 20%;
+  margin: 20px 20px 20px 20px ;
+  font-size: 40px;
+  font-weight: 600;
+  border-radius: 10px;
 }
