@@ -176,6 +176,7 @@ import { AuthContextProvider } from "./Context/AuthContext";
 import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
 import SignUp from "./Pages/SignUp";
 import PhoneLogin from "./Pages/PhoneLogin";
+import Adminservice from "./Pages/Adminservice";
 
 const Base = () => {
   return (
@@ -678,6 +679,10 @@ const router = createBrowserRouter([
       {
         path: "/others",
         element: <Others />,
+      },
+      {
+        path: "/Adminservice",
+        element: <Adminservice/>,
       },
     ],
   },
