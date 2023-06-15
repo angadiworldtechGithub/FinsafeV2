@@ -2,6 +2,9 @@
     border: 2px solid #e6e6e6;
     display: flex;
     flex-direction: row;
+.company-container {
+  height: 800px;
+  border: 2px solid #e6e6e6;
 }
 .welcome{
     padding-left: 20px;
@@ -13,13 +16,24 @@
     display: flex;
     justify-content: space-between;
     padding: 5px 5px 5px 5px;
+.welcome {
+  padding-left: 20px;
+  font-size: 30px;
+  color: #072f5f;
+  font-weight: 800;
 }
-.company-header{
-    text-align: center;
-    font-size: 40px;
-    color: #072f5f;
-    font-weight: 700;
+.company-header {
+  text-align: center;
+  font-size: 40px;
+  color: #072f5f;
+  font-weight: 700;
 }
+.company-left {
+  float: left;
+  width: 46%;
+  height: 600px;
+  border: 2px solid #000;
+  margin: 20px 20px 20px 20px;
 .company-left{
     display: flex;
     flex-direction: column;
@@ -41,6 +55,12 @@
 .roc-download{
     font-size: 30px;
     margin: 20px 20px 20px 20px ;
+.company-right {
+  float: right;
+  width: 46%;
+  height: 600px;
+  border: 2px solid #000;
+  margin: 20px 20px 20px 20px;
 }
 .roc {
     min-width: 60%;
@@ -70,21 +90,21 @@
     margin-right: 5px;
 
   }
-.company-button{
-    height: 50px;
-    width: 70%;
-    margin-left: 30px;
-    margin-top: 20px;
-    font-size: 30px;
-    font-weight: 600;
-    text-align: left;
-    padding-left: 10px;
-    border-radius: 10px;
+.company-button {
+  height: 50px;
+  width: 70%;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 10px;
+  border-radius: 10px;
     margin-bottom: 20px;
 }
-.company-icon{
-    font-size: 40px;
-    margin-top: 20px;
+.company-icon {
+  font-size: 40px;
+  margin-top: 20px;
 }
 @media screen and (max-width: 600px) {
     .company-nestedleft{
@@ -144,3 +164,16 @@
     font-weight: 600;
   }
 
+
+  }
+  .company-left {
+    width: 90%;
+    height: 500px;
+    margin-right: 5px;
+  }
+  .company-right {
+    width: 90%;
+    height: 500px;
+    margin-left: 5px;
+  }
+}

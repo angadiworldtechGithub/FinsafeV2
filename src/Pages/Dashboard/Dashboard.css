@@ -1,17 +1,17 @@
 /*Header */
-.flex-container{
-  flex : 1;
+.flex-container {
+  flex: 1;
 }
 
-.flex-item-left{
-  float: left;
+.flex-item-left {
   margin-top: 20px;
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 30px;
   color: #072f5f;
   padding: 10px 10px 10px 10px;
 }
-.flex-item-right{
+.flex-item-right {
   float: right;
   margin-top: 20px;
   font-weight: 700;
@@ -19,39 +19,40 @@
   color: #072f5f;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 520px
+  padding-left: 520px;
 }
 
 /*Company Details */
 
-.admin-container{
+.admin-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
-.admin-item-left{
-  width : 40%;
-  height: 350px;
+.admin-input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.admin-details {
+  padding-top: 20px;
+  padding-right: 20px;
+  max-width: 50%;
   float: left;
   border: 2px solid #e6e6e6;
 }
 
-.admin-item-right{
-  width : 60%;
+.admin-documents {
+  width: 60%;
   height: 350px;
-  float:right;
+  float: right;
   border: 2px solid #e6e6e6;
+  border-left: none;
+  padding: 20px;
 }
 
-.admin-box1{
-  width: 28%;
-  height: 270px;
-  padding-left: 20px;
-  margin: 5px 5px 5px 5px;
-  float: left;
-  border: 2px solid #e6e6e6;
-}
-
-.admin-box2{
+.admin-box2 {
   width: 60%;
   height: 270px;
   margin: 5px 5px 5px 5px;
@@ -62,7 +63,7 @@
   border: 2px solid #e6e6e6;
 }
 
-.admin-box3{
+.admin-box3 {
   width: 20%;
   height: 270px;
   padding-left: 20px;
@@ -71,8 +72,7 @@
   border: 2px solid #e6e6e6;
 }
 
-
-.admin-box4{
+.admin-box4 {
   width: 72%;
   height: 250px;
   margin: 5px 5px 5px 5px;
@@ -83,28 +83,27 @@
   border: 2px solid #e6e6e6;
 }
 
-.admin-text:focus{
+.admin-text:focus {
   border: 2px solid #000;
   border-radius: 3px;
 }
 
-.admin-address:focus{
+.admin-address:focus {
   border: 2px solid #000;
   border-radius: 3px;
 }
 
 .admin-text {
-  width: 90%;
-  height: 20px;
-  padding: 5px 5px 5px 5px;
-  margin: 5px 5px 5px 5px;
+  height: 25px;
+  margin: 5px;
+  width: 50%;
   background-color: #e6e6e6;
   border: 2px solid #000;
   border-radius: 3px;
 }
 
-.admin-address{
-  width: 90%;
+.admin-address {
+  width: 49%;
   height: 80px;
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
@@ -114,18 +113,29 @@
 }
 
 /*admin right box */
-.admin1-address{
+.admin1-address {
   font-size: 20px;
   font-weight: 700;
-
 }
-.admin1-text{
+.admin1-text {
   padding-top: 5px;
+  margin-left: 10px;
+  font-size: 20px;
 }
 
 .admin-text4 {
-  width: 50%;
+  width: 80%;
   height: 20px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: #e6e6e6;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.admin-address4 {
+  width: 80%;
+  height: 80px;
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
   background-color: #e6e6e6;
@@ -134,7 +144,7 @@
 }
 
 .admin-select {
-  width: 53%;
+  width: 40%;
   height: 35px;
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
@@ -143,18 +153,9 @@
   border-radius: 3px;
 }
 
-.admin-address4{
-  width: 50%;
-  height: 80px;
-  padding: 5px 5px 5px 5px;
-  margin: 5px 5px 5px 5px;
-  background-color: #e6e6e6;
-  border: 2px solid #000;
-  border-radius: 3px;
-}
-.button-upload{
+.button-upload {
   width: 80px;
-  height: 30px; 
+  height: 30px;
   margin-left: 5px;
   border-radius: 10px;
   background-color: #072f5f;
@@ -162,62 +163,52 @@
   font-size: 15px;
   font-weight: 600;
 }
-.upload-file{
+.upload-file {
   width: 100px;
-  height: 20px; 
+  height: 20px;
   margin-left: 5px;
 }
-.upload-icon{
+.download-icon {
   font-size: 30px;
   padding-left: 10px;
-  
 }
-.admin-number{
-  width: 22%;
+.admin-number {
   height: 20px;
-  padding: 5px 5px 5px 5px;
-  margin: 5px 5px 5px 5px;
+  margin: 5px;
   background-color: #e6e6e6;
   border: 2px solid #000;
   border-radius: 3px;
 }
-.label-name{
+.label-name {
   font-size: 15px;
 }
 
-
 /*Summary */
-.summary-container{
+.summary-container {
   display: flex;
 }
-.summary-right{
-  float: right;
-}
-.summary-right{
+
+.summary-right {
   width: 80%;
   height: 100px;
   padding: 5px 5px 5px 5px;
   margin: 20px 20px 20px 20px;
   background-color: #e6e6e6;
   border: 2px solid #000;
-  border-radius: 3px;
+  border-radius: 5px;
 }
-.summary-left{
-  float:left;
-}
-.summary-left{
+.summary-left {
   font-size: 20px;
   font-weight: 700;
   padding: 20px 10px 10px 30px;
 }
 
-
-.download-heading{
+.download-heading {
   text-align: center;
   color: #072f5f;
 }
 
-.download-icon{
+.download-icon {
   font-size: 40px;
   font-weight: 700;
   border-radius: 40px;
@@ -227,102 +218,53 @@
 
 /*Director Box*/
 
-.Director-box{
-  font-weight: 700;
-  font-size:30px;
-  color: #072f5f;
-  padding-top: 60px;
-  padding-left: 30px;
+.director-box {
+  padding: 20px;
+  margin: 10px;
+  min-height: 500px;
+  min-width: 500px;
+  border-radius: 30px;
+  border: 2px solid #e6e6e6;
 }
 
-.director-container{
+.director-container {
   display: flex;
-}
-
-.director-item-left{
-  width : 50%;
-  height: 550px;
-  float:right;
-  border: 2px solid #e6e6e6;
-}
-.director-box1{
-  width: 25%;
-  height: 495px;
-  padding-left: 20px;
-  margin: 5px 5px 5px 5px;
-  float: left;
-  border: 2px solid #e6e6e6;
-}
-.director-box2{
-  width: 65%;
-  height: 500px;
-  margin: 5px 5px 5px 5px;
-  float: right;
-  border-radius: 4px;
-  padding-top: 16px;
-  padding-left: 10px;
-  border: 2px solid #e6e6e6;
-}
-.director-name{
-  padding-top: 10px;
-}
-.director-address{
-  padding-bottom: 50px;
-}
-.director-num{
-  padding-top: 10px;
-}
-.director-gst{
-  padding-bottom: 10px;
-}
-.director-pan{
-  padding-top: 20px;
-}
-.director-documents{
-  padding-top: 20px;
-}
-.upload-directorfile{
-  margin-left: 180px;
-}
-
-.director-item-right{
-  width : 50%;
-  height: 550px;
-  float:  right;
-  border: 2px solid #e6e6e6;
-}
-.director-box3{
-  width: 90%;
-  height: 450px;
-  padding-left: 20px;
-  margin: 5px 5px 5px 5px;
-  float: left;
-  border: 2px solid #e6e6e6;
-}
-.director-addonbox{
-  margin-top: 90px;
-  margin-left: 160px;
-  height: 250px;
-  width: 40%;
-  border: 2px solid black;
-  background-color: #e6e6e6;
-}
-.director-icon{
   align-items: center;
-  padding-left: 70px;
-  font-size: 100px;
+  min-height: 400px;
+  flex-wrap: wrap;
 }
-.director-para{
-  font-size: 30px;
-  font-weight: 600;
-  padding-left: 60px;
-  padding-bottom: 20px;
-  font-style: normal;
+
+.director-box-inner {
+  margin: 5px 5px 5px 5px;
 }
-.director-download{
+
+.director-addonbox {
+  height: fit-content;
+  width: 100px;
+  border: 1px solid black;
+  background-color: #e6e6e6;
+  text-align: center;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.director-addonbox:hover {
+  cursor: pointer;
+}
+
+.director-icon {
+  font-size: 50px;
+}
+
+.director-icon-text {
+  font-size: 20px;
+  margin: 0px;
+}
+
+.director-download {
   font-size: 20px;
 }
-.line{
+.line {
   height: 500;
   width: 2px;
   color: #000;
@@ -331,7 +273,7 @@
   background-color: #000;
 }
 /*Date container */
-.date-container{
+.date-container {
   border: 2px solid #e6e6e6;
   height: 800px;
   width: 100%;
@@ -339,7 +281,7 @@
   padding-top: 30px;
   padding-right: 30px;
 }
-.date{
+.date {
   border: 3px solid #000;
   font-size: 20px;
   font-weight: 600;
@@ -347,44 +289,43 @@
   margin-bottom: 10px;
   margin-left: 20px;
 }
-.date-para{
-  font-size: 40px;
-  font-weight: 700;
+.date-para {
+  font-size: 20px;
+  font-weight: 300;
   padding-left: 20px;
 }
 
-.date-icon{
+.date-icon {
   font-size: 40px;
   color: #072f5f;
 }
-.date-flex{
+.date-flex {
   width: 95%;
-  border: 2px solid #000;
+  border: 1px solid #000;
   height: 320px;
   background-color: #e6e6e6;
   border-radius: 30px;
 }
-.date-flex-left{
- width: 20%;
- float: left;
- border: 2px solid #e6e6e6;
-
+.date-flex-left {
+  width: 20%;
+  float: left;
+  border: 2px solid #e6e6e6;
 }
-.date-flex-right{
+.date-flex-right {
   width: 75%;
   height: 300px;
- float: right;
- border: 2px solid #e6e6e6;
- display: flex;
+  float: right;
+  border: 2px solid #e6e6e6;
+  display: flex;
 }
-.date-right1{
+.date-right1 {
   height: 290px;
   width: 95%;
   border: 2px solid #e6e6e6;
   flex-direction: column;
 }
 
-.date-flex1{
+.date-flex1 {
   background-color: #fff;
   height: 120px;
   width: 80%;
@@ -397,11 +338,29 @@
   flex-direction: column;
 }
 
-.date-button{
+.date-button {
   height: 50px;
-   width: 20%;
-  margin: 20px 20px 20px 20px ;
+  width: 30%;
+  margin: 20px 20px 20px 20px;
   font-size: 40px;
   font-weight: 600;
   border-radius: 10px;
+}
+
+.dashboard_submit {
+  height: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #072f5f;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dashboard_submit:hover {
+  background-color: white;
+  border: #072f5f solid 2px;
 }
