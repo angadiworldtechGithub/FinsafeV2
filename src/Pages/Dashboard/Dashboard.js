@@ -40,13 +40,13 @@ export default function Dashboard() {
   return (
     <div>
       <CompanyDetails
-        setCompanyDetails={(companyDetails) => {
-          setDashboardDetails((dashboardDetails) => {
-            setDashboardDetails({
-              ...dashboardDetails,
-              companyDetails: { ...companyDetails },
-            });
-          });
+        setCompanyDetails={(companyDetailsCallback) => {
+          setDashboardDetails((dashboardDetails) => ({
+            ...dashboardDetails,
+            companyDetails: {
+              ...companyDetailsCallback(dashboardDetails.companyDetails),
+            },
+          }));
         }}
         companyDetails={dashboardDetails.companyDetails}
       />
