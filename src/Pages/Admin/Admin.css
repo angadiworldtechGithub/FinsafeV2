@@ -1,69 +1,63 @@
-.company-container{
-    height: 800px;
-    border: 2px solid #e6e6e6;
+.company-container {
+  height: 800px;
+  border: 2px solid #e6e6e6;
 }
-.welcome{
-    padding-left: 20px;
-    font-size: 30px;
-    color: #072f5f;
-    font-weight: 800;
+.welcome {
+  padding-left: 20px;
+  font-size: 30px;
+  color: #072f5f;
+  font-weight: 800;
 }
-.company-header{
-    text-align: center;
-    font-size: 30px;
-    color: #072f5f;
-    font-weight: 800;
+.company-header {
+  text-align: center;
+  font-size: 30px;
+  color: #072f5f;
+  font-weight: 800;
 }
-.company-left{
-    float: left;
-    width: 46%;
-    height: 600px;
-    border: 2px solid #000;
-    margin: 20px 20px 20px 20px ;
+.company-left {
+  float: left;
+  width: 46%;
+  height: 600px;
+  border: 2px solid #000;
+  margin: 20px 20px 20px 20px;
 }
-.company-right{
-    float: right;
-    width: 46%;
-    height: 600px;
-    border: 2px solid #000;
-    margin: 20px 20px 20px 20px ;
+.company-right {
+  float: right;
+  width: 46%;
+  height: 600px;
+  border: 2px solid #000;
+  margin: 20px 20px 20px 20px;
 }
-.company-button{
-    height: 50px;
-    width: 70%;
-    margin-left: 30px;
-    margin-top: 20px;
-    font-size: 30px;
-    font-weight: 600;
-    text-align: left;
-    padding-left: 10px;
-    border-radius: 10px;
+.company-button {
+  height: 50px;
+  width: 70%;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 10px;
+  border-radius: 10px;
 }
-.company-icon{
-    font-size: 40px;
-    margin-top: 20px;
+.company-icon {
+  font-size: 40px;
+  margin-top: 20px;
 }
-
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-.company-container{
+@media only screen and (max-width: 600px) {
+  .company-container {
     height: 1200px;
     border: 2px solid #e6e6e6;
-}
-}
-
-@media screen and (max-width: 600px) {
-    .company-left {
-        width: 90%;
-        height: 500px;
-        margin-right: 5px;
-    }
-}
-@media screen and (max-width: 600px) {
-    .company-right {
-        width: 90%;
-        height: 500px;
-        margin-left:5px
-    }
+  }
+  .company-left {
+    width: 90%;
+    height: 500px;
+    margin-right: 5px;
+  }
+  .company-right {
+    width: 90%;
+    height: 500px;
+    margin-left: 5px;
+  }
 }
