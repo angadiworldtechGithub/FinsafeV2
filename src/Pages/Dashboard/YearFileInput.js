@@ -10,11 +10,11 @@ export default function YearFileInput({ fileInput }) {
       <h4 className="date-button">{fileInput.name} Files</h4>
       <div className="income-flex">
          <div>
-               <label> Choose Date - </label>
+               <label className="label-flex"> Choose Date - </label>
                <input type="date" />
-        </div>
+         </div>
          <div>
-              <label>Upload File</label>
+              <label className="label-flex">Upload File - </label>
               <input type="file" />
          </div>
          <div>
