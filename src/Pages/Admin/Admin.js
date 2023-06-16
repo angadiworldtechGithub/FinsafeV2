@@ -1,98 +1,116 @@
-import "./Admin.css"
-import { BsChevronRight } from "react-icons/bs";
-import{ MdDownloadForOffline } from "react-icons/md";
+import "./Admin.css";
+import { MdDownloadForOffline } from "react-icons/md";
+import { useState } from "react";
+
 export default function Admin() {
+  const [companies, setCompanies] = useState([]);
+  const [activeCompany, setActiveCompany] = useState(0);
   return (
-     <div>
-     <p className="welcome">Welcome!</p>
-     <div className="company-container">
-     <div className="company-left">
-       <p className="company-header">List of Companies</p>
-       <button className="company-button">Company 1</button>
-       <button className="company-button">Company 2</button>
-       <button className="company-button">Company 2</button>
-      </div>
-
-     <div className="company-right">
-    
-
-        <div className="company-nestedleft">
-             
-        <div className="company">
-        <div><label className="companynested-header">Company 1</label></div>
-         <i className="companyprofile-download"><MdDownloadForOffline/></i>
+    <div>
+      <p className="title-text">Super Admin Panel</p>
+      <div className="company-container">
+        <div className="company-left">
+          <p className="company-header">List of Companies</p>
+          {companies.map((company, index) => (
+            <button
+              className="company-button"
+              onClick={() => {
+                setActiveCompany(index);
+              }}
+            >
+              Company {company?.name ?? "No Name"}
+            </button>
+          ))}
         </div>
-   
 
+        <div className="company-right">
+          <div className="company-nestedleft">
+            <div className="company">
+              <div>
+                <label className="companynested-header">Company 1</label>
+              </div>
+              <i className="companyprofile-download">
+                <MdDownloadForOffline />
+              </i>
+            </div>
 
-         <div className="company">
-           <div><label className="company-text">Company Name</label></div>
-           <input className="companynested-text"></input>
-         </div>
+            <div className="company">
+              <div>
+                <label className="company-text">Company Name</label>
+              </div>
+              {companies[activeCompany]?.name ?? "No Name"}
+            </div>
 
-         <div className="company">
-          <label className="company-text">Address</label>
-          <input className="companynested-address"></input>
+            <div className="company">
+              <label className="company-text">Address</label>
+              {companies[activeCompany]?.address ?? "No Address"}
+            </div>
+
+            <div className="company">
+              <label className="company-text">Phone Number</label>
+              {companies[activeCompany]?.mobilenumber ?? "No Mobile Number"}
+            </div>
+
+            <div className="company">
+              <label className="company-text">Email ID</label>
+              {companies[activeCompany]?.email ?? "No Email Id"}
+            </div>
+
+            <div className="company">
+              <label className="company-text">CIN Number</label>
+              {companies[activeCompany]?.cinNumber ?? "Not Entered"}
+            </div>
+
+            <div className="company">
+              <label className="company-text">DIN Number</label>
+              {companies[activeCompany]?.dinNumber ?? "Not Entered"}
+            </div>
+
+            <div className="company">
+              <label className="company-text">
+                Company InCorporation Certificate
+              </label>
+              <p className="roc">Status........</p>
+              <i className="roc-download">
+                <MdDownloadForOffline />
+              </i>
+            </div>
+
+            <div className="company">
+              <label className="company-text">ROC</label>
+              <p className="roc">Status........</p>
+              <i className="roc-download">
+                <MdDownloadForOffline />
+              </i>
+            </div>
+
+            <div className="company">
+              <label className="company-text">Income Tax</label>
+              <p className="tax">stauts........</p>
+              <i className="roc-download">
+                <MdDownloadForOffline />
+              </i>
+            </div>
+
+            <div className="company">
+              <label className="company-text">Form 16</label>
+              <p className="form16">stauts.......</p>
+              <i className="roc-download">
+                <MdDownloadForOffline />
+              </i>
+            </div>
+
+            <p className="company-header">List of Directors</p>
+            {companies[activeCompany]?.directors.map((director) => {
+              return (
+                <button className="company-button">
+                  Director {director.name}
+                </button>
+              );
+            }) ?? <></>}
           </div>
-
-          <div className="company">
-          <label className="company-text">Phone Number</label>
-          <input className="companynested-text"></input>
-          </div>
-
-          <div className="company">
-          <label className="company-text">Email ID</label>
-          <input className="companynested-text"></input>
-          </div>
-
-          <div className="company">
-          <label className="company-text">GST Number</label>
-          <input className="companynested-text"></input>
-          </div>
-
-          <div className="company">
-          <label className="company-text">PAN Number</label>
-          <input className="companynested-text"></input>
-          </div>
-
-          <div className="company">
-          <label className="company-text">Company InCorporation Certificate</label>
-          <input className="companynested-address"></input>
-          </div>
-
-          <div className="company">
-          <label className="company-text">ROC</label>
-          <p className="roc">Status........</p><i className="roc-download"><MdDownloadForOffline/></i> 
-          </div>
-
-          <div className="company">
-          <label className="company-text">Income Tax</label>
-          <p className="tax">stauts........</p><i className="roc-download"><MdDownloadForOffline/></i> 
-          </div>
-
-          <div className="company">
-          <label className="company-text">Form 16</label>
-          <p className="form16">stauts.......</p><i className="roc-download"><MdDownloadForOffline/></i> 
-          </div>
-
-          <p className="company-header">List of Directors</p>
-          <button className="company-button">Director 1</button>
-          <button className="company-button">Director 2</button>
-          <button className="company-button">Director 2</button>
-
-         </div>
-        
-        {/*</div><div className="company-nestedright">*/}
-
-     </div>
-    {/* <p className="company-header">List of  Directors</p>
-      <button className="company-button">Directors 1</button><i className="company-icon"><BsChevronRight/></i>
-      <button className="company-button">Individuals 2</button><i className="company-icon"><BsChevronRight/></i>
-      */}
-
-
-
-    </div> 
+        </div>
+      </div>
     </div>
-    );
+  );
 }

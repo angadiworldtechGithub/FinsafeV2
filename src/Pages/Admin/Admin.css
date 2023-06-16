@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: row;
 }
-.welcome {
+.title-text {
   padding-left: 20px;
-  font-size: 40px;
+  font-size: 30px;
   color: #072f5f;
   font-weight: 700;
 }

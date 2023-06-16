@@ -1,5 +1,5 @@
 import { MdOutlineDownloadForOffline } from "react-icons/md";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const DEFAULT_DOCUMENT_LIST = [
   "GST Number",
@@ -9,6 +9,7 @@ const DEFAULT_DOCUMENT_LIST = [
 
 export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
   const [documentOptions, setDocumentOptions] = useState(DEFAULT_DOCUMENT_LIST);
+  const docRef = useRef([]);
 
   return (
     <>
@@ -74,13 +75,16 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
 
         <div className="admin-documents">
           {companyDetails.documents.length ? (
-            companyDetails.documents.map((document) => {
+            companyDetails.documents.map((document, index) => {
               return (
-                <div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginBottom: "20px",
+                  }}
+                >
                   <label className="admin1-text">{document.name}</label>
-                  <i className="upload-icon">
-                    <MdOutlineDownloadForOffline />
-                  </i>
                   {document.downloadFileUrl ? (
                     <i className="upload-icon">
                       <a
@@ -92,14 +96,18 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                       </a>
                     </i>
                   ) : (
-                    <>
+                    <div style={{ display: "flex" }}>
                       <div>
-                        <input style={{ marginLeft: "10px" }} type="file" />
+                        <input
+                          style={{ marginLeft: "10px" }}
+                          ref={(el) => (docRef.current[index] = el)}
+                          type="file"
+                        />
                       </div>
                       <div>
                         <button className="button-upload">Upload</button>
                       </div>
-                    </>
+                    </div>
                   )}
                 </div>
               );

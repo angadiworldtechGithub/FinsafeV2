@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { ImCancelCircle } from "react-icons/im";
 
@@ -13,6 +13,7 @@ export default function Director({
 }) {
   const [newDocumentOptions, setNewDocumentOptions] = useState(DOCUMENT_LIST);
   const [data, setData] = useState(initialData);
+  const docRef = useRef([]);
   useEffect(() => {
     if (onSave === "medium") {
       setFinalData({ ...data });
@@ -78,7 +79,7 @@ export default function Director({
               className="admin-text4"
             ></input>
           </div>
-          {data.documents.map((document) => {
+          {data.documents.map((document, index) => {
             return (
               <div>
                 <div>
@@ -97,7 +98,11 @@ export default function Director({
                   </i>
                 ) : (
                   <div>
-                    <input style={{ marginLeft: "10px" }} type="file" />
+                    <input
+                      style={{ marginLeft: "10px" }}
+                      ref={(el) => (docRef.current[index] = el)}
+                      type="file"
+                    />
                     <button style={{ marginRight: "17%", float: "right" }}>
                       Upload
                     </button>
