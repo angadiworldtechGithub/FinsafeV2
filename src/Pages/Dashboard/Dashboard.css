@@ -364,3 +364,11 @@
   background-color: white;
   border: #072f5f solid 2px;
 }
+
+.director_cancel {
+  font-size: 30px;
+}
+
+.director_cancel:hover {
+  cursor: pointer;
+}
