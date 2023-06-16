@@ -5,6 +5,7 @@ export default function BusinessPlanning() {
     <ServiceComp
       title="Business Planning & Forecasting"
       description ="Finsafe Solutions aids businesses in developing comprehensive business plans and financial forecasts. This includes assessing market dynamics, setting strategic objectives, and creating financial projections to guide decision-making and attract investors. "
+      imageSource="assets/images/service3/Business Planning & Forcasting.png"
       bulletPoints={[
        
       ]}

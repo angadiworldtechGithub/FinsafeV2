@@ -7,7 +7,8 @@ export default function BusinessLegalDrafting () {
       description ="Finsafe Solutions helps in drafting various legal agreements for businesses.
        These agreements may include partnership agreements, shareholder agreements, licensing agreements,
        or any other legal documentation required for the smooth operation of a business. "
-      bulletPoints={[
+       imageSource="assets/images/service6/Business Legal agreement drafting.png"
+       bulletPoints={[
        
       ]}
       inputList={[

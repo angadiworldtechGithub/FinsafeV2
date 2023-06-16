@@ -5,6 +5,7 @@ export default function WorkingCapital() {
     <ServiceComp
       title="Working Capital Management"
       description ="Finsafe Solutions helps businesses effectively manage their working capital, which involves optimizing cash flow, managing inventory, and balancing receivables and payables. This ensures that the company has sufficient liquidity for day-to-day operations."
+      imageSource="assets/images/service3/Working Capital Loans.png"
       bulletPoints={[
 
       ]}

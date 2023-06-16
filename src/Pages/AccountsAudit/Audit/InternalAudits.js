@@ -5,6 +5,7 @@ export default function internalAudits() {
     <ServiceComp
       title="Internal Audits"
       description= "Internal audits are conducted by organizations to assess and evaluate their internal controls, risk management practices, and overall operational efficiency. Finsafe Solutions offers internal audit services, conducting independent reviews of a company's internal processes and controls to identify areas for improvement and ensure adherence to best practices."
+      imageSource="assets/images/service5/Internal Audits.png"
       bulletPoints={[
       ]}
       inputList={[

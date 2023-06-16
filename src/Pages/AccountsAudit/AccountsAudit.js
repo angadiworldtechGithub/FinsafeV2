@@ -5,6 +5,7 @@ export default function AccountsAudit () {
     <ServiceComp
       title="Accounts & Audit"
       description ="Finsafe Solutions provides guidance and expertise in managing various types of business transactions. This may include strategic advice on buying or selling businesses, evaluating investment opportunities, and structuring deals. "
+      imageSource="assets/images/service5/Accounts & Audit.png"
       bulletPoints={[
        
       ]}

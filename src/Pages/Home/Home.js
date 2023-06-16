@@ -18,7 +18,7 @@ import "./Home.css";
 const ProjectList = [
   {
     title: "CFO Services",
-    image: "assets/images/b.png",
+    image: "assets/images/450.png",
     description:
       "Freelancing Chief Financial Officer services CFO. Finsafe CFO services,strong financial growth just like large MNCs.",
   },

@@ -5,6 +5,7 @@ export default function HrFunction() {
     <ServiceComp
       title="HR Function Support"
       description= "Finsafe Solutions offers support for various HR functions, such as employee onboarding, managing employee records, leave management, and compliance with labor laws"
+      imageSource="assets/images/service5/HR Function Suppport.png"
       bulletPoints={[
       ]}
       inputList={[

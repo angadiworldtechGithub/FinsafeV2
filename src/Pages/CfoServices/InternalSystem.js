@@ -5,6 +5,7 @@ export default function InternalSystem() {
     <ServiceComp
       title="Internal Systems & Processes Design (SOPs)"
       description ="Finsafe Solutions helps businesses establish efficient internal systems and processes, including designing standard operating procedures (SOPs). This enhances operational efficiency, improves risk management, and supports scalability. "
+      imageSource="assets/images/service3/Internal System & Processes design(SOPs).png"
       bulletPoints={[
        
       ]}

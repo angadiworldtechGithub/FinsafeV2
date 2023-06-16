@@ -5,6 +5,7 @@ export default function StockAudit() {
     <ServiceComp
       title="Stock Audit"
       description= "Stock audit, also known as inventory audit, involves verifying and valuing a company's physical inventory or stock holdings. Finsafe Solutions provides stock audit services, conducting detailed examinations of a company's inventory records, physical counts, and valuation methods to ensure accuracy and compliance with accounting standards."
+      imageSource="assets/images/service5/Stock Audit.png"
       bulletPoints={[
       ]}
       inputList={[

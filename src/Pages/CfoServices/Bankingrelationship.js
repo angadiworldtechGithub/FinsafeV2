@@ -5,6 +5,7 @@ export default function Bankingrelationship() {
     <ServiceComp
       title="Banking Relationship"
       description ="Finsafe Solutions assists clients in managing their banking relationships. This may involve negotiating favorable terms with banks, optimizing cash management practices, and obtaining financing solutions tailored to the client's requirements. "
+      imageSource="assets/images/service3/Banking relationship.png"
       bulletPoints={[
        
       ]}

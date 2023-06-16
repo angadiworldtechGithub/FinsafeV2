@@ -5,7 +5,7 @@ export default function Trust() {
     <ServiceComp
       title="Trust"
       description= "Finsafe Solutions can provide services related to the creation and registration of trusts. A trust is a legal entity that holds and manages assets on behalf of beneficiaries according to the terms and conditions outlined in a trust deed."
-      imageSource="assets/images/service2/Company.png"
+      imageSource="assets/images/service2/Trust.png"
       bulletPoints={[]}
       inputList={[
         {

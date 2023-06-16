@@ -5,6 +5,7 @@ export default function JointVentures() {
     <ServiceComp
       title="Joint Ventures "
       description ="Finsafe Solutions helps clients establish and manage joint ventures, which involve collaboration between two or more businesses to pursue mutual goals. They may offer expertise in structuring joint venture agreements, assessing risks, and optimizing partnerships."
+      imageSource="assets/images/service3/Joint Ventures.png"
       bulletPoints={[
        
       ]}

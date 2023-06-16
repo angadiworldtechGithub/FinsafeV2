@@ -5,6 +5,7 @@ export default function RegularTax() {
     <ServiceComp
       title="Regular Tax Returns Filing"
       description= " Finsafe Solutions helps businesses in filing their tax returns accurately and in a timely manner, ensuring compliance with tax regulations and maximizing tax benefits."
+      imageSource="assets/images/service5/Regular Tax returns filing.png"
       bulletPoints={[
          
       ]}

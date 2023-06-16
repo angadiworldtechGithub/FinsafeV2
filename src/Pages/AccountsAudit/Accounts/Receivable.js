@@ -5,6 +5,7 @@ export default function Receivable() {
     <ServiceComp
       title="  Accounts Receivable Management"
       description= "Finsafe Solutions helps businesses in managing their accounts receivable, including issuing invoices, tracking customer payments, and following up on overdue payments."
+      imageSource="assets/images/service5/Accounts Receivable Management.png"
       bulletPoints={[
        
       ]}

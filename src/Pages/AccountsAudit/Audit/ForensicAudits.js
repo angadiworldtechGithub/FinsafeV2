@@ -5,6 +5,7 @@ export default function ForensicAudits() {
     <ServiceComp
       title="Forensic Audits"
       description= " Forensic audits involve investigating and examining financial records, transactions, and other evidence to uncover fraud, financial misconduct, or other irregularities. Finsafe Solutions conducts forensic audits, employing specialized techniques and methodologies to detect and investigate potential financial fraud or misconduct within organizations."
+      imageSource="assets/images/service5/Forensic Audits.png"
       bulletPoints={[
       ]}
       inputList={[

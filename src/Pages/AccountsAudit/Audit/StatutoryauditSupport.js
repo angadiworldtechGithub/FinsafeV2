@@ -5,6 +5,7 @@ export default function StatutoryauditSupport() {
     <ServiceComp
       title="Statutory Audit Support"
       description= "Statutory audit refers to the independent examination of a company's financial records and statements to ensure compliance with applicable laws and regulations. Finsafe Solutions provides support for companies undergoing statutory audits, helping them prepare for the audit process and ensuring compliance with the required standards."
+      imageSource="assets/images/service5/Statutory audit Support.png"
       bulletPoints={[
       ]}
       inputList={[

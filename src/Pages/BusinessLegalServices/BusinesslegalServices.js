@@ -5,6 +5,7 @@ export default function BusinesslegalServices () {
     <ServiceComp
       title="Business Legal Services"
       description ="Finsafe Solutions provides guidance and expertise in managing various types of business transactions. This may include strategic advice on buying or selling businesses, evaluating investment opportunities, and structuring deals. "
+      imageSource="assets/images/service6/Business Legal Services.png"
       bulletPoints={[
        
       ]}

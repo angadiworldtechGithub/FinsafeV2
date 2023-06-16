@@ -5,7 +5,7 @@ export default function PrivateLimitedCompany() {
     <ServiceComp
       title="Private Limited Company"
       description= " Finsafe Solutions offers services related to the establishment and management of private limited companies. They can assist in company formation, drafting the necessary documents such as the Memorandum of Association (MOA) and Articles of Association (AOA), and complying with statutory requirements."
-      imageSource="assets/images/service2/Company.png"
+      imageSource="assets/images/service2/Private Company.png"
       bulletPoints={[
       ]}
       inputList={[

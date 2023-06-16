@@ -5,7 +5,7 @@ export default function InCorporation() {
     <ServiceComp
       title="Incorporation of Company"
       description= " Finsafe Solutions can assist in the process of incorporating a company. This includes guiding clients through the legal and regulatory requirements, helping with the preparation and filing of necessary documents, and ensuring compliance with relevant laws."
-      imageSource="assets/images/service2/Company.png"
+      imageSource="assets/images/service2/incorporation.png"
       bulletPoints={[
       ]}
       inputList={[
