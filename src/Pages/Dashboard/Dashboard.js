@@ -12,6 +12,7 @@ const NEW_DIRECTOR = {
   address: "",
   mobilenumber: "",
   email: "",
+  summary: "",
   documents: [],
 };
 
@@ -34,54 +35,38 @@ const INITIAL_DASHBOARD_DETAILS = {
 };
 
 export default function Dashboard() {
-  const [dashboardDetails, setDashboardDetails] = useState(
-    INITIAL_DASHBOARD_DETAILS
+  const [companyDetails, setCompanyDetails] = useState(
+    INITIAL_DASHBOARD_DETAILS.companyDetails
   );
-  console.log(dashboardDetails);
+  const [directors, setDirectors] = useState(
+    INITIAL_DASHBOARD_DETAILS.directors
+  );
+  const [fileInputs, setFileInputs] = useState(
+    INITIAL_DASHBOARD_DETAILS.fileInputs
+  );
+  const [directorSave, setDirectorSave] = useState("low");
 
   const addDirector = () => {
-    setDashboardDetails((dashboardDetails) => {
-      return {
-        ...dashboardDetails,
-        directors: dashboardDetails.directors.concat([
-          { ...NEW_DIRECTOR, number: dashboardDetails.directors.length + 1 },
-        ]),
-      };
-    });
+    setDirectors([
+      ...directors.concat([{ ...NEW_DIRECTOR, number: directors.length + 1 }]),
+    ]);
   };
 
-  const setCompanyDetails = (companyDetailsCallback) => {
-    setDashboardDetails((dashboardDetails) => ({
-      ...dashboardDetails,
-      companyDetails: {
-        ...companyDetailsCallback(dashboardDetails.companyDetails),
-      },
-    }));
+  const setDirector = (index) => (director) => {
+    directors[index] = director;
+    setDirectors([...directors]);
   };
 
-  const setDirector = (index) => (directorsCallback) => {
-    const director = directorsCallback(dashboardDetails.directors[index]);
-    dashboardDetails.directors[index] = director;
-    setDashboardDetails((dashboardDetails) => ({
-      ...dashboardDetails,
-      directors: [...dashboardDetails.directors],
-    }));
-  };
-
-  const setFileInput = (index) => (fileInputCallback) => {
-    const fileInput = fileInputCallback(dashboardDetails.fileInputs[index]);
-    dashboardDetails.fileInputs[index] = fileInput;
-    setDashboardDetails((dashboardDetails) => ({
-      ...dashboardDetails,
-      fileInputs: [...dashboardDetails.fileInputs],
-    }));
+  const setFileInput = (index) => (fileInput) => {
+    fileInputs[index] = fileInput;
+    setFileInputs([...fileInputs]);
   };
 
   return (
     <div>
       <CompanyDetails
         setCompanyDetails={setCompanyDetails}
-        companyDetails={dashboardDetails.companyDetails}
+        companyDetails={companyDetails}
       />
       <div>
         <h1 className="download-heading">
@@ -92,19 +77,22 @@ export default function Dashboard() {
         </h1>
       </div>
       <div className="director-container">
-        {dashboardDetails.directors.map((director, index) => (
+        {directors.map((director, index) => (
           <Director
             key={shortid.generate()}
-            data={director}
-            setData={setDirector(index)}
+            initialData={director}
+            setFinalData={setDirector(index)}
             deleteDirector={() => {}}
+            onSave={directorSave}
+            setDirectorSave={setDirectorSave}
           />
         ))}
         <AddDirector clickHandler={addDirector} />
       </div>
-      {dashboardDetails.fileInputs.map((fileInput, index) => {
+      {fileInputs.map((fileInput, index) => {
         return (
           <YearFileInput
+            key={shortid.generate()}
             fileInput={fileInput}
             setFileInput={setFileInput(index)}
           />

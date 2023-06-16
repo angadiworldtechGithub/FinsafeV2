@@ -12,6 +12,9 @@ export default function YearFileInput({ fileInput }) {
         <label>Upload File</label>
         <input type="file" />
       </div>
+      <div>
+        <button className="button-upload">Upload</button>
+      </div>
       <table>
         <thead>
           <th>Date of Document</th>

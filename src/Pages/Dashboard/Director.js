@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { ImCancelCircle } from "react-icons/im";
 
 const DOCUMENT_LIST = ["GST Number", "PAN Number"];
 
-export default function Director({ data, setData, deleteDirector }) {
-  const isNew = Boolean(data);
-  const [documents, setDocuments] = useState([]);
+export default function Director({
+  initialData,
+  setFinalData,
+  deleteDirector,
+  onSave,
+  setDirectorSave,
+}) {
   const [newDocumentOptions, setNewDocumentOptions] = useState(DOCUMENT_LIST);
+  const [data, setData] = useState(initialData);
+  useEffect(() => {
+    if (onSave === "medium") {
+      setFinalData({ ...data });
+      setDirectorSave("high");
+    }
+  }, [data, onSave, setDirectorSave, setFinalData]);
   return (
     <>
       <div className="director-box">
@@ -26,7 +37,7 @@ export default function Director({ data, setData, deleteDirector }) {
             <input
               value={data.name}
               onChange={(e) => {
-                setData((data) => ({ ...data, name: e.target.value }));
+                setData({ ...data, name: e.target.value });
               }}
               className="admin-text4"
             ></input>
@@ -38,7 +49,7 @@ export default function Director({ data, setData, deleteDirector }) {
             <textarea
               value={data.address}
               onChange={(e) => {
-                setData((data) => ({ ...data, name: e.target.value }));
+                setData({ ...data, address: e.target.value });
               }}
               className="admin-address4"
             ></textarea>
@@ -50,7 +61,7 @@ export default function Director({ data, setData, deleteDirector }) {
             <input
               value={data.mobilenumber}
               onChange={(e) => {
-                setData((data) => ({ ...data, mobilenumber: e.target.value }));
+                setData({ ...data, mobilenumber: e.target.value });
               }}
               className="admin-text4"
             ></input>
@@ -61,15 +72,15 @@ export default function Director({ data, setData, deleteDirector }) {
             </div>
             <input
               onChange={(e) => {
-                setData((data) => ({ ...data, email: e.target.value }));
+                setData({ ...data, email: e.target.value });
               }}
               value={data.email}
               className="admin-text4"
             ></input>
           </div>
-          {documents.map((document) => {
+          {data.documents.map((document) => {
             return (
-              <div className="director-upload">
+              <div>
                 <div>
                   <label>{document.name}</label>
                   <input className="admin-text4" type="text" />
@@ -85,23 +96,19 @@ export default function Director({ data, setData, deleteDirector }) {
                     </a>
                   </i>
                 ) : (
-                  <>
-                    <div>
-                      <input style={{ marginLeft: "10px" }} type="file" />
-                    </div>
-                    <div>
-                      <button style={{ marginLeft: "10px", float: "right" }}>
-                        Upload
-                      </button>
-                    </div>
-                  </>
+                  <div>
+                    <input style={{ marginLeft: "10px" }} type="file" />
+                    <button style={{ marginRight: "17%", float: "right" }}>
+                      Upload
+                    </button>
+                  </div>
                 )}
               </div>
             );
           })}
           {newDocumentOptions.length ? (
             <>
-              <div>
+              <div className="director-upload">
                 <label>Upload Documents + </label>
               </div>
               <select
@@ -112,13 +119,14 @@ export default function Director({ data, setData, deleteDirector }) {
                     setNewDocumentOptions([
                       ...newDocumentOptions.filter((option) => {
                         return (
-                          !documents.map((doc) => doc.name).includes(option) &&
-                          option !== e.target.value
+                          !data.documents
+                            .map((doc) => doc.name)
+                            .includes(option) && option !== e.target.value
                         );
                       }),
                     ]);
-                    documents.push({ name: e.target.value });
-                    setDocuments([...documents]);
+                    data.documents.push({ name: e.target.value });
+                    setData({ ...data, documents: [...data.documents] });
                   }
                 }}
               >

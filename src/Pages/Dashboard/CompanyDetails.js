@@ -151,18 +151,45 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
           >
             <div>
               <label className="admin1-text">DIN Number</label>
-              <input className="admin-number"></input>
+              <input
+                className="admin-number"
+                value={companyDetails.dinNumber}
+                onChange={(e) => {
+                  setCompanyDetails((companyDetails) => ({
+                    ...companyDetails,
+                    dinNumber: e.target.value,
+                  }));
+                }}
+              ></input>
             </div>
             <div>
               <label className="admin1-text">CIN Number</label>
-              <input className="admin-number"></input>
+              <input
+                className="admin-number"
+                value={companyDetails.cinNumber}
+                onChange={(e) => {
+                  setCompanyDetails((companyDetails) => ({
+                    ...companyDetails,
+                    cinNumber: e.target.value,
+                  }));
+                }}
+              ></input>
             </div>
           </div>
         </div>
       </div>
       <div className="summary-container">
-        <div className="summary-left">Summary</div>
-        <textarea className="summary-right" />
+        <div className="admin1-text">Summary</div>
+        <textarea
+          value={companyDetails.summary}
+          onChange={(e) => {
+            setCompanyDetails((companyDetails) => ({
+              ...companyDetails,
+              summary: e.target.value,
+            }));
+          }}
+          className="summary-right"
+        />
       </div>
     </>
   );

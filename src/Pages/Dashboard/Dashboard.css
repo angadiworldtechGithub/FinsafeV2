@@ -129,7 +129,7 @@
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
   background-color: #e6e6e6;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 3px;
 }
 
@@ -139,7 +139,7 @@
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
   background-color: #e6e6e6;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 3px;
 }
 
@@ -163,6 +163,11 @@
   font-size: 15px;
   font-weight: 600;
 }
+
+.button-upload:hover {
+  cursor: pointer;
+}
+
 .upload-file {
   width: 100px;
   height: 20px;
@@ -197,6 +202,7 @@
   border: 1px solid #000;
   border-radius: 5px;
 }
+
 .summary-left {
   font-size: 20px;
   font-weight: 700;
@@ -229,7 +235,6 @@
 
 .director-container {
   display: flex;
-  align-items: center;
   min-height: 400px;
   flex-wrap: wrap;
 }
@@ -371,4 +376,8 @@
 
 .director_cancel:hover {
   cursor: pointer;
+}
+
+.director-upload {
+  margin-top: 10px;
 }
