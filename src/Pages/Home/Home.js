@@ -76,14 +76,14 @@ const SERVICE_CARDS_1 = [
   {
     title: "Start Your Business",
     icon: GrBusinessService,
-    image: "assets/images/income1.png",
+    image: "assets/images/cards/card1.png",
     color1: "#BB710D",
     color2: "#BB710D",
     link: "/businesslegalservices",
   },
   {
     title: "Get Expert Financial advice",
-    image: "assets/images/income.png",
+    image: "assets/images/cards/card2.png",
     icon: FcServices,
     color1: "#BF570D",
     color2: "#BF570D",
@@ -91,6 +91,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "Raise Capital - Loans & Equity",
+    image: "assets/images/cards/card3.png",
     icon: GrServices,
     color1: "#CC4922",
     color2: "#CC4922",
@@ -98,6 +99,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "File your Income tax returns",
+    image: "assets/images/cards/card4.png",
     icon: FaServicestack,
     color1: "#BC331C",
     color2: "#BC331C",
@@ -105,6 +107,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "GST compliances",
+    image: "assets/images/cards/card5.png",
     icon: GrServicePlay,
     color1: "#C2701C",
     color2: "#C2701C",
@@ -112,6 +115,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "Personal Financial planner",
+    image: "assets/images/cards/card6.png",
     icon: MdMiscellaneousServices,
     color1: "#BC331C",
     color2: "#C2701C",
@@ -119,6 +123,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "Virtual CFO services",
+    image: "assets/images/cards/card7.png",
     icon: MdOutlineHomeRepairService,
     color1: "#BF570D",
     color2: "#BF570D",
@@ -126,6 +131,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: " Business Transaction Advisory",
+    image: "assets/images/cards/card8.png",
     icon: MdOutlineBusiness,
     color1: "#CC4922",
     color2: "#CC4922",

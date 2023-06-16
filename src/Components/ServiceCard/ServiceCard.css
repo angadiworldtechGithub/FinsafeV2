@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  opacity: 100%;
   text-align: center;
   background: linear-gradient(to right, #bb710d, #cc4922);
   color: #fff;
