@@ -5,6 +5,7 @@ export default function LegalAdvisor() {
     <ServiceComp
       title="Talk to Legal Advisor"
       description="Finsafe Solutions offers access to legal advisors who can provide guidance on legal matters related to businesses, such as company law, contracts, intellectual property, and regulatory compliance."
+      imageSource="assets/images/service1/Talk to Legal Advisor.png"
       bulletPoints={[
       ]}
       inputList={[

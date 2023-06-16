@@ -5,6 +5,7 @@ export default function SectionCompany() {
     <ServiceComp
       title="Section8(NGO) Company"
       description= "Finsafe Solutions provides services related to company formation, structuring, and compliance. They can assist with the incorporation of various types of companies, such as private limited companies, public limited companies, and one-person companies.Additionally, they can help with annual compliance, filing of financial statements, and other regulatory requirements"
+      imageSource="assets/images/service2/Company.png"
       bulletPoints={[
       ]}
       inputList={[

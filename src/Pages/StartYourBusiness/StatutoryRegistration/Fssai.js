@@ -5,6 +5,7 @@ export default function Fssai() {
     <ServiceComp
       title="  FSSAI License"
       description= " Finsafe Solutions helps businesses in obtaining the Food Safety and Standards Authority of India (FSSAI) license. This license is required for businesses involved in food processing, manufacturing, and distribution."
+      imageSource="assets/images/service2/FSSAI Licnse.png"
       bulletPoints={[
       ]}
       inputList={[

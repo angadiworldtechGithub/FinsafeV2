@@ -5,6 +5,7 @@ export default function Llp() {
     <ServiceComp
       title="Limited Liability Partnership (LLP)"
       description= " Finsafe Solutions can help in setting up Limited Liability Partnerships (LLPs). LLPs are a form of business structure that combines features of both partnerships and corporations, providing limited liability protection to its partners."
+      imageSource="assets/images/service2/Company.png"
       bulletPoints={[
       ]}
       inputList={[

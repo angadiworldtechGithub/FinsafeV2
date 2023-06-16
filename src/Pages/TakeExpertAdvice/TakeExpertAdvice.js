@@ -6,7 +6,8 @@ export default function TakeExpertAdvice() {
       title="Take Expert Advice"
       description="Our tax experts provide expert-level guidance for tax planning and return filings.
        We understand the complexities of tax laws and regulations and help you optimize your tax planning to minimize your tax liabilities."
-      bulletPoints={[
+       imageSource="assets/images/service1/Take Expert Advice.png"
+       bulletPoints={[
         {
           text: "Our tax planning services include tax return preparation, tax compliance, and tax advisory services.",
         },

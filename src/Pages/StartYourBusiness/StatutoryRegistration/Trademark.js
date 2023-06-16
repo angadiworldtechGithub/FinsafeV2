@@ -5,6 +5,7 @@ export default function Trademark() {
     <ServiceComp
       title="Trademark/Copyright"
       description= " Finsafe Solutions provides assistance in trademark and copyright registration. They help businesses protect their intellectual property rights by facilitating the registration process."
+      imageSource="assets/images/service2/Trademark.png"
       bulletPoints={[
       ]}
       inputList={[

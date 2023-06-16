@@ -5,6 +5,7 @@ export default function Gst() {
     <ServiceComp
       title=" GST (Goods and Services Tax)"
       description= " Finsafe Solutions helps businesses comply with GST regulations. They provide assistance in GST registration, GST return filing, GST audit, and other related services."
+      imageSource="assets/images/service2/GST.png"
       bulletPoints={[
         
       ]}

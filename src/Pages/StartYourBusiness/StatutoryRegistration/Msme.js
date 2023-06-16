@@ -5,6 +5,7 @@ export default function Msme() {
     <ServiceComp
       title="MSME Registration (Udyam)"
       description= " Finsafe Solutions provides support in the registration process for Micro, Small, and Medium Enterprises (MSMEs) under the Udyam Registration scheme. This registration enables businesses to avail of various benefits and incentives provided by the government."
+      imageSource="assets/images/service2/MSME registration.png"
       bulletPoints={[
       ]}
       inputList={[

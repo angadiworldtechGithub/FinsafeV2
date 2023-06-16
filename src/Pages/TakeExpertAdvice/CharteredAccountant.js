@@ -5,6 +5,7 @@ export default function CharteredAccountant() {
     <ServiceComp
       title="Talk to Chartered Accountant"
       description="Finsafe Solutions has chartered accountants who can provide expertise in accounting, auditing, tax planning, and compliance-related issues for businesses and individuals."
+      imageSource="assets/images/service1/Talk to Chartered Accountant.png"
       bulletPoints={[
       ]}
       inputList={[

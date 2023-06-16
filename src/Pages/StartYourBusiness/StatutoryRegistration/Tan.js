@@ -5,6 +5,7 @@ export default function Tan() {
     <ServiceComp
       title="TAN (Tax Deduction and Collection Account Number)"
       description= "Finsafe Solutions helps individuals and businesses obtain PAN and TAN numbers, which are essential for various tax-related transactions and compliance. "
+      imageSource="assets/images/service2/Tan.png"
       bulletPoints={[
       ]}
       inputList={[

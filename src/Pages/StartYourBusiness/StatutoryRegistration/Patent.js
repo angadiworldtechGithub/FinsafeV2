@@ -5,6 +5,7 @@ export default function Patent() {
     <ServiceComp
       title="Patent Registration"
       description= " Finsafe Solutions assists inventors and businesses in the process of patent registration, which grants exclusive rights for their inventions."
+      imageSource="assets/images/service2/Patent.png"
       bulletPoints={[
       ]}
       inputList={[

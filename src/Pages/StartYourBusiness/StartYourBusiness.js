@@ -9,9 +9,8 @@ export default function StartYourBusiness() {
         {text:"Company Services"},
         {text:"Incorporation"},
         {text:"Statutory Registration"},
-    
-
       ]}
+      imageSource="assets/images/service2/Start Your Business.png"
       inputList={[
         {
           elementType: "input",

@@ -5,6 +5,7 @@ export default function CyberCrime() {
     <ServiceComp
       title="Talk to Cyber Crime Expert"
       description="With the increasing threat of cybercrime, Finsafe Solutions has experts who can provide advice on cybersecurity measures, data protection, incident response, and risk mitigation to help individuals and businesses safeguard their digital assets."
+      imageSource="assets/images/service1/Talk to Cyber Crime Expert.png"
       bulletPoints={[
       ]}
       inputList={[

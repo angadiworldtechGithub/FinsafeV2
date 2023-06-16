@@ -5,6 +5,7 @@ export default function Professional() {
     <ServiceComp
       title="Professional Tax"
       description= " Finsafe Solutions assists individuals and companies in complying with professional tax regulations. They provide guidance on professional tax registration, calculation, and filing of professional tax returns."
+      imageSource="assets/images/service2/Professional Tax.png"
       bulletPoints={[
       
       ]}

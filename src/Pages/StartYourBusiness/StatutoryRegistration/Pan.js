@@ -5,6 +5,7 @@ export default function pan() {
     <ServiceComp
       title="PAN (Permanent Account Number) "
       description= " Finsafe Solutions helps individuals and businesses obtain PAN and TAN numbers, which are essential for various tax-related transactions and compliance.      "
+      imageSource="assets/images/service2/Pan.png"
       bulletPoints={[
       ]}
       inputList={[

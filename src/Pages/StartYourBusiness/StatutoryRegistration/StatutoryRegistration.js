@@ -5,6 +5,7 @@ export default function StatutoryRegistration() {
     <ServiceComp
       title="Statutory Registration/Licenses"
       description= " Finsafe Solutions assists individuals and businesses in obtaining various statutory registrations and licenses required to operate legally. This includes registrations such as company incorporation, partnership firm registration, proprietorship registration, and more."
+      imageSource="assets/images/service2/Statutory Registration_Licenses.png"
       bulletPoints={[
       ]}
       inputList={[

@@ -5,6 +5,7 @@ export default function IecCode() {
     <ServiceComp
       title="IEC Code (Import Export Code): "
       description= "Finsafe Solutions assists businesses in obtaining the Import Export Code, which is mandatory for importers and exporters in India."
+      imageSource="assets/images/service2/IEC code.png"
       bulletPoints={[
       ]}
       inputList={[

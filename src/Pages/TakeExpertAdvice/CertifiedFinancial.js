@@ -5,6 +5,7 @@ export default function CertifiedFinancial() {
     <ServiceComp
       title="Talk to Certified Financial Planner"
       description="They have certified financial planners who can assist individuals and businesses in creating comprehensive financial plans, managing investments, retirement planning, and other financial matters."
+      imageSource="assets/images/service1/Talk to Certified Financial Planner.png"
       bulletPoints={[
       ]}
       inputList={[

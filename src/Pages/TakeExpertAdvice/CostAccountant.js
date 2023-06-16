@@ -5,6 +5,7 @@ export default function CostAccountant() {
     <ServiceComp
       title="Talk to Cost Accountant"
       description="Cost accountants at Finsafe Solutions specialize in analyzing and managing costs within a business, providing insights into cost control, budgeting, pricing, and profitability."
+      imageSource="assets/images/service1/Talk to Cost Accountant.png"
       bulletPoints={[
       ]}
       inputList={[

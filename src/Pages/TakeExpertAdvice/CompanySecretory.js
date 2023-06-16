@@ -5,6 +5,7 @@ export default function CompanySecretory() {
     <ServiceComp
       title="Talk to Company Secretory"
       description="Finsafe Solutions provides access to company secretaries who can assist businesses in fulfilling their statutory compliance requirements, corporate governance, board meetings, and other company secretarial matters."
+      imageSource="assets/images/service1/Talk to Company Secretory.png"
       bulletPoints={[
       ]}
       inputList={[

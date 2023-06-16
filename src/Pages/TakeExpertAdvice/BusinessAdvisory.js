@@ -5,6 +5,7 @@ export default function BusinessAdvisory() {
     <ServiceComp
       title="Talk to Business Advisory Analyst"
       description ="Finsafe Solutions provides access to business advisory analysts who can offer expert guidance and advice on various aspects of business operations, strategy, and growth."
+      imageSource="assets/images/service1/Talk to Business Advisory Analyst.png"
       bulletPoints={[
       ]}
       inputList={[

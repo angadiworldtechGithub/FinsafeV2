@@ -5,6 +5,7 @@ export default function Partnership() {
     <ServiceComp
       title="Partnership Firm"
       description= " Finsafe Solutions can aid in the establishment of partnership firms. A partnership firm is an association of two or more individuals who come together to carry out a business venture and share profits or losses according to a mutually agreed-upon partnership deed."
+      imageSource="assets/images/service2/Company.png"
       bulletPoints={[
       ]}
       inputList={[
