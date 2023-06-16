@@ -1,18 +1,18 @@
-.company-container{
-    border: 1px solid #e6e6e6;
-    display: flex;
-    flex-direction: row;
+.company-container {
+  border: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
 }
-.welcome{
-    padding-left: 20px;
-    font-size: 30px;
-    color: #072f5f;
-    font-weight: 700;
+.welcome {
+  padding-left: 20px;
+  font-size: 40px;
+  color: #072f5f;
+  font-weight: 700;
 }
-.company{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 5px 5px 5px;
+.company {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px 5px 5px;
 }
 .welcome {
   padding-left: 20px;
@@ -27,58 +27,55 @@
   font-weight: 700;
 }
 
-.company-left{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    border: 1px solid #000;
-    border-radius: 10px;
-    margin: 20px 20px 20px 20px ;
+.company-left {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 20px 20px 20px 20px;
 }
-.company-right{
-    display: flex;
-    width: 55%;
-    border: 1px solid #072f5f;
-    margin: 20px 20px 20px 20px ;
-    border-radius: 2px;
-    background-color: #e6e6e6;
-    padding-right:80px;
-    
+.company-right {
+  display: flex;
+  width: 55%;
+  border: 1px solid #072f5f;
+  margin: 20px 20px 20px 20px;
+  border-radius: 2px;
+  background-color: #e6e6e6;
+  padding-right: 80px;
 }
-.roc-download{
-    font-size: 20px;
-    margin: 20px 20px 20px 20px ;
+.roc-download {
+  font-size: 20px;
+  margin: 20px 20px 20px 20px;
 }
-
 
 .roc {
-    min-width: 60%;
-    height: 35px;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 3px;
-    margin-left:  210px;
-  }
+  min-width: 60%;
+  height: 35px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  margin-left: 210px;
+}
 
-  .tax{
-    min-width: 60%;
-    height: 35px;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 3px;
-    margin-left:  175px;
-    margin-right: 5px;
-  }
-  .form16 {
-    min-width: 60%;
-    height: 35px;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 3px;
-    margin-left:  200px;
-    margin-right: 5px;
-
-  }
+.tax {
+  min-width: 60%;
+  height: 35px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  margin-left: 175px;
+  margin-right: 5px;
+}
+.form16 {
+  min-width: 60%;
+  height: 35px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  margin-left: 200px;
+  margin-right: 5px;
+}
 .company-button {
   height: 50px;
   width: 70%;
@@ -89,68 +86,65 @@
   text-align: left;
   padding-left: 10px;
   border-radius: 10px;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .company-icon {
   font-size: 30px;
   margin-top: 20px;
 }
 @media screen and (max-width: 600px) {
-    .company-nestedleft{
-        width : 40%;
-        height: 800px;
-        float: left;
-        border: 2px solid #e6e6e6;
-        margin-left: 10px;
-        margin-top: 10px;
-    }
-}
-
-
-.company-nestedleft{
-    width : 90%;
-    display: flex;
-    flex-direction: column;
+  .company-nestedleft {
+    width: 40%;
+    height: 800px;
+    float: left;
     border: 2px solid #e6e6e6;
-    padding-left: 20px;
-    padding-top: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
 }
 
-.company-address{
-    padding-bottom: 60px;
+.company-nestedleft {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #e6e6e6;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
-.companyprofile-download{
-    font-size: 40px;
-    padding-right: 20px;
-    padding-bottom: 40px;
-    color: #072f5f;
+.company-address {
+  padding-bottom: 60px;
 }
-.companynested-header{
-    padding-bottom: 20px;
-    font-size: 30px;
-    color: #072f5f;
-    font-weight: 600;
+
+.companyprofile-download {
+  font-size: 40px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  color: #072f5f;
+}
+.companynested-header {
+  padding-bottom: 20px;
+  font-size: 30px;
+  color: #072f5f;
+  font-weight: 600;
 }
 .companynested-text {
-    min-width: 60%;
-    height: 35px;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 3px;
-    margin : 10px 10px 10px 10px; 
-  }
-  .companynested-address{
-    min-width: 60%;
-    height: 85px;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 3px;
-    margin : 10px 10px 10px 10px; 
-  }
-  .company-text{
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  
+  min-width: 60%;
+  height: 35px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  margin: 10px 10px 10px 10px;
+}
+.companynested-address {
+  min-width: 60%;
+  height: 85px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  margin: 10px 10px 10px 10px;
+}
+.company-text {
+  font-size: 20px;
+  font-weight: 600;
+}

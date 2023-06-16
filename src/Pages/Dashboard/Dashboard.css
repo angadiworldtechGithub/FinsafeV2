@@ -84,12 +84,12 @@
 }
 
 .admin-text:focus {
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 3px;
 }
 
 .admin-address:focus {
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 3px;
 }
 
@@ -98,7 +98,7 @@
   margin: 5px;
   width: 50%;
   background-color: #e6e6e6;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 3px;
 }
 
@@ -108,7 +108,7 @@
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
   background-color: #e6e6e6;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 3px;
 }
 
@@ -149,7 +149,7 @@
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
   background-color: #e6e6e6;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 3px;
 }
 
@@ -176,7 +176,7 @@
   height: 20px;
   margin: 5px;
   background-color: #e6e6e6;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 3px;
 }
 .label-name {
@@ -194,7 +194,7 @@
   padding: 5px 5px 5px 5px;
   margin: 20px 20px 20px 20px;
   background-color: #e6e6e6;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 5px;
 }
 .summary-left {
