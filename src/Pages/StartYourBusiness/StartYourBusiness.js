@@ -4,11 +4,8 @@ export default function StartYourBusiness() {
   return (
     <ServiceComp
       title="Start Your Business"
-      description= " Finsafe Solutions Offers Multiple Options to Start Your Business with the following Sub Categories :"
+      description= " Finsafe Solutions Offers Multiple Options to Start Your Business with the following Like Company Services, Incorporation and Statutory Registration."
       bulletPoints={[
-        {text:"Company Services"},
-        {text:"Incorporation"},
-        {text:"Statutory Registration"},
       ]}
       imageSource="assets/images/service2/Start Your Business.png"
       inputList={[

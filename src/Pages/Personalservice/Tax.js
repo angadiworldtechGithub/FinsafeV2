@@ -6,7 +6,8 @@ export default function Tax() {
       title="Tax Planning"
       description="Our tax experts provide expert-level guidance for tax planning and return filings.
        We understand the complexities of tax laws and regulations and help you optimize your tax planning to minimize your tax liabilities."
-      bulletPoints={[
+       imageSource = "assets/images/service7/Tax Planning.png"
+       bulletPoints={[
         { text: "Our tax planning services include tax return preparation, tax compliance, and tax advisory services."},
         { text: "We work with you to analyze your current tax situation and identify opportunities for tax savings." },
         { text: "We understand the complexities of tax laws and regulations and help you optimize your tax planning to minimize your tax liabilities."}

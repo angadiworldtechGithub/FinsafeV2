@@ -5,6 +5,7 @@ export default function Individual() {
     <ServiceComp
       title="Individual Accounts Maintenance"
       description="Finsafe Solutions offers individual accounts maintenance services, which involve managing and organizing financial records, transactions, and statements for individuals. They can help you keep track of your income, expenses, investments, and other financial activities, providing you with a clear picture of your financial health."
+      imageSource = "assets/images/service7/individual.png"
       bulletPoints={[
        
       ]}
