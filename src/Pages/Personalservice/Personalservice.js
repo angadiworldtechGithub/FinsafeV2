@@ -5,13 +5,8 @@ export default function PersonalService() {
     <ServiceComp
       title="Personal Services"
       description="Our Personal services include investment planning, estate management services, tax planning, and income tax returns. We help individuals achieve their financial goals with expert-level guidance and personalized financial planning."
+      imageSource = "assets/images/service7/Pesonal Services.png"
       bulletPoints={[
-        { text: "Talk to Expert" },
-        { text: "Investment planning" },
-        { text: "Estate management services" },
-        { text: "Tax Planning" },
-        { text: "Income tax returns" },
-        { text: "Individual Accounts maintenance" },
       ]}
       inputList={[
         {

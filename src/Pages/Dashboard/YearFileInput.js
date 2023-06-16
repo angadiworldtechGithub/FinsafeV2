@@ -1,4 +1,5 @@
 import { BsDownload } from "react-icons/bs";
+import "./YearFileInput.css";
 
 export default function YearFileInput({ fileInput }) {
   return (
@@ -13,28 +14,20 @@ export default function YearFileInput({ fileInput }) {
         <input type="file" />
       </div>
       <table>
-        <thead>
+         <tr>
           <th>Date of Document</th>
           <th>Download</th>
-        </thead>
-        <tbody>
+         </tr>
+        <tr>
           {fileInput.documents.map((document) => {
             return (
               <>
-                <tr>{document.date}</tr>
-                <tr>
-                  <a
-                    href={document.fileDownloadUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <BsDownload />
-                  </a>
-                </tr>
+                <td>{document.date}</td>
+                <td><a href={document.fileDownloadUrl} target="_blank" rel="noreferrer"><BsDownload /></a></td>
               </>
             );
           })}
-        </tbody>
+        </tr>
       </table>
     </>
   );

@@ -5,6 +5,7 @@ export default function IncomeTax() {
     <ServiceComp
       title="Income Tax Returns"
       description="Finsafe Solutions assists individuals in preparing and filing their income tax returns. They stay updated with the latest tax laws and regulations to ensure accurate and timely filing. Their team of tax professionals can help you maximize deductions and credits while ensuring compliance with tax laws."
+      imageSource = "assets/images/service7/incometax.png"
       bulletPoints={[
       ]}
       inputList={[

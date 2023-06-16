@@ -397,7 +397,7 @@ function Navbar() {
             headerName="Personal Services"
             headerLink="/personalservice"
             subHeaders={[
-              { link: "/", title: "Talk to Expert" },
+              { link: "/personalservice", title: "Talk to Expert" },
               { link: "/investment", title: "Investment planning" },
               { link: "/estate", title: "Estate management services" },
               { link: "/tax", title: "Tax Planning" },
