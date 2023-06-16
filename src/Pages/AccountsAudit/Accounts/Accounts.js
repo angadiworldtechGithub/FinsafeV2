@@ -5,6 +5,7 @@ export default function Accounts() {
     <ServiceComp
       title="Bookkeeping & Record Maintenance"
       description= "Finsafe Solutions helps businesses maintain accurate and up-to-date financial records, including recording transactions, organizing receipts, and reconciling accounts."
+      imageSource="assets/images/service5/Bookkeeping & Record maintenance.png"
       bulletPoints={[
       ]}
       inputList={[

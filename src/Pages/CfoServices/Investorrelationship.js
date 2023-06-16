@@ -5,6 +5,7 @@ export default function Investorrelationship() {
     <ServiceComp
       title="Investor Relationship Management "
       description ="Finsafe Solutions assists companies in managing their relationships with investors. They may help develop investor communication strategies, prepare presentations, and provide ongoing support to strengthen investor confidence. "
+      imageSource="assets/images/service3/Investor relationship management.png"
       bulletPoints={[
        
       ]}

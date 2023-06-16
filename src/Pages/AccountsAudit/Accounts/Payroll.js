@@ -5,6 +5,7 @@ export default function Payroll() {
     <ServiceComp
       title="Payroll Management"
       description= "Finsafe Solutions offers payroll management services, which involve calculating employee salaries, deductions, and taxes, generating pay slips, and ensuring compliance with relevant labor laws."
+      imageSource="assets/images/service5/Payroll management.png"
       bulletPoints={[
         
       ]}

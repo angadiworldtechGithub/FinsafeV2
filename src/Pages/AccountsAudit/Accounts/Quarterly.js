@@ -5,6 +5,7 @@ export default function Quarterly() {
     <ServiceComp
       title="Quarterly & Yearly Financials Preparation"
       description= " Finsafe Solutions assists businesses in preparing their financial statements on a quarterly and yearly basis, including income statements, balance sheets, and cash flow statements."
+      imageSource="assets/images/service5/Quarterly & Yearly Financials Preparation.png"
       bulletPoints={[
        
       ]}

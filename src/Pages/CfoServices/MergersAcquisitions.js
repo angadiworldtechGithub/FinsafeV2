@@ -5,6 +5,7 @@ export default function MergersAcquisitions () {
     <ServiceComp
       title="Mergers & Acquisitions "
       description =" Finsafe Solutions assists clients in navigating the complex process of mergers and acquisitions. They may provide services such as conducting due diligence, negotiating deals, and facilitating the integration of acquired businesses. "
+      imageSource="assets/images/service3/Mergers & Acquisitions.png"
       bulletPoints={[
        
       ]}

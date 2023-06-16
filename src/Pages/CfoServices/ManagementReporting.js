@@ -6,6 +6,7 @@ export default function ManagementReporting() {
       title="Management Reporting"
       description ="Finsafe Solutions provides management reporting services to help businesses monitor their financial performance. This involves generating regular reports, analyzing key performance indicators (KPIs), and providing insights to support decision-making.
       "
+      imageSource="assets/images/service3/Management Reporting.png"
       bulletPoints={[
        
       ]}

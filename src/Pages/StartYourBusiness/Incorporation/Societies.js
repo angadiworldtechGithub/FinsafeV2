@@ -5,7 +5,7 @@ export default function Societies() {
     <ServiceComp
       title="Co-operative Societies"
       description= "Finsafe Solutions can help in the formation and registration of co-operative societies. Co-operative societies are voluntary associations of individuals who come together to promote their common economic, social, and cultural interests, with democratic control and equal participation."
-      imageSource="assets/images/service2/Company.png"
+      imageSource="assets/images/service2/Co-operative Societies.png"
       bulletPoints={[]}
       inputList={[
         {

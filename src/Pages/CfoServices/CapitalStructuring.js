@@ -5,6 +5,7 @@ export default function CapitalStructuring() {
     <ServiceComp
       title="Capital Structuring"
       description ="Finsafe Solutions helps businesses determine the most effective capital structure for their needs. This involves analyzing the company's financial position, identifying suitable sources of capital (debt or equity), and optimizing the mix to achieve financial objectives. "
+      imageSource="assets/images/service3/Capital Structuring.png"
       bulletPoints={[
        
       ]}

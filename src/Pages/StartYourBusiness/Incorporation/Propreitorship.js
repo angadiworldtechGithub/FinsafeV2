@@ -5,7 +5,7 @@ export default function Proprietorship() {
     <ServiceComp
       title="Proprietorship"
       description= " Finsafe Solutions can assist in setting up proprietorships. A proprietorship is a business owned and operated by a single individual, where the owner has complete control and is personally liable for all the business's obligations."
-      imageSource="assets/images/service2/Company.png"
+      imageSource="assets/images/service2/Propreitorship.png"
       bulletPoints={[]}
       inputList={[
         {

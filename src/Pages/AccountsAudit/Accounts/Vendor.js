@@ -5,6 +5,7 @@ export default function Vendor() {
     <ServiceComp
       title="Vendor Payable Management"
       description= "Finsafe Solutions assists businesses in managing their vendor payments, including invoice processing, payment scheduling, and maintaining records of outstanding payables."
+      imageSource="assets/images/service5/Vendor Payable Management.png"
       bulletPoints={[
        
       ]}

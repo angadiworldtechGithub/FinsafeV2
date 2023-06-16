@@ -5,6 +5,7 @@ export default function Secretarial() {
     <ServiceComp
       title="Company Secretarial Services"
       description= " Finsafe Solutions provides company secretarial services, which involve maintaining statutory records, preparing board meeting minutes, filing required forms with regulatory authorities, and ensuring compliance with corporate governance requirements.      "
+      imageSource="assets/images/service5/Company Secretarial Services.png"
       bulletPoints={[
        
       ]}

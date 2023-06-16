@@ -5,6 +5,7 @@ export default function TaxAudit() {
     <ServiceComp
       title="Tax Audit Management"
       description= " Tax audit is an assessment of a company's tax filings and records by a tax authority to verify the accuracy of tax calculations and compliance with tax laws. Finsafe Solutions assists businesses in managing the tax audit process, ensuring that the necessary documentation is in order and supporting clients in responding to tax authorities' inquiries."
+      imageSource="assets/images/service5/Tax Audit Management.png"
       bulletPoints={[
       ]}
       inputList={[

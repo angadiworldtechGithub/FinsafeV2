@@ -5,6 +5,7 @@ export default function AssetsAccounting() {
     <ServiceComp
       title="Asset Accounting & Management"
       description= "Finsafe Solutions provides services related to asset accounting and management, which involve tracking and recording assets, calculating depreciation, and ensuring compliance with accounting standards."
+      imageSource="assets/images/service5/Asset Accounting & Management.png"
       bulletPoints={[
        
       ]}
