@@ -7,7 +7,8 @@ export default function BusinessTransaction () {
       description ="Finsafe Solutions provides assistance in land-related litigation cases.
        This includes supporting clients in resolving disputes or legal issues concerning land ownership,
        boundaries, encroachments, or other conflicts related to property. "
-      bulletPoints={[
+       imageSource="assets/images/service6/Land Litigation assistance.png"
+       bulletPoints={[
        
       ]}
       inputList={[

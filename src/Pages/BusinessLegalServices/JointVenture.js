@@ -7,6 +7,7 @@ export default function JointVenture () {
       description ="Finsafe Solutions assists in drafting agreements related to 
       joint development projects and joint ventures. These agreements outline the terms and 
       conditions agreed upon by multiple parties involved in the project."
+      imageSource="assets/images/service6/Joint Development & Joint Venture agreement drafting.png"
       bulletPoints={[
        
       ]}

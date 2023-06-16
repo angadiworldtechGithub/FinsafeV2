@@ -8,6 +8,7 @@ export default function CustomerLitigation() {
       Finsafe Solutions offers support in customer litigation cases. 
       This may involve providing legal advice, representing clients in court proceedings, or assisting in settling disputes 
       related to customer grievances or contractual disagreements. "
+      imageSource="assets/images/service6/Customer litigation support.png"
       bulletPoints={[
        
       ]}

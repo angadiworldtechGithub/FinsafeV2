@@ -7,6 +7,7 @@ export default function BusinessTransaction () {
       description ="Finsafe Solutions conducts land title due diligence,
        which involves investigating and verifying the ownership and legal status of a property. 
       This service is crucial for individuals or businesses looking to buy or invest in real estate. "
+      imageSource="assets/images/service6/Land title Due diligence.png"
       bulletPoints={[
        
       ]}

@@ -7,7 +7,8 @@ export default function CustomerAgreement () {
       description ="Finsafe Solutions assists in drafting customer agreements.
        These agreements establish the terms and conditions between a business and its customers,
        ensuring clarity and legal protection for both parties. "
-      bulletPoints={[
+       imageSource="assets/images/service6/Customer Agreement drafting.png"
+       bulletPoints={[
        
       ]}
       inputList={[
