@@ -236,7 +236,7 @@
 
 .director-container {
   display: flex;
-  min-height: 400px;
+  min-height: 200px;
   flex-wrap: wrap;
 }
 
@@ -251,7 +251,8 @@
   background-color: #e6e6e6;
   text-align: center;
   border-radius: 20px;
-  margin: 10px;
+  margin-top: 3.5%;
+  margin-bottom: 3.5%;
 }
 
 .director-addonbox:hover {
