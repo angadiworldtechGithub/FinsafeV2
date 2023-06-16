@@ -68,7 +68,11 @@ export default function ServiceComp({
           </h1>
 
           <p className="color_white">{description}</p>
-          <img src={imageSource} alt="No image found." />
+          <img
+            className="image_source"
+            src={imageSource}
+            alt="No image found."
+          />
 
           <p className="color_white">
             <ul className="service_list">

@@ -4,13 +4,25 @@ import AddDirector from "./AddDirector";
 import CompanyDetails from "./CompanyDetails";
 import { useState } from "react";
 import Director from "./Director";
+import shortid from "shortid";
 import YearFileInput from "./YearFileInput";
+
+const NEW_DIRECTOR = {
+  name: "",
+  address: "",
+  mobilenumber: "",
+  email: "",
+  documents: [],
+};
 
 const INITIAL_DASHBOARD_DETAILS = {
   companyDetails: {
     name: "",
     address: "",
     mobilenumber: "",
+    email: "",
+    dinNumber: "",
+    cinNumber: "",
     documents: [],
   },
   directors: [],
@@ -25,29 +37,50 @@ export default function Dashboard() {
   const [dashboardDetails, setDashboardDetails] = useState(
     INITIAL_DASHBOARD_DETAILS
   );
+  console.log(dashboardDetails);
 
   const addDirector = () => {
     setDashboardDetails((dashboardDetails) => {
       return {
         ...dashboardDetails,
         directors: dashboardDetails.directors.concat([
-          { number: dashboardDetails.directors.length + 1 },
+          { ...NEW_DIRECTOR, number: dashboardDetails.directors.length + 1 },
         ]),
       };
     });
   };
 
+  const setCompanyDetails = (companyDetailsCallback) => {
+    setDashboardDetails((dashboardDetails) => ({
+      ...dashboardDetails,
+      companyDetails: {
+        ...companyDetailsCallback(dashboardDetails.companyDetails),
+      },
+    }));
+  };
+
+  const setDirector = (index) => (directorsCallback) => {
+    const director = directorsCallback(dashboardDetails.directors[index]);
+    dashboardDetails.directors[index] = director;
+    setDashboardDetails((dashboardDetails) => ({
+      ...dashboardDetails,
+      directors: [...dashboardDetails.directors],
+    }));
+  };
+
+  const setFileInput = (index) => (fileInputCallback) => {
+    const fileInput = fileInputCallback(dashboardDetails.fileInputs[index]);
+    dashboardDetails.fileInputs[index] = fileInput;
+    setDashboardDetails((dashboardDetails) => ({
+      ...dashboardDetails,
+      fileInputs: [...dashboardDetails.fileInputs],
+    }));
+  };
+
   return (
     <div>
       <CompanyDetails
-        setCompanyDetails={(companyDetailsCallback) => {
-          setDashboardDetails((dashboardDetails) => ({
-            ...dashboardDetails,
-            companyDetails: {
-              ...companyDetailsCallback(dashboardDetails.companyDetails),
-            },
-          }));
-        }}
+        setCompanyDetails={setCompanyDetails}
         companyDetails={dashboardDetails.companyDetails}
       />
       <div>
@@ -59,16 +92,21 @@ export default function Dashboard() {
         </h1>
       </div>
       <div className="director-container">
-        {dashboardDetails.directors.map((director) => (
-          <Director number={director.number} data={director.data} />
+        {dashboardDetails.directors.map((director, index) => (
+          <Director
+            key={shortid.generate()}
+            data={director}
+            setData={setDirector(index)}
+            deleteDirector={() => {}}
+          />
         ))}
         <AddDirector clickHandler={addDirector} />
       </div>
-      {dashboardDetails.fileInputs.map((fileInput) => {
+      {dashboardDetails.fileInputs.map((fileInput, index) => {
         return (
           <YearFileInput
-            name={fileInput.name}
-            documents={fileInput.documents}
+            fileInput={fileInput}
+            setFileInput={setFileInput(index)}
           />
         );
       })}

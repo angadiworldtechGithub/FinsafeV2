@@ -40,6 +40,13 @@ h1 {
   font-size: 12px;
 }
 
+.image_source {
+  aspect-ratio: 2;
+  width: 100%;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
 /*.flex-child:first-child{
       margin-right: 20px;
       
