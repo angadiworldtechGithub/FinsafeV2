@@ -5,6 +5,7 @@ export default function GSTaudits() {
     <ServiceComp
       title="GST audits"
       description= "Goods and Services Tax (GST) audits are conducted to ensure compliance with GST laws and regulations. Finsafe Solutions offers professional assistance in conducting GST audits for businesses. This involves examining financial records, verifying tax calculations, and ensuring compliance with GST regulations."
+      imageSource="assets/images/service4/Assesment.png"
       bulletPoints={[
       
       ]}

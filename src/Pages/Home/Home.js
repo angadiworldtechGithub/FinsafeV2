@@ -18,49 +18,49 @@ import "./Home.css";
 const ProjectList = [
   {
     title: "CFO Services",
-    image: "assets/images/450.png",
+    image: "assets/images/banners/cfo.png",
     description:
       "Freelancing Chief Financial Officer services CFO. Finsafe CFO services,strong financial growth just like large MNCs.",
   },
   {
     title: "Loan Services",
-    image: "assets/images/banners/banner_3.png",
+    image: "assets/images/banners/Loan.png",
     description:
       "Finsafe maintains with banks and Financial institutions which helps to raise required growth capital for your organisation",
   },
   {
     title: "Transaction Advisory",
-    image: "assets/images/banners/banner_4.png",
+    image: "assets/images/banners/Transaction.png",
     description:
       "Finsafe experts will help you in drafting and vetting business agreements which help you enter into strong business relationships",
   },
   {
     title: "Tax Planning",
-    image: "assets/images/banners/banner_5.png",
+    image: "assets/images/banners/Tax Planning.png",
     description:
       "Our Tax Experts will help implement best Tax best planning for your organisation.",
   },
   {
     title: "Statutory Compliances",
-    image: "assets/images/banners/banner_6.png",
+    image: "assets/images/banners/Statutory Compliance.png",
     description:
       "Our experienced team ensures your organisation is always compliant (GST, RERA, Income tax and Companies act etc.)",
   },
   {
     title: "Business Services",
-    image: "assets/images/banners/banner_7.png",
+    image: "assets/images/banners/Business services.png",
     description:
       "FINSAFE efficient process such as payroll, AP & AR will help reduce operations cost signficantly.",
   },
   {
     title: "Financial planning",
-    image: "assets/images/banners/banner_8.png",
+    image: "assets/images/banners/Financial planning.png",
     description:
       "FINSAFE's Certified financial planners builds a robust plan to help achive your financial targets",
   },
   {
     title: "Investment",
-    image: "assets/images/banners/banner_9.png",
+    image: "assets/images/banners/Income tax.png",
     description:
       "Our relationship with large financial institutions ensure highest value loan at lowest possible returns	",
   },
@@ -143,6 +143,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Loan Documentation Support",
     icon: GrBusinessService,
+    image: "assets/images/cards1/Due.png",
     color1: "#CC4922",
     color2: "#CC4922",
     link: "/loandocumentationsupport",
@@ -150,6 +151,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Joint Ventures",
     icon: FcServices,
+    image: "assets/images/cards1/Joint.png",
     color1: "#BF4827",
     color2: "#BF4827",
     link: "/JointVentures",
@@ -157,6 +159,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Investment planning",
     icon: GrServices,
+    image: "assets/images/cards1/planning.png",
     link: "/investment",
     color1: "#BF570D",
     color2: "#BF570D",
@@ -164,6 +167,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Payroll Management",
     icon: FaServicestack,
+    image: "assets/images/cards1/payroll.png",
     link: "/payroll",
     color1: "#BB710D",
     color2: "#BB710D",
@@ -171,6 +175,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "GST E-Way Bill",
     icon: GrServicePlay,
+    image: "assets/images/cards1/bill.png",
     link: "/gstEwaybill",
     color1: "#BC331C",
     color2: "#BC331C",
@@ -178,6 +183,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Investor Relationship Management",
     icon: MdMiscellaneousServices,
+    image: "assets/images/cards1/relation.png",
     link: "/Investorrelationship",
     color1: "#BF570D",
     color2: "#BF570D",
@@ -185,6 +191,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Land Title Due Diligence",
     icon: MdOutlineHomeRepairService,
+    image: "assets/images/cards1/Land.png",
     link: "/landlittle",
     color1: "#CC4922",
     color2: "#CC4922",
@@ -192,6 +199,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Trademark/Copyright",
     icon: RiCopyrightFill,
+    image: "assets/images/cards1/Trademark.png",
     link: "/trademark",
     color1: "#E29513",
     color2: "#E29513",

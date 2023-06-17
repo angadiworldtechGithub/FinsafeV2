@@ -5,6 +5,7 @@ export default function CompanyLawServices() {
     <ServiceComp
       title="Company Law Services"
       description= ""
+      imageSource="assets/images/service4/Assesment.png"
       bulletPoints={[
        
       ]}

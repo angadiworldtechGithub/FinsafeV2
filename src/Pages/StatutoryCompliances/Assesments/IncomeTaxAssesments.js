@@ -5,6 +5,7 @@ export default function IncomeTaxAssesments() {
     <ServiceComp
       title="Income Tax Assesments"
       description= " Finsafe Solutions helps individuals and businesses in managing income tax assessments. This typically involves reviewing tax returns, assessing income sources, verifying deductions and exemptions, and ensuring compliance with income tax laws."
+      imageSource="assets/images/service4/Income Tax Assesments.png"
       bulletPoints={[
         
       ]}

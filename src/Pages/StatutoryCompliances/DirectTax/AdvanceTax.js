@@ -5,6 +5,7 @@ export default function AdvanceTax() {
     <ServiceComp
       title="Advance Tax"
       description= " Finsafe Solutions provides guidance on advance tax, which is the payment of income tax in installments during the financial year, based on the estimated income. They assist individuals and businesses in calculating the advance tax liability and making timely payments."
+      imageSource="assets/images/service4/Advance tax.png"
       bulletPoints={[
         
       ]}

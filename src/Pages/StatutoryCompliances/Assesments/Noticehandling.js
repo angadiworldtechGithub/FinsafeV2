@@ -5,6 +5,7 @@ export default function Noticehandling() {
     <ServiceComp
       title="Notice handling from GST & Income tax"
       description= " Finsafe Solutions assists clients in handling notices received from the GST and Income Tax departments. This includes understanding the content of the notice, preparing a suitable response, and representing clients in communications with tax authorities."
+      imageSource="assets/images/service4/Notice handling from GST & Income tax.png"
       bulletPoints={[
       ]}
       inputList={[

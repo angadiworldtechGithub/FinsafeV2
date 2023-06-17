@@ -49,6 +49,109 @@ function Navbar() {
             </Link>
           </div>
 
+
+          <Dropdown
+          isActive={menu["staCom"]}
+          setIsActive={() => {
+            setMenu({
+              ...INITIAL_NAVBAR_STATE,
+              staCom: !menu["staCom"],
+            });
+          }}
+          headerName="Statutory Compliances"
+          headerLink="/statutorycompliances"
+          subHeaders={[
+            {
+              link: "/directtax",
+              title: "Direct Tax",
+              subHeaders: [
+                { link: "/incometaxreturns", title: "Income Tax returns" },
+                { link: "/taxauditsupport", title: "Tax Audit Support" },
+                {
+                  link: "/transferpricingaudit",
+                  title: "Transfer Pricing Audit",
+                },
+                { link: "/propertytax", title: "Property Tax" },
+                { link: "/tdstcsreturns", title: "TDS & TCS Returns" },
+                { link: "/advancetax ", title: "Advance tax" },
+              ],
+            },
+            {
+              link: "/indirecttax",
+              title: "Indirect Tax",
+              subHeaders: [
+                { link: "/gstadvisory", title: "GST Advisory" },
+                {
+                  link: "/gstmonthlyreturnsfiling",
+                  title: "GST monthly Returns filing",
+                },
+                {
+                  link: "/gstYearlyreturns",
+                  title: "GST Yearly returns & audits",
+                },
+                { link: "/customs", title: "Customs" },
+                { link: "/ieccompliance", title: "IEC compliance" },
+                { link: "/gstEwaybill", title: "GST E-way bill" },
+                { link: "/gsteinvoice", title: "GST E-Invoice" },
+              ],
+            },
+            {
+              link: "/companylawservices",
+              title: "Company Law Services",
+              subHeaders: [
+                {
+                  link: "/yearlyreturnsfiling",
+                  title: "Yearly Returns filing",
+                },
+                { link: "/regularcompliance", title: "Regular Compliance" },
+                {
+                  link: "/llpProprietorship",
+                  title: "LLP/Proprietorship to Company Conversion",
+                },
+              ],
+            },
+            {
+              link: "/assesments",
+              title: "Assesments & Litigations",
+              subHeaders: [
+                { link: "/gstaudits", title: "GST audits" },
+                {
+                  link: "/incometaxassesments",
+                  title: "Income Tax Assesments",
+                },
+                {
+                  link: "/noticehandling",
+                  title: "Notice handling from GST & Income tax",
+                },
+              ],
+            },
+            {
+              link: "/rera",
+              title: "Others",
+              subHeaders: [
+                { link: "/rera", title: "RERA" },
+                {
+                  link: "/llcservices",
+                  title: "Labour Law compliance services",
+                },
+                { link: "/pfcompliance", title: "PF Compliance" },
+                { link: "/esicompliance", title: "ESI Compliance" },
+                { link: "/professionaltax", title: "Professional Tax" },
+              ],
+            },
+          ]}
+        />
+
+
+
+
+
+
+
+
+
+
+
           <Dropdown
             isActive={menu["takeExpAdv"]}
             setIsActive={() => {
@@ -183,97 +286,7 @@ function Navbar() {
             ]}
           />
 
-          <Dropdown
-            isActive={menu["staCom"]}
-            setIsActive={() => {
-              setMenu({
-                ...INITIAL_NAVBAR_STATE,
-                staCom: !menu["staCom"],
-              });
-            }}
-            headerName="Statutory Compliances"
-            headerLink="/statutorycompliances"
-            subHeaders={[
-              {
-                link: "/directtax",
-                title: "Direct Tax",
-                subHeaders: [
-                  { link: "/incometaxreturns", title: "Income Tax returns" },
-                  { link: "/taxauditsupport", title: "Tax Audit Support" },
-                  {
-                    link: "/transferpricingaudit",
-                    title: "Transfer Pricing Audit",
-                  },
-                  { link: "/propertytax", title: "Property Tax" },
-                  { link: "/tdstcsreturns", title: "TDS & TCS Returns" },
-                  { link: "/advancetax ", title: "Advance tax" },
-                ],
-              },
-              {
-                link: "/indirecttax",
-                title: "Indirect Tax",
-                subHeaders: [
-                  { link: "/gstadvisory", title: "GST Advisory" },
-                  {
-                    link: "/gstmonthlyreturnsfiling",
-                    title: "GST monthly Returns filing",
-                  },
-                  {
-                    link: "/gstYearlyreturns",
-                    title: "GST Yearly returns & audits",
-                  },
-                  { link: "/customs", title: "Customs" },
-                  { link: "/ieccompliance", title: "IEC compliance" },
-                  { link: "/gstEwaybill", title: "GST E-way bill" },
-                  { link: "/gsteinvoice", title: "GST E-Invoice" },
-                ],
-              },
-              {
-                link: "/companylawservices",
-                title: "Company Law Services",
-                subHeaders: [
-                  {
-                    link: "/yearlyreturnsfiling",
-                    title: "Yearly Returns filing",
-                  },
-                  { link: "/regularcompliance", title: "Regular Compliance" },
-                  {
-                    link: "/llpProprietorship",
-                    title: "LLP/Proprietorship to Company Conversion",
-                  },
-                ],
-              },
-              {
-                link: "/assesments",
-                title: "Assesments & Litigations",
-                subHeaders: [
-                  { link: "/gstaudits", title: "GST audits" },
-                  {
-                    link: "/incometaxassesments",
-                    title: "Income Tax Assesments",
-                  },
-                  {
-                    link: "/noticehandling",
-                    title: "Notice handling from GST & Income tax",
-                  },
-                ],
-              },
-              {
-                link: "/rera",
-                title: "Others",
-                subHeaders: [
-                  { link: "/rera", title: "RERA" },
-                  {
-                    link: "/llcservices",
-                    title: "Labour Law compliance services",
-                  },
-                  { link: "/pfcompliance", title: "PF Compliance" },
-                  { link: "/esicompliance", title: "ESI Compliance" },
-                  { link: "/professionaltax", title: "Professional Tax" },
-                ],
-              },
-            ]}
-          />
+        
 
           <Dropdown
             isActive={menu["accAud"]}
