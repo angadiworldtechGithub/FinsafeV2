@@ -68,36 +68,34 @@ export default function Admin() {
 
             <div className="company">
               <label className="company-text">
-                Company InCorporation Certificate
+                Uploaded Documents List ...
               </label>
-              <p className="roc">Status........</p>
-              <i className="roc-download">
-                <MdDownloadForOffline />
-              </i>
             </div>
+            {companies[activeCompany]?.documents.map((document) => {
+              return (
+                <div className="company">
+                  <label className="company-text">{document.name}</label>
+                  <MdDownloadForOffline />
+                </div>
+              );
+            }) ?? <></>}
 
             <div className="company">
               <label className="company-text">ROC</label>
-              <p className="roc">Status........</p>
-              <i className="roc-download">
-                <MdDownloadForOffline />
-              </i>
+              Status........
+              <MdDownloadForOffline />
             </div>
 
             <div className="company">
               <label className="company-text">Income Tax</label>
-              <p className="tax">stauts........</p>
-              <i className="roc-download">
-                <MdDownloadForOffline />
-              </i>
+              Status........
+              <MdDownloadForOffline />
             </div>
 
             <div className="company">
               <label className="company-text">Form 16</label>
-              <p className="form16">stauts.......</p>
-              <i className="roc-download">
-                <MdDownloadForOffline />
-              </i>
+              Status.......
+              <MdDownloadForOffline />
             </div>
 
             <p className="company-header">List of Directors</p>

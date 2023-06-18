@@ -30,7 +30,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                   name: e.target.value,
                 }));
               }}
-            ></input>
+            />
           </div>
           <div className="admin-input-row">
             <label className="admin1-text">Address</label>
@@ -117,34 +117,38 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
           )}
           {documentOptions.length ? (
             <div className="admin-input-row">
-              <label className="admin1-text">Add Documents +</label>
-              <select
-                className="admin-select"
-                onChange={(e) => {
-                  if (e.target.value !== "") {
-                    console.log(e.target.value);
-                    setDocumentOptions([
-                      ...documentOptions.filter((option) => {
-                        return (
-                          !companyDetails.documents
-                            .map((doc) => doc.name)
-                            .includes(option) && option !== e.target.value
-                        );
-                      }),
-                    ]);
-                    companyDetails.documents.push({ name: e.target.value });
-                    setCompanyDetails((companyDetails) => ({
-                      ...companyDetails,
-                      documents: [...companyDetails.documents],
-                    }));
-                  }
-                }}
-              >
-                <option></option>
-                {documentOptions.map((option) => (
-                  <option>{option}</option>
-                ))}
-              </select>
+              <div>
+                <label className="admin1-text">Add Documents +</label>
+              </div>
+              <div>
+                <select
+                  className="admin-select"
+                  onChange={(e) => {
+                    if (e.target.value !== "") {
+                      console.log(e.target.value);
+                      setDocumentOptions([
+                        ...documentOptions.filter((option) => {
+                          return (
+                            !companyDetails.documents
+                              .map((doc) => doc.name)
+                              .includes(option) && option !== e.target.value
+                          );
+                        }),
+                      ]);
+                      companyDetails.documents.push({ name: e.target.value });
+                      setCompanyDetails((companyDetails) => ({
+                        ...companyDetails,
+                        documents: [...companyDetails.documents],
+                      }));
+                    }
+                  }}
+                >
+                  <option></option>
+                  {documentOptions.map((option) => (
+                    <option>{option}</option>
+                  ))}
+                </select>
+              </div>
             </div>
           ) : (
             <></>

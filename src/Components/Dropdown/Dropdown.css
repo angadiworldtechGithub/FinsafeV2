@@ -3,16 +3,13 @@
   padding: 10px;
 }
 @media only screen and (min-width: 1100px) {
-  .dropdown_nested {
-    padding-right: 30px;
-  }
   .dropdown {
     z-index: 100;
     position: absolute;
     background-color: #072f5f;
     top: 25px;
     left: 0px;
-    padding-right: 30px;
+    padding-right: 10px;
     display: none;
   }
   .dropdown_text:hover > .dropdown {
@@ -28,6 +25,7 @@
   }
   .dropdown_list_flex {
     display: flex;
+    padding: 0px;
   }
 }
 
