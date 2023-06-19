@@ -1,5 +1,5 @@
 import { MdOutlineDownloadForOffline, MdCancel } from "react-icons/md";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 
 const DEFAULT_DOCUMENT_LIST = ["GST Number", "PAN Number", "Company Inc. Cert"];
@@ -9,7 +9,15 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
   const docRef = useRef([]);
   const [selectVal, setSelectVal] = useState("");
   const { auth } = useContext(AuthContext);
-  console.log(companyDetails);
+
+  useEffect(() => {
+    setDocumentOptions([
+      ...documentOptions.filter(
+        (option) =>
+          !companyDetails.documents.map((doc) => doc.name).includes(option)
+      ),
+    ]);
+  }, [companyDetails.documents]);
 
   return (
     <>
@@ -180,15 +188,6 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                   value={selectVal}
                   onChange={(e) => {
                     if (e.target.value !== "") {
-                      setDocumentOptions([
-                        ...documentOptions.filter((option) => {
-                          return (
-                            !companyDetails.documents
-                              .map((doc) => doc.name)
-                              .includes(option) && option !== e.target.value
-                          );
-                        }),
-                      ]);
                       companyDetails.documents.push({
                         name: e.target.value,
                         file: null,

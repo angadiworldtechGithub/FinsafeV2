@@ -39,22 +39,30 @@ const signOutClick = (setAuth, setIsClicked) => () => {
 const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
   const pageName = location.pathname.split("/")[1];
   if (auth) {
-    if (["admin", "dashboard"].includes(pageName)) {
+    if (["admin", "dashboard", "adminservice"].includes(pageName)) {
       return {
         text: "Sign Out",
         link: null,
       };
     }
     if (ADMIN_EMAILS.includes(auth.email)) {
-      return {
-        text: "Admin",
-        link: "/admin",
-      };
+      return [
+        {
+          text: "Admin",
+          link: "/admin",
+        },
+        {
+          text: "Admin Service",
+          link: "/adminservice",
+        },
+      ];
     } else {
-      return {
-        text: "Dashboard",
-        link: "/dashboard",
-      };
+      return [
+        {
+          text: "Dashboard",
+          link: "/dashboard",
+        },
+      ];
     }
   } else {
     return {
@@ -114,7 +122,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
-        {!rightButton.link ? (
+        {!rightButton.link && !Array.isArray(rightButton) ? (
           <div
             className="sign_in_out"
             onClick={
@@ -151,9 +159,17 @@ export default function Header() {
             )}
           </div>
         ) : (
-          <Link className="right_button" to={rightButton.link}>
-            {rightButton.text}
-          </Link>
+          <div>
+            {rightButton.map((rb) => (
+              <Link
+                className="right_button"
+                to={rb.link}
+                style={{ marginLeft: "10px" }}
+              >
+                {rb.text}
+              </Link>
+            ))}
+          </div>
         )}
       </div>
 

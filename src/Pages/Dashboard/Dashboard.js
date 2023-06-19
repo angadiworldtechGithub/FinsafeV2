@@ -1,5 +1,5 @@
 import "./Dashboard.css";
-import { MdBookOnline, MdOutlineDownloadForOffline } from "react-icons/md";
+import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { AiOutlineLoading } from "react-icons/ai";
 import AddDirector from "./AddDirector";
 import CompanyDetails from "./CompanyDetails";
@@ -13,13 +13,13 @@ import { addData } from "../../API/createDoc";
 import { docExist, getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
 import { uploadDocuments } from "../../API/uploadFiles";
+import { showLoading } from "react-global-loading";
 
 const NEW_DIRECTOR = {
   name: "",
   address: "",
   mobilenumber: "",
   email: "",
-  summary: "",
   documents: [],
 };
 
@@ -63,7 +63,6 @@ export default function Dashboard() {
   const [fileInputs, setFileInputs] = useState(
     INITIAL_DASHBOARD_DETAILS.fileInputs
   );
-  const [directorSave, setDirectorSave] = useState("low");
 
   const [saving, setSaving] = useState(false);
 
@@ -72,20 +71,15 @@ export default function Dashboard() {
       (doc) => Boolean(doc.file) || Boolean(doc.fileDownloadUrl)
     );
 
-    console.log(documentsToSave);
-
     const documentsToUpload = documentsToSave
       .map((item, index) => [item.file, index])
       .filter((o) => Boolean(o[0]));
-
-    console.log(documentsToUpload);
 
     if (documentsToUpload.length) {
       const downloadUrls = await uploadDocuments(
         documentsToUpload.map((item) => item[0])
       );
 
-      console.log(downloadUrls);
       documentsToUpload.forEach((item, index) => {
         delete documentsToSave[item[1]].file;
         documentsToSave[item[1]] = {
@@ -100,17 +94,41 @@ export default function Dashboard() {
   };
 
   const saveHandler = async () => {
-    console.log(directorSave);
-    if (directorSave === "low") {
-      setSaving(true);
-      setDirectorSave("medium");
+    setSaving(true);
+    console.log("Uploading Documents");
+    companyDetails.documents = await addDownloadUrlToDocuments(
+      companyDetails.documents
+    );
+
+    directors.forEach(async (director, index) => {
+      directors[index].documents = await addDownloadUrlToDocuments(
+        director.documents
+      );
+    });
+    const filter = getFilter();
+    if (await docExist(COMPANY_COLL_NAME, filter)) {
+      console.log("!!!");
+      await editData(COMPANY_COLL_NAME, filter, {
+        ...companyDetails,
+        directors: directors,
+      });
+    } else {
+      await addData(COMPANY_COLL_NAME, {
+        ...companyDetails,
+        directors: directors,
+        fileInputs: fileInputs,
+      });
     }
+    setSaving(false);
+    alert("Save Complete");
   };
 
   useEffect(() => {
     (async () => {
       if (auth) {
+        showLoading(true);
         const [dashboardDoc] = await getDocs(COMPANY_COLL_NAME, getFilter());
+        console.log(dashboardDoc);
         if (dashboardDoc) {
           setCompanyDetails({
             ...dashboardDoc,
@@ -119,6 +137,7 @@ export default function Dashboard() {
           });
           setDirectors(dashboardDoc.directors);
           setFileInputs(dashboardDoc.fileInputs);
+          showLoading(false);
         } else {
           if (auth.email && companyDetails.email.value === "") {
             setCompanyDetails({
@@ -134,46 +153,11 @@ export default function Dashboard() {
               mobilenumber: { value: auth.mobilenumber, canEdit: false },
             });
           }
+          showLoading(false);
         }
       }
     })();
   }, [auth]);
-
-  useEffect(() => {
-    (async () => {
-      console.log(directorSave);
-      if (
-        directorSave === "high" ||
-        (directorSave === "medium" && directors.length === 0)
-      ) {
-        console.log("Uploading Documents");
-        companyDetails.documents = await addDownloadUrlToDocuments(
-          companyDetails.documents
-        );
-
-        directors.forEach(async (director, index) => {
-          directors[index].documents = await addDownloadUrlToDocuments(
-            director.documents
-          );
-        });
-        const filter = getFilter();
-        if (await docExist(COMPANY_COLL_NAME, filter)) {
-          await editData(COMPANY_COLL_NAME, filter, {
-            ...companyDetails,
-            directors: directors,
-          });
-        } else {
-          await addData(COMPANY_COLL_NAME, {
-            ...companyDetails,
-            directors: directors,
-            fileInputs: fileInputs,
-          });
-        }
-        setSaving(false);
-        setDirectorSave("low");
-      }
-    })();
-  }, [directorSave]);
 
   if (!auth || (auth && ADMIN_EMAILS.includes(auth.email))) {
     return (
@@ -190,7 +174,10 @@ export default function Dashboard() {
 
   const setDirector = (index) => (director) => {
     directors[index] = director;
-    setDirectors([...directors]);
+    setDirectors((directors) => {
+      directors[index] = director;
+      return [...directors];
+    });
   };
 
   const setFileInput = (index) => (fileInput) => {
@@ -224,8 +211,6 @@ export default function Dashboard() {
               directors.splice(index, 1);
               setDirectors([...directors]);
             }}
-            onSave={directorSave}
-            setDirectorSave={setDirectorSave}
           />
         ))}
         <AddDirector clickHandler={addDirector} />

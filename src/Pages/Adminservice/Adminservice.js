@@ -1,9 +1,20 @@
-import "./Adminservice.css"
+import { useEffect, useState } from "react";
+import { SERVICE_COLL_NAME } from "../../constants";
+import "./Adminservice.css";
+import { getAllDocs } from "../../API/readDoc";
+
 export default function Adminservice() {
-    return (
-        <div>
-          <div className="Adminservice-container">
-          <table>
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const documents = await getAllDocs(SERVICE_COLL_NAME);
+      setServices(documents);
+    })();
+  }, []);
+  return (
+    <div>
+      <div className="Adminservice-container">
+        <table>
           <tr>
             <th>User ID</th>
             <th>User Registred Service</th>
@@ -11,72 +22,27 @@ export default function Adminservice() {
             <th>Email ID</th>
             <th>Phone Number</th>
             <th>Organisation Name</th>
+            <th>Services</th>
             <th>User State</th>
             <th>User City</th>
           </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Income Tax Returns</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Business Legal Services</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Business Legal Drafting</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Personal services</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Bookkeeping & Record Maintenance</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>pay roll Management</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
+          {services.map((doc) => {
+            return (
+              <tr>
+                <td>{doc.indetifier}</td>
+                <td>{doc.serviceName}</td>
+                <td>{doc.name}</td>
+                <td>{doc.email}</td>
+                <td>{doc.contact_number}</td>
+                <td>{doc.organisation}</td>
+                <td>{doc.services}</td>
+                <td>{doc.city}</td>
+                <td>{doc.state}</td>
+              </tr>
+            );
+          })}
         </table>
-        
-          </div>  
-        </div>
-    );
+      </div>
+    </div>
+  );
 }

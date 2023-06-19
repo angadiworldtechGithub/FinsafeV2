@@ -51,6 +51,7 @@ export const docExist = (collectionName, filter) => {
   return new Promise((resolve, reject) => {
     getDocs_(query(collection(firestore, collectionName), ...whereList))
       .then((querySnapshot) => {
+        console.log(querySnapshot);
         resolve(Boolean(querySnapshot.length));
       })
       .catch((error) => {
