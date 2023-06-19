@@ -10,6 +10,7 @@ export default function Director({
   deleteDirector,
   onSave,
   setDirectorSave,
+  number,
 }) {
   const [newDocumentOptions, setNewDocumentOptions] = useState(DOCUMENT_LIST);
   const [data, setData] = useState(initialData);
@@ -24,10 +25,10 @@ export default function Director({
     <>
       <div className="director-box">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h2>Director #{data.number}</h2>
+          <h2>Director #{number}</h2>
           <ImCancelCircle
             className="director_cancel"
-            onClick={deleteDirector()}
+            onClick={deleteDirector}
           />
         </div>
         <div className="director-box-inner">
@@ -135,7 +136,7 @@ export default function Director({
                   }
                 }}
               >
-                <option></option>
+                <option selected></option>
                 {newDocumentOptions.map((option) => (
                   <option>{option}</option>
                 ))}

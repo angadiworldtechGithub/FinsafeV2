@@ -84,6 +84,7 @@
 .splider_box {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .text_overlay {
@@ -94,6 +95,5 @@
   z-index: 40;
   position: absolute;
   padding: 10px;
-  bottom: 20%;
   opacity: 60%;
 }
