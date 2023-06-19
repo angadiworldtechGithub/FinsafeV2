@@ -7,7 +7,7 @@
 .flex-item-left {
   font-weight: 700;
   font-size: 30px;
-  color: #fff;
+  color: #072f5f;
   padding: 10px 10px 10px 10px;
   margin: 20px 20px 20px 20px;
 }
@@ -28,8 +28,10 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  color: #fff;
-  background-color: #072f5f;
+  color: #072f5f;
+  font-weight: 600;
+  color: #000;
+  background-color: #dddddd;
 }
 
 .admin-input-row {
@@ -190,8 +192,10 @@
 .summary-container {
   display: flex;
   padding: 20px;
-  background-color: #072f5f;
-  color: #fff;
+  color: #072f5f;
+  font-weight: 600;
+  color: #000;
+  background-color: #dddddd;
 }
 
 .summary-right {
