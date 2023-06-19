@@ -188,8 +188,10 @@
 .summary-container {
   display: flex;
   padding: 20px;
-  background-color: #072f5f;
-  color: #fff;
+  color: #072f5f;
+  font-weight: 600;
+  color: #000;
+  background-color: #dddddd;
 }
 
 .summary-right {
