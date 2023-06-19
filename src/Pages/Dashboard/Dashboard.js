@@ -89,11 +89,19 @@ export default function Dashboard() {
       );
 
       directors.forEach((director, index) => {
-        directors[0].documents = addDownloadUrlToDocuments(director.documents);
+        directors[index].documents = addDownloadUrlToDocuments(
+          director.documents
+        );
       });
     }
-    if (await docExist({ email: auth.email })) {
-      await editData(COMPANY_COLL_NAME, {
+    let filter;
+    if (auth.email) {
+      filter = { email: auth.email };
+    } else if (auth.mobilenumber) {
+      filter = { mobilenumber: auth.mobilenumber };
+    }
+    if (await docExist(COMPANY_COLL_NAME, filter)) {
+      await editData(COMPANY_COLL_NAME, filter, {
         ...companyDetails,
         directors: directors,
       });
@@ -116,14 +124,17 @@ export default function Dashboard() {
           ...companyDetails,
           email: { value: auth.email, canEdit: false },
         });
-      } else if (companyDetails.mobilenumber.value === "") {
+      } else if (
+        auth.mobilenumber &&
+        companyDetails.mobilenumber.value === ""
+      ) {
         setCompanyDetails({
           ...companyDetails,
           mobilenumber: { value: auth.mobilenumber, canEdit: false },
         });
       }
     }
-  }, [auth, companyDetails]);
+  }, [auth]);
 
   if (!auth || (auth && ADMIN_EMAILS.includes(auth.email))) {
     return (

@@ -1,4 +1,4 @@
-import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { MdOutlineDownloadForOffline, MdCancel } from "react-icons/md";
 import { useRef, useState } from "react";
 
 const DEFAULT_DOCUMENT_LIST = ["GST Number", "PAN Number", "Company Inc. Cert"];
@@ -6,6 +6,7 @@ const DEFAULT_DOCUMENT_LIST = ["GST Number", "PAN Number", "Company Inc. Cert"];
 export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
   const [documentOptions, setDocumentOptions] = useState(DEFAULT_DOCUMENT_LIST);
   const docRef = useRef([]);
+  const [selectVal, setSelectVal] = useState("");
 
   return (
     <>
@@ -127,6 +128,23 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                         }}
                         type="file"
                       />
+                      <MdCancel
+                        className="hover_click"
+                        onClick={() => {
+                          const [deleteDoc] = companyDetails.documents.splice(
+                            index,
+                            1
+                          );
+                          setCompanyDetails({
+                            ...companyDetails,
+                            documents: companyDetails.documents,
+                          });
+                          console.log(deleteDoc);
+                          setDocumentOptions([
+                            ...documentOptions.concat([deleteDoc.name]),
+                          ]);
+                        }}
+                      />
                     </div>
                   )}
                 </div>
@@ -143,9 +161,9 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
               <div style={{ width: "50%" }}>
                 <select
                   className="admin-select"
+                  value={selectVal}
                   onChange={(e) => {
                     if (e.target.value !== "") {
-                      console.log(e.target.value);
                       setDocumentOptions([
                         ...documentOptions.filter((option) => {
                           return (
@@ -163,10 +181,11 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                         ...companyDetails,
                         documents: [...companyDetails.documents],
                       }));
+                      setSelectVal("");
                     }
                   }}
                 >
-                  <option selected></option>
+                  <option></option>
                   {documentOptions.map((option, index) => (
                     <option key={index}>{option}</option>
                   ))}

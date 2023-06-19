@@ -7,9 +7,8 @@
 .flex-item-left {
   font-weight: 700;
   font-size: 30px;
-  color: #fff;
-  padding: 10px 10px 10px 10px;
-  margin: 20px 20px 20px 20px;
+  padding: 10px;
+  margin: 20px;
 }
 .flex-item-right {
   float: right;
@@ -28,8 +27,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  color: #fff;
-  background-color: #072f5f;
+  color: #072f5f;
 }
 
 .admin-input-row {

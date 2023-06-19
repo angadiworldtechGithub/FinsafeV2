@@ -44,4 +44,18 @@ export const getDocs = (collectionName, filter) => {
   });
 };
 
-export const docExist = () => {};
+export const docExist = (collectionName, filter) => {
+  const whereList = Object.keys(filter).map((key) => {
+    return where(key, "==", filter[key]);
+  });
+  return new Promise((resolve, reject) => {
+    getDocs_(query(collection(firestore, collectionName), ...whereList))
+      .then((querySnapshot) => {
+        resolve(Boolean(querySnapshot.length));
+      })
+      .catch((error) => {
+        console.error(error);
+        reject(error);
+      });
+  });
+};
