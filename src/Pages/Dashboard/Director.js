@@ -18,7 +18,7 @@ export default function Director({
   useEffect(() => {
     if (onSave === "medium") {
       setFinalData({ ...data });
-      setDirectorSave("high");
+      setImmediate(() => setDirectorSave("high"));
     }
   }, [data, onSave, setDirectorSave, setFinalData]);
   return (

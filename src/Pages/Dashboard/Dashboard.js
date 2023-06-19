@@ -1,5 +1,6 @@
 import "./Dashboard.css";
-import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { MdBookOnline, MdOutlineDownloadForOffline } from "react-icons/md";
+import { AiOutlineLoading } from "react-icons/ai";
 import AddDirector from "./AddDirector";
 import CompanyDetails from "./CompanyDetails";
 import { useContext, useEffect, useState } from "react";
@@ -9,7 +10,7 @@ import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
 import { addData } from "../../API/createDoc";
-import { docExist } from "../../API/readDoc";
+import { docExist, getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
 import { uploadDocuments } from "../../API/uploadFiles";
 
@@ -43,6 +44,14 @@ const INITIAL_DASHBOARD_DETAILS = {
 export default function Dashboard() {
   const { auth } = useContext(AuthContext);
 
+  const getFilter = () => {
+    if (auth.email) {
+      return { "email.value": auth.email };
+    } else if (auth.mobilenumber) {
+      return { "mobilnumber.value": auth.mobilenumber };
+    }
+  };
+
   const [companyDetails, setCompanyDetails] = useState(
     INITIAL_DASHBOARD_DETAILS.companyDetails
   );
@@ -58,83 +67,112 @@ export default function Dashboard() {
   const [saving, setSaving] = useState(false);
 
   const addDownloadUrlToDocuments = async (documents) => {
-    const documentsToUpload = documents
-      .map((item, index) => [index, item])
-      .filter((item) => Boolean(item[1].file));
+    const documentsToSave = documents.filter(
+      (doc) => Boolean(doc.file) || Boolean(doc.fileDownloadUrl)
+    );
+
+    console.log(documentsToSave);
+
+    const documentsToUpload = documentsToSave
+      .filter((doc) => Boolean(doc.file))
+      .map((item, index) => [item.file, index]);
+
+    console.log(documentsToUpload);
 
     if (documentsToUpload.length) {
       const downloadUrls = await uploadDocuments(
         documentsToUpload.map((item) => item[0])
       );
+
+      console.log(downloadUrls);
       documentsToUpload.forEach((item, index) => {
-        delete companyDetails.documents[item[0]].file;
-        companyDetails.documents[item[0]] = {
-          ...companyDetails.documents,
+        delete documentsToSave[item[1]].file;
+        documentsToSave[item[1]] = {
+          ...companyDetails.documents[index],
           fileDownloadUrl: downloadUrls[index],
         };
       });
-      return [...documents];
+      return [...documentsToSave];
     } else {
-      return documents;
+      return documentsToSave;
     }
   };
 
   const saveHandler = async () => {
-    setDirectorSave("medium");
-    if (directorSave === "high") {
+    console.log(directorSave);
+    if (directorSave === "low") {
       setSaving(true);
-      console.log("Uploading Documents");
-      companyDetails.documents = addDownloadUrlToDocuments(
-        companyDetails.documents
-      );
-
-      directors.forEach((director, index) => {
-        directors[index].documents = addDownloadUrlToDocuments(
-          director.documents
-        );
-      });
+      setDirectorSave("medium");
     }
-    let filter;
-    if (auth.email) {
-      filter = { email: auth.email };
-    } else if (auth.mobilenumber) {
-      filter = { mobilenumber: auth.mobilenumber };
-    }
-    if (await docExist(COMPANY_COLL_NAME, filter)) {
-      await editData(COMPANY_COLL_NAME, filter, {
-        ...companyDetails,
-        directors: directors,
-      });
-    } else {
-      await addData(COMPANY_COLL_NAME, {
-        ...companyDetails,
-        directors: directors,
-      });
-    }
-    setSaving(false);
-    setDirectorSave("low");
   };
 
   useEffect(() => {
-    if (auth) {
-      // Get Info
-      // if on info excecute code below
-      if (auth.email && companyDetails.email.value === "") {
-        setCompanyDetails({
-          ...companyDetails,
-          email: { value: auth.email, canEdit: false },
-        });
-      } else if (
-        auth.mobilenumber &&
-        companyDetails.mobilenumber.value === ""
-      ) {
-        setCompanyDetails({
-          ...companyDetails,
-          mobilenumber: { value: auth.mobilenumber, canEdit: false },
-        });
+    (async () => {
+      if (auth) {
+        const [dashboardDoc] = await getDocs(COMPANY_COLL_NAME, getFilter());
+        if (dashboardDoc) {
+          setCompanyDetails({
+            ...dashboardDoc,
+            directors: undefined,
+            fileInputs: undefined,
+          });
+          setDirectors(dashboardDoc.directors);
+          setFileInputs(dashboardDoc.fileInputs);
+        } else {
+          if (auth.email && companyDetails.email.value === "") {
+            setCompanyDetails({
+              ...companyDetails,
+              email: { value: auth.email, canEdit: false },
+            });
+          } else if (
+            auth.mobilenumber &&
+            companyDetails.mobilenumber.value === ""
+          ) {
+            setCompanyDetails({
+              ...companyDetails,
+              mobilenumber: { value: auth.mobilenumber, canEdit: false },
+            });
+          }
+        }
       }
-    }
+    })();
   }, [auth]);
+
+  useEffect(() => {
+    (async () => {
+      console.log(directorSave);
+      if (
+        directorSave === "high" ||
+        (directorSave === "medium" && directors.length === 0)
+      ) {
+        console.log("Uploading Documents");
+        companyDetails.documents = await addDownloadUrlToDocuments(
+          companyDetails.documents
+        );
+
+        directors.forEach(async (director, index) => {
+          directors[index].documents = await addDownloadUrlToDocuments(
+            director.documents
+          );
+        });
+        const filter = getFilter();
+        if (await docExist(COMPANY_COLL_NAME, filter)) {
+          await editData(COMPANY_COLL_NAME, filter, {
+            ...companyDetails,
+            directors: directors,
+          });
+        } else {
+          await addData(COMPANY_COLL_NAME, {
+            ...companyDetails,
+            directors: directors,
+            fileInputs: fileInputs,
+          });
+        }
+        setSaving(false);
+        setDirectorSave("low");
+      }
+    })();
+  }, [directorSave]);
 
   if (!auth || (auth && ADMIN_EMAILS.includes(auth.email))) {
     return (
@@ -197,7 +235,7 @@ export default function Dashboard() {
           disabled={saving}
           onClick={saveHandler}
         >
-          Save
+          {saving ? <AiOutlineLoading className="loading" /> : "Save"}
         </button>
       </div>
       <div style={{ height: "5px", borderBottom: "solid 1px black" }}></div>
