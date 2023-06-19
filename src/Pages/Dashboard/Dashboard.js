@@ -71,12 +71,12 @@ export default function Dashboard() {
   useEffect(() => {
     if (auth) {
       // Get Info
-      if (auth.email) {
+      if (auth.email && companyDetails.email.value === "") {
         setCompanyDetails({
           ...companyDetails,
           email: { value: auth.email, canEdit: false },
         });
-      } else {
+      } else if (companyDetails.mobilenumber.value === "") {
         setCompanyDetails({
           ...companyDetails,
           mobilenumber: { value: auth.mobilenumber, canEdit: false },

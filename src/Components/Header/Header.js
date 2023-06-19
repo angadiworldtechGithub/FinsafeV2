@@ -128,9 +128,9 @@ export default function Header() {
               rightButton.subHeaders.length ? (
                 <div className="dropdown_sign_in">
                   <ul className="sign_in_list">
-                    {rightButton.subHeaders.map((subHeader) => {
+                    {rightButton.subHeaders.map((subHeader, index) => {
                       return (
-                        <li onClick={subHeader.onClick}>
+                        <li key={index} onClick={subHeader.onClick}>
                           {subHeader.to ? (
                             <Link style={{ color: "white" }} to={subHeader.to}>
                               {subHeader.text}

@@ -167,8 +167,8 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                   }}
                 >
                   <option selected></option>
-                  {documentOptions.map((option) => (
-                    <option>{option}</option>
+                  {documentOptions.map((option, index) => (
+                    <option key={index}>{option}</option>
                   ))}
                 </select>
               </div>
