@@ -31,6 +31,7 @@ const INITIAL_DASHBOARD_DETAILS = {
     email: { value: "", canEdit: true },
     dinNumber: "",
     cinNumber: "",
+    summary: "",
     documents: [],
   },
   directors: [],
@@ -74,8 +75,8 @@ export default function Dashboard() {
     console.log(documentsToSave);
 
     const documentsToUpload = documentsToSave
-      .filter((doc) => Boolean(doc.file))
-      .map((item, index) => [item.file, index]);
+      .map((item, index) => [item.file, index])
+      .filter((o) => Boolean(o[0]));
 
     console.log(documentsToUpload);
 
