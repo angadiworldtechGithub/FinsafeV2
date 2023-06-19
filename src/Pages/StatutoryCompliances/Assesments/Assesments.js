@@ -5,7 +5,7 @@ export default function Assesments() {
     <ServiceComp
     title="Assesments & Litigations	"
     description= " Finsafe Solutions assists individuals and businesses in dealing with various assessments and litigations related to taxation. This could involve representing clients in tax-related disputes,providing legal and financial advice, and helping them navigate the assessment process. "
-    imageSource="assets/images/service4/Assesment.png"
+    imageSource="assets/images/service4/97.png"
     bulletPoints={[
      
     ]}

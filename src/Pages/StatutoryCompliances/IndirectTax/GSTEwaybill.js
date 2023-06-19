@@ -5,6 +5,7 @@ export default function GSTEwaybill() {
     <ServiceComp
       title="GST E-Way Bill"
       description= "Finsafe Solutions offers services related to the generation and management of GST E-Way Bills. E-Way Bills are electronic documents required for the movement of goods exceeding specified values within India. Finsafe Solutions can help businesses generate and manage these documents efficiently. "
+      imageSource="assets/images/service4/GST ebill.png"
       bulletPoints={[
         
       ]}

@@ -8,6 +8,7 @@ export default function LoanDocumentationSupport() {
        of loan documentation. This service helps individuals and businesses navigate 
        the complex process of gathering and arranging the required paperwork for loan
         applications, ensuring compliance with the necessary regulations and requirements."
+        imageSource="assets/images/service8/Loan Documentation Support.png"
       bulletPoints={[
       ]}
       inputList={[

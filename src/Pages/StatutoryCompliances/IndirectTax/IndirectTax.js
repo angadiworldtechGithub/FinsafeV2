@@ -5,6 +5,7 @@ export default function IndirectTax() {
     <ServiceComp
       title="Indirect Tax"
       description= "Indirect taxes are levied on goods and services rather than directly on income or profits. These taxes are typically passed on to the end consumer through the prices of goods and services. Indirect taxes can include goods and services tax (GST), value-added tax (VAT), sales tax, excise duties, customs duties, and other similar taxes."
+      imageSource="assets/images/service4/GSTAdvisory.png"
       bulletPoints={[
         
       ]}

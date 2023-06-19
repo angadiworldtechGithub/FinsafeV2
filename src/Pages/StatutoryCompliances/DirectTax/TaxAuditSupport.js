@@ -5,6 +5,7 @@ export default function TaxAuditSupport() {
     <ServiceComp
       title="Tax Audit Support"
       description= "In case of tax audits initiated by tax authorities, Finsafe Solutions provides support and assistance to individuals and businesses in responding to audit queries, preparing necessary documentation, and ensuring compliance with tax audit requirements."
+      imageSource="assets/images/service4/Tax Audit Support.png"
       bulletPoints={[
         
       ]}

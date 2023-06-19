@@ -5,7 +5,7 @@ export default function DirectTax() {
     <ServiceComp
       title="Direct Tax"
       description= "Finsafe Solutions assists individuals and businesses in understanding and managing their direct tax obligations. This includes services such as tax planning, tax computation, and filing of income tax returns."
-      imageSource="assets/images/service4/.png"
+      imageSource="assets/images/service4/97.png"
       bulletPoints={[
         
       ]}

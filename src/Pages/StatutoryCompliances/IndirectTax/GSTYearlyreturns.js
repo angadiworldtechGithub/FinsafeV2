@@ -5,6 +5,7 @@ export default function GSTYearlyreturns() {
     <ServiceComp
       title="GST Yearly Returns & Audits"
       description= " Apart from monthly returns, Finsafe Solutions can also help with the preparation and filing of yearly GST returns. Additionally, they may provide audit services to ensure the accuracy and compliance of the GST records and returns."
+      imageSource="assets/images/service4/GST Yearly returns & audits.png"
       bulletPoints={[
         
       ]}

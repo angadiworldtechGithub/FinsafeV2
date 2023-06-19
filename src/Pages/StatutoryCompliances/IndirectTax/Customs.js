@@ -5,6 +5,7 @@ export default function Customs() {
     <ServiceComp
       title="Customs and Import-Export Code (IEC) Compliance"
       description= " Finsafe Solutions assists businesses in complying with customs regulations and requirements. They help in matters related to customs duties, import/export documentation, and obtaining and maintaining an Import-Export Code (IEC) from the relevant authorities."
+      imageSource="assets/images/service4/customs.png"
       bulletPoints={[
         
       ]}

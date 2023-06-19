@@ -5,6 +5,7 @@ export default function TransferPricingAudit() {
     <ServiceComp
       title="Transfer Pricing Audit"
       description= " Finsafe Solutions offers services related to transfer pricing audits, which involve ensuring that transactions between related entities comply with arm's length pricing principles as per the tax laws."
+      imageSource="assets/images/service4/Transfer Pricing Audit.png"
       bulletPoints={[
         
       ]}

@@ -1,14 +1,13 @@
 import ServiceComp from "../../../Components/ServiceComp";
 
-export default function DormantCompany() {
+export default function LlpProprietorship() {
   return (
     <ServiceComp
-      title="Dormant Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
-      imageSource="assets/images/service4/Assesment.png"
+      title="LLP/Proprietorship to Company Conversion:"
+      description= "Our experienced team facilitates seamless and efficient conversion of limited liability partnerships (LLPs) and proprietorships into companies, ensuring a smooth transition and compliance with legal procedures."
+      imageSource="assets/images/service4/Proprietorship to Company Conversion.png"
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
+      
       ]}
       inputList={[
         {

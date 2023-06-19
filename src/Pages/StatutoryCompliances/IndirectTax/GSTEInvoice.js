@@ -5,6 +5,7 @@ export default function GSTEInvoice() {
     <ServiceComp
       title="GST E-Invoice"
       description= " Finsafe Solutions provides support for implementing and managing the GST E-Invoice system. E-Invoicing is an electronic invoicing mechanism mandated by the Indian government for certain taxpayers. Finsafe Solutions can assist businesses in generating and validating E-Invoices as per the prescribed standards."
+      imageSource="assets/images/service4/GST e invoic.png"
       bulletPoints={[
         
       ]}

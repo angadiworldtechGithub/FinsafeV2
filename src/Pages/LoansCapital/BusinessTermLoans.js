@@ -8,6 +8,7 @@ export default function BusinessTermLoans() {
        which are longer-term loans provided to businesses for specific purposes
       like expanding operations, purchasing equipment, or investing in business growth. 
       These loans generally have a fixed repayment period and regular installment payments."
+      imageSource="assets/images/service8/Business term Loans.png"
       bulletPoints={[
       ]}
       inputList={[

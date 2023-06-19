@@ -8,7 +8,8 @@ export default function ProjectReportsPreparation() {
        Project reports are comprehensive documents that outline the financial, operational, and strategic aspects of a proposed project.
        These reports are crucial when seeking funding from financial institutions
         or investors."
-      bulletPoints={[
+        imageSource="assets/images/service8/Project report preparation.png"
+        bulletPoints={[
       ]}
       inputList={[
         {

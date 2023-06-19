@@ -8,6 +8,7 @@ export default function TalkToExperts() {
       experts who can provide guidance and advice on different aspects of financial 
       management. This service allows individuals and 
       businesses to seek professional assistance in making informed financial decisions."
+      imageSource="assets/images/service8/BusinessTermLoans.png"
       bulletPoints={[
       ]}
       inputList={[

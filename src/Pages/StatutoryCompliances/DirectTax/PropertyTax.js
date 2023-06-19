@@ -5,6 +5,7 @@ export default function PropertyTax() {
     <ServiceComp
       title="Property Tax"
       description= " Finsafe Solutions assists individuals and property owners in understanding and managing their property tax obligations, including computation and payment of property taxes."
+      imageSource="assets/images/service4/Property tax.png"
       bulletPoints={[
         
       ]}

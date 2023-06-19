@@ -5,6 +5,7 @@ export default function TdsTcsReturns() {
     <ServiceComp
       title="TDC & TCS Returns"
       description= ""
+      imageSource="assets/images/service4/TDS, TCS Returns.png"
       bulletPoints={[
         {text : "TDS (Tax Deducted at Source): Finsafe Solutions helps businesses in complying with TDS regulations by providing guidance on deducting the correct amount of tax from various payments and filing TDS returns with the tax authorities."},
         {text : "TCS (Tax Collected at Source) Returns: For businesses that are required to collect tax at source on specified transactions, Finsafe Solutions assists in complying with TCS regulations by helping them determine the applicable tax rates, collecting the tax, and filing TCS returns."}

@@ -8,7 +8,8 @@ export default function msmeloans() {
       Small, and Medium Enterprises (MSMEs). These loans cater to the unique
        financial needs of MSMEs, including working capital requirements,
         machinery purchase, technology upgradation, and business expansion."
-      bulletPoints={[
+        imageSource="assets/images/service8/MSME Loans.png"
+        bulletPoints={[
       ]}
       inputList={[
         {

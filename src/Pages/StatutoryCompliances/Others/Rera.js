@@ -5,6 +5,7 @@ export default function Rera() {
     <ServiceComp
       title="RERA Compliance"
       description= "Finsafe Solutions helps real estate developers and agents comply with the regulations set forth by the Real Estate Regulatory Authority. This includes assistance in registering projects, filing necessary documents, and ensuring compliance with RERA guidelines."
+      imageSource="assets/images/service4/RERA.png" 
       bulletPoints={[
         
       ]}

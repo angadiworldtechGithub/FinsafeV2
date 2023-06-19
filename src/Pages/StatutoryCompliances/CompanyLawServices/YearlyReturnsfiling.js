@@ -3,12 +3,10 @@ import ServiceComp from "../../../Components/ServiceComp";
 export default function DormantCompany() {
   return (
     <ServiceComp
-      title="Dormant Company"
-      description= " Finsafe Solutions can help individuals with various aspects of estate management :"
-      imageSource="assets/images/service4/Assesment.png"
+      title="Yearly Returns filing"
+      description= "Our professional team ensures timely and accurate filing of yearly returns, helping companies meet their statutory obligations and maintain good standing with regulatory authorities."
+      imageSource="assets/images/service4/Yearly Returns filing.png"
       bulletPoints={[
-        { text: " The solutions includes estate planning, wealth preservation, and distribution of assets."},
-        { text: " They provide guidance on creating wills, trusts, and other estate planning documents to ensure that your assets are distributed according to your wishes." },
       ]}
       inputList={[
         {

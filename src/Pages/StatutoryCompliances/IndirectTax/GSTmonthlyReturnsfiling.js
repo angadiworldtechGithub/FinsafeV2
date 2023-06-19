@@ -5,6 +5,7 @@ export default function GSTmonthlyReturnsfiling() {
     <ServiceComp
       title="GST Monthly Returns Filing"
       description= "Finsafe Solutions assists businesses in preparing and filing their monthly GST returns. They help in accurately calculating the GST liability, input tax credits, and other necessary details required for filing the returns as per the prescribed format."     
+      imageSource="assets/images/service4/GST monthly filing.png"
       bulletPoints={[
         
       ]}

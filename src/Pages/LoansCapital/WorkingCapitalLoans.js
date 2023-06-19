@@ -8,7 +8,8 @@ export default function WorkingCapitalLoans() {
       These loans are designed to meet short-term funding requirements such as purchasing
        inventory, managing cash flow, or covering operational expenses.
        Working capital loans help businesses maintain their day-to-day operations smoothly."
-      bulletPoints={[
+       imageSource="assets/images/service8/Working Capital Management.png"
+       bulletPoints={[
       ]}
       inputList={[
         {

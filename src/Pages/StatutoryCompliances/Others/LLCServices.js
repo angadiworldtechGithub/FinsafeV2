@@ -5,6 +5,7 @@ export default function LLCServices() {
     <ServiceComp
       title="Labor Law Compliance Services"
       description= " Finsafe Solutions assists companies in adhering to various labor laws and regulations. This involves ensuring compliance with employment contracts, minimum wage laws, working hours, employee benefits, and other statutory requirements related to labor."
+      imageSource="assets/images/service4/Labour Law compliance services.png"
       bulletPoints={[
       
       ]}

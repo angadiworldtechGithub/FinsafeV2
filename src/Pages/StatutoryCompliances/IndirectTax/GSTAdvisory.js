@@ -5,6 +5,7 @@ export default function GSTAdvisory() {
     <ServiceComp
       title="GST Advisory"
       description= "Finsafe Solutions offers expert guidance and advice on Goods and Services Tax (GST) compliance and strategies. They help businesses understand the GST laws and regulations, interpret complex provisions, and ensure compliance with the applicable rules."
+      imageSource="assets/images/service4/GST Advisory.png"
       bulletPoints={[
         
       ]}

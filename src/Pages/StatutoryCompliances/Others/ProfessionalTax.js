@@ -5,6 +5,7 @@ export default function ProfessionalTax() {
     <ServiceComp
       title="  Professional Tax"
       description= "Finsafe Solutions offers services related to Professional Tax compliance. Professional Tax is a state-level tax imposed on individuals engaged in certain professions, trades, or employment. The company assists in registration, computation of tax liabilities, filing returns, and ensuring compliance with Professional Tax laws."
+      imageSource="assets/images/service4/Professional Tax.png"
       bulletPoints={[
       ]}
       inputList={[

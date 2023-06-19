@@ -5,6 +5,7 @@ export default function Pfcompliance() {
     <ServiceComp
       title="PF Compliance"
       description= "Finsafe Solutions helps organizations comply with the provisions of the Provident Fund Act. This includes assisting in PF registration, maintaining employee PF accounts, managing contributions, and ensuring timely filing of PF returns."
+      imageSource="assets/images/service4/Professional Tax.png"c
       bulletPoints={[
        
       ]}

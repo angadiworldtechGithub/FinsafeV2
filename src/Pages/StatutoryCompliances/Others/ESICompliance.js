@@ -5,6 +5,7 @@ export default function ESICompliance() {
     <ServiceComp
       title="ESI Compliance"
       description= "Finsafe Solutions aids businesses in complying with the Employee State Insurance Act. This involves assisting with ESI registration, calculating and depositing ESI contributions, maintaining employee records, and filing ESI returns."
+      imageSource="assets/images/service4/ESI Compliance.png"
       bulletPoints={[
         
       ]}

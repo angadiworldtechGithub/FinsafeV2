@@ -5,6 +5,7 @@ export default function Others() {
     <ServiceComp
       title="Others"
       description= " Finsafe Solutions can help Others with various aspects:"
+      imageSource="assets/images/service4/Professional Tax.png"
       bulletPoints={[
          {text:"RERA"},
          {text:"Labour Law compliance services"},

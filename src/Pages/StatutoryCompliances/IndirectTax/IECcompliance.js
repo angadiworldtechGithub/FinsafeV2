@@ -5,6 +5,7 @@ export default function IECcompliance() {
     <ServiceComp
       title="IEC compliance"
       description= "IEC compliance typically refers to adherence to the Importer-Exporter Code (IEC) guidelines and regulations in a particular country. "
+      imageSource="assets/images/service4/IEC compliance.png"
       bulletPoints={[
         
       ]}
