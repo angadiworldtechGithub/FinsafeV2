@@ -5,11 +5,9 @@
 }
 
 .flex-item-left {
-  margin-top: 20px;
-  margin-bottom: 20px;
   font-weight: 700;
   font-size: 30px;
-  color: #072f5f;
+  color: #fff;
   padding: 10px 10px 10px 10px;
   margin: 20px 20px 20px 20px;
 }
@@ -30,6 +28,8 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  color: #fff;
+  background-color: #072f5f;
 }
 
 .admin-input-row {
@@ -43,16 +43,18 @@
   padding: 20px;
   min-width: 40%;
   flex-grow: 1;
-  border: 2px solid #e6e6e6;
-  margin: 10px 5px 10px 5px;
+  margin: 10px 5px 10px 20px;
 }
 
 .admin-documents {
   height: 350px;
   margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding-top: 25px;
-  border: 2px solid #e6e6e6;
+  padding-left: 20px;
+  padding-right: 20px;
   flex-grow: 1;
 }
 
@@ -101,7 +103,7 @@
   height: 25px;
   margin: 5px;
   width: 50%;
-  background-color: #e6e6e6;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 3px;
 }
@@ -111,7 +113,7 @@
   height: 80px;
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 3px;
   resize: vertical;
@@ -122,7 +124,7 @@
   height: 20px;
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 3px;
 }
@@ -132,7 +134,7 @@
   height: 80px;
   padding: 5px;
   margin: 5px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 3px;
   resize: vertical;
@@ -143,7 +145,7 @@
   height: 35px;
   padding: 5px;
   margin: 5px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 3px;
 }
@@ -153,8 +155,8 @@
   height: 30px;
   margin-left: 5px;
   border-radius: 10px;
-  background-color: #072f5f;
-  color: #fff;
+  background-color: #fff;
+  color: #072f5f;
   font-size: 15px;
   font-weight: 600;
   margin-top: 5px;
@@ -177,7 +179,7 @@
 .admin-number {
   height: 20px;
   margin: 5px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 3px;
 }
@@ -189,13 +191,15 @@
 .summary-container {
   display: flex;
   padding: 20px;
+  background-color: #072f5f;
+  color: #fff;
 }
 
 .summary-right {
   width: 80%;
   height: 100px;
   margin-left: 20px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 5px;
   resize: vertical;
@@ -218,11 +222,11 @@
 
 .director-box {
   padding: 20px;
-  margin: 10px;
+  margin: 20px 20px 20px 20px;
   max-width: 400px;
   min-width: 300px;
   border-radius: 30px;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #fff;
   flex-grow: 1;
 }
 
@@ -230,6 +234,10 @@
   display: flex;
   min-height: 200px;
   flex-wrap: wrap;
+  margin: 20px 20px 20px 20px;
+  background-color: #072f5f;
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 .director-box-inner {
@@ -240,12 +248,14 @@
   height: fit-content;
   width: 100px;
   border: 1px solid black;
-  background-color: #e6e6e6;
+  background-color: #fff;
+  color: #072f5f;
   text-align: center;
   border-radius: 20px;
   margin-top: 3.5%;
   margin-bottom: 3.5%;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .director-addonbox:hover {
@@ -274,7 +284,7 @@
 }
 /*Date container */
 .date-container {
-  border: 2px solid #e6e6e6;
+  border: 2px solid #fff;
   height: 800px;
   width: 100%;
   padding-left: 30px;
@@ -303,25 +313,25 @@
   width: 95%;
   border: 1px solid #000;
   height: 320px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   border-radius: 30px;
 }
 .date-flex-left {
   width: 20%;
   float: left;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #fff;
 }
 .date-flex-right {
   width: 75%;
   height: 300px;
   float: right;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #fff;
   display: flex;
 }
 .date-right1 {
   height: 290px;
   width: 95%;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #fff;
   flex-direction: column;
 }
 

@@ -16,6 +16,7 @@ table {
     margin-left: 20px;
     margin-right: 20px;
     font-size: 20px;
+    color: #072f5f;
   }
   
   tr:nth-child(even) {
@@ -27,6 +28,7 @@ table {
   .table-container{
     margin-left: 20px ;
     margin-right: 20px;
+    margin-bottom: 20px;
   }
 /*.Adminservice-box1{
     display: flex;
