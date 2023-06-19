@@ -7,8 +7,8 @@ export default function YearFileInput({ fileInput }) {
   const [date, setDate] = useState("");
   return (
     <>
-      <h4 className="date-button">{fileInput.name} Files</h4>
-      <div className="income-flex">
+      <h4 className="year-file-heading">{fileInput.name} Files</h4>
+      <div className="year-file-input-container">
         <div className="year-file-row">
           <label className="label-flex"> Choose Date - </label>
           <input
@@ -23,7 +23,7 @@ export default function YearFileInput({ fileInput }) {
           <label className="label-flex">Upload File - </label>
           <input type="file" ref={docRef} />
         </div>
-        <div className="year-file-row" style={{ marginLeft: "60%" }}>
+        <div className="year-file-row year-upload">
           <button className="button-upload">Upload</button>
         </div>
       </div>
