@@ -40,8 +40,7 @@
 }
 
 .admin-details {
-  padding-top: 20px;
-  padding-right: 20px;
+  padding: 20px;
   min-width: 40%;
   flex-grow: 1;
   border: 2px solid #e6e6e6;
@@ -115,17 +114,7 @@
   background-color: #e6e6e6;
   border: 1px solid #000;
   border-radius: 3px;
-}
-
-/*admin right box */
-.admin1-address {
-  font-size: 20px;
-  font-weight: 700;
-}
-.admin1-text {
-  padding-top: 5px;
-  margin-left: 10px;
-  font-size: 20px;
+  resize: vertical;
 }
 
 .admin-text4 {
@@ -141,11 +130,12 @@
 .admin-address4 {
   width: 80%;
   height: 80px;
-  padding: 5px 5px 5px 5px;
-  margin: 5px 5px 5px 5px;
+  padding: 5px;
+  margin: 5px;
   background-color: #e6e6e6;
   border: 1px solid #000;
   border-radius: 3px;
+  resize: vertical;
 }
 
 .admin-select {
@@ -198,22 +188,17 @@
 /*Summary */
 .summary-container {
   display: flex;
+  padding: 20px;
 }
 
 .summary-right {
   width: 80%;
   height: 100px;
-  padding: 5px 5px 5px 5px;
-  margin: 20px 20px 20px 20px;
+  margin-left: 20px;
   background-color: #e6e6e6;
   border: 1px solid #000;
   border-radius: 5px;
-}
-
-.summary-left {
-  font-size: 20px;
-  font-weight: 700;
-  padding: 20px 10px 10px 30px;
+  resize: vertical;
 }
 
 .download-heading {
@@ -351,14 +336,6 @@
   margin-bottom: 20px;
   border-radius: 10px;
   flex-direction: column;
-}
-
-.date-button {
-  height: 50px;
-  margin: 20px 20px 20px 20px;
-  font-size: 30px;
-  font-weight: 600;
-  border-radius: 10px;
 }
 
 .dashboard_submit {

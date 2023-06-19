@@ -43,3 +43,5 @@ export const getDocs = (collectionName, filter) => {
       });
   });
 };
+
+export const docExist = () => {};
