@@ -107,17 +107,26 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                       </a>
                     </i>
                   ) : (
-                    <div style={{ display: "flex", flexWrap: "wrap" }}>
-                      <div>
-                        <input
-                          style={{ marginLeft: "10px" }}
-                          ref={(el) => (docRef.current[index] = el)}
-                          type="file"
-                        />
-                      </div>
-                      <div>
-                        <button className="button-upload">Upload</button>
-                      </div>
+                    <div>
+                      <input
+                        style={{ marginLeft: "10px" }}
+                        ref={(el) => {
+                          docRef.current[index] = el;
+                        }}
+                        onChange={() => {
+                          setCompanyDetails((companyDetails) => {
+                            companyDetails.documents[index] = {
+                              ...companyDetails.documents[index],
+                              file: docRef.current[index].files[0],
+                            };
+                            return {
+                              ...companyDetails,
+                              documents: companyDetails.documents,
+                            };
+                          });
+                        }}
+                        type="file"
+                      />
                     </div>
                   )}
                 </div>
@@ -146,7 +155,10 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                           );
                         }),
                       ]);
-                      companyDetails.documents.push({ name: e.target.value });
+                      companyDetails.documents.push({
+                        name: e.target.value,
+                        file: null,
+                      });
                       setCompanyDetails((companyDetails) => ({
                         ...companyDetails,
                         documents: [...companyDetails.documents],

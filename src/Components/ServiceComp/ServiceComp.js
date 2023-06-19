@@ -3,6 +3,7 @@ import "./ServiceComp.css";
 import { useState, useContext, useRef } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import { addData } from "../../API/createDoc";
+import { SERVICE_COLL_NAME } from "../../constants";
 
 export default function ServiceComp({
   title,
@@ -33,9 +34,10 @@ export default function ServiceComp({
       ) {
         setSubmitting(true);
         await addData(
-          title,
+          SERVICE_COLL_NAME,
           {
             emailAuth: auth.email,
+            serviceName: title,
             ...inputs,
           },
           () => {

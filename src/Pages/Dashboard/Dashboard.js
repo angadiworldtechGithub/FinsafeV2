@@ -7,7 +7,8 @@ import Director from "./Director";
 import shortid from "shortid";
 import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
-import { ADMIN_EMAILS } from "../../constants";
+import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
+import { addData } from "../../API/createDoc";
 
 const NEW_DIRECTOR = {
   name: "",
@@ -50,6 +51,22 @@ export default function Dashboard() {
     INITIAL_DASHBOARD_DETAILS.fileInputs
   );
   const [directorSave, setDirectorSave] = useState("low");
+
+  const [saving, setSaving] = useState(false);
+
+  const saveHandler = async () => {
+    setSaving(true);
+    // const documentsToUpload = companyDetails.documents.filter((document) =>
+    //   Boolean(document.file)
+    // );
+    // if (documentsToUpload.length) {
+    // }
+    // if (docExist) {
+    // } else {
+    //   await addDoc(COMPANY_COLL_NAME);
+    // }
+    setSaving(false);
+  };
 
   useEffect(() => {
     if (auth) {
@@ -133,7 +150,13 @@ export default function Dashboard() {
         );
       })}
       <div style={{ margin: "0 auto", width: "fit-content" }}>
-        <button className="dashboard_submit">Save</button>
+        <button
+          className="dashboard_submit"
+          disabled={saving}
+          onClick={saveHandler}
+        >
+          Save
+        </button>
       </div>
     </div>
   );
