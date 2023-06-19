@@ -9,6 +9,9 @@ import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
 import { addData } from "../../API/createDoc";
+import { docExist } from "../../API/readDoc";
+import { editData } from "../../API/editDoc";
+import { uploadDocuments } from "../../API/uploadFiles";
 
 const NEW_DIRECTOR = {
   name: "",
@@ -54,23 +57,60 @@ export default function Dashboard() {
 
   const [saving, setSaving] = useState(false);
 
+  const addDownloadUrlToDocuments = async (documents) => {
+    const documentsToUpload = documents
+      .map((item, index) => [index, item])
+      .filter((item) => Boolean(item[1].file));
+
+    if (documentsToUpload.length) {
+      const downloadUrls = await uploadDocuments(
+        documentsToUpload.map((item) => item[0])
+      );
+      documentsToUpload.forEach((item, index) => {
+        delete companyDetails.documents[item[0]].file;
+        companyDetails.documents[item[0]] = {
+          ...companyDetails.documents,
+          fileDownloadUrl: downloadUrls[index],
+        };
+      });
+      return [...documents];
+    } else {
+      return documents;
+    }
+  };
+
   const saveHandler = async () => {
-    setSaving(true);
-    // const documentsToUpload = companyDetails.documents.filter((document) =>
-    //   Boolean(document.file)
-    // );
-    // if (documentsToUpload.length) {
-    // }
-    // if (docExist) {
-    // } else {
-    //   await addDoc(COMPANY_COLL_NAME);
-    // }
+    setDirectorSave("medium");
+    if (directorSave === "high") {
+      setSaving(true);
+      console.log("Uploading Documents");
+      companyDetails.documents = addDownloadUrlToDocuments(
+        companyDetails.documents
+      );
+
+      directors.forEach((director, index) => {
+        directors[0].documents = addDownloadUrlToDocuments(director.documents);
+      });
+    }
+    if (await docExist({ email: auth.email })) {
+      await editData(COMPANY_COLL_NAME, {
+        ...companyDetails,
+        directors: directors,
+      });
+    } else {
+      await addData(COMPANY_COLL_NAME, {
+        ...companyDetails,
+        directors: directors,
+      });
+    }
     setSaving(false);
+    setDirectorSave("low");
   };
 
   useEffect(() => {
     if (auth) {
       // Get Info
+      // if on info excecute code below
       if (auth.email && companyDetails.email.value === "") {
         setCompanyDetails({
           ...companyDetails,
@@ -140,15 +180,6 @@ export default function Dashboard() {
         ))}
         <AddDirector clickHandler={addDirector} />
       </div>
-      {fileInputs.map((fileInput, index) => {
-        return (
-          <YearFileInput
-            key={shortid.generate()}
-            fileInput={fileInput}
-            setFileInput={setFileInput(index)}
-          />
-        );
-      })}
       <div style={{ margin: "0 auto", width: "fit-content" }}>
         <button
           className="dashboard_submit"
@@ -158,6 +189,16 @@ export default function Dashboard() {
           Save
         </button>
       </div>
+      <div style={{ height: "5px", borderBottom: "solid 1px black" }}></div>
+      {fileInputs.map((fileInput, index) => {
+        return (
+          <YearFileInput
+            key={shortid.generate()}
+            fileInput={fileInput}
+            setFileInput={setFileInput(index)}
+          />
+        );
+      })}
     </div>
   );
 }

@@ -102,6 +102,13 @@ export default function Director({
                     <input
                       style={{ marginLeft: "10px" }}
                       ref={(el) => (docRef.current[index] = el)}
+                      onChange={() => {
+                        data.documents[index] = {
+                          ...data.documents[index],
+                          file: docRef.current.files[0],
+                        };
+                        setData({ ...data, documents: [...data.documents] });
+                      }}
                       type="file"
                     />
                     <button style={{ marginRight: "17%", float: "right" }}>
@@ -119,6 +126,7 @@ export default function Director({
               </div>
               <select
                 className="admin-select"
+                defaultChecked=""
                 onChange={(e) => {
                   if (e.target.value !== "") {
                     console.log(e.target.value);
@@ -131,7 +139,7 @@ export default function Director({
                         );
                       }),
                     ]);
-                    data.documents.push({ name: e.target.value });
+                    data.documents.push({ name: e.target.value, file: null });
                     setData({ ...data, documents: [...data.documents] });
                   }
                 }}

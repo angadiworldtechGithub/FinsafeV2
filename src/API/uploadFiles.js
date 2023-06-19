@@ -4,8 +4,8 @@ import shortid from "shortid";
 
 export const uploadDocuments = async (
   files,
-  successCallback,
-  processDownloadUrls
+  processDownloadUrls = async (url) => url,
+  successCallback = async () => {}
 ) => {
   const downloadUrls = await Promise.all(
     files.map((file) => {
@@ -48,6 +48,6 @@ export const uploadDocuments = async (
       });
     })
   );
-  await processDownloadUrls(downloadUrls);
   await successCallback();
+  return await processDownloadUrls(downloadUrls);
 };

@@ -9,7 +9,7 @@ export default function YearFileInput({ fileInput }) {
     <>
       <h4 className="date-button">{fileInput.name} Files</h4>
       <div className="income-flex">
-        <div style={{ width: "fit-content" }}>
+        <div className="year-file-row">
           <label className="label-flex"> Choose Date - </label>
           <input
             type="date"
@@ -19,11 +19,11 @@ export default function YearFileInput({ fileInput }) {
             }}
           />
         </div>
-        <div style={{ width: "fit-content" }}>
+        <div className="year-file-row">
           <label className="label-flex">Upload File - </label>
           <input type="file" ref={docRef} />
         </div>
-        <div style={{ width: "fit-content" }}>
+        <div className="year-file-row" style={{ marginLeft: "60%" }}>
           <button className="button-upload">Upload</button>
         </div>
       </div>
