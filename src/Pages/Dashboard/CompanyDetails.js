@@ -1,11 +1,7 @@
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { useRef, useState } from "react";
 
-const DEFAULT_DOCUMENT_LIST = [
-  "GST Number",
-  "PAN Number",
-  "Company InCorporation Certificate",
-];
+const DEFAULT_DOCUMENT_LIST = ["GST Number", "PAN Number", "Company Inc. Cert"];
 
 export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
   const [documentOptions, setDocumentOptions] = useState(DEFAULT_DOCUMENT_LIST);
@@ -49,11 +45,15 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
             <label className="admin1-text">Phone Number</label>
             <input
               className="admin-text"
-              value={companyDetails.mobilenumber}
+              disabled={!companyDetails.mobilenumber.canEdit}
+              value={companyDetails.mobilenumber.value}
               onChange={(e) => {
                 setCompanyDetails((companyDetails) => ({
                   ...companyDetails,
-                  mobilenumber: e.target.value,
+                  mobilenumber: {
+                    value: e.target.value,
+                    canEdit: companyDetails.mobilenumber.canEdit,
+                  },
                 }));
               }}
             ></input>
@@ -62,11 +62,15 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
             <label className="admin1-text">Email ID</label>
             <input
               className="admin-text"
-              value={companyDetails.email}
+              disabled={!companyDetails.email.canEdit}
+              value={companyDetails.email.value}
               onChange={(e) => {
                 setCompanyDetails((companyDetails) => ({
                   ...companyDetails,
-                  email: e.target.value,
+                  email: {
+                    value: e.target.value,
+                    canEdit: companyDetails.email.canEdit,
+                  },
                 }));
               }}
             ></input>
@@ -84,7 +88,14 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                     marginBottom: "20px",
                   }}
                 >
-                  <label className="admin1-text">{document.name}</label>
+                  <div style={{ minWidth: "90px" }}>
+                    <label
+                      className="admin1-text"
+                      style={{ marginRight: "10px" }}
+                    >
+                      {document.name}
+                    </label>
+                  </div>
                   {document.downloadFileUrl ? (
                     <i className="upload-icon">
                       <a
@@ -96,7 +107,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                       </a>
                     </i>
                   ) : (
-                    <div style={{ display: "flex" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap" }}>
                       <div>
                         <input
                           style={{ marginLeft: "10px" }}
@@ -120,7 +131,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
               <div>
                 <label className="admin1-text">Add Documents +</label>
               </div>
-              <div>
+              <div style={{ width: "50%" }}>
                 <select
                   className="admin-select"
                   onChange={(e) => {
@@ -143,7 +154,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                     }
                   }}
                 >
-                  <option></option>
+                  <option selected></option>
                   {documentOptions.map((option) => (
                     <option>{option}</option>
                   ))}
@@ -156,12 +167,9 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
-              paddingLeft: "10px",
-              paddingRight: "100px",
             }}
           >
-            <div>
+            <div style={{ width: "fit-content" }}>
               <label className="admin1-text">DIN Number</label>
               <input
                 className="admin-number"

@@ -145,6 +145,7 @@
 }
 
 .admin-select {
+  width: 80%;
   height: 35px;
   padding: 5px;
   margin: 5px;
@@ -162,6 +163,7 @@
   color: #fff;
   font-size: 15px;
   font-weight: 600;
+  border: none;
 }
 
 .button-upload:hover {

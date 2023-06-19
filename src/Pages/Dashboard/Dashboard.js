@@ -2,10 +2,12 @@ import "./Dashboard.css";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import AddDirector from "./AddDirector";
 import CompanyDetails from "./CompanyDetails";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Director from "./Director";
 import shortid from "shortid";
 import YearFileInput from "./YearFileInput";
+import { AuthContext } from "../../Context/AuthContext";
+import { ADMIN_EMAILS } from "../../constants";
 
 const NEW_DIRECTOR = {
   name: "",
@@ -20,8 +22,8 @@ const INITIAL_DASHBOARD_DETAILS = {
   companyDetails: {
     name: "",
     address: "",
-    mobilenumber: "",
-    email: "",
+    mobilenumber: { value: "", canEdit: true },
+    email: { value: "", canEdit: true },
     dinNumber: "",
     cinNumber: "",
     documents: [],
@@ -35,9 +37,12 @@ const INITIAL_DASHBOARD_DETAILS = {
 };
 
 export default function Dashboard() {
+  const { auth } = useContext(AuthContext);
+
   const [companyDetails, setCompanyDetails] = useState(
     INITIAL_DASHBOARD_DETAILS.companyDetails
   );
+
   const [directors, setDirectors] = useState(
     INITIAL_DASHBOARD_DETAILS.directors
   );
@@ -46,10 +51,34 @@ export default function Dashboard() {
   );
   const [directorSave, setDirectorSave] = useState("low");
 
+  useEffect(() => {
+    if (auth) {
+      // Get Info
+      if (auth.email) {
+        setCompanyDetails({
+          ...companyDetails,
+          email: { value: auth.email, canEdit: false },
+        });
+      } else {
+        setCompanyDetails({
+          ...companyDetails,
+          mobilenumber: { value: auth.mobilenumber, canEdit: false },
+        });
+      }
+    }
+  }, [auth, companyDetails]);
+
+  if (!auth || (auth && ADMIN_EMAILS.includes(auth.email))) {
+    return (
+      <div className="dashboard_container">
+        <h1>Dashboard</h1>
+        <h1>Please login with a non admin account to view this page.</h1>
+      </div>
+    );
+  }
+
   const addDirector = () => {
-    setDirectors([
-      ...directors.concat([{ ...NEW_DIRECTOR, number: directors.length + 1 }]),
-    ]);
+    setDirectors([...directors.concat([{ ...NEW_DIRECTOR }])]);
   };
 
   const setDirector = (index) => (director) => {
@@ -79,10 +108,15 @@ export default function Dashboard() {
       <div className="director-container">
         {directors.map((director, index) => (
           <Director
+            number={index + 1}
             key={shortid.generate()}
             initialData={director}
             setFinalData={setDirector(index)}
-            deleteDirector={() => {}}
+            deleteDirector={() => {
+              console.log(index);
+              directors.splice(index, 1);
+              setDirectors([...directors]);
+            }}
             onSave={directorSave}
             setDirectorSave={setDirectorSave}
           />

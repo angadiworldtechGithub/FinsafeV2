@@ -9,15 +9,21 @@ export default function YearFileInput({ fileInput }) {
     <>
       <h4 className="date-button">{fileInput.name} Files</h4>
       <div className="income-flex">
-        <div>
+        <div style={{ width: "fit-content" }}>
           <label className="label-flex"> Choose Date - </label>
-          <input type="date" />
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => {
+              setDate(e.target.value);
+            }}
+          />
         </div>
-        <div>
+        <div style={{ width: "fit-content" }}>
           <label className="label-flex">Upload File - </label>
-          <input type="file" />
+          <input type="file" ref={docRef} />
         </div>
-        <div>
+        <div style={{ width: "fit-content" }}>
           <button className="button-upload">Upload</button>
         </div>
       </div>
@@ -27,6 +33,9 @@ export default function YearFileInput({ fileInput }) {
           <th>Date of Document</th>
           <th>Download</th>
         </tr>
+        {fileInput.documents.map((document) => (
+          <></>
+        ))}
         <tr>
           <td>21/08/2023</td>
           <td>
