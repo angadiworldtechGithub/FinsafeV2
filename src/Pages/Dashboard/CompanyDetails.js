@@ -2,7 +2,7 @@ import { MdOutlineDownloadForOffline, MdCancel } from "react-icons/md";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 
-const DEFAULT_DOCUMENT_LIST = ["GST Number", "PAN Number", "Company Inc. Cert"];
+const DEFAULT_DOCUMENT_LIST = ["GST File", "PAN Card", "Company Inc. Cert"];
 
 export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
   const [documentOptions, setDocumentOptions] = useState(DEFAULT_DOCUMENT_LIST);
@@ -21,11 +21,10 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
 
   return (
     <>
-   
       <div className="admin-container">
-      <div className="dashboard-color">
-        <div className="flex-item-left">Company Details</div>
-      </div>
+        <div className="dashboard-color">
+          <div className="flex-item-left">Company Details</div>
+        </div>
       </div>
 
       <div className="admin-container">

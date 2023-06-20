@@ -167,10 +167,7 @@ export default function Dashboard() {
 
   const setDirector = (index) => (director) => {
     directors[index] = director;
-    setDirectors((directors) => {
-      directors[index] = director;
-      return [...directors];
-    });
+    setDirectors([...directors]);
   };
 
   const setFileInput = (index) => (fileInput) => {

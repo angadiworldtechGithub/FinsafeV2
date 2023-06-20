@@ -4,7 +4,7 @@ import { ImCancelCircle } from "react-icons/im";
 import _ from "lodash";
 import { AuthContext } from "../../Context/AuthContext";
 
-const DOCUMENT_LIST = ["GST Number", "PAN Number"];
+const DOCUMENT_LIST = ["GST File", "PAN Card"];
 
 export default function Director({
   initialData,
@@ -87,7 +87,7 @@ export default function Director({
           </div>
           {data.documents.map((document, index) => {
             return (
-              <div key={index} style={{ marginTop: "10px" }}>
+              <div key={index} style={{ marginTop: "10px", display: "flex" }}>
                 <div style={{ display: "flex" }}>
                   <label>{document.name}</label>
                   {!document.fileDownloadUrl ? (
@@ -148,7 +148,7 @@ export default function Director({
             );
           })}
           {newDocumentOptions.length ? (
-            <>
+            <div>
               <div className="director-upload">
                 <label>Upload Documents + </label>
               </div>
@@ -168,7 +168,7 @@ export default function Director({
                   <option key={index}>{option}</option>
                 ))}
               </select>
-            </>
+            </div>
           ) : (
             <></>
           )}
