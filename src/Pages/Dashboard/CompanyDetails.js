@@ -21,9 +21,11 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
 
   return (
     <>
-      <div className="dashboard-color"></div>
+   
       <div className="admin-container">
+      <div className="dashboard-color">
         <div className="flex-item-left">Company Details</div>
+      </div>
       </div>
 
       <div className="admin-container">
