@@ -52,7 +52,7 @@ export default function AdminService() {
           {services.map((doc) => {
             return (
               <tr>
-                <td>{doc.indetifier}</td>
+                <td>{doc.indentifier}</td>
                 <td>{doc.serviceName}</td>
                 <td>{doc.name}</td>
                 <td>{doc.email}</td>

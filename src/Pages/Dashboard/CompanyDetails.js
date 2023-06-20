@@ -118,7 +118,9 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <MdOutlineDownloadForOffline />
+                        <MdOutlineDownloadForOffline
+                          style={{ fontSize: "40px" }}
+                        />
                       </a>
                     </i>
                   ) : (

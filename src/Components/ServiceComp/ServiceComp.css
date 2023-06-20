@@ -90,8 +90,8 @@ h1 {
 
 .checkbox {
   margin-top: 20px;
-  height: 15px !important;
-  width: 50px !important;
+  height: 15px;
+  width: 30px;
   accent-color: #072f5f;
 }
 

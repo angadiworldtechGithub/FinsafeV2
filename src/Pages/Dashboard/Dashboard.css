@@ -178,7 +178,6 @@
 }
 .download-icon {
   font-size: 30px;
-  margin-left: 60%;
 }
 .admin-number {
   height: 20px;
@@ -411,4 +410,8 @@
   to {
     transform: rotate(359deg);
   }
+}
+
+.hover_click:hover {
+  cursor: pointer;
 }

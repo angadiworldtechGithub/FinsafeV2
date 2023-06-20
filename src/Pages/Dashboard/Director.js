@@ -88,12 +88,12 @@ export default function Director({
           {data.documents.map((document, index) => {
             return (
               <div key={index} style={{ marginTop: "10px", display: "flex" }}>
-                <div style={{ display: "flex" }}>
-                  <label>{document.name}</label>
+                <div style={{ display: "flex", width: "100%" }}>
+                  <label style={{ minWidth: "60px" }}>{document.name}</label>
                   {!document.fileDownloadUrl ? (
                     <MdCancel
                       className="hover_click"
-                      style={{ marginLeft: "55%" }}
+                      style={{ marginLeft: "55%", fontSize: "20px" }}
                       onClick={() => {
                         const [deleteDoc] = data.documents.splice(index, 1);
                         setData({
@@ -114,6 +114,7 @@ export default function Director({
                     href={document.fileDownloadUrl}
                     target="_blank"
                     rel="noreferrer"
+                    style={{ marginLeft: "65%" }}
                   >
                     <MdOutlineDownloadForOffline className="download-icon" />
                   </a>
