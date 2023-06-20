@@ -1,20 +1,15 @@
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase";
-import shortid from "shortid";
 
 export const uploadDocuments = async (
   files,
-  processDownloadUrls = async (url) => url,
+  processDownloadUrls = (url) => url,
   successCallback = async () => {}
 ) => {
   const downloadUrls = await Promise.all(
     files.map((file) => {
-      const reference = ref(
-        storage,
-        `${file.name.split(".")[0]}_${shortid.generate()}.${
-          file.name.split(".")[1]
-        }`
-      );
+      console.log(file.name);
+      const reference = ref(storage, file.name);
       const metadata = { contentType: file.type };
       const uploadTask = uploadBytesResumable(reference, file, metadata);
       return new Promise((resolve, reject) => {
@@ -49,5 +44,5 @@ export const uploadDocuments = async (
     })
   );
   await successCallback();
-  return await processDownloadUrls(downloadUrls);
+  return downloadUrls.map(processDownloadUrls);
 };

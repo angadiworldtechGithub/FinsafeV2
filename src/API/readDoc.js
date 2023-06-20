@@ -44,4 +44,20 @@ export const getDocs = (collectionName, filter) => {
   });
 };
 
-export const docExist = () => {};
+export const docExist = (collectionName, filter) => {
+  const whereList = Object.keys(filter).map((key) => {
+    return where(key, "==", filter[key]);
+  });
+  console.log("Check if document exists");
+  return new Promise((resolve, reject) => {
+    getDocs_(query(collection(firestore, collectionName), ...whereList))
+      .then((querySnapshot) => {
+        console.log(querySnapshot);
+        resolve(Boolean(querySnapshot.length));
+      })
+      .catch((error) => {
+        console.error(error);
+        reject(error);
+      });
+  });
+};

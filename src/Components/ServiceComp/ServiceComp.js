@@ -36,7 +36,7 @@ export default function ServiceComp({
         await addData(
           SERVICE_COLL_NAME,
           {
-            emailAuth: auth.email,
+            indetifier: auth.email ? auth.email : auth.mobilenumber,
             serviceName: title,
             ...inputs,
           },

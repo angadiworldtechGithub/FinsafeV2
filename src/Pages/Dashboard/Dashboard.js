@@ -1,5 +1,6 @@
 import "./Dashboard.css";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { AiOutlineLoading } from "react-icons/ai";
 import AddDirector from "./AddDirector";
 import CompanyDetails from "./CompanyDetails";
 import { useContext, useEffect, useState } from "react";
@@ -9,16 +10,16 @@ import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
 import { addData } from "../../API/createDoc";
-import { docExist } from "../../API/readDoc";
+import { docExist as checkDocExist, getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
-import { uploadDocuments } from "../../API/uploadFiles";
+import { addDownloadUrlToDocuments, getAuthFilter } from "./utilities";
+import { showLoading } from "react-global-loading";
 
 const NEW_DIRECTOR = {
   name: "",
   address: "",
   mobilenumber: "",
   email: "",
-  summary: "",
   documents: [],
 };
 
@@ -30,6 +31,7 @@ const INITIAL_DASHBOARD_DETAILS = {
     email: { value: "", canEdit: true },
     dinNumber: "",
     cinNumber: "",
+    summary: "",
     documents: [],
   },
   directors: [],
@@ -53,47 +55,27 @@ export default function Dashboard() {
   const [fileInputs, setFileInputs] = useState(
     INITIAL_DASHBOARD_DETAILS.fileInputs
   );
-  const [directorSave, setDirectorSave] = useState("low");
 
   const [saving, setSaving] = useState(false);
-
-  const addDownloadUrlToDocuments = async (documents) => {
-    const documentsToUpload = documents
-      .map((item, index) => [index, item])
-      .filter((item) => Boolean(item[1].file));
-
-    if (documentsToUpload.length) {
-      const downloadUrls = await uploadDocuments(
-        documentsToUpload.map((item) => item[0])
-      );
-      documentsToUpload.forEach((item, index) => {
-        delete companyDetails.documents[item[0]].file;
-        companyDetails.documents[item[0]] = {
-          ...companyDetails.documents,
-          fileDownloadUrl: downloadUrls[index],
-        };
-      });
-      return [...documents];
-    } else {
-      return documents;
-    }
-  };
+  const [docExist, setDocExist] = useState(false);
 
   const saveHandler = async () => {
-    setDirectorSave("medium");
-    if (directorSave === "high") {
-      setSaving(true);
-      console.log("Uploading Documents");
-      companyDetails.documents = addDownloadUrlToDocuments(
-        companyDetails.documents
+    setSaving(true);
+    console.log("Uploading Company Details Documents");
+    companyDetails.documents = await addDownloadUrlToDocuments(
+      companyDetails.documents
+    );
+    console.log("Uploading Directors Documents");
+    directors.forEach(async (director, index) => {
+      directors[index].documents = await addDownloadUrlToDocuments(
+        director.documents
       );
+    });
 
-      directors.forEach((director, index) => {
-        directors[0].documents = addDownloadUrlToDocuments(director.documents);
-      });
-    }
-    if (await docExist({ email: auth.email })) {
-      await editData(COMPANY_COLL_NAME, {
+    const filter = getAuthFilter();
+    if (docExist) {
+      console.log("!!!");
+      await editData(COMPANY_COLL_NAME, filter, {
         ...companyDetails,
         directors: directors,
       });
@@ -101,29 +83,52 @@ export default function Dashboard() {
       await addData(COMPANY_COLL_NAME, {
         ...companyDetails,
         directors: directors,
+        fileInputs: fileInputs,
       });
     }
     setSaving(false);
-    setDirectorSave("low");
+    alert("Save Complete");
   };
 
   useEffect(() => {
-    if (auth) {
-      // Get Info
-      // if on info excecute code below
-      if (auth.email && companyDetails.email.value === "") {
-        setCompanyDetails({
-          ...companyDetails,
-          email: { value: auth.email, canEdit: false },
-        });
-      } else if (companyDetails.mobilenumber.value === "") {
-        setCompanyDetails({
-          ...companyDetails,
-          mobilenumber: { value: auth.mobilenumber, canEdit: false },
-        });
+    (async () => {
+      if (auth) {
+        showLoading(true);
+        const [dashboardDoc] = await getDocs(
+          COMPANY_COLL_NAME,
+          getAuthFilter()
+        );
+        console.log(dashboardDoc);
+        if (dashboardDoc) {
+          setDocExist(true);
+          setCompanyDetails({
+            ...dashboardDoc,
+            directors: undefined,
+            fileInputs: undefined,
+          });
+          setDirectors(dashboardDoc.directors);
+          setFileInputs(dashboardDoc.fileInputs);
+          showLoading(false);
+        } else {
+          if (auth.email && companyDetails.email.value === "") {
+            setCompanyDetails({
+              ...companyDetails,
+              email: { value: auth.email, canEdit: false },
+            });
+          } else if (
+            auth.mobilenumber &&
+            companyDetails.mobilenumber.value === ""
+          ) {
+            setCompanyDetails({
+              ...companyDetails,
+              mobilenumber: { value: auth.mobilenumber, canEdit: false },
+            });
+          }
+          showLoading(false);
+        }
       }
-    }
-  }, [auth, companyDetails]);
+    })();
+  }, [auth]);
 
   if (!auth || (auth && ADMIN_EMAILS.includes(auth.email))) {
     return (
@@ -140,7 +145,10 @@ export default function Dashboard() {
 
   const setDirector = (index) => (director) => {
     directors[index] = director;
-    setDirectors([...directors]);
+    setDirectors((directors) => {
+      directors[index] = director;
+      return [...directors];
+    });
   };
 
   const setFileInput = (index) => (fileInput) => {
@@ -174,8 +182,6 @@ export default function Dashboard() {
               directors.splice(index, 1);
               setDirectors([...directors]);
             }}
-            onSave={directorSave}
-            setDirectorSave={setDirectorSave}
           />
         ))}
         <AddDirector clickHandler={addDirector} />
@@ -186,7 +192,7 @@ export default function Dashboard() {
           disabled={saving}
           onClick={saveHandler}
         >
-          Save
+          {saving ? <AiOutlineLoading className="loading" /> : "Save"}
         </button>
       </div>
       <div style={{ height: "5px", borderBottom: "solid 1px black" }}></div>

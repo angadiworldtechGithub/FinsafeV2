@@ -1,11 +1,23 @@
-import { MdOutlineDownloadForOffline } from "react-icons/md";
-import { useRef, useState } from "react";
+import { MdOutlineDownloadForOffline, MdCancel } from "react-icons/md";
+import { useContext, useEffect, useRef, useState } from "react";
+import { AuthContext } from "../../Context/AuthContext";
 
 const DEFAULT_DOCUMENT_LIST = ["GST Number", "PAN Number", "Company Inc. Cert"];
 
 export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
   const [documentOptions, setDocumentOptions] = useState(DEFAULT_DOCUMENT_LIST);
   const docRef = useRef([]);
+  const [selectVal, setSelectVal] = useState("");
+  const { auth } = useContext(AuthContext);
+
+  useEffect(() => {
+    setDocumentOptions([
+      ...documentOptions.filter(
+        (option) =>
+          !companyDetails.documents.map((doc) => doc.name).includes(option)
+      ),
+    ]);
+  }, [companyDetails.documents]);
 
   return (
     <>
@@ -96,10 +108,10 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                       {document.name}
                     </label>
                   </div>
-                  {document.downloadFileUrl ? (
+                  {document.fileDownloadUrl ? (
                     <i className="upload-icon">
                       <a
-                        href={document.downloadFileUrl}
+                        href={document.fileDownloadUrl}
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -114,10 +126,24 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                           docRef.current[index] = el;
                         }}
                         onChange={() => {
+                          const file_ = docRef.current[index].files[0];
+                          const newName = `${companyDetails.documents[
+                            index
+                          ].name
+                            .replace(/\s+/g, "_")
+                            .toLowerCase()}_${
+                            auth.email
+                              ? auth.email + "." + file_.name.split(".")[1]
+                              : auth.mobilenumber +
+                                "." +
+                                file_.name.split(".")[1]
+                          }`;
                           setCompanyDetails((companyDetails) => {
                             companyDetails.documents[index] = {
                               ...companyDetails.documents[index],
-                              file: docRef.current[index].files[0],
+                              file: new File([file_], newName, {
+                                type: file_.type,
+                              }),
                             };
                             return {
                               ...companyDetails,
@@ -126,6 +152,22 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                           });
                         }}
                         type="file"
+                      />
+                      <MdCancel
+                        className="hover_click"
+                        onClick={() => {
+                          const [deleteDoc] = companyDetails.documents.splice(
+                            index,
+                            1
+                          );
+                          setCompanyDetails({
+                            ...companyDetails,
+                            documents: companyDetails.documents,
+                          });
+                          setDocumentOptions([
+                            ...documentOptions.concat([deleteDoc.name]),
+                          ]);
+                        }}
                       />
                     </div>
                   )}
@@ -143,18 +185,9 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
               <div style={{ width: "50%" }}>
                 <select
                   className="admin-select"
+                  value={selectVal}
                   onChange={(e) => {
                     if (e.target.value !== "") {
-                      console.log(e.target.value);
-                      setDocumentOptions([
-                        ...documentOptions.filter((option) => {
-                          return (
-                            !companyDetails.documents
-                              .map((doc) => doc.name)
-                              .includes(option) && option !== e.target.value
-                          );
-                        }),
-                      ]);
                       companyDetails.documents.push({
                         name: e.target.value,
                         file: null,
@@ -163,10 +196,11 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                         ...companyDetails,
                         documents: [...companyDetails.documents],
                       }));
+                      setSelectVal("");
                     }
                   }}
                 >
-                  <option selected></option>
+                  <option></option>
                   {documentOptions.map((option, index) => (
                     <option key={index}>{option}</option>
                   ))}

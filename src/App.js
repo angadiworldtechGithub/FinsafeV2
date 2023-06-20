@@ -1,4 +1,6 @@
 import "./App.css";
+import { GlobalLoading } from "react-global-loading";
+
 import Navbar from "./Components/Navbar";
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
@@ -176,7 +178,7 @@ import { AuthContextProvider } from "./Context/AuthContext";
 import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
 import SignUp from "./Pages/SignUp";
 import PhoneLogin from "./Pages/PhoneLogin";
-import Adminservice from "./Pages/Adminservice";
+import AdminService from "./Pages/AdminService";
 
 const Base = () => {
   return (
@@ -681,8 +683,8 @@ const router = createBrowserRouter([
         element: <Others />,
       },
       {
-        path: "/Adminservice",
-        element: <Adminservice/>,
+        path: "/adminservice",
+        element: <AdminService />,
       },
     ],
   },
@@ -692,6 +694,7 @@ function App() {
   return (
     <AuthContextProvider>
       <RouterProvider router={router} />
+      <GlobalLoading />
     </AuthContextProvider>
   );
 }

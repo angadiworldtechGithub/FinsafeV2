@@ -1,9 +1,42 @@
-import "./Adminservice.css"
+import { useEffect, useState, useContext } from "react";
+import { SERVICE_COLL_NAME, ADMIN_EMAILS } from "../../constants";
+import { AuthContext } from "../../Context/AuthContext";
+import "./AdminService.css";
+import { getAllDocs } from "../../API/readDoc";
+
 export default function Adminservice() {
+  const { auth } = useContext(AuthContext);
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const documents = await getAllDocs(SERVICE_COLL_NAME);
+      documents.sort((a, b) => {
+        if (a < b) {
+          return 1;
+        } else if (a === b) {
+          return 0;
+        } else {
+          return -1;
+        }
+      });
+      setServices(documents);
+    })();
+  }, []);
+
+  if (!auth || (auth && !ADMIN_EMAILS.includes(auth.email))) {
     return (
-        <div>
-          <div className="Adminservice-container">
-          <table>
+      <div className="dashboard_container">
+        <h1>Admin Services</h1>
+        <h1>Please login with a admin account to view this page.</h1>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div className="adminservice-container">
+        <table>
           <tr>
             <th>User ID</th>
             <th>User Registred Service</th>
@@ -11,72 +44,29 @@ export default function Adminservice() {
             <th>Email ID</th>
             <th>Phone Number</th>
             <th>Organisation Name</th>
+            <th>Services</th>
             <th>User State</th>
             <th>User City</th>
+            <th>Date Created</th>
           </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Income Tax Returns</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Business Legal Services</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Business Legal Drafting</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Personal services</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>Bookkeeping & Record Maintenance</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
-          <tr>
-            <td>A12b345678</td>
-            <td>pay roll Management</td>
-            <td>xxxxxxx</td>
-            <td>xxxxxxx@gmail.com</td>
-            <td>00000000000</td>
-            <td>Software company</td>
-            <td>karnataka</td>
-            <td>Banglore</td>
-          </tr>
+          {services.map((doc) => {
+            return (
+              <tr>
+                <td>{doc.indetifier}</td>
+                <td>{doc.serviceName}</td>
+                <td>{doc.name}</td>
+                <td>{doc.email}</td>
+                <td>{doc.contact_number}</td>
+                <td>{doc.organisation}</td>
+                <td>{doc.services}</td>
+                <td>{doc.city}</td>
+                <td>{doc.state}</td>
+                <td>{doc.dateCreated.toDate().toString()}</td>
+              </tr>
+            );
+          })}
         </table>
-        
-          </div>  
-        </div>
-    );
+      </div>
+    </div>
+  );
 }

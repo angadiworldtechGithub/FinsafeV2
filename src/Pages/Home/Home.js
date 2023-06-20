@@ -24,43 +24,43 @@ const ProjectList = [
   },
   {
     title: "Loan Services",
-    image: "assets/images/banners/Loan.png",
+    image: "assets/images/banners/loan.png",
     description:
       "Finsafe maintains with banks and Financial institutions which helps to raise required growth capital for your organisation",
   },
   {
     title: "Transaction Advisory",
-    image: "assets/images/banners/Transaction.png",
+    image: "assets/images/banners/transaction.png",
     description:
       "Finsafe experts will help you in drafting and vetting business agreements which help you enter into strong business relationships",
   },
   {
     title: "Tax Planning",
-    image: "assets/images/banners/Tax Planning.png",
+    image: "assets/images/banners/tax_planning.png",
     description:
       "Our Tax Experts will help implement best Tax best planning for your organisation.",
   },
   {
     title: "Statutory Compliances",
-    image: "assets/images/banners/Statutory Compliance.png",
+    image: "assets/images/banners/statutory_compliance.png",
     description:
       "Our experienced team ensures your organisation is always compliant (GST, RERA, Income tax and Companies act etc.)",
   },
   {
     title: "Business Services",
-    image: "assets/images/banners/Business services.png",
+    image: "assets/images/banners/business_services.png",
     description:
       "FINSAFE efficient process such as payroll, AP & AR will help reduce operations cost signficantly.",
   },
   {
     title: "Financial planning",
-    image: "assets/images/banners/Financial planning.png",
+    image: "assets/images/banners/financial_planning.png",
     description:
       "FINSAFE's Certified financial planners builds a robust plan to help achive your financial targets",
   },
   {
     title: "Investment",
-    image: "assets/images/banners/Income tax.png",
+    image: "assets/images/banners/income_tax.png",
     description:
       "Our relationship with large financial institutions ensure highest value loan at lowest possible returns	",
   },

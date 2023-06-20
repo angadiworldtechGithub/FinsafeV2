@@ -1,2 +1,2 @@
-import Adminservice from "./Adminservice.js";
-export default Adminservice;
+import AdminService from "./AdminService.js";
+export default AdminService;

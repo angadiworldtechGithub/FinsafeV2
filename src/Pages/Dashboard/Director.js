@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { useMemo, useRef, useState } from "react";
+import { MdOutlineDownloadForOffline, MdCancel } from "react-icons/md";
 import { ImCancelCircle } from "react-icons/im";
+import _ from "lodash";
 
 const DOCUMENT_LIST = ["GST Number", "PAN Number"];
 
@@ -8,19 +9,19 @@ export default function Director({
   initialData,
   setFinalData,
   deleteDirector,
-  onSave,
-  setDirectorSave,
   number,
 }) {
   const [newDocumentOptions, setNewDocumentOptions] = useState(DOCUMENT_LIST);
   const [data, setData] = useState(initialData);
+  const [selectValue, setSelectValue] = useState("");
   const docRef = useRef([]);
-  useEffect(() => {
-    if (onSave === "medium") {
-      setFinalData({ ...data });
-      setDirectorSave("high");
-    }
-  }, [data, onSave, setDirectorSave, setFinalData]);
+  useMemo(() => {
+    setNewDocumentOptions([
+      ...newDocumentOptions.filter((option) => {
+        return !data.documents.map((doc) => doc.name).includes(option);
+      }),
+    ]);
+  }, [data.documents]);
   return (
     <>
       <div className="director-box">
@@ -82,10 +83,23 @@ export default function Director({
           </div>
           {data.documents.map((document, index) => {
             return (
-              <div>
-                <div>
+              <div style={{ marginTop: "10px" }}>
+                <div style={{ display: "flex" }}>
                   <label>{document.name}</label>
-                  <input className="admin-text4" type="text" />
+                  <MdCancel
+                    className="hover_click"
+                    style={{ marginLeft: "55%" }}
+                    onClick={() => {
+                      const [deleteDoc] = data.documents.splice(index, 1);
+                      setData({
+                        ...data,
+                        documents: data.documents,
+                      });
+                      setNewDocumentOptions([
+                        ...newDocumentOptions.concat([deleteDoc.name]),
+                      ]);
+                    }}
+                  />
                 </div>
                 {document.fileDownloadUrl ? (
                   <i className="download-icon">
@@ -98,22 +112,19 @@ export default function Director({
                     </a>
                   </i>
                 ) : (
-                  <div>
+                  <div style={{ marginTop: "10px" }}>
                     <input
                       style={{ marginLeft: "10px" }}
                       ref={(el) => (docRef.current[index] = el)}
                       onChange={() => {
                         data.documents[index] = {
                           ...data.documents[index],
-                          file: docRef.current.files[0],
+                          file: docRef.current[index].files[0],
                         };
                         setData({ ...data, documents: [...data.documents] });
                       }}
                       type="file"
                     />
-                    <button style={{ marginRight: "17%", float: "right" }}>
-                      Upload
-                    </button>
                   </div>
                 )}
               </div>
@@ -126,27 +137,18 @@ export default function Director({
               </div>
               <select
                 className="admin-select"
-                defaultChecked=""
+                value={selectValue}
                 onChange={(e) => {
                   if (e.target.value !== "") {
-                    console.log(e.target.value);
-                    setNewDocumentOptions([
-                      ...newDocumentOptions.filter((option) => {
-                        return (
-                          !data.documents
-                            .map((doc) => doc.name)
-                            .includes(option) && option !== e.target.value
-                        );
-                      }),
-                    ]);
                     data.documents.push({ name: e.target.value, file: null });
                     setData({ ...data, documents: [...data.documents] });
+                    setSelectValue("");
                   }
                 }}
               >
-                <option selected></option>
-                {newDocumentOptions.map((option) => (
-                  <option>{option}</option>
+                <option></option>
+                {newDocumentOptions.map((option, index) => (
+                  <option key={index}>{option}</option>
                 ))}
               </select>
             </>
@@ -154,6 +156,20 @@ export default function Director({
             <></>
           )}
         </div>
+        {!_.isEqual(data, initialData) ? (
+          <div style={{ margin: "0 auto", width: "fit-content" }}>
+            <button
+              className="director_submit"
+              onClick={() => {
+                setFinalData({ ...data });
+              }}
+            >
+              Save
+            </button>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );
