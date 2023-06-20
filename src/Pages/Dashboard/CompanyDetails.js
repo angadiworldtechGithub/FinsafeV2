@@ -219,7 +219,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
               display: "flex",
             }}
           >
-            <div style={{ width: "fit-content" }}>
+            <div  className="admin-input-row" style={{ width: "fit-content" }}>
               <label className="admin1-text">DIN Number</label>
               <input
                 className="admin-number"
@@ -232,7 +232,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                 }}
               ></input>
             </div>
-            <div>
+            <div className="admin-input-row">
               <label className="admin1-text">CIN Number</label>
               <input
                 className="admin-number"
