@@ -27,7 +27,7 @@ export default function Admin() {
     return (
       <div className="dashboard_container">
         <h1>Admin</h1>
-        <h1>Please login with a admin account to view this page.</h1>
+        <h1>Please login with a admin account to view this page</h1>
       </div>
     );
   }

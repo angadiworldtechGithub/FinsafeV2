@@ -5,6 +5,15 @@
   margin-bottom: 20px ;
 }
 
+.dashboard_container{
+  text-align: center;
+  border: 2px solid #fff;
+  margin: 20px 20px 20px 20px;
+  border-radius: 20px;
+  background-color: #dddddd;
+  color: #072f5f;
+}
+
 .title-text {
   padding-left: 20px;
   font-size: 30px;
