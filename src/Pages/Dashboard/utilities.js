@@ -29,7 +29,6 @@ export const addDownloadUrlToDocuments = async (documents) => {
 
     // Add download file url to the documents to save and remove the file object
 
-    console.log(documentsToSave);
     return [...documentsToSave];
   } else {
     return documentsToSave;
@@ -39,7 +38,7 @@ export const addDownloadUrlToDocuments = async (documents) => {
 export const getAuthFilter = (auth) => {
   if (auth.email) {
     return { "email.value": auth.email };
-  } else if (auth.mobilenumber) {
-    return { "mobilnumber.value": auth.mobilenumber };
+  } else if (auth.phoneNumber) {
+    return { "mobilnumber.value": auth.phoneNumber };
   }
 };

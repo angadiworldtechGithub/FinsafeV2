@@ -10,7 +10,7 @@ import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
 import { addData } from "../../API/createDoc";
-import { docExist as checkDocExist, getDocs } from "../../API/readDoc";
+import { getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
 import { addDownloadUrlToDocuments, getAuthFilter } from "./utilities";
 import { showLoading } from "react-global-loading";
@@ -59,6 +59,8 @@ export default function Dashboard() {
   const [saving, setSaving] = useState(false);
   const [docExist, setDocExist] = useState(false);
 
+  console.log(directors);
+
   useEffect(() => {
     (async () => {
       if (auth) {
@@ -84,12 +86,12 @@ export default function Dashboard() {
               email: { value: auth.email, canEdit: false },
             });
           } else if (
-            auth.mobilenumber &&
+            auth.phoneNumber &&
             companyDetails.mobilenumber.value === ""
           ) {
             setCompanyDetails({
               ...companyDetails,
-              mobilenumber: { value: auth.mobilenumber, canEdit: false },
+              mobilenumber: { value: auth.phoneNumber, canEdit: false },
             });
           }
           showLoading(false);
@@ -101,23 +103,34 @@ export default function Dashboard() {
   const saveHandler = async () => {
     setSaving(true);
     console.log("Uploading Company Details Documents");
-    companyDetails.documents = await addDownloadUrlToDocuments(
-      companyDetails.documents
-    );
+    if (companyDetails.documents.length) {
+      companyDetails.documents = await addDownloadUrlToDocuments(
+        companyDetails.documents
+      );
+    }
+
     console.log("Uploading Directors Documents");
-    directors.forEach(async (director, index) => {
-      console.log(director.documents);
-      directors[index].documents = await addDownloadUrlToDocuments(
-        director.documents
-      );
-      console.log(directors[index].documents);
-    });
+    await Promise.all(
+      directors.map(async (director, index) => {
+        console.log(director.documents);
+        if (director.documents.length) {
+          directors[index].documents = await addDownloadUrlToDocuments(
+            director.documents
+          );
+        }
+      })
+    );
+
     console.log("Uploading File Inputs Documents");
-    fileInputs.forEach(async (fileInput, index) => {
-      fileInputs[index].documents = await addDownloadUrlToDocuments(
-        fileInput.documents
-      );
-    });
+    await Promise.all(
+      fileInputs.map(async (fileInput, index) => {
+        if (fileInputs[index].documents.length) {
+          fileInputs[index].documents = await addDownloadUrlToDocuments(
+            fileInput.documents
+          );
+        }
+      })
+    );
 
     const filter = getAuthFilter(auth);
 
@@ -187,7 +200,6 @@ export default function Dashboard() {
             initialData={director}
             setFinalData={setDirector(index)}
             deleteDirector={() => {
-              console.log(index);
               directors.splice(index, 1);
               setDirectors([...directors]);
             }}

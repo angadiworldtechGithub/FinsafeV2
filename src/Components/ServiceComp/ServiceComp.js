@@ -23,7 +23,7 @@ export default function ServiceComp({
 
   const formRef = useRef(null);
 
-  const { auth } = useContext(AuthContext);
+  const { auth, getIdentifier } = useContext(AuthContext);
 
   const onSubmit = async (e) => {
     if (auth) {
@@ -36,7 +36,7 @@ export default function ServiceComp({
         await addData(
           SERVICE_COLL_NAME,
           {
-            indetifier: auth.email ? auth.email : auth.mobilenumber,
+            indentifier: getIdentifier(),
             serviceName: title,
             ...inputs,
           },

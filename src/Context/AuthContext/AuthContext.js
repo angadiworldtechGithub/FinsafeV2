@@ -9,7 +9,7 @@ export function AuthContextProvider({ children }) {
   const [auth, setAuth] = useState(null);
 
   const getIdentifier = () => {
-    return auth ? (auth.email ? auth.email : auth.mobilenumber) : "";
+    return auth ? (auth.email ? auth.email : auth.phoneNumber) : "";
   };
 
   useEffect(() => {

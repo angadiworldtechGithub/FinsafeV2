@@ -90,31 +90,33 @@ export default function Director({
               <div key={index} style={{ marginTop: "10px" }}>
                 <div style={{ display: "flex" }}>
                   <label>{document.name}</label>
-                  <MdCancel
-                    className="hover_click"
-                    style={{ marginLeft: "55%" }}
-                    onClick={() => {
-                      const [deleteDoc] = data.documents.splice(index, 1);
-                      setData({
-                        ...data,
-                        documents: data.documents,
-                      });
-                      setNewDocumentOptions([
-                        ...newDocumentOptions.concat([deleteDoc.name]),
-                      ]);
-                    }}
-                  />
+                  {!document.fileDownloadUrl ? (
+                    <MdCancel
+                      className="hover_click"
+                      style={{ marginLeft: "55%" }}
+                      onClick={() => {
+                        const [deleteDoc] = data.documents.splice(index, 1);
+                        setData({
+                          ...data,
+                          documents: data.documents,
+                        });
+                        setNewDocumentOptions([
+                          ...newDocumentOptions.concat([deleteDoc.name]),
+                        ]);
+                      }}
+                    />
+                  ) : (
+                    <></>
+                  )}
                 </div>
                 {document.fileDownloadUrl ? (
-                  <i className="download-icon">
-                    <a
-                      href={document.fileDownloadUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <MdOutlineDownloadForOffline />
-                    </a>
-                  </i>
+                  <a
+                    href={document.fileDownloadUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <MdOutlineDownloadForOffline className="download-icon" />
+                  </a>
                 ) : document.file ? (
                   <div>{document.file.name}</div>
                 ) : (
