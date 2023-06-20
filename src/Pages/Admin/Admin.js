@@ -1,7 +1,6 @@
 import "./Admin.css";
 import { MdDownloadForOffline } from "react-icons/md";
 import { FaChevronRight } from "react-icons/fa";
-import { useState } from "react";
 import { useEffect, useContext, useState } from "react";
 import { getAllDocs } from "../../API/readDoc";
 import { COMPANY_COLL_NAME } from "../../constants";

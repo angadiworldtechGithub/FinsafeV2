@@ -42,37 +42,41 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="login_container">
+      <div className="login_left">
+         <img src="assets/images/login_banner.png"></img>
+      </div>
+      <div className="login_right">
       <div className="header_text">
-        <h1>Login</h1>
+        <h1>Welcome to Finsafe</h1>
       </div>
       <div className="login_box">
         <div>
-          <label>Email</label>
+          <label className="login_text">Email</label>
         </div>
         <input
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
           }}
-          className="input_login"
+          className="logininput"
         ></input>
       </div>
       <div className="login_box">
         <div>
-          <label>Password</label>
+          <label className="login_text">Password</label>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex",position:"relative" }}>
           <input
             value={password}
             type={showPassword ? "text" : "password"}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
-            className="input_login"
+            className="logininput"
           />
           {showPassword ? (
-            <AiFillEye className="password_eye" onClick={handleEyeClick} />
+            <AiFillEye className="password_eye"  onClick={handleEyeClick} />
           ) : (
             <AiFillEyeInvisible
               className="password_eye"
@@ -93,6 +97,7 @@ export default function Login() {
       <div className="bottom_text">Forgot Password ?</div>
       <div className="bottom_text">
         <Link to="/signup">No account, please create an account</Link>
+      </div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import "./AdminService.css";
 import { getAllDocs } from "../../API/readDoc";
 
-export default function Adminservice() {
+export default function AdminService() {
   const { auth } = useContext(AuthContext);
   const [services, setServices] = useState([]);
 

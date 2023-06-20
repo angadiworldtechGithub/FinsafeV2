@@ -66,7 +66,7 @@ const ProjectList = [
   },
   {
     title: "Wealth Management services",
-    image: "assets/images/banners/wealth Mangement service.png",
+    image: "assets/images/banners/wealth_Mangement_service.png",
     description:
       "Our team of Experts ensures your wealth, assets are preserved and passed on to Generations to come.	",
   },

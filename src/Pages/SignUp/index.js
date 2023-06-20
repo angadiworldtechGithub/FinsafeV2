@@ -47,9 +47,13 @@ export default function SignUp() {
   };
 
   return (
-    <div>
+    <div className="login_container">
+    <div className="login_left">
+       <img src="assets/images/login_banner.png"></img>
+    </div>
+    <div className="login_right">
       <div className="header_text">
-        <h1>Sign Up</h1>
+        <h1>Register to Finsafe</h1>
       </div>
       <div className="login_box">
         <div className="center_text">
@@ -60,21 +64,21 @@ export default function SignUp() {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
-          className="input_login"
+          className="logininput"
         ></input>
       </div>
       <div className="login_box">
         <div className="center_text">
           <label>Password</label>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex",position:"relative" }}>
           <input
             value={password}
             type={showPassword ? "text" : "password"}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
-            className="input_login"
+            className="logininput"
           />
           {showPassword ? (
             <AiFillEye className="password_eye" onClick={handleEyeClick} />
@@ -96,18 +100,19 @@ export default function SignUp() {
           onChange={(e) => {
             setConfirmPassword(e.target.value);
           }}
-          className="input_login"
+          className="logininput"
         ></input>
       </div>
       <div className="login_box">
-        <button
+        <center><button
           className="button_login"
-          style={{ width: "100%", height: "40px" }}
+          style={{ width: "60%", height: "40px" }}
           onClick={onSignUp}
         >
           {loading ? <AiOutlineLoading className="loading" /> : "Sign Up"}
-        </button>
+        </button></center> 
       </div>
+    </div>
     </div>
   );
 }
