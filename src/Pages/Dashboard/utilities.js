@@ -39,6 +39,6 @@ export const getAuthFilter = (auth) => {
   if (auth.email) {
     return { "email.value": auth.email };
   } else if (auth.phoneNumber) {
-    return { "mobilnumber.value": auth.phoneNumber };
+    return { "mobilenumber.value": auth.phoneNumber };
   }
 };
