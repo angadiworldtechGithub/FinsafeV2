@@ -14,7 +14,9 @@ export default function YearFileInput({ initialFileInput, setFileInput }) {
       documentDate: date,
       file: new File(
         [file],
-        `${getIdentifier()}_${initialFileInput.name}.${file.name.split(".")[1]}`
+        `year_file_input_${getIdentifier()}_${initialFileInput.name}.${
+          file.name.split(".")[1]
+        }`
       ),
     });
     setFileInput({
@@ -64,8 +66,8 @@ export default function YearFileInput({ initialFileInput, setFileInput }) {
             <th>Date of Document</th>
             <th>Download</th>
           </tr>
-          {initialFileInput.documents.map((document) => (
-            <tr>
+          {initialFileInput.documents.map((document, index) => (
+            <tr key={index}>
               <td>
                 {document.documentDate.toDate
                   ? document.documentDate.toDate().toString()

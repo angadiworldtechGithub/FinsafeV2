@@ -59,44 +59,6 @@ export default function Dashboard() {
   const [saving, setSaving] = useState(false);
   const [docExist, setDocExist] = useState(false);
 
-  const saveHandler = async () => {
-    setSaving(true);
-    console.log("Uploading Company Details Documents");
-    companyDetails.documents = await addDownloadUrlToDocuments(
-      companyDetails.documents
-    );
-    console.log("Uploading Directors Documents");
-    directors.forEach(async (director, index) => {
-      directors[index].documents = await addDownloadUrlToDocuments(
-        director.documents
-      );
-    });
-    console.log("Uploading File Inputs Documents");
-    fileInputs.forEach(async (fileInput, index) => {
-      fileInputs[index].documents = await addDownloadUrlToDocuments(
-        fileInput.documents
-      );
-    });
-
-    const filter = getAuthFilter(auth);
-    if (docExist) {
-      console.log("!!!");
-      await editData(COMPANY_COLL_NAME, filter, {
-        ...companyDetails,
-        directors: directors,
-        fileInputs: fileInputs,
-      });
-    } else {
-      await addData(COMPANY_COLL_NAME, {
-        ...companyDetails,
-        directors: directors,
-        fileInputs: fileInputs,
-      });
-    }
-    setSaving(false);
-    alert("Save Complete");
-  };
-
   useEffect(() => {
     (async () => {
       if (auth) {
@@ -135,6 +97,47 @@ export default function Dashboard() {
       }
     })();
   }, [auth]);
+
+  const saveHandler = async () => {
+    setSaving(true);
+    console.log("Uploading Company Details Documents");
+    companyDetails.documents = await addDownloadUrlToDocuments(
+      companyDetails.documents
+    );
+    console.log("Uploading Directors Documents");
+    directors.forEach(async (director, index) => {
+      console.log(director.documents);
+      directors[index].documents = await addDownloadUrlToDocuments(
+        director.documents
+      );
+      console.log(directors[index].documents);
+    });
+    console.log("Uploading File Inputs Documents");
+    fileInputs.forEach(async (fileInput, index) => {
+      fileInputs[index].documents = await addDownloadUrlToDocuments(
+        fileInput.documents
+      );
+    });
+
+    const filter = getAuthFilter(auth);
+
+    if (docExist) {
+      await editData(COMPANY_COLL_NAME, filter, {
+        ...companyDetails,
+        directors: directors,
+        fileInputs: fileInputs,
+      });
+    } else {
+      await addData(COMPANY_COLL_NAME, {
+        ...companyDetails,
+        directors: directors,
+        fileInputs: fileInputs,
+      });
+      setDocExist(true);
+    }
+    setSaving(false);
+    alert("Save Complete");
+  };
 
   if (!auth || (auth && ADMIN_EMAILS.includes(auth.email))) {
     return (
