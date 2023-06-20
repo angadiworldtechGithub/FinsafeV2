@@ -143,7 +143,7 @@ export default function Admin() {
             return (
               <div>
                 <div className="company-button">
-                  Director Information 1{director.name}
+                  1.Director Information 1{director.name}
                 </div>
                 <div className="company">
                   <div>
@@ -161,17 +161,8 @@ export default function Admin() {
                     "No Mobile Number"}
                 </div>
                 <div className="company">
-                  <label className="company-text">Email ID</label>
+                  <label className="company-text">Email</label>
                   {companies[activeCompany]?.email.value ?? "No Email Id"}
-                </div>
-                <div className="company">
-                  <label className="company-text">CIN Number</label>
-                  {companies[activeCompany]?.cinNumber ?? "Not Entered"}
-                </div>
-                <div className="company">
-                  <label className="company-text">
-                    Uploaded Documents List ...
-                  </label>
                 </div>
                 {companies[activeCompany]?.documents.map((document) => {
                   return (
