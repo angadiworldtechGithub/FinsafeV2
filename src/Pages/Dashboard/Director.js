@@ -1,7 +1,8 @@
-import { useMemo, useRef, useState } from "react";
+import { useContext, useMemo, useRef, useState } from "react";
 import { MdOutlineDownloadForOffline, MdCancel } from "react-icons/md";
 import { ImCancelCircle } from "react-icons/im";
 import _ from "lodash";
+import { AuthContext } from "../../Context/AuthContext";
 
 const DOCUMENT_LIST = ["GST Number", "PAN Number"];
 
@@ -14,7 +15,9 @@ export default function Director({
   const [newDocumentOptions, setNewDocumentOptions] = useState(DOCUMENT_LIST);
   const [data, setData] = useState(initialData);
   const [selectValue, setSelectValue] = useState("");
+  const { getIdentifier } = useContext(AuthContext);
   const docRef = useRef([]);
+
   useMemo(() => {
     setNewDocumentOptions([
       ...newDocumentOptions.filter((option) => {
@@ -22,6 +25,7 @@ export default function Director({
       }),
     ]);
   }, [data.documents]);
+
   return (
     <>
       <div className="director-box">
@@ -83,7 +87,7 @@ export default function Director({
           </div>
           {data.documents.map((document, index) => {
             return (
-              <div style={{ marginTop: "10px" }}>
+              <div key={index} style={{ marginTop: "10px" }}>
                 <div style={{ display: "flex" }}>
                   <label>{document.name}</label>
                   <MdCancel
@@ -111,15 +115,26 @@ export default function Director({
                       <MdOutlineDownloadForOffline />
                     </a>
                   </i>
+                ) : document.file ? (
+                  <div>{document.file.name}</div>
                 ) : (
                   <div style={{ marginTop: "10px" }}>
                     <input
                       style={{ marginLeft: "10px" }}
                       ref={(el) => (docRef.current[index] = el)}
                       onChange={() => {
+                        const file = docRef.current[index].files[0];
                         data.documents[index] = {
-                          ...data.documents[index],
-                          file: docRef.current[index].files[0],
+                          ...document,
+                          file: new File(
+                            [file],
+                            `director_${document.name}_${getIdentifier()}.${
+                              file.name.split(".")[1]
+                            }`,
+                            {
+                              type: file.type,
+                            }
+                          ),
                         };
                         setData({ ...data, documents: [...data.documents] });
                       }}

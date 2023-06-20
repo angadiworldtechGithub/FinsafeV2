@@ -94,6 +94,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
             companyDetails.documents.map((document, index) => {
               return (
                 <div
+                  key={index}
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
@@ -188,6 +189,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                   value={selectVal}
                   onChange={(e) => {
                     if (e.target.value !== "") {
+                      console.log(e.target.value);
                       companyDetails.documents.push({
                         name: e.target.value,
                         file: null,
@@ -202,7 +204,9 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                 >
                   <option></option>
                   {documentOptions.map((option, index) => (
-                    <option key={index}>{option}</option>
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
                   ))}
                 </select>
               </div>

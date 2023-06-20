@@ -1,48 +1,33 @@
 import { GrDownload } from "react-icons/gr";
 import "./YearFileInput.css";
 import { useContext, useRef, useState } from "react";
-import { uploadDocuments } from "../../API/uploadFiles";
 import { AuthContext } from "../../Context/AuthContext";
-import { editData } from "../../API/editDoc";
-import { COMPANY_COLL_NAME } from "../../constants";
 
-export default function YearFileInput({ fileInput, docExist = false }) {
+export default function YearFileInput({ initialFileInput, setFileInput }) {
   const docRef = useRef(null);
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(null);
+  const [file, setFile] = useState(null);
   const { getIdentifier } = useContext(AuthContext);
 
   const onUpload = async () => {
-    if (docExist) {
-      if (docRef.current.files.length) {
-        const file = docRef.current.files[0];
-        const [downloadUrl] = await uploadDocuments([
-          new File(
-            [file],
-            `${fileInput.name}_${getIdentifier()}.${file.name.split(".")[1]}`,
-            { type: file.type }
-          ),
-        ]);
-
-        const document = {
-          fileDownloadUrl: downloadUrl,
-          date,
-        };
-
-        await editData(
-          COMPANY_COLL_NAME,
-          { identifier: "" },
-          { documents: [document] }
-        );
-      } else {
-        alert("Must add file to upload.");
-      }
-    } else {
-      alert("Must create other data to save files.");
-    }
+    initialFileInput.documents.push({
+      documentDate: date,
+      file: new File(
+        [file],
+        `year_file_input_${getIdentifier()}_${initialFileInput.name}.${
+          file.name.split(".")[1]
+        }`
+      ),
+    });
+    setFileInput({
+      ...initialFileInput,
+      documents: [...initialFileInput.documents],
+    });
   };
+
   return (
     <>
-      <h4 className="year-file-heading">{fileInput.name} Files</h4>
+      <h4 className="year-file-heading">{initialFileInput.name} Files</h4>
       <div className="year-file-input-container">
         <div className="year-file-row">
           <label className="label-flex">Choose Date -</label>
@@ -56,13 +41,23 @@ export default function YearFileInput({ fileInput, docExist = false }) {
         </div>
         <div className="year-file-row">
           <label className="label-flex">Upload File - </label>
-          <input type="file" ref={docRef} />
+          <input
+            type="file"
+            ref={docRef}
+            onChange={() => {
+              setFile(docRef.current.files[0]);
+            }}
+          />
         </div>
-        <div className="year-file-row year-upload">
-          <button className="button-upload" onClick={onUpload}>
-            Upload
-          </button>
-        </div>
+        {docRef.current && docRef.current.files.length && date ? (
+          <div className="year-file-row year-upload">
+            <button className="button-upload" onClick={onUpload}>
+              Upload
+            </button>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
 
       <div className="table-container">
@@ -71,9 +66,13 @@ export default function YearFileInput({ fileInput, docExist = false }) {
             <th>Date of Document</th>
             <th>Download</th>
           </tr>
-          {fileInput.documents.map((document) => (
-            <tr>
-              <td>{document.dateCreated.toDate().toString()}</td>
+          {initialFileInput.documents.map((document, index) => (
+            <tr key={index}>
+              <td>
+                {document.documentDate.toDate
+                  ? document.documentDate.toDate().toString()
+                  : document.documentDate.toString()}
+              </td>
               <td>
                 <a
                   href={document.fileDownloadUrl}

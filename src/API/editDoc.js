@@ -15,7 +15,7 @@ export const editData = (collectionName, filter, newPayload) => {
     getDocs(query(collection(firestore, collectionName), ...whereList)).then(
       (querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          updateDoc(doc, newPayload).then(() => {
+          updateDoc(doc.ref, newPayload).then(() => {
             console.log("Updated");
           });
         });
