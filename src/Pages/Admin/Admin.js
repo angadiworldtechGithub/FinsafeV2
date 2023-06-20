@@ -101,36 +101,39 @@ export default function Admin() {
             return (
               <div className="company">
                 <label className="company-text">{document.name}</label>
-                <MdDownloadForOffline />
+                <a
+                  href={document.fileDownloadUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <MdDownloadForOffline style={{ fontSize: "30px" }} />
+                </a>
               </div>
             );
           }) ?? <></>}
 
-          <div className="company">
-            <label className="company-text">ROC</label>
-            Submitted
-            <a
-              href={
-                companies[activeCompany]?.fileInputs.find(
-                  (o) => o.name === "ROC"
-                )?.documents[-1]
-              }
-            >
-              <MdDownloadForOffline />
-            </a>
-          </div>
-
-          <div className="company">
-            <label className="company-text">Income Tax</label>
-            Submitted
-            <MdDownloadForOffline />
-          </div>
-
-          <div className="company">
-            <label className="company-text">Form 16</label>
-            Submitted
-            <MdDownloadForOffline />
-          </div>
+          {companies[activeCompany]?.fileInputs.map((fileInput) => {
+            return (
+              <>
+                {fileInput.documents.length ? (
+                  <div className="company">
+                    <label className="company-text">{fileInput.name}</label>
+                    Submitted
+                    <a
+                      href={fileInput.documents[0].fileDownloadUrl}
+                      target="_blank"
+                      r
+                      rel="noreferrer"
+                    >
+                      <MdDownloadForOffline style={{ fontSize: "30px" }} />
+                    </a>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </>
+            );
+          })}
 
           <div
             className="company-header"
