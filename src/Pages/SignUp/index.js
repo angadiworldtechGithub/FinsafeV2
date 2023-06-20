@@ -48,71 +48,77 @@ export default function SignUp() {
 
   return (
     <div className="login_container">
-    <div className="login_left">
-       <img src="assets/images/login_banner.png"></img>
-    </div>
-    <div className="login_right">
-      <div className="header_text">
-        <h1>Register to Finsafe</h1>
+      <div className="login_left">
+        <img
+          src="assets/images/login_banner.png"
+          className="login_image"
+          alt="No Image"
+        ></img>
       </div>
-      <div className="login_box">
-        <div className="center_text">
-          <label>Email</label>
+      <div className="login_right">
+        <div className="header_text">
+          <h1>Register to Finsafe</h1>
         </div>
-        <input
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          className="logininput"
-        ></input>
-      </div>
-      <div className="login_box">
-        <div className="center_text">
-          <label>Password</label>
-        </div>
-        <div style={{ display: "flex",position:"relative" }}>
+        <div className="login_box">
+          <div className="center_text">
+            <label>Email</label>
+          </div>
           <input
-            value={password}
-            type={showPassword ? "text" : "password"}
+            value={email}
             onChange={(e) => {
-              setPassword(e.target.value);
+              setEmail(e.target.value);
             }}
             className="logininput"
-          />
-          {showPassword ? (
-            <AiFillEye className="password_eye" onClick={handleEyeClick} />
-          ) : (
-            <AiFillEyeInvisible
-              className="password_eye"
-              onClick={handleEyeClick}
+          ></input>
+        </div>
+        <div className="login_box">
+          <div className="center_text">
+            <label>Password</label>
+          </div>
+          <div style={{ display: "flex", position: "relative" }}>
+            <input
+              value={password}
+              type={showPassword ? "text" : "password"}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              className="logininput"
             />
-          )}
+            {showPassword ? (
+              <AiFillEye className="password_eye" onClick={handleEyeClick} />
+            ) : (
+              <AiFillEyeInvisible
+                className="password_eye"
+                onClick={handleEyeClick}
+              />
+            )}
+          </div>
+        </div>
+        <div className="login_box">
+          <div className="center_text">
+            <label>Confirm Password</label>
+          </div>
+          <input
+            value={confirmPassword}
+            type={showPassword ? "text" : "password"}
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+            }}
+            className="logininput"
+          ></input>
+        </div>
+        <div className="login_box">
+          <center>
+            <button
+              className="button_login"
+              style={{ width: "60%", height: "40px" }}
+              onClick={onSignUp}
+            >
+              {loading ? <AiOutlineLoading className="loading" /> : "Sign Up"}
+            </button>
+          </center>
         </div>
       </div>
-      <div className="login_box">
-        <div className="center_text">
-          <label>Confirm Password</label>
-        </div>
-        <input
-          value={confirmPassword}
-          type={showPassword ? "text" : "password"}
-          onChange={(e) => {
-            setConfirmPassword(e.target.value);
-          }}
-          className="logininput"
-        ></input>
-      </div>
-      <div className="login_box">
-        <center><button
-          className="button_login"
-          style={{ width: "60%", height: "40px" }}
-          onClick={onSignUp}
-        >
-          {loading ? <AiOutlineLoading className="loading" /> : "Sign Up"}
-        </button></center> 
-      </div>
-    </div>
     </div>
   );
 }

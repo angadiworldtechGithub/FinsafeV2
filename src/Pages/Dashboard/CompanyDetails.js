@@ -8,7 +8,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
   const [documentOptions, setDocumentOptions] = useState(DEFAULT_DOCUMENT_LIST);
   const docRef = useRef([]);
   const [selectVal, setSelectVal] = useState("");
-  const { auth } = useContext(AuthContext);
+  const { getIdentifier } = useContext(AuthContext);
 
   useEffect(() => {
     setDocumentOptions([
@@ -133,11 +133,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
                           ].name
                             .replace(/\s+/g, "_")
                             .toLowerCase()}_${
-                            auth.email
-                              ? auth.email + "." + file_.name.split(".")[1]
-                              : auth.mobilenumber +
-                                "." +
-                                file_.name.split(".")[1]
+                            getIdentifier() + "." + file_.name.split(".")[1]
                           }`;
                           setCompanyDetails((companyDetails) => {
                             companyDetails.documents[index] = {

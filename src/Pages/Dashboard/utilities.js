@@ -38,7 +38,7 @@ export const addDownloadUrlToDocuments = async (documents) => {
 export const getAuthFilter = (auth) => {
   if (auth.email) {
     return { "email.value": auth.email };
-  } else if (auth.mobilenumber) {
-    return { "mobilnumber.value": auth.mobilenumber };
+  } else if (auth.phoneNumber) {
+    return { "mobilnumber.value": auth.phoneNumber };
   }
 };

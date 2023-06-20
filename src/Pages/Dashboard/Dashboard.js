@@ -45,8 +45,6 @@ const INITIAL_DASHBOARD_DETAILS = {
 export default function Dashboard() {
   const { auth } = useContext(AuthContext);
 
-  console.log(auth);
-
   const [companyDetails, setCompanyDetails] = useState(
     INITIAL_DASHBOARD_DETAILS.companyDetails
   );
@@ -88,12 +86,12 @@ export default function Dashboard() {
               email: { value: auth.email, canEdit: false },
             });
           } else if (
-            auth.mobilenumber &&
+            auth.phoneNumber &&
             companyDetails.mobilenumber.value === ""
           ) {
             setCompanyDetails({
               ...companyDetails,
-              mobilenumber: { value: auth.mobilenumber, canEdit: false },
+              mobilenumber: { value: auth.phoneNumber, canEdit: false },
             });
           }
           showLoading(false);
