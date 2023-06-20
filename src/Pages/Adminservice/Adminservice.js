@@ -1,19 +1,41 @@
-import { useEffect, useState } from "react";
-import { SERVICE_COLL_NAME } from "../../constants";
-import "./Adminservice.css";
+import { useEffect, useState, useContext } from "react";
+import { SERVICE_COLL_NAME, ADMIN_EMAILS } from "../../constants";
+import { AuthContext } from "../../Context/AuthContext";
+import "./AdminService.css";
 import { getAllDocs } from "../../API/readDoc";
 
 export default function Adminservice() {
+  const { auth } = useContext(AuthContext);
   const [services, setServices] = useState([]);
+
   useEffect(() => {
     (async () => {
       const documents = await getAllDocs(SERVICE_COLL_NAME);
+      documents.sort((a, b) => {
+        if (a < b) {
+          return 1;
+        } else if (a === b) {
+          return 0;
+        } else {
+          return -1;
+        }
+      });
       setServices(documents);
     })();
   }, []);
+
+  if (!auth || (auth && !ADMIN_EMAILS.includes(auth.email))) {
+    return (
+      <div className="dashboard_container">
+        <h1>Admin Services</h1>
+        <h1>Please login with a admin account to view this page.</h1>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <div className="Adminservice-container">
+      <div className="adminservice-container">
         <table>
           <tr>
             <th>User ID</th>
@@ -25,6 +47,7 @@ export default function Adminservice() {
             <th>Services</th>
             <th>User State</th>
             <th>User City</th>
+            <th>Date Created</th>
           </tr>
           {services.map((doc) => {
             return (
@@ -38,6 +61,7 @@ export default function Adminservice() {
                 <td>{doc.services}</td>
                 <td>{doc.city}</td>
                 <td>{doc.state}</td>
+                <td>{doc.dateCreated.toDate().toString()}</td>
               </tr>
             );
           })}
