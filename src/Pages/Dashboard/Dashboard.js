@@ -71,13 +71,20 @@ export default function Dashboard() {
         director.documents
       );
     });
+    console.log("Uploading File Inputs Documents");
+    fileInputs.forEach(async (fileInput, index) => {
+      fileInputs[index].documents = await addDownloadUrlToDocuments(
+        fileInput.documents
+      );
+    });
 
-    const filter = getAuthFilter();
+    const filter = getAuthFilter(auth);
     if (docExist) {
       console.log("!!!");
       await editData(COMPANY_COLL_NAME, filter, {
         ...companyDetails,
         directors: directors,
+        fileInputs: fileInputs,
       });
     } else {
       await addData(COMPANY_COLL_NAME, {
@@ -96,7 +103,7 @@ export default function Dashboard() {
         showLoading(true);
         const [dashboardDoc] = await getDocs(
           COMPANY_COLL_NAME,
-          getAuthFilter()
+          getAuthFilter(auth)
         );
         console.log(dashboardDoc);
         if (dashboardDoc) {
@@ -200,7 +207,7 @@ export default function Dashboard() {
         return (
           <YearFileInput
             key={shortid.generate()}
-            fileInput={fileInput}
+            initialFileInput={fileInput}
             setFileInput={setFileInput(index)}
           />
         );

@@ -1,7 +1,6 @@
 import "./Admin.css";
 import { MdDownloadForOffline } from "react-icons/md";
 import { FaChevronRight } from "react-icons/fa";
-import { useState } from "react";
 import { useEffect, useContext, useState } from "react";
 import { getAllDocs } from "../../API/readDoc";
 import { COMPANY_COLL_NAME } from "../../constants";
@@ -35,8 +34,14 @@ export default function Admin() {
       <p className="title-text">Super Admin Panel</p>
       <div className="company-container">
         <div className="company-left">
-          
-        <button className="company-header-button"><p className="company-header">List of Companies<i className="side-icon"><FaChevronRight/></i></p></button>
+          <button className="company-header-button">
+            <p className="company-header">
+              List of Companies
+              <i className="side-icon">
+                <FaChevronRight />
+              </i>
+            </p>
+          </button>
           {companies.map((company, index) => (
             <button
               className="company-button"
@@ -110,7 +115,9 @@ export default function Admin() {
             <div className="company">
               <label className="company-text">ROC</label>
               Status........
-              <MdDownloadForOffline />
+              <a>
+                <MdDownloadForOffline />
+              </a>
             </div>
 
             <div className="company">
@@ -125,7 +132,12 @@ export default function Admin() {
               <MdDownloadForOffline />
             </div>
 
-            <p className="company-header-right">List of Directors<i className="side-icon"><FaChevronRight/></i></p>
+            <p className="company-header-right">
+              List of Directors
+              <i className="side-icon">
+                <FaChevronRight />
+              </i>
+            </p>
             {companies[activeCompany]?.directors.map((director) => {
               return (
                 <button className="company-button">
