@@ -136,11 +136,13 @@ export default function Admin() {
             List of Directors
             <FaChevronRight />
           </div>
-          {companies[activeCompany]?.directors.map((director) => {
+          {companies[activeCompany]?.Directors.map((director) => {
             return (
-              <div className="company-button">Director {director.name}</div>
+              <div className="company-button">Director Information 1{director.name}</div>
             );
           }) ?? <></>}
+
+          
         </div>
       </div>
     </div>
