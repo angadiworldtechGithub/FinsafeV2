@@ -44,60 +44,64 @@ export default function Login() {
   return (
     <div className="login_container">
       <div className="login_left">
-         <img src="assets/images/login_banner.png"></img>
+        <img
+          src="assets/images/login_banner.png"
+          className="login_image"
+          alt="Login Image"
+        ></img>
       </div>
       <div className="login_right">
-      <div className="header_text">
-        <h1>Welcome to Finsafe</h1>
-      </div>
-      <div className="login_box">
-        <div>
-          <label className="login_text">Email</label>
+        <div className="header_text">
+          <h1>Welcome to Finsafe</h1>
         </div>
-        <input
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          className="logininput"
-        ></input>
-      </div>
-      <div className="login_box">
-        <div>
-          <label className="login_text">Password</label>
-        </div>
-        <div style={{ display: "flex",position:"relative" }}>
+        <div className="login_box">
+          <div>
+            <label className="login_text">Email</label>
+          </div>
           <input
-            value={password}
-            type={showPassword ? "text" : "password"}
+            value={email}
             onChange={(e) => {
-              setPassword(e.target.value);
+              setEmail(e.target.value);
             }}
             className="logininput"
-          />
-          {showPassword ? (
-            <AiFillEye className="password_eye"  onClick={handleEyeClick} />
-          ) : (
-            <AiFillEyeInvisible
-              className="password_eye"
-              onClick={handleEyeClick}
-            />
-          )}
+          ></input>
         </div>
-      </div>
-      <div className="login_box">
-        <button
-          className="button_login"
-          style={{ width: "100%", height: "40px" }}
-          onClick={onLogin}
-        >
-          {loading ? <AiOutlineLoading className="loading" /> : "Login"}
-        </button>
-      </div>
-      <div className="bottom_text">Forgot Password ?</div>
-      <div className="bottom_text">
-        <Link to="/signup">No account, please create an account</Link>
-      </div>
+        <div className="login_box">
+          <div>
+            <label className="login_text">Password</label>
+          </div>
+          <div style={{ display: "flex", position: "relative" }}>
+            <input
+              value={password}
+              type={showPassword ? "text" : "password"}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              className="logininput"
+            />
+            {showPassword ? (
+              <AiFillEye className="password_eye" onClick={handleEyeClick} />
+            ) : (
+              <AiFillEyeInvisible
+                className="password_eye"
+                onClick={handleEyeClick}
+              />
+            )}
+          </div>
+        </div>
+        <div className="login_box">
+          <button
+            className="button_login"
+            style={{ width: "100%", height: "40px" }}
+            onClick={onLogin}
+          >
+            {loading ? <AiOutlineLoading className="loading" /> : "Login"}
+          </button>
+        </div>
+        <div className="bottom_text">Forgot Password ?</div>
+        <div className="bottom_text">
+          <Link to="/signup">No account, please create an account</Link>
+        </div>
       </div>
     </div>
   );

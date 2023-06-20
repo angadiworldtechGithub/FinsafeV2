@@ -63,60 +63,67 @@ export default function Login() {
 
   return (
     <div className="login_container">
-    <div className="login_left">
-       <img src="assets/images/phone_banner2.png"></img>
-    </div>
-    <div className="login_right">
-      <div className="header_text" style={{paddingBottom:"40px"}}>
-        <h1>Login with Phone Number</h1>
-        <div className="bottom_text">(Only Indian Numbers)</div>
+      <div className="login_left">
+        <img
+          src="assets/images/phone_banner2.png"
+          className="login_image"
+          alt="No Image"
+        ></img>
       </div>
-      <div className="login_box">
-        {confirmationResult ? (
-          <>
-            <div>
-              <label>Confirmation Code</label>
-            </div>
-            <input
-              value={confirmationCode}
-              onChange={(e) => {
-                setConfirmationCode(e.target.value);
-              }}
-              className="logininput"
-            ></input>
-          </>
-        ) : (
-          <>
-            <div>
-              <label>Mobile Number</label>
-            </div>
-            <input
-              value={mobilenumber}
-              onChange={(e) => {
-                setMobilenumber(e.target.value);
-              }}
-              className="logininput"
-            ></input>
-          </>
-        )}
-      </div>
-      <div id="recaptcha-container"></div>
-      <div className="login_box">
-       <center> <button
-          className="button_login"
-          style={{ width: "60%", height: "40px" }}
-          onClick={confirmationCode ? onCodeSubmit : onLogin}
-        >
-          {loading ? (
-            <AiOutlineLoading className="loading" />
-          ) : confirmationCode ? (
-            "Submit"
+      <div className="login_right">
+        <div className="header_text" style={{ paddingBottom: "40px" }}>
+          <h1>Login with Phone Number</h1>
+          <div className="bottom_text">(Only Indian Numbers)</div>
+        </div>
+        <div className="login_box">
+          {confirmationResult ? (
+            <>
+              <div>
+                <label>Confirmation Code</label>
+              </div>
+              <input
+                value={confirmationCode}
+                onChange={(e) => {
+                  setConfirmationCode(e.target.value);
+                }}
+                className="logininput"
+              ></input>
+            </>
           ) : (
-            "Login"
+            <>
+              <div>
+                <label>Mobile Number</label>
+              </div>
+              <input
+                value={mobilenumber}
+                onChange={(e) => {
+                  setMobilenumber(e.target.value);
+                }}
+                className="logininput"
+              ></input>
+            </>
           )}
-        </button></center>
+        </div>
+        <div id="recaptcha-container"></div>
+        <div className="login_box">
+          <center>
+            {" "}
+            <button
+              className="button_login"
+              style={{ width: "60%", height: "40px" }}
+              onClick={confirmationCode ? onCodeSubmit : onLogin}
+            >
+              {loading ? (
+                <AiOutlineLoading className="loading" />
+              ) : confirmationCode ? (
+                "Submit"
+              ) : (
+                "Login"
+              )}
+            </button>
+          </center>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

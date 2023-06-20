@@ -10,7 +10,7 @@ import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
 import { addData } from "../../API/createDoc";
-import { docExist as checkDocExist, getDocs } from "../../API/readDoc";
+import { getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
 import { addDownloadUrlToDocuments, getAuthFilter } from "./utilities";
 import { showLoading } from "react-global-loading";
@@ -44,6 +44,8 @@ const INITIAL_DASHBOARD_DETAILS = {
 
 export default function Dashboard() {
   const { auth } = useContext(AuthContext);
+
+  console.log(auth);
 
   const [companyDetails, setCompanyDetails] = useState(
     INITIAL_DASHBOARD_DETAILS.companyDetails
