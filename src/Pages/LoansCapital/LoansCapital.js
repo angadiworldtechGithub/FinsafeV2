@@ -6,7 +6,7 @@ export default function LoansCapital() {
       title="Loans & Captial"
       description="Our loan solutions are designed to provide you with the financial flexibility you need. Whether you're planning a vacation, consolidating debt, or facing unexpected expenses, we offer competitive interest rates and flexible repayment terms to suit your individual circumstances. For entrepreneurs and small business owners, 
       we provide tailored business loan options to help you start, expand, or manage your enterprise."
-      imageSource="assets/images/service8/Loans and Capital.png"
+      imageSource="assets/images/service2/loans and assets.png"
       bulletPoints={[
       {text: "If you're a growing business looking for capital to fuel your expansion plans, we offer various capital funding solutions. From venture capital to equity financing, we work with you to understand your business objectives and provide the right funding options to support your growth." }
       ]}
