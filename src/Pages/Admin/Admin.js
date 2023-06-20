@@ -144,12 +144,12 @@ export default function Admin() {
                 </div>
                 <div className="company">
                   <div>
-                    <label className="company-text">Company Name</label>
+                    <label className="company-text">Director Name</label>
                   </div>
                   {companies[activeCompany]?.name ?? "No Name"}
                 </div>
                 <div className="company">
-                  <label className="company-text">Address</label>
+                  <label className="company-text">Director Address</label>
                   {companies[activeCompany]?.address ?? "No Address"}
                 </div>
                 <div className="company">
@@ -166,10 +166,6 @@ export default function Admin() {
                   {companies[activeCompany]?.cinNumber ?? "Not Entered"}
                 </div>
                 <div className="company">
-                  <label className="company-text">DIN Number</label>
-                  {companies[activeCompany]?.dinNumber ?? "Not Entered"}
-                </div>
-                <div className="company">
                   <label className="company-text">
                     Uploaded Documents List ...
                   </label>
@@ -182,7 +178,6 @@ export default function Admin() {
                     </div>
                   );
                 }) ?? <></>}
-                d
               </div>
             );
           }) ?? <></>}
