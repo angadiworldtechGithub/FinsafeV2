@@ -48,6 +48,7 @@ export const docExist = (collectionName, filter) => {
   const whereList = Object.keys(filter).map((key) => {
     return where(key, "==", filter[key]);
   });
+  console.log("Check if document exists");
   return new Promise((resolve, reject) => {
     getDocs_(query(collection(firestore, collectionName), ...whereList))
       .then((querySnapshot) => {

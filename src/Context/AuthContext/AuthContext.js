@@ -8,6 +8,10 @@ export const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
   const [auth, setAuth] = useState(null);
 
+  const getIdentifier = () => {
+    return auth ? (auth.email ? auth.email : auth.mobilenumber) : "";
+  };
+
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) {
@@ -17,7 +21,7 @@ export function AuthContextProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth }}>
+    <AuthContext.Provider value={{ auth, setAuth, getIdentifier }}>
       {children}
     </AuthContext.Provider>
   );

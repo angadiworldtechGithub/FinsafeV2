@@ -69,11 +69,17 @@ const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
       text: "Sign In Options",
       subHeaders: [
         {
-          text: "Google sign in",
+          text: (
+            <img
+              alt="Google sign in"
+              src="/assets/images/btn_google_signin_dark_pressed_web.png"
+              className="hover_click"
+            />
+          ),
           onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
         },
-        { text: "Sign in with email and password", to: "/login" },
-        { text: "Phone number login", to: "/phonelogin" },
+        { text: "Email Password Sign In", to: "/login" },
+        { text: "Phone Number Login", to: "/phonelogin" },
       ],
     };
   }

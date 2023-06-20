@@ -10,9 +10,9 @@ import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
 import { addData } from "../../API/createDoc";
-import { docExist, getDocs } from "../../API/readDoc";
+import { docExist as checkDocExist, getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
-import { uploadDocuments } from "../../API/uploadFiles";
+import { addDownloadUrlToDocuments, getAuthFilter } from "./utilities";
 import { showLoading } from "react-global-loading";
 
 const NEW_DIRECTOR = {
@@ -45,14 +45,6 @@ const INITIAL_DASHBOARD_DETAILS = {
 export default function Dashboard() {
   const { auth } = useContext(AuthContext);
 
-  const getFilter = () => {
-    if (auth.email) {
-      return { "email.value": auth.email };
-    } else if (auth.mobilenumber) {
-      return { "mobilnumber.value": auth.mobilenumber };
-    }
-  };
-
   const [companyDetails, setCompanyDetails] = useState(
     INITIAL_DASHBOARD_DETAILS.companyDetails
   );
@@ -65,34 +57,7 @@ export default function Dashboard() {
   );
 
   const [saving, setSaving] = useState(false);
-
-  const addDownloadUrlToDocuments = async (documents) => {
-    const documentsToSave = documents.filter(
-      (doc) => Boolean(doc.file) || Boolean(doc.fileDownloadUrl)
-    );
-
-    const documentsToUpload = documentsToSave
-      .map((item, index) => [item.file, index])
-      .filter((o) => Boolean(o[0]));
-
-    if (documentsToUpload.length) {
-      const downloadUrls = await uploadDocuments(
-        documentsToUpload.map((item) => item[0])
-      );
-
-      documentsToUpload.forEach((item, index) => {
-        delete documentsToSave[item[1]].file;
-        documentsToSave[item[1]] = {
-          ...companyDetails.documents[index],
-          fileDownloadUrl: downloadUrls[index],
-          dateCreated: new Date(Date.now()),
-        };
-      });
-      return [...documentsToSave];
-    } else {
-      return documentsToSave;
-    }
-  };
+  const [docExist, setDocExist] = useState(false);
 
   const saveHandler = async () => {
     setSaving(true);
@@ -106,15 +71,9 @@ export default function Dashboard() {
         director.documents
       );
     });
-    console.log("Uploading File Inputs Documents");
-    fileInputs.forEach(async (fileInput, index) => {
-      fileInputs[index].documents = await addDownloadUrlToDocuments(
-        fileInput.documents
-      );
-    });
 
-    const filter = getFilter();
-    if (await docExist(COMPANY_COLL_NAME, filter)) {
+    const filter = getAuthFilter();
+    if (docExist) {
       console.log("!!!");
       await editData(COMPANY_COLL_NAME, filter, {
         ...companyDetails,
@@ -135,9 +94,13 @@ export default function Dashboard() {
     (async () => {
       if (auth) {
         showLoading(true);
-        const [dashboardDoc] = await getDocs(COMPANY_COLL_NAME, getFilter());
+        const [dashboardDoc] = await getDocs(
+          COMPANY_COLL_NAME,
+          getAuthFilter()
+        );
         console.log(dashboardDoc);
         if (dashboardDoc) {
+          setDocExist(true);
           setCompanyDetails({
             ...dashboardDoc,
             directors: undefined,
