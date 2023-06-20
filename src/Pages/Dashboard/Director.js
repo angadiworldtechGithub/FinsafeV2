@@ -114,6 +114,7 @@ export default function Director({
                 ) : (
                   <div style={{ marginTop: "10px" }}>
                     <input
+                      value={[document.file]}
                       style={{ marginLeft: "10px" }}
                       ref={(el) => (docRef.current[index] = el)}
                       onChange={() => {

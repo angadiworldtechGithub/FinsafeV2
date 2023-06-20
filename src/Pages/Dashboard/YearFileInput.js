@@ -1,15 +1,21 @@
 import { GrDownload } from "react-icons/gr";
 import "./YearFileInput.css";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { AuthContext } from "../../Context/AuthContext";
 
 export default function YearFileInput({ initialFileInput, setFileInput }) {
   const docRef = useRef(null);
   const [date, setDate] = useState(null);
+  const [file, setFile] = useState(null);
+  const { getIdentifier } = useContext(AuthContext);
 
   const onUpload = async () => {
     initialFileInput.documents.push({
       documentDate: date,
-      file: docRef.current.files[0],
+      file: new File(
+        [file],
+        `${getIdentifier()}_${initialFileInput.name}.${file.name.split(".")[1]}`
+      ),
     });
     setFileInput({
       ...initialFileInput,
@@ -33,7 +39,13 @@ export default function YearFileInput({ initialFileInput, setFileInput }) {
         </div>
         <div className="year-file-row">
           <label className="label-flex">Upload File - </label>
-          <input type="file" ref={docRef} />
+          <input
+            type="file"
+            ref={docRef}
+            onChange={() => {
+              setFile(docRef.current.files[0]);
+            }}
+          />
         </div>
         {docRef.current && docRef.current.files.length && date ? (
           <div className="year-file-row year-upload">
@@ -54,7 +66,11 @@ export default function YearFileInput({ initialFileInput, setFileInput }) {
           </tr>
           {initialFileInput.documents.map((document) => (
             <tr>
-              <td>{document.documentDate.toDate().toString()}</td>
+              <td>
+                {document.documentDate.toDate
+                  ? document.documentDate.toDate().toString()
+                  : document.documentDate.toString()}
+              </td>
               <td>
                 <a
                   href={document.fileDownloadUrl}

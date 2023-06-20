@@ -105,7 +105,6 @@ export default function Dashboard() {
           COMPANY_COLL_NAME,
           getAuthFilter(auth)
         );
-        console.log(dashboardDoc);
         if (dashboardDoc) {
           setDocExist(true);
           setCompanyDetails({
