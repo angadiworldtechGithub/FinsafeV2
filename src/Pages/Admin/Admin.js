@@ -6,6 +6,7 @@ import { getAllDocs } from "../../API/readDoc";
 import { COMPANY_COLL_NAME } from "../../constants";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS } from "../../constants";
+import { showLoading } from "react-global-loading";
 
 export default function Admin() {
   const [companies, setCompanies] = useState([]);
@@ -15,10 +16,12 @@ export default function Admin() {
 
   useEffect(() => {
     (async () => {
+      showLoading(true);
       const companies = await getAllDocs(COMPANY_COLL_NAME);
       setCompanies(companies);
+      showLoading(false);
     })();
-  });
+  }, []);
 
   if (!auth || (auth && !ADMIN_EMAILS.includes(auth.email))) {
     return (
@@ -43,7 +46,7 @@ export default function Admin() {
           </div>
           {companies.map((company, index) => (
             <div
-              className="company-item"
+              className="company-item hover_click"
               onClick={() => {
                 setActiveCompany(index);
               }}

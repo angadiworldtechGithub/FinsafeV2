@@ -16,7 +16,8 @@ export default function YearFileInput({ initialFileInput, setFileInput }) {
         [file],
         `year_file_input_${getIdentifier()}_${initialFileInput.name}.${
           file.name.split(".")[1]
-        }`
+        }`,
+        { type: file.type }
       ),
     });
     setFileInput({

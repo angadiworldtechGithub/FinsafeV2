@@ -59,8 +59,6 @@ export default function Dashboard() {
   const [saving, setSaving] = useState(false);
   const [docExist, setDocExist] = useState(false);
 
-  console.log(directors);
-
   useEffect(() => {
     (async () => {
       if (auth) {
@@ -167,10 +165,7 @@ export default function Dashboard() {
 
   const setDirector = (index) => (director) => {
     directors[index] = director;
-    setDirectors((directors) => {
-      directors[index] = director;
-      return [...directors];
-    });
+    setDirectors([...directors]);
   };
 
   const setFileInput = (index) => (fileInput) => {
