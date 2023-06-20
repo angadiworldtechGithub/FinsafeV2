@@ -125,7 +125,7 @@ export default function Admin() {
 
           <div className="company">
             <label className="company-text">Form 16</label>
-            Subitted
+            Submitted
             <MdDownloadForOffline />
           </div>
 
@@ -142,6 +142,47 @@ export default function Admin() {
                 <div className="company-button">
                   Director Information 1{director.name}
                 </div>
+                <div className="company">
+                  <div>
+                    <label className="company-text">Company Name</label>
+                  </div>
+                  {companies[activeCompany]?.name ?? "No Name"}
+                </div>
+                <div className="company">
+                  <label className="company-text">Address</label>
+                  {companies[activeCompany]?.address ?? "No Address"}
+                </div>
+                <div className="company">
+                  <label className="company-text">Phone Number</label>
+                  {companies[activeCompany]?.mobilenumber.value ??
+                    "No Mobile Number"}
+                </div>
+                <div className="company">
+                  <label className="company-text">Email ID</label>
+                  {companies[activeCompany]?.email.value ?? "No Email Id"}
+                </div>
+                <div className="company">
+                  <label className="company-text">CIN Number</label>
+                  {companies[activeCompany]?.cinNumber ?? "Not Entered"}
+                </div>
+                <div className="company">
+                  <label className="company-text">DIN Number</label>
+                  {companies[activeCompany]?.dinNumber ?? "Not Entered"}
+                </div>
+                <div className="company">
+                  <label className="company-text">
+                    Uploaded Documents List ...
+                  </label>
+                </div>
+                {companies[activeCompany]?.documents.map((document) => {
+                  return (
+                    <div className="company">
+                      <label className="company-text">{document.name}</label>
+                      <MdDownloadForOffline />
+                    </div>
+                  );
+                }) ?? <></>}
+                d
               </div>
             );
           }) ?? <></>}
