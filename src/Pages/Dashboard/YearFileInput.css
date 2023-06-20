@@ -24,7 +24,6 @@ tr:nth-child(even) {
   justify-content: space-between;
   flex-wrap: wrap;
   padding-bottom: 30px;
-  border: 2px  solid #dddddd ;
   margin-bottom: 30px;
   margin-left: 20px ;
   margin-right: 20px;
@@ -39,6 +38,7 @@ tr:nth-child(even) {
   font-weight: 600;
   border-radius: 10px;
   color: #072f5f;
+  padding-left: 30px;
 }
 
 .year-file-row {

@@ -20,7 +20,7 @@ th {
   text-align: left;
   padding: 8px;
   font-size: 20px;
-  color: #072f5f;
+  color: #000;
 }
 
 tr:nth-child(even) {
