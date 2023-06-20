@@ -62,9 +62,14 @@ export default function Login() {
   }, []);
 
   return (
-    <div>
-      <div className="header_text">
-        <h1>Phone Login (Only Indian Number Valid)</h1>
+    <div className="login_container">
+    <div className="login_left">
+       <img src="assets/images/phone_banner2.png"></img>
+    </div>
+    <div className="login_right">
+      <div className="header_text" style={{paddingBottom:"40px"}}>
+        <h1>Login with Phone Number</h1>
+        <div className="bottom_text">(Only Indian Numbers)</div>
       </div>
       <div className="login_box">
         {confirmationResult ? (
@@ -77,7 +82,7 @@ export default function Login() {
               onChange={(e) => {
                 setConfirmationCode(e.target.value);
               }}
-              className="input_login"
+              className="logininput"
             ></input>
           </>
         ) : (
@@ -90,16 +95,16 @@ export default function Login() {
               onChange={(e) => {
                 setMobilenumber(e.target.value);
               }}
-              className="input_login"
+              className="logininput"
             ></input>
           </>
         )}
       </div>
       <div id="recaptcha-container"></div>
       <div className="login_box">
-        <button
+       <center> <button
           className="button_login"
-          style={{ width: "100%", height: "40px" }}
+          style={{ width: "60%", height: "40px" }}
           onClick={confirmationCode ? onCodeSubmit : onLogin}
         >
           {loading ? (
@@ -109,8 +114,9 @@ export default function Login() {
           ) : (
             "Login"
           )}
-        </button>
+        </button></center>
       </div>
+    </div>
     </div>
   );
 }
