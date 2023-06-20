@@ -59,8 +59,6 @@ export default function Dashboard() {
   const [saving, setSaving] = useState(false);
   const [docExist, setDocExist] = useState(false);
 
-  console.log(directors);
-
   useEffect(() => {
     (async () => {
       if (auth) {
