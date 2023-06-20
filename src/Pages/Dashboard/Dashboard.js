@@ -85,6 +85,7 @@ export default function Dashboard() {
         documentsToSave[item[1]] = {
           ...companyDetails.documents[index],
           fileDownloadUrl: downloadUrls[index],
+          dateCreated: new Date(Date.now()),
         };
       });
       return [...documentsToSave];
@@ -95,16 +96,23 @@ export default function Dashboard() {
 
   const saveHandler = async () => {
     setSaving(true);
-    console.log("Uploading Documents");
+    console.log("Uploading Company Details Documents");
     companyDetails.documents = await addDownloadUrlToDocuments(
       companyDetails.documents
     );
-
+    console.log("Uploading Directors Documents");
     directors.forEach(async (director, index) => {
       directors[index].documents = await addDownloadUrlToDocuments(
         director.documents
       );
     });
+    console.log("Uploading File Inputs Documents");
+    fileInputs.forEach(async (fileInput, index) => {
+      fileInputs[index].documents = await addDownloadUrlToDocuments(
+        fileInput.documents
+      );
+    });
+
     const filter = getFilter();
     if (await docExist(COMPANY_COLL_NAME, filter)) {
       console.log("!!!");
