@@ -29,7 +29,6 @@ export const addDownloadUrlToDocuments = async (documents) => {
 
     // Add download file url to the documents to save and remove the file object
 
-    console.log(documentsToSave);
     return [...documentsToSave];
   } else {
     return documentsToSave;

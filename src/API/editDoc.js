@@ -12,15 +12,15 @@ export const editData = (collectionName, filter, newPayload) => {
     return where(key, "==", filter[key]);
   });
   return new Promise((resolve, reject) => {
-    getDocs(query(collection(firestore, collectionName), ...whereList)).then(
-      (querySnapshot) => {
+    getDocs(query(collection(firestore, collectionName), ...whereList))
+      .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           updateDoc(doc.ref, newPayload).then(() => {
             console.log("Updated");
           });
         });
         resolve(true);
-      }
-    );
+      })
+      .catch((error) => reject(error));
   });
 };

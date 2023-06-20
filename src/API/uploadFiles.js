@@ -8,7 +8,6 @@ export const uploadDocuments = async (
 ) => {
   const downloadUrls = await Promise.all(
     files.map((file) => {
-      console.log(file.name);
       const reference = ref(storage, file.name);
       const metadata = { contentType: file.type };
       const uploadTask = uploadBytesResumable(reference, file, metadata);
