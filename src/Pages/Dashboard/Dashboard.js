@@ -6,6 +6,7 @@ import CompanyDetails from "./CompanyDetails";
 import { useContext, useEffect, useState } from "react";
 import Director from "./Director";
 import shortid from "shortid";
+import _ from "lodash";
 import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
@@ -158,9 +159,9 @@ export default function Dashboard() {
       </div>
     );
   }
-
+  console.log(directors);
   const addDirector = () => {
-    setDirectors([...directors.concat([{ ...NEW_DIRECTOR }])]);
+    setDirectors([...directors.concat([_.cloneDeep(NEW_DIRECTOR)])]);
   };
 
   const setDirector = (index) => (director) => {
