@@ -1,12 +1,12 @@
 @media only screen and (max-width: 1100px) {
   .flex-container {
-    background: #e6e6e6;
+    background: #F8F1F1;
   }
 }
 @media only screen and (min-width: 1100px) {
   .flex-container {
     display: flex;
-    background: #e6e6e6;
+    background: #F8F1F1;
   }
 }
 h1 {
@@ -19,11 +19,12 @@ h1 {
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
-  border-radius: 20px;
-  background: #e6e6e6;
+  border-radius: 10px;
+  background: #F8F1F1;
   line-height: 25px;
   font-size: 17px;
 }

@@ -17,8 +17,14 @@ import "./Home.css";
 
 const ProjectList = [
   {
+    title: "Business Services",
+    image: "assets/images/banners/business_services.png",
+    description:
+      "FINSAFE efficient process such as payroll, AP & AR will help reduce operations cost signficantly.",
+  },
+  {
     title: "CFO Services",
-    image: "assets/images/banners/cfo.png",
+    image: "assets/images/banners/21.png",
     description:
       "Freelancing Chief Financial Officer services CFO. Finsafe CFO services,strong financial growth just like large MNCs.",
   },
@@ -47,12 +53,6 @@ const ProjectList = [
       "Our experienced team ensures your organisation is always compliant (GST, RERA, Income tax and Companies act etc.)",
   },
   {
-    title: "Business Services",
-    image: "assets/images/banners/business_services.png",
-    description:
-      "FINSAFE efficient process such as payroll, AP & AR will help reduce operations cost signficantly.",
-  },
-  {
     title: "Financial planning",
     image: "assets/images/banners/financial_planning.png",
     description:
@@ -76,22 +76,22 @@ const SERVICE_CARDS_1 = [
   {
     title: "Start Your Business",
     icon: GrBusinessService,
-    image: "assets/images/cards/card1.png",
+    image: "assets/images/cards/1.png",
     color1: "#BB710D",
     color2: "#BB710D",
     link: "/businesslegalservices",
   },
   {
     title: "Get Expert Financial advice",
-    image: "assets/images/cards/card2.png",
-    icon: FcServices,
+    image: "assets/images/cards/2.png",
+    icon: MdMiscellaneousServices,
     color1: "#BF570D",
     color2: "#BF570D",
     link: "/businesslegalservices",
   },
   {
     title: "Raise Capital - Loans & Equity",
-    image: "assets/images/cards/card3.png",
+    image: "assets/images/cards/3.png",
     icon: GrServices,
     color1: "#CC4922",
     color2: "#CC4922",
@@ -99,7 +99,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "File your Income tax returns",
-    image: "assets/images/cards/card4.png",
+    image: "assets/images/cards/4.png",
     icon: FaServicestack,
     color1: "#BC331C",
     color2: "#BC331C",
@@ -107,7 +107,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "GST compliances",
-    image: "assets/images/cards/card5.png",
+    image: "assets/images/cards/5.png",
     icon: GrServicePlay,
     color1: "#C2701C",
     color2: "#C2701C",
@@ -115,7 +115,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "Personal Financial planner",
-    image: "assets/images/cards/card6.png",
+    image: "assets/images/cards/6.png",
     icon: MdMiscellaneousServices,
     color1: "#BC331C",
     color2: "#C2701C",
@@ -123,7 +123,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: "Virtual CFO services",
-    image: "assets/images/cards/card7.png",
+    image: "assets/images/cards/7.png",
     icon: MdOutlineHomeRepairService,
     color1: "#BF570D",
     color2: "#BF570D",
@@ -131,7 +131,7 @@ const SERVICE_CARDS_1 = [
   },
   {
     title: " Business Transaction Advisory",
-    image: "assets/images/cards/card8.png",
+    image: "assets/images/cards/8.png",
     icon: MdOutlineBusiness,
     color1: "#CC4922",
     color2: "#CC4922",
@@ -143,15 +143,15 @@ const SERVICE_CARDS_2 = [
   {
     title: "Loan Documentation Support",
     icon: GrBusinessService,
-    image: "assets/images/cards1/Due.png",
+    image: "assets/images/cards1/11.png",
     color1: "#CC4922",
     color2: "#CC4922",
     link: "/loandocumentationsupport",
   },
   {
     title: "Joint Ventures",
-    icon: FcServices,
-    image: "assets/images/cards1/Joint.png",
+    icon: MdMiscellaneousServices,
+    image: "assets/images/cards1/12.png",
     color1: "#BF4827",
     color2: "#BF4827",
     link: "/JointVentures",
@@ -159,7 +159,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Investment planning",
     icon: GrServices,
-    image: "assets/images/cards1/planning.png",
+    image: "assets/images/cards1/13.png",
     link: "/investment",
     color1: "#BF570D",
     color2: "#BF570D",
@@ -167,7 +167,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Payroll Management",
     icon: FaServicestack,
-    image: "assets/images/cards1/payroll.png",
+    image: "assets/images/cards1/14.png",
     link: "/payroll",
     color1: "#BB710D",
     color2: "#BB710D",
@@ -175,7 +175,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "GST E-Way Bill",
     icon: GrServicePlay,
-    image: "assets/images/cards1/bill.png",
+    image: "assets/images/cards1/15.png",
     link: "/gstEwaybill",
     color1: "#BC331C",
     color2: "#BC331C",
@@ -183,7 +183,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Investor Relationship Management",
     icon: MdMiscellaneousServices,
-    image: "assets/images/cards1/relation.png",
+    image: "assets/images/cards1/16.png",
     link: "/Investorrelationship",
     color1: "#BF570D",
     color2: "#BF570D",
@@ -191,7 +191,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Land Title Due Diligence",
     icon: MdOutlineHomeRepairService,
-    image: "assets/images/cards1/Land.png",
+    image: "assets/images/cards1/17.png",
     link: "/landlittle",
     color1: "#CC4922",
     color2: "#CC4922",
@@ -199,7 +199,7 @@ const SERVICE_CARDS_2 = [
   {
     title: "Trademark/Copyright",
     icon: RiCopyrightFill,
-    image: "assets/images/cards1/Trademark.png",
+    image: "assets/images/cards1/18.png",
     link: "/trademark",
     color1: "#E29513",
     color2: "#E29513",
@@ -228,7 +228,7 @@ export default function Home() {
         })}
       </Splide>
 
-      <h1>
+      <h1 style={{color:"#923300"}}>
         <center> Our Popular Services</center>
       </h1>
       <Splide
@@ -271,7 +271,7 @@ export default function Home() {
         </p>
       </div>
 
-      <h1>
+      <h1 style={{color:"#923300"}}>
         <center>Frequently Used Services</center>
       </h1>
       <Splide
@@ -293,7 +293,7 @@ export default function Home() {
         {SERVICE_CARDS_2.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>
-              <ServiceCard
+              <ServiceCard style={{color:"#fff"}}
                 title={serviceCard.title}
                 ICON={serviceCard.icon}
                 link={serviceCard.link}
