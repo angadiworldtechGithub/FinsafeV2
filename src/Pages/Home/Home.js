@@ -219,8 +219,8 @@ export default function Home() {
               <div className="splider_box">
                 <img src={project.image} alt="" className="slider_image" />
                 <div className="text_overlay overlay_text">
-                  <h2>{project.title}</h2>
-                  <p>{project.description}</p>
+                  <h2 className="banner-title">{project.title}</h2>
+                  <p className="banner-description">{project.description}</p>
                 </div>
               </div>
             </SplideSlide>

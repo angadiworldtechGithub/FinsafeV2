@@ -5,7 +5,7 @@ export default function CompanyLawServices() {
     <ServiceComp
       title="Company Law Services"
       description= "We offer comprehensive company law services, providing expert guidance and assistance in navigating the legal aspects of corporate governance, compliance, and regulatory requirements for businesses."
-      imageSource="assets/images/service4/Assesment.png"
+      imageSource="assets/images/service2/Company.png"
       bulletPoints={[
        
       ]}

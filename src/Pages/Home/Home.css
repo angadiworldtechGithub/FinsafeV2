@@ -9,6 +9,15 @@
   margin-top: 20px;
 }
 
+.banner-title{
+  font-size: 30px;
+  font-weight: 800;
+}
+.banner-description{
+  font-size: 25px;
+  font-weight: 700;
+}
+
 .scroll-left p {
   position: absolute;
   width: 100%;
@@ -62,12 +71,32 @@
   .overlay_text {
     font-size: 10px;
   }
+  
+.banner-title{
+  font-size: 16px;
+  font-weight: 700;
+}
+.banner-description{
+  font-size: 13px;
+  font-weight: 600;
+}
+
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1100px) {
   .overlay_text {
     font-size: 15px;
   }
+  
+.banner-title{
+  font-size: 16px;
+  font-weight: 700;
+}
+.banner-description{
+  font-size: 13px;
+  font-weight: 600;
+}
+
 }
 
 .slider_image {
@@ -79,6 +108,16 @@
   .overlay_text {
     font-size: 15px;
   }
+  
+.banner-title{
+  font-size: 16px;
+  font-weight: 700;
+}
+.banner-description{
+  font-size: 13px;
+  font-weight: 500;
+}
+
 }
 
 .splider_box {

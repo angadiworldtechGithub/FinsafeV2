@@ -59,7 +59,7 @@ export default function Footer() {
               <Link to="/statutorycompliances">Statutory Compliances</Link>
             </li>
             <li>
-              <Link to="/personalservice"></Link>Personal Services
+              <Link to="/personalservice">Personal Services</Link>
             </li>
           </ul>
         </div>

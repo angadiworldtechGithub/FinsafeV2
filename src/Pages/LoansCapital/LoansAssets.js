@@ -8,7 +8,7 @@ export default function LoanAssets() {
       owned by individuals or businesses. This can include assets like property,
        vehicles, machinery, or equipment. Loans on assets allow borrowers to leverage
        their owned assets to obtain funds for various purposes without selling the assets."
-       imageSource="assets/images/service8/BusinessTermLoans.png"
+       imageSource="assets/images/service8/loans and assets.png"
       bulletPoints={[
       ]}
       inputList={[
