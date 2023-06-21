@@ -19,7 +19,7 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
 
-  usePreventAuthUser("login", auth);
+  usePreventAuthUser("signup", auth);
 
   const handleEyeClick = () => {
     setShowPassword((bool) => !bool);

@@ -5,10 +5,14 @@ export default function Investment() {
     <ServiceComp
       title="Investment planning"
       description="At Finsafe, we understand the importance of investment planning for individuals."
-      imageSource = "assets/images/service7/Investment planning.png"
+      imageSource="assets/images/service7/investment_planning.png"
       bulletPoints={[
-        { text: "We offer comprehensive investment planning services, including retirement planning, Financial planning, tax planning, and risk management." },
-        { text: "Our certified planners work with you to understand your financial goals, analyze your current financial situation, and create a personalized investment plan that will help you achieve those goals."}
+        {
+          text: "We offer comprehensive investment planning services, including retirement planning, Financial planning, tax planning, and risk management.",
+        },
+        {
+          text: "Our certified planners work with you to understand your financial goals, analyze your current financial situation, and create a personalized investment plan that will help you achieve those goals.",
+        },
       ]}
       inputList={[
         {
