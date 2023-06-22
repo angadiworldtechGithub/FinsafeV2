@@ -179,6 +179,7 @@ import TakeExpertAdvice from "./Pages/TakeExpertAdvice";
 import SignUp from "./Pages/SignUp";
 import PhoneLogin from "./Pages/PhoneLogin";
 import AdminService from "./Pages/AdminService";
+import AdminNotification from "./Pages/AdminNotification";
 
 const Base = () => {
   return (
@@ -216,6 +217,7 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
+      { path: "/adminnotification", element: <AdminNotification /> },
       { path: "/signup", element: <SignUp /> },
       { path: "/phonelogin", element: <PhoneLogin /> },
       {

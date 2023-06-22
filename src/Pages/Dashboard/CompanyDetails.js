@@ -1,14 +1,15 @@
 import { MdOutlineDownloadForOffline, MdCancel } from "react-icons/md";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
-
-const DEFAULT_DOCUMENT_LIST = ["GST File", "PAN Card", "Company Inc. Cert"];
+import { DEFAULT_DOCUMENT_LIST } from "../../constants";
 
 export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
   const [documentOptions, setDocumentOptions] = useState(DEFAULT_DOCUMENT_LIST);
   const docRef = useRef([]);
   const [selectVal, setSelectVal] = useState("");
   const { getIdentifier } = useContext(AuthContext);
+
+  // extract file upload component
 
   useEffect(() => {
     setDocumentOptions([
@@ -219,7 +220,7 @@ export default function CompanyDetails({ setCompanyDetails, companyDetails }) {
               display: "flex",
             }}
           >
-            <div  className="admin-input-row" style={{ width: "fit-content" }}>
+            <div className="admin-input-row" style={{ width: "fit-content" }}>
               <label className="admin1-text">DIN Number</label>
               <input
                 className="admin-number"

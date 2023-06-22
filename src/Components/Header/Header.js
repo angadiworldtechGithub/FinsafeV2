@@ -39,7 +39,11 @@ const signOutClick = (setAuth, setIsClicked) => () => {
 const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
   const pageName = location.pathname.split("/")[1];
   if (auth) {
-    if (["admin", "dashboard", "adminservice"].includes(pageName)) {
+    if (
+      ["admin", "dashboard", "adminservice", "adminnotification"].includes(
+        pageName
+      )
+    ) {
       return {
         text: "Sign Out",
         link: null,
@@ -54,6 +58,10 @@ const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
         {
           text: "Admin Service",
           link: "/adminservice",
+        },
+        {
+          text: "Admin Notification",
+          link: "/adminnotification",
         },
       ];
     } else {

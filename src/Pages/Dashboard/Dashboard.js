@@ -13,7 +13,7 @@ import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
 import { addData } from "../../API/createDoc";
 import { getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
-import { addDownloadUrlToDocuments, getAuthFilter } from "./utilities";
+import { addDownloadUrlToDocuments, getAuthFilter } from "../utilities";
 import { showLoading } from "react-global-loading";
 
 const NEW_DIRECTOR = {
@@ -56,6 +56,7 @@ export default function Dashboard() {
   const [fileInputs, setFileInputs] = useState(
     INITIAL_DASHBOARD_DETAILS.fileInputs
   );
+  const [newNotifications, setNewNotifications] = useState([]);
 
   const [saving, setSaving] = useState(false);
   const [docExist, setDocExist] = useState(false);
@@ -176,6 +177,14 @@ export default function Dashboard() {
 
   return (
     <div>
+      <div>
+        <div>New Notifications</div>
+        {newNotifications.map((notification) => {
+          return <div>{notification.message}</div>;
+        })}
+        <button>Mark Read</button>
+      </div>
+
       <CompanyDetails
         setCompanyDetails={setCompanyDetails}
         companyDetails={companyDetails}

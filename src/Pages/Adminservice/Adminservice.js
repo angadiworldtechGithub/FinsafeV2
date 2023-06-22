@@ -3,6 +3,7 @@ import { SERVICE_COLL_NAME, ADMIN_EMAILS } from "../../constants";
 import { AuthContext } from "../../Context/AuthContext";
 import "./AdminService.css";
 import { getAllDocs } from "../../API/readDoc";
+import { sortDateList } from "../utilities";
 
 export default function AdminService() {
   const { auth } = useContext(AuthContext);
@@ -11,15 +12,7 @@ export default function AdminService() {
   useEffect(() => {
     (async () => {
       const documents = await getAllDocs(SERVICE_COLL_NAME);
-      documents.sort((a, b) => {
-        if (a < b) {
-          return 1;
-        } else if (a === b) {
-          return 0;
-        } else {
-          return -1;
-        }
-      });
+      documents.sort(sortDateList);
       setServices(documents);
     })();
   }, []);

@@ -1,4 +1,4 @@
-import { uploadDocuments } from "../../API/uploadFiles";
+import { uploadDocuments } from "../API/uploadFiles";
 
 export const addDownloadUrlToDocuments = async (documents) => {
   const documentsToSave = documents.filter(
@@ -40,5 +40,15 @@ export const getAuthFilter = (auth) => {
     return { "email.value": auth.email };
   } else if (auth.phoneNumber) {
     return { "mobilenumber.value": auth.phoneNumber };
+  }
+};
+
+export const sortDateList = (a, b) => {
+  if (a < b) {
+    return 1;
+  } else if (a === b) {
+    return 0;
+  } else {
+    return -1;
   }
 };

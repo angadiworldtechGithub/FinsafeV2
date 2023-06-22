@@ -7,6 +7,8 @@ import {
 } from "firebase/firestore";
 import { firestore } from "../firebase";
 
+// add rate limiters!
+
 export const getAllDocs = (collectionName) => {
   return new Promise((resolve, reject) => {
     getDocs_(query(collection(firestore, collectionName)))
