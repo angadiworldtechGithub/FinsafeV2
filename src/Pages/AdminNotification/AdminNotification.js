@@ -69,8 +69,9 @@ export default function AdminNotification() {
           style={{
             fontSize: "20px",
             fontWeight: "400",
-            height: " 80px",
-            width: "70%",
+            height: "120px",
+            width: "350px",
+            border: "2px solid #160057",
           }}
           value={message}
           onChange={(e) => {
@@ -81,10 +82,12 @@ export default function AdminNotification() {
           <button
             style={{
               fontSize: "20px",
-              fontWeight: "700",
+              fontWeight: "600",
               margin: "10px 10px 10px 10px",
               padding: "5px 5px 5px 5px",
               borderRadius: "10px",
+              backgroundColor:"#072f5f",
+              color:"#fff",
             }}
             onClick={sendHandler}
           >
