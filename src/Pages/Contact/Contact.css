@@ -21,9 +21,9 @@
 
 
 .contact1{
-    background: linear-gradient(to right,#878787,#878787);
+    background: #dddddd;
     border : 10px solid white;
-    color: #fff;
+    color: #072f5f;
     padding: 1rem;
     height: 10rem;
     border-radius: 50px 20px;
@@ -60,7 +60,7 @@ i{
     letter-spacing: 1px;
 }
 button.contact_form_submit {
-    background: linear-gradient(to top right, #1325e8 -5%, #072f5f 100%);
+    background: #072f5f;
     border: none;
     color: #fff;
     padding: 10px 15px;
