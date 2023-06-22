@@ -117,16 +117,6 @@ export default function Header() {
           </div>
           <div>
             <Link to="#">
-              <BsFacebook className="facebook social_icons" />
-            </Link>
-          </div>
-          <div>
-            <Link to="#">
-              <BsLinkedin className="linkedin social_icons" />
-            </Link>
-          </div>
-          <div>
-            <Link to="#">
               <HiMail className="mail social_icons" />
             </Link>
           </div>
