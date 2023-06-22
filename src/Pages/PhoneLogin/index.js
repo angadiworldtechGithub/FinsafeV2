@@ -72,7 +72,7 @@ export default function Login() {
       </div>
       <div className="login_right">
         <div className="header_text" style={{ paddingBottom: "40px" }}>
-          <h1>Login with Phone Number</h1>
+          <h1 className="login_header">Login with Phone Number</h1>
           <div className="bottom_text">(Only Indian Numbers)</div>
         </div>
         <div className="login_box">

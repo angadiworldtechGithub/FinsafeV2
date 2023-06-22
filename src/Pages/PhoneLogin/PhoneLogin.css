@@ -1,5 +1,6 @@
 .login_text {
   font-size: 20px;
+  color: #160057;
 }
 
 .bottom_text {
@@ -14,7 +15,9 @@
   background-color: #dddddd;
   border: none;
 }
-
+.login_header{
+  color: #923300;
+}
 .button_login {
   background-color: #072f5f;
   border: none;

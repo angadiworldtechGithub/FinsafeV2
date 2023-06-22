@@ -52,7 +52,7 @@ export default function Login() {
       </div>
       <div className="login_right">
         <div className="header_text">
-          <h1>Welcome to Finsafe</h1>
+          <h1  className="login_header">Welcome to Finsafe</h1>
         </div>
         <div className="login_box">
           <div>

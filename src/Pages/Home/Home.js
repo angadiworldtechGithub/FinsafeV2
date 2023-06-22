@@ -24,7 +24,7 @@ const ProjectList = [
   },
   {
     title: "CFO Services",
-    image: "assets/images/banners/21.png",
+    image: "assets/images/banners/cfo.png",
     description:
       "Freelancing Chief Financial Officer services CFO. Finsafe CFO services,strong financial growth just like large MNCs.",
   },
