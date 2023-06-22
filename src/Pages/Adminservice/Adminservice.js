@@ -10,12 +10,14 @@ export default function AdminService() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    (async () => {
-      const documents = await getAllDocs(SERVICE_COLL_NAME);
-      documents.sort(sortDateList);
-      setServices(documents);
-    })();
-  }, []);
+    if (auth) {
+      (async () => {
+        const documents = await getAllDocs(SERVICE_COLL_NAME);
+        documents.sort(sortDateList);
+        setServices(documents);
+      })();
+    }
+  }, [auth]);
 
   if (!auth || (auth && !ADMIN_EMAILS.includes(auth.email))) {
     return (

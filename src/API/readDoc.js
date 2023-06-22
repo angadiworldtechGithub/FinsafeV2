@@ -9,9 +9,13 @@ import { firestore } from "../firebase";
 
 // add rate limiters!
 
-export const getAllDocs = (collectionName) => {
+export const getAllDocs = (collectionName, limit) => {
+  const queryArgs = [];
+  if (limit) {
+    queryArgs.push(limit(limit));
+  }
   return new Promise((resolve, reject) => {
-    getDocs_(query(collection(firestore, collectionName)))
+    getDocs_(query(collection(firestore, collectionName), ...queryArgs))
       .then((querySnapshot) => {
         const dataList = [];
         querySnapshot.forEach((doc) => {
