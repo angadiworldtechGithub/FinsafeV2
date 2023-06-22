@@ -27,24 +27,25 @@ export default function Contact() {
       <center>
       <i className="fa fa-map-marker" aria-hidden="true"></i> 
        
-       <p><b style={{fontSize:'19px'}}>YSR Kadapa</b></p> 
-        Opp : Court Complex,<br></br>
-        (PVR Associates)
-        RAJAMPET-516115,<br></br>
-        YSR Kadapa Dist,<br></br>
-        Andhra Pradesh
+       <p><b style={{fontSize:'19px'}}>Office Address</b></p> 
+        No.1574/22,2nd Cross,HBCS Layout<br></br>
+        Ramanjaneya Nagar,Uttarahalli<br></br>
+        Bangalore-560061<br></br>
+        Karnataka,
+        India
        </center>
       
       </div>
       <div class="contact1">
       <center>
       <i className="fa fa-envelope-o" aria-hidden="true"></i>
-        <h2><b>finsafe@gmail.com</b></h2>
+        <h2><b>contact@finsafegroup.com</b></h2>
+        <h2><b>admin@finsafegroup.com</b></h2>
       </center>
       </div>
       <div class="contact1">
       <center><i className="fa fa-mobile" aria-hidden="true"></i>
-      <h2><b>+91 0000000000</b></h2>
+      <h2><b>+91 9901576612</b></h2>
       </center>
       </div>
    </div>
@@ -64,7 +65,7 @@ export default function Contact() {
        </div>
 
       <div className="contact2">
-       <iframe src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Opp : Court Complex, (PVR Associates)  RAJAMPET-516115, YSR Kadapa Dist, Andhra Pradesh&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="400" frameborder="0" style={{border:'0'}}></iframe>
+      <iframe src="https://maps.google.com/maps?q=No.1574/22,2nd+Cross,HBCS+Layout+Ramanjaneya+Nagar,Uttarahalli+Bangalore-560061+Karnataka,+India&output=embed" width="100%" height="450" frameborder="0" style={{border:"0"}} allowfullscreen></iframe>
      </div>
 
   </div>
