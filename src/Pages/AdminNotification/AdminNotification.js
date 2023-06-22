@@ -38,14 +38,14 @@ export default function AdminNotification() {
         style={{ margin: "0 auto", width: "fit-content", textAlign: "center" }}
       >
         <div style={{fontSize:"30px",fontWeight:"700",padding:"10px 10px 10px 10px", color:"#923300"}}>Add Notification</div>
-        <textarea  style={{fontSize:"20px",fontWeight:"400",height:" 80px",width:"70%"}}
+        <textarea  style={{fontSize:"20px",fontWeight:"400",height:"120px",width:"350px",border:"3px solid #160057"}}
           value={message}
           onChange={(e) => {
             setMessage(e.target.value);
           }}
         />
         <div  className="notifications" >
-          <button  style={{fontSize:"20px",fontWeight:"700",margin:"10px 10px 10px 10px",padding:"5px 5px 5px 5px",borderRadius:"10px"}} onClick={sendHandler}>
+          <button  style={{fontSize:"20px",fontWeight:"700",color:"#fff",margin:"10px 10px 10px 10px",padding:"5px 5px 5px 5px",borderRadius:"10px",backgroundColor:"#072f5f"}} onClick={sendHandler}>
             {sending ? (
               <AiOutlineLoading className="loading" />
             ) : (
@@ -55,8 +55,8 @@ export default function AdminNotification() {
         </div>
       </div>
       <div>
-        <div>Notification History</div>
-        <table>
+        <div style={{fontSize:"30px",fontWeight:"700",padding:"10px 10px 10px 10px", color:"#923300"}}>Notification History</div>
+        <table style={{fontSize:"20px",fontWeight:"700",border:"3px solid #000"}} >
           <thead>
             <tr>
               <th>Date Posted</th>
