@@ -46,7 +46,9 @@ export default function Admin() {
           </div>
           {companies.map((company, index) => (
             <div
-              className="company-item hover_click"
+              className={`company-item hover_click ${
+                index === activeCompany ? "underline" : ""
+              }`}
               onClick={() => {
                 setActiveCompany(index);
               }}
@@ -146,28 +148,27 @@ export default function Admin() {
             return (
               <div>
                 <div className="company-button">
-                  1.Director Information 1{director.name}
+                  1.Director {director.name} Information
                 </div>
                 <div className="company">
                   <div>
                     <label className="company-text">Director Name</label>
                   </div>
-                  {companies[activeCompany]?.name ?? "No Name"}
+                  {director?.name ?? "No Name"}
                 </div>
                 <div className="company">
                   <label className="company-text">Director Address</label>
-                  {companies[activeCompany]?.address ?? "No Address"}
+                  {director?.address ?? "No Address"}
                 </div>
                 <div className="company">
                   <label className="company-text">Phone Number</label>
-                  {companies[activeCompany]?.mobilenumber.value ??
-                    "No Mobile Number"}
+                  {director?.mobilenumber.value ?? "No Mobile Number"}
                 </div>
                 <div className="company">
                   <label className="company-text">Email</label>
-                  {companies[activeCompany]?.email.value ?? "No Email Id"}
+                  {director?.email.value ?? "No Email Id"}
                 </div>
-                {companies[activeCompany]?.documents.map((document) => {
+                {director?.documents.map((document) => {
                   return (
                     <div className="company">
                       <label className="company-text">{document.name}</label>
