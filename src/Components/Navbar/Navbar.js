@@ -34,124 +34,117 @@ function Navbar() {
     headerClass = "header_section";
   }
 
+  const resetMenu = () => {
+    setMenu({ ...INITIAL_NAVBAR_STATE });
+    setCollapse(true);
+  };
+
   return (
     <>
       <div className="navbar">
         <div className={headerClass}>
           <div className="navbar_text navbar_text_mobile">
-            <Link to="/" className="navbar_link">
+            <Link to="/" onClick={resetMenu} className="navbar_link">
               Home
             </Link>
           </div>
           <div className="navbar_text navbar_text_mobile">
-            <Link to="/about" className="navbar_link">
+            <Link to="/about" onClick={resetMenu} className="navbar_link">
               About Us
             </Link>
           </div>
-
-
           <Dropdown
-          isActive={menu["staCom"]}
-          setIsActive={() => {
-            setMenu({
-              ...INITIAL_NAVBAR_STATE,
-              staCom: !menu["staCom"],
-            });
-          }}
-          headerName="Statutory Compliances"
-          headerLink="/statutorycompliances"
-          subHeaders={[
-            {
-              link: "/directtax",
-              title: "Direct Tax",
-              subHeaders: [
-                { link: "/incometaxreturns", title: "Income Tax returns" },
-                { link: "/taxauditsupport", title: "Tax Audit Support" },
-                {
-                  link: "/transferpricingaudit",
-                  title: "Transfer Pricing Audit",
-                },
-                { link: "/propertytax", title: "Property Tax" },
-                { link: "/tdstcsreturns", title: "TDS & TCS Returns" },
-                { link: "/advancetax ", title: "Advance tax" },
-              ],
-            },
-            {
-              link: "/indirecttax",
-              title: "Indirect Tax",
-              subHeaders: [
-                { link: "/gstadvisory", title: "GST Advisory" },
-                {
-                  link: "/gstmonthlyreturnsfiling",
-                  title: "GST monthly Returns filing",
-                },
-                {
-                  link: "/gstYearlyreturns",
-                  title: "GST Yearly returns & audits",
-                },
-                { link: "/customs", title: "Customs" },
-                { link: "/ieccompliance", title: "IEC compliance" },
-                { link: "/gstEwaybill", title: "GST E-way bill" },
-                { link: "/gsteinvoice", title: "GST E-Invoice" },
-              ],
-            },
-            {
-              link: "/companylawservices",
-              title: "Company Law Services",
-              subHeaders: [
-                {
-                  link: "/yearlyreturnsfiling",
-                  title: "Yearly Returns filing",
-                },
-                { link: "/regularcompliance", title: "Regular Compliance" },
-                {
-                  link: "/llpProprietorship",
-                  title: "LLP/Proprietorship to Company Conversion",
-                },
-              ],
-            },
-            {
-              link: "/assesments",
-              title: "Assesments & Litigations",
-              subHeaders: [
-                { link: "/gstaudits", title: "GST audits" },
-                {
-                  link: "/incometaxassesments",
-                  title: "Income Tax Assesments",
-                },
-                {
-                  link: "/noticehandling",
-                  title: "Notice handling from GST & Income tax",
-                },
-              ],
-            },
-            {
-              link: "/rera",
-              title: "Others",
-              subHeaders: [
-                { link: "/rera", title: "RERA" },
-                {
-                  link: "/llcservices",
-                  title: "Labour Law compliance services",
-                },
-                { link: "/pfcompliance", title: "PF Compliance" },
-                { link: "/esicompliance", title: "ESI Compliance" },
-                { link: "/professionaltax", title: "Professional Tax" },
-              ],
-            },
-          ]}
-        />
-
-
-
-
-
-
-
-
-
-
-
+            isActive={menu["staCom"]}
+            setIsActive={() => {
+              setMenu({
+                ...INITIAL_NAVBAR_STATE,
+                staCom: !menu["staCom"],
+              });
+            }}
+            resetMenu={resetMenu}
+            headerName="Statutory Compliances"
+            headerLink="/statutorycompliances"
+            subHeaders={[
+              {
+                link: "/directtax",
+                title: "Direct Tax",
+                subHeaders: [
+                  { link: "/incometaxreturns", title: "Income Tax returns" },
+                  { link: "/taxauditsupport", title: "Tax Audit Support" },
+                  {
+                    link: "/transferpricingaudit",
+                    title: "Transfer Pricing Audit",
+                  },
+                  { link: "/propertytax", title: "Property Tax" },
+                  { link: "/tdstcsreturns", title: "TDS & TCS Returns" },
+                  { link: "/advancetax ", title: "Advance tax" },
+                ],
+              },
+              {
+                link: "/indirecttax",
+                title: "Indirect Tax",
+                subHeaders: [
+                  { link: "/gstadvisory", title: "GST Advisory" },
+                  {
+                    link: "/gstmonthlyreturnsfiling",
+                    title: "GST monthly Returns filing",
+                  },
+                  {
+                    link: "/gstYearlyreturns",
+                    title: "GST Yearly returns & audits",
+                  },
+                  { link: "/customs", title: "Customs" },
+                  { link: "/ieccompliance", title: "IEC compliance" },
+                  { link: "/gstEwaybill", title: "GST E-way bill" },
+                  { link: "/gsteinvoice", title: "GST E-Invoice" },
+                ],
+              },
+              {
+                link: "/companylawservices",
+                title: "Company Law Services",
+                subHeaders: [
+                  {
+                    link: "/yearlyreturnsfiling",
+                    title: "Yearly Returns filing",
+                  },
+                  { link: "/regularcompliance", title: "Regular Compliance" },
+                  {
+                    link: "/llpProprietorship",
+                    title: "LLP/Proprietorship to Company Conversion",
+                  },
+                ],
+              },
+              {
+                link: "/assesments",
+                title: "Assesments & Litigations",
+                subHeaders: [
+                  { link: "/gstaudits", title: "GST audits" },
+                  {
+                    link: "/incometaxassesments",
+                    title: "Income Tax Assesments",
+                  },
+                  {
+                    link: "/noticehandling",
+                    title: "Notice handling from GST & Income tax",
+                  },
+                ],
+              },
+              {
+                link: "/rera",
+                title: "Others",
+                subHeaders: [
+                  { link: "/rera", title: "RERA" },
+                  {
+                    link: "/llcservices",
+                    title: "Labour Law compliance services",
+                  },
+                  { link: "/pfcompliance", title: "PF Compliance" },
+                  { link: "/esicompliance", title: "ESI Compliance" },
+                  { link: "/professionaltax", title: "Professional Tax" },
+                ],
+              },
+            ]}
+          />
           <Dropdown
             isActive={menu["takeExpAdv"]}
             setIsActive={() => {
@@ -160,6 +153,7 @@ function Navbar() {
                 takeExpAdv: !menu["takeExpAdv"],
               });
             }}
+            resetMenu={resetMenu}
             headerName="Take Expert Advice"
             headerLink="/takeexpertadvice"
             subHeaders={[
@@ -184,7 +178,6 @@ function Navbar() {
               },
             ]}
           />
-
           <Dropdown
             isActive={menu["startYoBu"]}
             setIsActive={() => {
@@ -193,6 +186,7 @@ function Navbar() {
                 startYoBu: !menu["startYoBu"],
               });
             }}
+            resetMenu={resetMenu}
             headerName="Start Your Business"
             headerLink="/startyourbusiness"
             subHeaders={[
@@ -252,12 +246,12 @@ function Navbar() {
               },
             ]}
           />
-
           <Dropdown
             isActive={menu["cfoServ"]}
             setIsActive={() => {
               setMenu({ ...INITIAL_NAVBAR_STATE, cfoServ: !menu["cfoServ"] });
             }}
+            resetMenu={resetMenu}
             headerName="CFO Services"
             headerLink="/CfoServices"
             subHeaders={[
@@ -285,9 +279,6 @@ function Navbar() {
               },
             ]}
           />
-
-        
-
           <Dropdown
             isActive={menu["accAud"]}
             setIsActive={() => {
@@ -296,6 +287,7 @@ function Navbar() {
                 accAud: !menu["accAud"],
               });
             }}
+            resetMenu={resetMenu}
             headerName="Accounts & Audit"
             headerLink="/accountsaudit"
             subHeaders={[
@@ -345,7 +337,6 @@ function Navbar() {
               },
             ]}
           />
-
           <Dropdown
             isActive={menu["busLegSer"]}
             setIsActive={() => {
@@ -354,6 +345,7 @@ function Navbar() {
                 busLegSer: !menu["busLegSer"],
               });
             }}
+            resetMenu={resetMenu}
             headerName=" Business legal Services "
             headerLink="/businesslegalservices"
             subHeaders={[
@@ -377,12 +369,12 @@ function Navbar() {
               },
             ]}
           />
-
           <Dropdown
             isActive={menu["loanCap"]}
             setIsActive={() => {
               setMenu({ ...INITIAL_NAVBAR_STATE, loanCap: !menu["loanCap"] });
             }}
+            resetMenu={resetMenu}
             headerName="Loans & Capital"
             headerLink="/loanscapital"
             subHeaders={[
@@ -401,12 +393,12 @@ function Navbar() {
               },
             ]}
           />
-
           <Dropdown
             isActive={menu["persServ"]}
             setIsActive={() => {
               setMenu({ ...INITIAL_NAVBAR_STATE, persServ: !menu["persServ"] });
             }}
+            resetMenu={resetMenu}
             headerName="Personal Services"
             headerLink="/personalservice"
             subHeaders={[
@@ -420,7 +412,7 @@ function Navbar() {
           />
 
           <div className="navbar_text navbar_text_mobile">
-            <Link to="/contact" className="navbar_link">
+            <Link to="/contact" onClick={resetMenu} className="navbar_link">
               Contact Us
             </Link>
           </div>

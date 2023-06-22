@@ -30,12 +30,16 @@ export const getAllDocs = (collectionName, limit) => {
   });
 };
 
-export const getDocs = (collectionName, filter) => {
-  const whereList = Object.keys(filter).map((key) => {
-    return where(key, "==", filter[key]);
+export const getDocs = (collectionName, filter, limit) => {
+  const queryArgs = [];
+  Object.keys(filter).forEach((key) => {
+    queryArgs.push(where(key, "==", filter[key]));
   });
+  if (limit) {
+    queryArgs.push(limit(limit));
+  }
   return new Promise((resolve, reject) => {
-    getDocs_(query(collection(firestore, collectionName), ...whereList))
+    getDocs_(query(collection(firestore, collectionName), ...queryArgs))
       .then((querySnapshot) => {
         const dataList = [];
         querySnapshot.forEach((doc) => {

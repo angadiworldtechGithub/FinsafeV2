@@ -11,6 +11,7 @@ import { showLoading } from "react-global-loading";
 import { sortDateList } from "../utilities";
 import { AuthContext } from "../../Context/AuthContext";
 import "./AdminNotification.css";
+import LoadingButton from "../../Components/LoadingButton/LoadingButton";
 
 export default function AdminNotification() {
   const [notifications, setNotifications] = useState([]);
@@ -33,12 +34,16 @@ export default function AdminNotification() {
     }
   }, []);
   const sendHandler = async () => {
-    setSending(true);
-    await addData(NOTIF_COLL_NAME, { message });
-    notifications.push({ message, dateCreated: "Right Now...", readBy: [] });
-    alert("Notification Sent");
-    setMessage("");
-    setSending(false);
+    if (message !== "") {
+      setSending(true);
+      await addData(NOTIF_COLL_NAME, { message });
+      notifications.push({ message, dateCreated: "Right Now...", readBy: [] });
+      alert("Notification Sent");
+      setMessage("");
+      setSending(false);
+    } else {
+      alert("No message");
+    }
   };
 
   if (!auth || (auth && !ADMIN_EMAILS.includes(auth.email))) {
@@ -78,22 +83,19 @@ export default function AdminNotification() {
           }}
         />
         <div className="notifications">
-          <button
+          <LoadingButton
             style={{
               fontSize: "20px",
               fontWeight: "700",
-              margin: "10px 10px 10px 10px",
-              padding: "5px 5px 5px 5px",
+              margin: "10px",
+              padding: "5px",
               borderRadius: "10px",
             }}
+            loading={sending}
             onClick={sendHandler}
           >
-            {sending ? (
-              <AiOutlineLoading className="loading" />
-            ) : (
-              "Send Notification"
-            )}
-          </button>
+            "Send Notification"
+          </LoadingButton>
         </div>
       </div>
       <div>

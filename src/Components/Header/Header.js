@@ -1,7 +1,9 @@
 import "./Header.css";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { BsFacebook, BsLinkedin, BsFillTelephoneFill } from "react-icons/bs";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 import { HiMail } from "react-icons/hi";
+import { AiTwotonePhone } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
@@ -46,50 +48,64 @@ const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
     ) {
       return {
         text: "Sign Out",
-        link: null,
+        to: null,
       };
     }
     if (ADMIN_EMAILS.includes(auth.email)) {
       return [
         {
           text: "Admin",
-          link: "/admin",
+          to: "/admin",
         },
         {
           text: "Admin Service",
-          link: "/adminservice",
+          to: "/adminservice",
         },
         {
           text: "Admin Notification",
-          link: "/adminnotification",
+          to: "/adminnotification",
         },
       ];
     } else {
       return [
         {
           text: "Dashboard",
-          link: "/dashboard",
+          to: "/dashboard",
         },
       ];
     }
   } else {
-    return {
-      text: "Sign In Options",
-      subHeaders: [
-        {
-          text: (
-            <img
-              alt="Google sign in"
-              src="/assets/images/btn_google_signin_dark_pressed_web.png"
-              className="hover_click"
-            />
-          ),
-          onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
-        },
-        { text: "Email Password Sign In", to: "/login" },
-        { text: "Phone Number Login", to: "/phonelogin" },
-      ],
-    };
+    return [
+      {
+        text: (
+          <img
+            alt="Google sign in"
+            src="/assets/images/btn_google_signin_dark_pressed_web.png"
+            className="hover_click"
+            style={{ aspectRatio: 4.15, height: "21px" }}
+          />
+        ),
+        onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
+      },
+      {
+        text: (
+          <>
+            <MdEmail style={{ fontSize: "20px" }} />
+            Sign In
+          </>
+        ),
+        to: "/login",
+      },
+      {
+        text: (
+          <>
+            <AiTwotonePhone style={{ fontSize: "20px" }} />
+            Sign In
+          </>
+        ),
+        to: "/phonelogin",
+      },
+    ];
   }
 };
 
@@ -136,43 +152,24 @@ export default function Header() {
             }
           >
             {rightButton.text}
-            {rightButton.subHeaders ? (
-              rightButton.subHeaders.length ? (
-                <div className="dropdown_sign_in">
-                  <ul className="sign_in_list">
-                    {rightButton.subHeaders.map((subHeader, index) => {
-                      return (
-                        <li key={index} onClick={subHeader.onClick}>
-                          {subHeader.to ? (
-                            <Link style={{ color: "white" }} to={subHeader.to}>
-                              {subHeader.text}
-                            </Link>
-                          ) : (
-                            subHeader.text
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ) : (
-                <></>
-              )
-            ) : (
-              <></>
-            )}
           </div>
         ) : (
-          <div>
-            {rightButton.map((rb) => (
-              <Link
-                className="right_button"
-                to={rb.link}
-                style={{ marginLeft: "10px" }}
-              >
-                {rb.text}
-              </Link>
-            ))}
+          <div style={{ display: "flex" }}>
+            {rightButton.map((rb) => {
+              return rb.to ? (
+                <Link
+                  className="right_button"
+                  to={rb.to}
+                  style={{ fontWeight: 700 }}
+                >
+                  {rb.text}
+                </Link>
+              ) : (
+                <div className="right_button" onClick={rb.onClick}>
+                  {rb.text}
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
