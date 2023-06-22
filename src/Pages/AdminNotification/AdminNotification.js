@@ -10,6 +10,7 @@ import { getAllDocs } from "../../API/readDoc";
 import { showLoading } from "react-global-loading";
 import { sortDateList } from "../utilities";
 import { AuthContext } from "../../Context/AuthContext";
+import "./AdminNotification.css";
 
 export default function AdminNotification() {
   const [notifications, setNotifications] = useState([]);
@@ -54,15 +55,39 @@ export default function AdminNotification() {
       <div
         style={{ margin: "0 auto", width: "fit-content", textAlign: "center" }}
       >
-        <div>Add Notification</div>
+        <div
+          style={{
+            fontSize: "30px",
+            fontWeight: "700",
+            padding: "10px 10px 10px 10px",
+            color: "#923300",
+          }}
+        >
+          Add Notification
+        </div>
         <textarea
+          style={{
+            fontSize: "20px",
+            fontWeight: "400",
+            height: " 80px",
+            width: "70%",
+          }}
           value={message}
           onChange={(e) => {
             setMessage(e.target.value);
           }}
         />
-        <div>
-          <button onClick={sendHandler}>
+        <div className="notifications">
+          <button
+            style={{
+              fontSize: "20px",
+              fontWeight: "700",
+              margin: "10px 10px 10px 10px",
+              padding: "5px 5px 5px 5px",
+              borderRadius: "10px",
+            }}
+            onClick={sendHandler}
+          >
             {sending ? (
               <AiOutlineLoading className="loading" />
             ) : (
