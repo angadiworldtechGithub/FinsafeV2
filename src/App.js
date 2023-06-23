@@ -185,9 +185,9 @@ const Base = () => {
   return (
     <>
       <Header />
+      <Navbar />
       <Outlet />
-      <Footer/>
-      <Navbar /> 
+      <Footer />
     </>
   );
 };

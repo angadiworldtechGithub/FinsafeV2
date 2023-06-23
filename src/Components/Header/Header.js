@@ -86,7 +86,11 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       {
         text: (
           <>
-           <button> <MdEmail style={{ fontSize: "20px" }} />Sign In</button>
+            <button>
+              {" "}
+              <MdEmail style={{ fontSize: "20px" }} />
+              Sign In
+            </button>
           </>
         ),
         to: "/login",
@@ -94,8 +98,10 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       {
         text: (
           <>
-            <button><AiTwotonePhone style={{ fontSize: "20px" }} />
-            Sign In</button>
+            <button>
+              <AiTwotonePhone style={{ fontSize: "20px" }} />
+              Sign In
+            </button>
           </>
         ),
         to: "/phonelogin",
@@ -144,7 +150,7 @@ export default function Header() {
           </div>
         </div>
         <div>
-          {newNotifications.length && !isAdmin ? (
+          {newNotifications.length && auth && !isAdmin ? (
             <span
               onClick={() => {
                 setShowModal(true);
