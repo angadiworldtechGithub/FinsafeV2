@@ -75,13 +75,17 @@ export default function YearFileInput({ initialFileInput, setFileInput }) {
                   : document.documentDate.toString()}
               </td>
               <td>
-                <a
-                  href={document.fileDownloadUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <GrDownload />
-                </a>
+                {document.fileDownloadUrl ? (
+                  <a
+                    href={document.fileDownloadUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <GrDownload />
+                  </a>
+                ) : (
+                  "Please Click Save"
+                )}
               </td>
             </tr>
           ))}

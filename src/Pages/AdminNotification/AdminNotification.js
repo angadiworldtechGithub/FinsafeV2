@@ -1,10 +1,5 @@
 import { useContext, useState } from "react";
-import { AiOutlineLoading } from "react-icons/ai";
-import {
-  NOTIF_COLL_NAME,
-  USER_NOTIF_COLL_NAME,
-  ADMIN_EMAILS,
-} from "../../constants";
+import { NOTIF_COLL_NAME, ADMIN_EMAILS } from "../../constants";
 import { addData } from "../../API/createDoc";
 import { getAllDocs } from "../../API/readDoc";
 import { showLoading } from "react-global-loading";

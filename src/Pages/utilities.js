@@ -52,3 +52,10 @@ export const sortDateList = (a, b) => {
     return -1;
   }
 };
+
+export function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}

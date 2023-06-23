@@ -80,10 +80,6 @@ export default function Dashboard() {
           })
         ).map((n) => n.notifId);
 
-        console.log(readNotificationIds);
-
-        console.log(notifications);
-
         setNewNotifications([
           ...notifications.filter(
             (notif) => !readNotificationIds.includes(notif.id)
@@ -278,7 +274,7 @@ export default function Dashboard() {
           loading={saving}
           onClick={saveHandler}
         >
-          "Save"
+          Save
         </LoadingButton>
       </div>
       <div style={{ height: "5px", borderBottom: "solid 1px black" }}></div>

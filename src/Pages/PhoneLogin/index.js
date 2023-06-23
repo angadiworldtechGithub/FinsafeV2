@@ -1,6 +1,5 @@
 import { useState, useContext, useEffect } from "react";
 import "./PhoneLogin.css";
-import { AiOutlineLoading } from "react-icons/ai";
 import { auth as firebaseAuth } from "../../firebase";
 import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 import { usePreventAuthUser } from "../../Hooks/redirect.js";
@@ -65,7 +64,7 @@ export default function Login() {
         <img
           src="assets/images/phone_banner2.png"
           className="login_image"
-          alt="No Image"
+          alt="phone_banner"
         ></img>
       </div>
       <div className="login_right">

@@ -31,7 +31,7 @@ export default function Dropdown({
           return init;
         }
       }, {}),
-    [subHeaders]
+    [subHeaders, x]
   );
   const [menu, setMenu] = useState(initialNavbarState);
   const count = useMemo(
