@@ -131,3 +131,14 @@
 .dropdown_sign_in:hover {
   display: block;
 }
+
+.mid-left{
+  width : 65%;
+}
+.mid-right{
+  height : 100px;
+  width : 35%;
+  flex-direction: column;
+  font-Size:20px;
+  color:#000;
+}
