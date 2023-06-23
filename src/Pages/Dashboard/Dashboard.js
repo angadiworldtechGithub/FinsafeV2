@@ -146,7 +146,6 @@ export default function Dashboard() {
     console.log("Uploading Directors Documents");
     await Promise.all(
       directors.map(async (director, index) => {
-        console.log(director.documents);
         if (director.documents.length) {
           directors[index].documents = await addDownloadUrlToDocuments(
             director.documents
@@ -194,7 +193,6 @@ export default function Dashboard() {
       </div>
     );
   }
-  console.log(directors);
   const addDirector = () => {
     setDirectors([...directors.concat([_.cloneDeep(NEW_DIRECTOR)])]);
   };

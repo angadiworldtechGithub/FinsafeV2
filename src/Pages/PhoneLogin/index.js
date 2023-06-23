@@ -6,6 +6,7 @@ import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 import { usePreventAuthUser } from "../../Hooks/redirect.js";
 
 import { AuthContext } from "../../Context/AuthContext";
+import LoadingButton from "../../Components/LoadingButton";
 
 export default function Login() {
   const [mobilenumber, setMobilenumber] = useState("");
@@ -17,10 +18,8 @@ export default function Login() {
   usePreventAuthUser("phonelogin", auth);
 
   const onLogin = () => {
-    console.log("Clicked");
     if (mobilenumber !== "") {
       const number = "+91" + mobilenumber;
-      console.log(number);
       setLoading(true);
       signInWithPhoneNumber(firebaseAuth, number, window.recaptchaVerifier)
         .then((confirmationResult) => {
@@ -40,7 +39,6 @@ export default function Login() {
       setLoading(true);
       confirmationResult.confirm(confirmationCode).then((result) => {
         setAuth(result.user);
-        console.log(result.user);
         setLoading(false);
       });
     } else {
@@ -54,7 +52,7 @@ export default function Login() {
       {
         size: "invisible",
         callback: () => {
-          console.log("verified!");
+          console.log("Capthca Completed.");
         },
       },
       firebaseAuth
@@ -108,19 +106,14 @@ export default function Login() {
         <div className="login_box">
           <center>
             {" "}
-            <button
+            <LoadingButton
               className="button_login"
               style={{ width: "60%", height: "40px" }}
+              loading={loading}
               onClick={confirmationCode ? onCodeSubmit : onLogin}
             >
-              {loading ? (
-                <AiOutlineLoading className="loading" />
-              ) : confirmationCode ? (
-                "Submit"
-              ) : (
-                "Login"
-              )}
-            </button>
+              {confirmationCode ? "Submit" : "Login"}
+            </LoadingButton>
           </center>
         </div>
       </div>

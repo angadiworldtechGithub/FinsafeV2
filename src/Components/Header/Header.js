@@ -155,9 +155,10 @@ export default function Header() {
           </div>
         ) : (
           <div style={{ display: "flex" }}>
-            {rightButton.map((rb) => {
+            {rightButton.map((rb, index) => {
               return rb.to ? (
                 <Link
+                  key={index}
                   className="right_button"
                   to={rb.to}
                   style={{ fontWeight: 700 }}
@@ -165,7 +166,7 @@ export default function Header() {
                   {rb.text}
                 </Link>
               ) : (
-                <div className="right_button" onClick={rb.onClick}>
+                <div key={index} className="right_button" onClick={rb.onClick}>
                   {rb.text}
                 </div>
               );

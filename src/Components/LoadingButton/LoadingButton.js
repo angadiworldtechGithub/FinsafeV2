@@ -11,7 +11,7 @@ export default function LoadingButton({
       {loading ? (
         <AiOutlineLoading className="loading" {...iconProps} />
       ) : (
-        { children }
+        children
       )}
     </button>
   );
