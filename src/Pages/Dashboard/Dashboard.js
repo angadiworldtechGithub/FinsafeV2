@@ -1,6 +1,6 @@
 import "./Dashboard.css";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
-import { AiOutlineLoading } from "react-icons/ai";
+import LoadingButton from "../../Components/LoadingButton";
 import { useContext, useEffect, useState } from "react";
 import Director from "./Director";
 import shortid from "shortid";
@@ -9,9 +9,14 @@ import AddDirector from "./AddDirector";
 import CompanyDetails from "./CompanyDetails";
 import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
-import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";
+import {
+  ADMIN_EMAILS,
+  COMPANY_COLL_NAME,
+  USER_NOTIF_COLL_NAME,
+  NOTIF_COLL_NAME,
+} from "../../constants";
 import { addData } from "../../API/createDoc";
-import { getDocs } from "../../API/readDoc";
+import { getAllDocs, getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
 import { addDownloadUrlToDocuments, getAuthFilter } from "../utilities";
 import { showLoading } from "react-global-loading";
@@ -44,7 +49,7 @@ const INITIAL_DASHBOARD_DETAILS = {
 };
 
 export default function Dashboard() {
-  const { auth } = useContext(AuthContext);
+  const { auth, getIdentifier } = useContext(AuthContext);
 
   const [companyDetails, setCompanyDetails] = useState(
     INITIAL_DASHBOARD_DETAILS.companyDetails
@@ -59,12 +64,26 @@ export default function Dashboard() {
   const [newNotifications, setNewNotifications] = useState([]);
 
   const [saving, setSaving] = useState(false);
+  const [marking, setMarking] = useState(false);
   const [docExist, setDocExist] = useState(false);
 
   useEffect(() => {
     (async () => {
       if (auth) {
         showLoading(true);
+
+        const notifications = await getAllDocs(NOTIF_COLL_NAME);
+        console.log(notifications);
+        // const readNotificationIds = await getDocs(USER_NOTIF_COLL_NAME, {
+        //   identifier: getIdentifier(),
+        // }).map((n) => n.id);
+
+        // setNewNotifications([
+        //   ...notifications.filter(
+        //     (notif) => !readNotificationIds.includes(notif.id)
+        //   ),
+        // ]);
+
         const [dashboardDoc] = await getDocs(
           COMPANY_COLL_NAME,
           getAuthFilter(auth)
@@ -99,6 +118,21 @@ export default function Dashboard() {
       }
     })();
   }, [auth]);
+
+  const markReadHandler = async () => {
+    if (window.confirm("Marking read will remove notifications")) {
+      setMarking(true);
+      await addData(
+        USER_NOTIF_COLL_NAME,
+        newNotifications.map((notif) => ({
+          identifier: getIdentifier(),
+          notifId: notif.id,
+        }))
+      );
+      setNewNotifications([]);
+      setMarking(false);
+    }
+  };
 
   const saveHandler = async () => {
     setSaving(true);
@@ -182,7 +216,13 @@ export default function Dashboard() {
         {newNotifications.map((notification) => {
           return <div>{notification.message}</div>;
         })}
-        <button>Mark Read</button>
+        <LoadingButton
+          loading={marking}
+          onClick={markReadHandler}
+          className="dashboard_submit"
+        >
+          Mark Read
+        </LoadingButton>
       </div>
 
       <CompanyDetails
@@ -213,13 +253,13 @@ export default function Dashboard() {
         <AddDirector clickHandler={addDirector} />
       </div>
       <div style={{ margin: "0 auto", width: "fit-content" }}>
-        <button
+        <LoadingButton
           className="dashboard_submit"
-          disabled={saving}
+          loading={saving}
           onClick={saveHandler}
         >
-          {saving ? <AiOutlineLoading className="loading" /> : "Save"}
-        </button>
+          "Save"
+        </LoadingButton>
       </div>
       <div style={{ height: "5px", borderBottom: "solid 1px black" }}></div>
       {fileInputs.map((fileInput, index) => {

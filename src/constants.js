@@ -9,3 +9,4 @@ export const DEFAULT_DOCUMENT_LIST = [
   "PAN Card",
   "Company Inc. Cert",
 ];
+export const NOTIF_LIMIT = 20;
