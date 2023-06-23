@@ -86,8 +86,7 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       {
         text: (
           <>
-            <MdEmail style={{ fontSize: "20px" }} />
-            Sign In
+           <button> <MdEmail style={{ fontSize: "20px" }} />Sign In</button>
           </>
         ),
         to: "/login",
@@ -95,8 +94,8 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       {
         text: (
           <>
-            <AiTwotonePhone style={{ fontSize: "20px" }} />
-            Sign In
+            <button><AiTwotonePhone style={{ fontSize: "20px" }} />
+            Sign In</button>
           </>
         ),
         to: "/phonelogin",

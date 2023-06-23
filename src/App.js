@@ -1,6 +1,5 @@
 import "./App.css";
 import { GlobalLoading } from "react-global-loading";
-
 import Navbar from "./Components/Navbar";
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
@@ -186,9 +185,9 @@ const Base = () => {
   return (
     <>
       <Header />
-      <Navbar />
       <Outlet />
-      <Footer />
+      <Footer/>
+      <Navbar /> 
     </>
   );
 };
