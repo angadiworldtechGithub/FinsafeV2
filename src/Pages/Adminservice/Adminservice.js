@@ -15,7 +15,7 @@ export default function AdminService() {
       (async () => {
         showLoading(true);
         const documents = await getAllDocs(SERVICE_COLL_NAME);
-        documents.sort(sortDateList);
+        documents.sort(sortDateList("dateCreated"));
         setServices(documents);
         showLoading(false);
       })();

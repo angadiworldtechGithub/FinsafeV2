@@ -43,10 +43,10 @@ export const getAuthFilter = (auth) => {
   }
 };
 
-export const sortDateList = (a, b) => {
-  if (a < b) {
+export const sortDateList = (key) => (a, b) => {
+  if (a[key] < b[key]) {
     return 1;
-  } else if (a === b) {
+  } else if (a[key] === b[key]) {
     return 0;
   } else {
     return -1;

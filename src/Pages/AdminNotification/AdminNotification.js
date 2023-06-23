@@ -29,11 +29,11 @@ export default function AdminNotification() {
           if (map[readNotification.notifId]) {
             map[readNotification.notifId].push(readNotification.identifier);
           } else {
-            map[readNotification.notifId] = [];
+            map[readNotification.notifId] = [readNotification.identifier];
           }
           return map;
         }, {});
-        notifications.sort(sortDateList);
+        notifications.sort(sortDateList("dateCreated"));
         setNotifications(
           notifications.map((notification) => {
             return {
@@ -51,7 +51,7 @@ export default function AdminNotification() {
     if (message !== "") {
       setSending(true);
       await addData(NOTIF_COLL_NAME, { message });
-      notifications.push({ message, dateCreated: "Right Now...", readBy: [] });
+      notifications.push({ message, dateCreated: null, readBy: [] });
       alert("Notification Sent");
       setMessage("");
       setSending(false);
@@ -144,7 +144,10 @@ export default function AdminNotification() {
             {notifications.map((notification) => {
               return (
                 <tr>
-                  <td>{notification.dateCreated.toDate().toString()}</td>
+                  <td>
+                    {notification.dateCreated?.toDate().toString() ??
+                      "Just Now"}
+                  </td>
                   <td>{notification.message}</td>
                   <td>
                     <ul>
