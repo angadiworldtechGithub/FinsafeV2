@@ -62,30 +62,14 @@ export default function Dashboard() {
   const [fileInputs, setFileInputs] = useState(
     INITIAL_DASHBOARD_DETAILS.fileInputs
   );
-  const [newNotifications, setNewNotifications] = useState([]);
 
   const [saving, setSaving] = useState(false);
-  const [marking, setMarking] = useState(false);
   const [docExist, setDocExist] = useState(false);
 
   useEffect(() => {
     (async () => {
       if (auth) {
         showLoading(true);
-
-        const notifications = await getAllDocs(NOTIF_COLL_NAME);
-        const readNotificationIds = (
-          await getDocs(USER_NOTIF_COLL_NAME, {
-            identifier: getIdentifier(),
-          })
-        ).map((n) => n.notifId);
-
-        setNewNotifications([
-          ...notifications.filter(
-            (notif) => !readNotificationIds.includes(notif.id)
-          ),
-        ]);
-
         const [dashboardDoc] = await getDocs(
           COMPANY_COLL_NAME,
           getAuthFilter(auth)
@@ -120,21 +104,6 @@ export default function Dashboard() {
       }
     })();
   }, [auth]);
-
-  const markReadHandler = async () => {
-    if (window.confirm("Marking read will remove notifications")) {
-      setMarking(true);
-      await addBatchedData(
-        USER_NOTIF_COLL_NAME,
-        newNotifications.map((notif) => ({
-          identifier: getIdentifier(),
-          notifId: notif.id,
-        }))
-      );
-      setNewNotifications([]);
-      setMarking(false);
-    }
-  };
 
   const saveHandler = async () => {
     setSaving(true);
@@ -211,42 +180,6 @@ export default function Dashboard() {
 
   return (
     <div>
-      <div>
-        <div>New Notifications</div>
-        {newNotifications.length ? (
-          <>
-            <table>
-              <thead>
-                <tr>
-                  <th>Date Sent</th>
-                  <th>Message</th>
-                </tr>
-              </thead>
-              <tbody>
-                {newNotifications.map((notification) => {
-                  return (
-                    <tr key={notification.id}>
-                      <td>{notification.dateCreated.toDate().toString()}</td>
-                      <td>{notification.message}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-
-            <LoadingButton
-              loading={marking}
-              onClick={markReadHandler}
-              className="dashboard_submit"
-            >
-              Mark Read
-            </LoadingButton>
-          </>
-        ) : (
-          <>No New Notifications</>
-        )}
-      </div>
-
       <CompanyDetails
         setCompanyDetails={setCompanyDetails}
         companyDetails={companyDetails}

@@ -180,6 +180,7 @@ import SignUp from "./Pages/SignUp";
 import PhoneLogin from "./Pages/PhoneLogin";
 import AdminService from "./Pages/AdminService";
 import AdminNotification from "./Pages/AdminNotification";
+import { NotificationsContextProvider } from "./Context/NotificationsContext";
 
 const Base = () => {
   return (
@@ -695,8 +696,10 @@ const router = createBrowserRouter([
 function App() {
   return (
     <AuthContextProvider>
-      <RouterProvider router={router} />
-      <GlobalLoading />
+      <NotificationsContextProvider>
+        <RouterProvider router={router} />
+        <GlobalLoading />
+      </NotificationsContextProvider>
     </AuthContextProvider>
   );
 }

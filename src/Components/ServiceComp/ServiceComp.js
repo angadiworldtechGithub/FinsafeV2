@@ -78,9 +78,9 @@ export default function ServiceComp({
 
           <p className="color_white">
             <ul className="service_list">
-              {bulletPoints.map((point) => {
+              {bulletPoints.map((point, index) => {
                 return (
-                  <li>
+                  <li key={index}>
                     <i className="fa-solid fa-circle-check"></i> &nbsp;{" "}
                     {point.text}
                   </li>
@@ -95,11 +95,12 @@ export default function ServiceComp({
             <h1>{title}</h1>
           </center>
           <form ref={formRef}>
-            {inputList.map((inputObj) => {
+            {inputList.map((inputObj, index) => {
               if (inputObj.elementType === "select") {
                 return (
                   <select
                     className="service_input"
+                    key={index}
                     type={inputObj.type}
                     id={inputObj.id}
                     name={inputObj.name}
@@ -114,8 +115,10 @@ export default function ServiceComp({
                     <option value={inputObj.placeholder}>
                       {inputObj.placeholder}
                     </option>
-                    {inputObj.optionList.map((option) => (
-                      <option value={option.value}>{option.text}</option>
+                    {inputObj.optionList.map((option, index) => (
+                      <option key={index} value={option.value}>
+                        {option.text}
+                      </option>
                     ))}
                   </select>
                 );

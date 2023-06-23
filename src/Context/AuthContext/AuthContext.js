@@ -1,7 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 import { auth as firebaseAuth } from "../../firebase";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
+import { ADMIN_EMAILS } from "../../constants";
 
 export const AuthContext = createContext();
 
@@ -12,6 +13,10 @@ export function AuthContextProvider({ children }) {
     return auth ? (auth.email ? auth.email : auth.phoneNumber) : "";
   };
 
+  const isAdmin = useMemo(() => {
+    return Boolean(auth) && ADMIN_EMAILS.includes(auth.email);
+  }, [auth]);
+
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) {
@@ -21,7 +26,7 @@ export function AuthContextProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth, getIdentifier }}>
+    <AuthContext.Provider value={{ auth, setAuth, getIdentifier, isAdmin }}>
       {children}
     </AuthContext.Provider>
   );

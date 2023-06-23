@@ -4,13 +4,14 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { HiMail } from "react-icons/hi";
 import { AiTwotonePhone } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
+import { NotificationsContext } from "../../Context/NotificationsContext";
 import { ADMIN_EMAILS } from "../../constants";
-
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth as firebaseAuth } from "../../firebase";
+import NotificationsModal from "../NotificationsModal/NotificationsModal";
 
 const provider = new GoogleAuthProvider();
 
@@ -38,19 +39,12 @@ const signOutClick = (setAuth, setIsClicked) => () => {
     .catch((error) => console.error(error));
 };
 
-const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
-  const pageName = location.pathname.split("/")[1];
+const getButton = (auth, setAuth, isClicked, setIsClicked) => {
   if (auth) {
-    if (
-      ["admin", "dashboard", "adminservice", "adminnotification"].includes(
-        pageName
-      )
-    ) {
-      return {
-        text: "Sign Out",
-        to: null,
-      };
-    }
+    const signOut = {
+      text: "Sign Out",
+      onClick: isClicked ? () => {} : signOutClick(setAuth, setIsClicked),
+    };
     if (ADMIN_EMAILS.includes(auth.email)) {
       return [
         {
@@ -65,6 +59,7 @@ const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
           text: "Admin Notification",
           to: "/adminnotification",
         },
+        signOut,
       ];
     } else {
       return [
@@ -72,6 +67,7 @@ const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
           text: "Dashboard",
           to: "/dashboard",
         },
+        signOut,
       ];
     }
   } else {
@@ -110,20 +106,26 @@ const getButton = (auth, setAuth, location, isClicked, setIsClicked) => {
 };
 
 export default function Header() {
-  const { auth, setAuth } = useContext(AuthContext);
+  const { auth, setAuth, getIdentifier, isAdmin } = useContext(AuthContext);
+  const { newNotifications, setNewNotifications } =
+    useContext(NotificationsContext);
   const [isClicked, setIsClicked] = useState(false);
-  const location = useLocation();
-
-  const rightButton = getButton(
-    auth,
-    setAuth,
-    location,
-    isClicked,
-    setIsClicked
-  );
+  const [showModal, setShowModal] = useState(false);
+  const rightButton = getButton(auth, setAuth, isClicked, setIsClicked);
 
   return (
     <>
+      {!isAdmin && newNotifications.length ? (
+        <NotificationsModal
+          isOpen={showModal}
+          closeModal={() => setShowModal(false)}
+          newNotifications={newNotifications}
+          setNewNotifications={setNewNotifications}
+          getIdentifier={getIdentifier}
+        />
+      ) : (
+        <></>
+      )}
       <div className="top_header">
         <div className="social_icon_box">
           <div>
@@ -142,18 +144,21 @@ export default function Header() {
             </Link>
           </div>
         </div>
-        {!rightButton.link && !Array.isArray(rightButton) ? (
-          <div
-            className="sign_in_out"
-            onClick={
-              rightButton.text === "Sign Out"
-                ? signOutClick(setAuth, setIsClicked)
-                : () => {}
-            }
-          >
-            {rightButton.text}
-          </div>
-        ) : (
+        <div>
+          {newNotifications.length && !isAdmin ? (
+            <span
+              onClick={() => {
+                setShowModal(true);
+              }}
+              style={{ textDecoration: "underline" }}
+            >
+              New Notifications
+            </span>
+          ) : (
+            <></>
+          )}
+        </div>
+        {
           <div style={{ display: "flex" }}>
             {rightButton.map((rb, index) => {
               return rb.to ? (
@@ -172,7 +177,7 @@ export default function Header() {
               );
             })}
           </div>
-        )}
+        }
       </div>
 
       <div className="mid_header">

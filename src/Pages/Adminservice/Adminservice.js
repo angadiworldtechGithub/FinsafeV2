@@ -4,6 +4,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import "./AdminService.css";
 import { getAllDocs } from "../../API/readDoc";
 import { sortDateList } from "../utilities";
+import { showLoading } from "react-global-loading";
 
 export default function AdminService() {
   const { auth } = useContext(AuthContext);
@@ -12,9 +13,11 @@ export default function AdminService() {
   useEffect(() => {
     if (auth) {
       (async () => {
+        showLoading(true);
         const documents = await getAllDocs(SERVICE_COLL_NAME);
         documents.sort(sortDateList);
         setServices(documents);
+        showLoading(false);
       })();
     }
   }, [auth]);
