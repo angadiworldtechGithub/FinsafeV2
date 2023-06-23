@@ -1,5 +1,9 @@
-import { useContext, useState } from "react";
-import { NOTIF_COLL_NAME, ADMIN_EMAILS } from "../../constants";
+import { useContext, useEffect, useState } from "react";
+import {
+  NOTIF_COLL_NAME,
+  ADMIN_EMAILS,
+  USER_NOTIF_COLL_NAME,
+} from "../../constants";
 import { addData } from "../../API/createDoc";
 import { getAllDocs } from "../../API/readDoc";
 import { showLoading } from "react-global-loading";
@@ -13,21 +17,36 @@ export default function AdminNotification() {
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
   const { auth } = useContext(AuthContext);
-  useState(() => {
+
+  useEffect(() => {
     if (auth) {
       (async () => {
         showLoading(true);
         const notifications = await getAllDocs(NOTIF_COLL_NAME);
+        const readNotificationsMap = (
+          await getAllDocs(USER_NOTIF_COLL_NAME)
+        ).reduce((map, readNotification) => {
+          if (map[readNotification.notifId]) {
+            map[readNotification.notifId].push(readNotification.identifier);
+          } else {
+            map[readNotification.notifId] = [];
+          }
+          return map;
+        }, {});
         notifications.sort(sortDateList);
         setNotifications(
           notifications.map((notification) => {
-            return { ...notification, readBy: [] };
+            return {
+              ...notification,
+              readBy: readNotificationsMap[notification.id] ?? [],
+            };
           })
         );
         showLoading(false);
       })();
     }
-  }, []);
+  }, [auth]);
+
   const sendHandler = async () => {
     if (message !== "") {
       setSending(true);
@@ -92,7 +111,7 @@ export default function AdminNotification() {
             loading={sending}
             onClick={sendHandler}
           >
-            "Send Notification"
+            Send Notification
           </LoadingButton>
         </div>
       </div>

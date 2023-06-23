@@ -213,32 +213,38 @@ export default function Dashboard() {
     <div>
       <div>
         <div>New Notifications</div>
-        <table>
-          <thead>
-            <tr>
-              <th>Date Sent</th>
-              <th>Message</th>
-            </tr>
-          </thead>
-          <tbody>
-            {newNotifications.map((notification) => {
-              return (
-                <tr key={notification.id}>
-                  <td>{notification.dateCreated.toDate().toString()}</td>
-                  <td>{notification.message}</td>
+        {newNotifications.length ? (
+          <>
+            <table>
+              <thead>
+                <tr>
+                  <th>Date Sent</th>
+                  <th>Message</th>
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
+              </thead>
+              <tbody>
+                {newNotifications.map((notification) => {
+                  return (
+                    <tr key={notification.id}>
+                      <td>{notification.dateCreated.toDate().toString()}</td>
+                      <td>{notification.message}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
 
-        <LoadingButton
-          loading={marking}
-          onClick={markReadHandler}
-          className="dashboard_submit"
-        >
-          Mark Read
-        </LoadingButton>
+            <LoadingButton
+              loading={marking}
+              onClick={markReadHandler}
+              className="dashboard_submit"
+            >
+              Mark Read
+            </LoadingButton>
+          </>
+        ) : (
+          <>No New Notifications</>
+        )}
       </div>
 
       <CompanyDetails
