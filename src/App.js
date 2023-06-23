@@ -1,7 +1,12 @@
 import "./App.css";
 import { GlobalLoading } from "react-global-loading";
-
-import Navbar from "./Components/Navbar";
+import Post1 from "./Components/Blog/Post1";
+import Post2 from "./Components/Blog/Post2";
+import Post3 from "./Components/Blog/Post3";
+import Post4 from "./Components/Blog/Post4";
+import BlogNav from "./Components/Blog/BlogNav";
+import Navbar1 from "./Components/Navbar1";
+import Posts from "./Components/Blog/Posts"
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
@@ -185,9 +190,13 @@ const Base = () => {
   return (
     <>
       <Header />
-      <Navbar />
+      <BlogNav/>
       <Outlet />
       <Footer />
+      <div className="main-container" style={{backgroundColor: "aliceblue"}}>
+      <Navbar1 />
+      <Posts />
+      </div>
     </>
   );
 };
@@ -200,6 +209,30 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path:"/Post1",
+        element:<Post1/>
+      },
+      {
+        path:"/Post2",
+        element:<Post2/>
+      },
+      {
+        path:"/Post3",
+        element:<Post3/>
+      },
+      {
+        path:"/BlogNav",
+        element:<BlogNav/>
+      },
+      {
+        path:"/Post4",
+        element:<Post4/>
+      },
+      {
+        path:"/Navbar1",
+        element:<Navbar1/>
       },
       {
         path: "/admin",

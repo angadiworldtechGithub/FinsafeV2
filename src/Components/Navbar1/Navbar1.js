@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.css";
+import "./Navbar1.css";
 import { MdMenu } from "react-icons/md";
 import { useState } from "react";
 import Dropdown from "../Dropdown";
