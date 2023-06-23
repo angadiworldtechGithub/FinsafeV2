@@ -206,6 +206,22 @@ const SERVICE_CARDS_2 = [
   },
 ];
 
+const SPLIDE_CARP_OPTS = {
+  gap: "0px",
+  perPage: 4,
+  breakpoints: {
+    500: {
+      perPage: 1,
+    },
+    840: {
+      perPage: 2,
+    },
+    1000: {
+      perPage: 3,
+    },
+  },
+};
+
 export default function Home() {
   return (
     <>
@@ -228,25 +244,10 @@ export default function Home() {
         })}
       </Splide>
 
-      <h1 style={{color:"#923300"}}>
+      <h1 style={{ color: "#923300" }}>
         <center> Our Popular Services</center>
       </h1>
-      <Splide
-        options={{
-          perPage: 4,
-          breakpoints: {
-            500: {
-              perPage: 1,
-            },
-            840: {
-              perPage: 2,
-            },
-            1000: {
-              perPage: 3,
-            },
-          },
-        }}
-      >
+      <Splide options={SPLIDE_CARP_OPTS}>
         {SERVICE_CARDS_1.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>
@@ -271,29 +272,15 @@ export default function Home() {
         </p>
       </div>
 
-      <h1 style={{color:"#923300"}}>
+      <h1 style={{ color: "#923300" }}>
         <center>Frequently Used Services</center>
       </h1>
-      <Splide
-        options={{
-          perPage: 4,
-          breakpoints: {
-            500: {
-              perPage: 1,
-            },
-            840: {
-              perPage: 2,
-            },
-            1000: {
-              perPage: 3,
-            },
-          },
-        }}
-      >
+      <Splide options={SPLIDE_CARP_OPTS}>
         {SERVICE_CARDS_2.map((serviceCard) => {
           return (
             <SplideSlide key={shortid.generate()}>
-              <ServiceCard style={{color:"#fff"}}
+              <ServiceCard
+                style={{ color: "#fff" }}
                 title={serviceCard.title}
                 ICON={serviceCard.icon}
                 link={serviceCard.link}
