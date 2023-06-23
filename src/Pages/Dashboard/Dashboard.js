@@ -1,12 +1,12 @@
 import "./Dashboard.css";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { AiOutlineLoading } from "react-icons/ai";
-import AddDirector from "./AddDirector";
-import CompanyDetails from "./CompanyDetails";
 import { useContext, useEffect, useState } from "react";
 import Director from "./Director";
 import shortid from "shortid";
 import _ from "lodash";
+import AddDirector from "./AddDirector";
+import CompanyDetails from "./CompanyDetails";
 import YearFileInput from "./YearFileInput";
 import { AuthContext } from "../../Context/AuthContext";
 import { ADMIN_EMAILS, COMPANY_COLL_NAME } from "../../constants";

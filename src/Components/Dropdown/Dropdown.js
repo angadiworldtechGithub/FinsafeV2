@@ -16,6 +16,7 @@ export default function Dropdown({
   headerName,
   headerLink,
   subHeaders,
+  resetMenu,
   isNested = false,
 }) {
   const x = useCallback(getShortForm, []);
@@ -76,6 +77,10 @@ export default function Dropdown({
                       [x(subHeader.title)]: !menu[x(subHeader.title)],
                     });
                   }}
+                  resetMenu={() => {
+                    setMenu({ ...initialNavbarState });
+                    resetMenu();
+                  }}
                   headerName={subHeader.title}
                   headerLink={subHeader.link}
                   subHeaders={subHeader.subHeaders}
@@ -85,7 +90,11 @@ export default function Dropdown({
             } else {
               return (
                 <li key={shortid.generate()} className="sub_heading_text">
-                  <Link to={subHeader.link} className="navbar_link">
+                  <Link
+                    to={subHeader.link}
+                    onClick={() => resetMenu()}
+                    className="navbar_link"
+                  >
                     {subHeader.title}
                   </Link>
                 </li>
