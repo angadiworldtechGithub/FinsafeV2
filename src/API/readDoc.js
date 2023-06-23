@@ -19,7 +19,7 @@ export const getAllDocs = (collectionName, limit) => {
       .then((querySnapshot) => {
         const dataList = [];
         querySnapshot.forEach((doc) => {
-          dataList.push({ ...doc.data() });
+          dataList.push({ ...doc.data(), id: doc.id });
         });
         resolve(dataList);
       })
@@ -43,7 +43,7 @@ export const getDocs = (collectionName, filter, limit) => {
       .then((querySnapshot) => {
         const dataList = [];
         querySnapshot.forEach((doc) => {
-          dataList.push({ ...doc.data() });
+          dataList.push({ ...doc.data(), id: doc.id });
         });
         resolve(dataList);
       })

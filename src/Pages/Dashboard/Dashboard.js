@@ -14,8 +14,9 @@ import {
   COMPANY_COLL_NAME,
   USER_NOTIF_COLL_NAME,
   NOTIF_COLL_NAME,
+  NOTIF_LIMIT,
 } from "../../constants";
-import { addData } from "../../API/createDoc";
+import { addBatchedData, addData } from "../../API/createDoc";
 import { getAllDocs, getDocs } from "../../API/readDoc";
 import { editData } from "../../API/editDoc";
 import { addDownloadUrlToDocuments, getAuthFilter } from "../utilities";
@@ -73,16 +74,21 @@ export default function Dashboard() {
         showLoading(true);
 
         const notifications = await getAllDocs(NOTIF_COLL_NAME);
-        console.log(notifications);
-        // const readNotificationIds = await getDocs(USER_NOTIF_COLL_NAME, {
-        //   identifier: getIdentifier(),
-        // }).map((n) => n.id);
+        const readNotificationIds = (
+          await getDocs(USER_NOTIF_COLL_NAME, {
+            identifier: getIdentifier(),
+          })
+        ).map((n) => n.notifId);
 
-        // setNewNotifications([
-        //   ...notifications.filter(
-        //     (notif) => !readNotificationIds.includes(notif.id)
-        //   ),
-        // ]);
+        console.log(readNotificationIds);
+
+        console.log(notifications);
+
+        setNewNotifications([
+          ...notifications.filter(
+            (notif) => !readNotificationIds.includes(notif.id)
+          ),
+        ]);
 
         const [dashboardDoc] = await getDocs(
           COMPANY_COLL_NAME,
@@ -122,7 +128,7 @@ export default function Dashboard() {
   const markReadHandler = async () => {
     if (window.confirm("Marking read will remove notifications")) {
       setMarking(true);
-      await addData(
+      await addBatchedData(
         USER_NOTIF_COLL_NAME,
         newNotifications.map((notif) => ({
           identifier: getIdentifier(),
@@ -211,9 +217,25 @@ export default function Dashboard() {
     <div>
       <div>
         <div>New Notifications</div>
-        {newNotifications.map((notification) => {
-          return <div>{notification.message}</div>;
-        })}
+        <table>
+          <thead>
+            <tr>
+              <th>Date Sent</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            {newNotifications.map((notification) => {
+              return (
+                <tr key={notification.id}>
+                  <td>{notification.dateCreated.toDate().toString()}</td>
+                  <td>{notification.message}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
         <LoadingButton
           loading={marking}
           onClick={markReadHandler}
