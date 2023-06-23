@@ -52,12 +52,12 @@ export default function SignUp() {
         <img
           src="assets/images/login_banner.png"
           className="login_image"
-          alt="No Image"
+          alt="Login Banner"
         ></img>
       </div>
       <div className="login_right">
         <div className="header_text">
-          <h1  className="login_header">Register to Finsafe</h1>
+          <h1 className="login_header">Register to Finsafe</h1>
         </div>
         <div className="login_box">
           <div className="center_text">
