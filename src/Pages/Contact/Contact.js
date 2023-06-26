@@ -12,7 +12,20 @@ export default function Contact() {
         />
       </div>
 
-      <div className="contact_section">
+      <div className="contact-box">
+       <center>
+         <h1 className="contact-boxheader">GET IN TOUCH</h1>
+         <h3 className="contact-boxtext1"><i style={{padding:"10px 10px 10px 10px" ,color:"#072f5f"}} className="fa fa-mobile" aria-hidden="true"></i><u className="contact-boxtext">Phone</u> : +91 9901576612</h3>
+         <h3 className="contact-boxtext1"><i style={{padding:"10px 10px 10px 10px",color:"#072f5f"}}  className="fa fa-envelope-o" aria-hidden="true"></i><u className="contact-boxtext">Email</u> : contact@finsafegroup.com<br></br>admin@finsafegroup.com</h3>
+         <h3 className="contact-boxtext1"><i style={{padding:"10px 10px 10px 10px",color:"#072f5f"}}  className="fa fa-map-marker" aria-hidden="true"></i><u className="contact-boxtext">Address</u> : No.1574/22,2nd Cross,HBCS Layout
+         Ramanjaneya Nagar,Uttarahalli
+         Bangalore-560061
+         Karnataka, India
+         </h3>
+         </center>
+      </div>
+
+    {/*   <div className="contact_section">
         <div
           class="contact"
           style={{
@@ -53,12 +66,12 @@ export default function Contact() {
             </center>
           </div>
         </div>
-      </div>
+        </div>*/}
 
       <div className="contact">
         <div className="contact2">
           <div className="row">
-            <h1>Talk to us!</h1>
+            <h1  className="contact-boxheader">Talk to us!</h1>
             <p className="para">
               Feel Free to contact us any time. We will get back to you as soon
               as we can!.

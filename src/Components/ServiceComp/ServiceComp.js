@@ -65,7 +65,7 @@ export default function ServiceComp({
         <div className="flex-child">
           <h1 className="color_white" style={{ fontWeight: "600" }}>
             <center>
-              <b>{title}</b>
+              <b className="servicepage-header">{title}</b>
             </center>
           </h1>
 

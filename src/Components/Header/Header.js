@@ -81,17 +81,17 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
               className="hover_click"
               style={{ aspectRatio: 1, height: "21px" }}
             />
-            <span className="mobile_hide">Sign In</span>
+           <span className="mobile_hide">Sign In</span>
           </>
         ),
         onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
       },
       {
         text: (
-          <>
+          <> <button className="signin-button">
             {" "}
             <MdEmail style={{ fontSize: "20px" }} />
-            <span className="mobile_hide">Sign In</span>
+           <span className="mobile_hide">Sign In</span></button>
           </>
         ),
         to: "/login",
@@ -99,8 +99,9 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       {
         text: (
           <>
-            <AiTwotonePhone style={{ fontSize: "20px" }} />
-            <span className="mobile_hide">Sign In</span>
+          <button className="signin-button">
+            <AiTwotonePhone style={{ fontSize: "20px" }} /><span className="mobile_hide">Sign In</span>
+          </button>
           </>
         ),
         to: "/phonelogin",
