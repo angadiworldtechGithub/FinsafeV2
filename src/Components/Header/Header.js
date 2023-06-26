@@ -81,13 +81,15 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       {
         text: (
           <>
+          <button  className="signin-button">
             <img
               alt="Google sign in"
-              src="/assets/images/google_g_logo.svg"
+              src="assets/images/google.png"
               className="hover_click"
               style={{ aspectRatio: 1, height: "21px" }}
             />
            <span className="mobile_hide">Sign In</span>
+           </button>
           </>
         ),
         onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
@@ -96,7 +98,13 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
         text: (
           <> <button className="signin-button">
            {" "}
-           <i className="fa fa-envelope-o" aria-hidden="true"></i> <span className="mobile-hide">Sign In</span>
+           <img
+           alt="Google sign in"
+           src="assets/images/email.png"
+           className="hover_click"
+           style={{ aspectRatio: 1, height: "21px" }}
+         />
+          <span className="mobile-hide">Sign In</span>
            </button>
            </>
         ),
@@ -106,8 +114,13 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
         text: (
           <>
           <button className="signin-button">
-           <i className="fa fa-mobile" aria-hidden="true"></i><span className="mobile-hide">Sign In</span>
-          </button>
+          <img
+          alt="Google sign in"
+          src="assets/images/ph.png"
+          className="hover_click"
+          style={{ aspectRatio: 1, height: "21px" }}
+        /><span className="mobile-hide">Sign In</span>
+        </button>
           </>
         ),
         to: "/phonelogin",
