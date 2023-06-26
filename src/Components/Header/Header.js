@@ -45,6 +45,10 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       text: "Sign Out",
       onClick: isClicked ? () => {} : signOutClick(setAuth, setIsClicked),
     };
+    const blog = {
+      text: "Blog Page",
+      to: "/blog",
+    };
     if (ADMIN_EMAILS.includes(auth.email)) {
       return [
         {
@@ -59,6 +63,7 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
           text: "Admin Notification",
           to: "/adminnotification",
         },
+        blog,
         signOut,
       ];
     } else {
@@ -67,6 +72,7 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
           text: "Dashboard",
           to: "/dashboard",
         },
+        blog,
         signOut,
       ];
     }
@@ -130,24 +136,24 @@ export default function Header() {
       ) : (
         <></>
       )}
-     <div className="top_header">
-      <div className="social_icon_box">
-        <div>
-          <Link to="#">
-            <IoLogoWhatsapp className="whatsapp social_icons" />
-          </Link>
+      <div className="top_header">
+        <div className="social_icon_box">
+          <div>
+            <Link to="#">
+              <IoLogoWhatsapp className="whatsapp social_icons" />
+            </Link>
+          </div>
+          <div>
+            <Link to="#">
+              <HiMail className="mail social_icons" />
+            </Link>
+          </div>
+          <div>
+            <Link to="#">
+              <BsFillTelephoneFill className="phone social_icons" />
+            </Link>
+          </div>
         </div>
-        <div>
-          <Link to="#">
-            <HiMail className="mail social_icons" />
-          </Link>
-        </div>
-        <div>
-          <Link to="#">
-            <BsFillTelephoneFill className="phone social_icons" />
-          </Link>
-        </div>
-      </div> 
         <div>
           {newNotifications.length && auth && !isAdmin ? (
             <span
@@ -185,17 +191,15 @@ export default function Header() {
       </div>
 
       <div className="mid_header">
-      <div className="mid-left">
-        <img
-          src="assets/images/logo.png"
-          alt="logonot loaded"
-          className="logo"
-        />
-      </div>
+        <div className="mid-left">
+          <img
+            src="assets/images/logo.png"
+            alt="logonot loaded"
+            className="logo"
+          />
+        </div>
 
-      <div  className="mid-right">
-      
-      </div>
+        <div className="mid-right"></div>
       </div>
     </>
   );

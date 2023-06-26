@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import { GlobalLoading } from "react-global-loading";
 import Navbar from "./Components/Navbar";
 import Header from "./Components/Header";
@@ -7,6 +7,7 @@ import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
 import CfoServices from "./Pages/CfoServices/CfoServices";
+import Blog from "./Pages/Blog";
 
 import Login from "./Pages/Login";
 
@@ -180,6 +181,7 @@ import PhoneLogin from "./Pages/PhoneLogin";
 import AdminService from "./Pages/AdminService";
 import AdminNotification from "./Pages/AdminNotification";
 import { NotificationsContextProvider } from "./Context/NotificationsContext";
+import PostCreate from "./Pages/PostCreate";
 
 const Base = () => {
   return (
@@ -687,6 +689,14 @@ const router = createBrowserRouter([
       {
         path: "/adminservice",
         element: <AdminService />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+      {
+        path: "/createpost",
+        element: <PostCreate />,
       },
     ],
   },

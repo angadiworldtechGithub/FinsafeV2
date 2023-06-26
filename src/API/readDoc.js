@@ -71,3 +71,5 @@ export const docExist = (collectionName, filter) => {
       });
   });
 };
+
+export const getDocById = () => {};

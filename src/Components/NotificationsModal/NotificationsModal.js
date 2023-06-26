@@ -31,6 +31,7 @@ export default function NotificationsModal({
       isOpen={isOpen}
       onRequestClose={closeModal}
       contentLabel="New Notifications"
+      customStyles={{ height: "fit-content" }}
     >
       <div>New Notifications</div>
       <table>
