@@ -89,10 +89,10 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       {
         text: (
           <> <button className="signin-button">
-            {" "}
-            <MdEmail style={{ fontSize: "20px" }} />
-           <span className="mobile_hide">Sign In</span></button>
-          </>
+           {" "}
+           <i className="fa fa-envelope-o" aria-hidden="true"></i> <span className="mobile-hide">Sign In</span>
+           </button>
+           </>
         ),
         to: "/login",
       },
@@ -100,7 +100,7 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
         text: (
           <>
           <button className="signin-button">
-            <AiTwotonePhone style={{ fontSize: "20px" }} /><span className="mobile_hide">Sign In</span>
+           <i className="fa fa-mobile" aria-hidden="true"></i><span className="mobile-hide">Sign In</span>
           </button>
           </>
         ),
