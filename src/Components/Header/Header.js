@@ -89,6 +89,7 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
               style={{ aspectRatio: 1, height: "21px" }}
             />
             <span className="mobile_hide">Sign In</span>
+            </button>
           </>
         ),
         onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
