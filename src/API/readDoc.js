@@ -3,7 +3,9 @@ import {
   collection,
   query,
   getDocs as getDocs_,
+  getDoc,
   where,
+  doc,
 } from "firebase/firestore";
 import { firestore } from "../firebase";
 
@@ -72,4 +74,15 @@ export const docExist = (collectionName, filter) => {
   });
 };
 
-export const getDocById = () => {};
+export const getDocById = (collectionName, id) => {
+  return new Promise((resolve, reject) => {
+    getDoc(doc(collection(firestore, collectionName), id))
+      .then((docSnapshot) => {
+        resolve({ ...docSnapshot.data(), id: docSnapshot.id });
+      })
+      .catch((error) => {
+        console.error(error);
+        reject(error);
+      });
+  });
+};

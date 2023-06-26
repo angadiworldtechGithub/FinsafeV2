@@ -8,7 +8,6 @@ import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Footer";
 import CfoServices from "./Pages/CfoServices/CfoServices";
 import Blog from "./Pages/Blog";
-
 import Login from "./Pages/Login";
 
 import {
@@ -182,6 +181,7 @@ import AdminService from "./Pages/AdminService";
 import AdminNotification from "./Pages/AdminNotification";
 import { NotificationsContextProvider } from "./Context/NotificationsContext";
 import PostCreate from "./Pages/PostCreate";
+import PostShow from "./Pages/PostShow";
 
 const Base = () => {
   return (
@@ -697,6 +697,10 @@ const router = createBrowserRouter([
       {
         path: "/createpost",
         element: <PostCreate />,
+      },
+      {
+        path: "/post/:id",
+        element: <PostShow />,
       },
     ],
   },

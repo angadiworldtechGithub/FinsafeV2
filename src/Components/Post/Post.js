@@ -11,8 +11,7 @@ export default function Post(props) {
 
   const { isAdmin } = useContext(AuthContext);
 
-  const { postId, title, bodyMeta, userHandle, likeCount, commentCount } =
-    props.post;
+  const { id, title, bodyMeta, identifier, comments } = props.post;
 
   function renderAdmin() {
     return (
@@ -23,11 +22,11 @@ export default function Post(props) {
           </div>
 
           <div className="dropdown-menu">
-            <Link className="dropdown-item" to={`/posts/edit/${postId}`}>
+            <Link className="dropdown-item" to={`/posts/edit/${id}`}>
               Edit
             </Link>
             <div className="dropdown-item">
-              <PostDelete id={postId} title={bodyMeta} />
+              <PostDelete id={id} title={bodyMeta} />
             </div>
           </div>
         </div>
@@ -37,17 +36,18 @@ export default function Post(props) {
 
   return (
     <div className="card">
-      {isAdmin() && renderAdmin()}
+      {isAdmin && renderAdmin()}
       <div className="card-body mr-1">
         <h5 className="card-title">
-          <Link to={`/posts/${postId}`}>{title}</Link>
+          <Link to={`/post/${id}`}>{title}</Link>
         </h5>
         <p className="card-text">{bodyMeta}</p>
         <div className="row meta-data align-items-center">
-          <div className="col-12 col-sm-6">{userHandle}</div>
+          <div className="col-12 col-sm-6">{identifier}</div>
           <div className="col-12 col-sm-6">
             <span className="ml-4">
-              <i className="far fa-comment"></i> {commentCount} Comments
+              <i className="far fa-comment"></i>
+              {comments ? comments.length : 0} Comments
             </span>
           </div>
         </div>

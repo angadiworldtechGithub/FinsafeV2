@@ -1,36 +1,38 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { connect } from "react-redux";
 import { submitComment } from "../../Redux/actions";
-import MarkdownEditor from "../../Components/MarkdownEditor";
+import MarkdownEditor from "../MarkdownEditor";
 import "./CommentForm.css";
-import { isBlank, isEmptyObj } from "../../Pages/utilities/dataValidation";
+import { isBlank, isEmptyObj } from "../../Pages/utilities";
+import { AuthContext } from "../../Context/AuthContext";
 
 const CommentForm = (props) => {
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState({});
 
+  const { auth, getIdentifier } = useContext(AuthContext);
+
   const postComment = (event) => {
     event.preventDefault();
     const data = {
       body: comment,
+      identifier: getIdentifier(),
     };
 
     let err = {};
     if (isBlank(data.body)) err.comment = "Can't be empty!";
 
     if (isEmptyObj(err)) {
-      props.submitComment(props.post.postId, data);
+      props.submitComment(props.post.id, data);
       setComment("");
     }
 
     setErrors(err);
   };
 
-  const { authenticated } = props;
-
   return (
     <div className="comment-form">
-      {authenticated && (
+      {auth && (
         <form
           className="form row justify-content-center"
           onSubmit={postComment}
@@ -64,7 +66,6 @@ const CommentForm = (props) => {
 const mapStateToProps = (state) => {
   return {
     post: state.data.post,
-    authenticated: state.user.authenticated,
     ui: state.ui,
   };
 };

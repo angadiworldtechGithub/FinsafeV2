@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
     case ACTIONS.FETCH_POSTS:
       return {
         ...state,
-        posts: { ..._.mapKeys(action.payload, "postId") },
+        posts: [...action.payload],
         loading: false,
       };
 
@@ -29,10 +29,7 @@ export default (state = initialState, action) => {
     case ACTIONS.CREATE_POST:
       return {
         ...state,
-        posts: {
-          ...state.posts,
-          [action.payload.postId]: action.payload,
-        },
+        posts: [...state.posts, { ...action.payload }],
       };
 
     case ACTIONS.EDIT_POST:

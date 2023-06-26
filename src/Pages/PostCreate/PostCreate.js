@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { connect } from "react-redux";
 import MarkdownEditor from "../../Components/MarkdownEditor";
 import { createPost } from "../../Redux/actions";
 import { isBlank, isEmptyObj } from "../utilities";
+import { AuthContext } from "../../Context/AuthContext";
 
 const PostCreate = (props) => {
   const [title, setTitle] = useState("");
   const [bodyMeta, setBodyMeta] = useState("");
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState({});
+  const { getIdentifier } = useContext(AuthContext);
 
   // page title
   useEffect(() => {
@@ -24,6 +26,7 @@ const PostCreate = (props) => {
 
     const post = {
       title,
+      identifier: getIdentifier(),
       bodyMeta,
       body,
     };
