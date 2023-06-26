@@ -4,6 +4,7 @@ import MarkdownEditor from "../../Components/MarkdownEditor";
 import { createPost } from "../../Redux/actions";
 import { isBlank, isEmptyObj } from "../utilities";
 import { AuthContext } from "../../Context/AuthContext";
+import "./PostCreate.css";
 
 const PostCreate = (props) => {
   const [title, setTitle] = useState("");
@@ -42,12 +43,12 @@ const PostCreate = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{border:"2px solid #000", margin: "20px 20px 20px 20px",padding:"20px 40px 20px 20px",backgroundColor:"#F8F1F1"}}>
       <form className="post-create-form mt-2" onSubmit={onCreatePost}>
-        <h2>Publish a new post</h2>
-        <div className="form-group mt-4">
+        <center><h1>Publish A New Post</h1></center>
+        <div className="form-group mt-4" style={{padding:"10px 10px 10px 10px",fontSize:"25px",fontWeight:"600"}}>
           <label>Title</label>
-          <input
+          <input style={{borderBottom: "2px solid #072f5f"}}
             type="text"
             className="form-control"
             value={title}
@@ -57,9 +58,9 @@ const PostCreate = (props) => {
             <small className="error-message">{errors.title}</small>
           ) : null}
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{padding:"10px 10px 10px 10px",fontSize:"25px",fontWeight:"600"}}>
           <label>Short Description</label>
-          <textarea
+          <textarea style={{borderBottom: "2px solid #072f5f"}}
             type="textarea"
             className="form-control"
             rows="1"
@@ -70,9 +71,9 @@ const PostCreate = (props) => {
             <small className="error-message">{errors.bodyMeta}</small>
           ) : null}
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{padding:"10px 10px 10px 10px",fontSize:"25px",fontWeight:"600"}}>
           <label>Post Content</label>
-          <MarkdownEditor
+          <MarkdownEditor style={{border: "2px solid #072f5f"}}
             editorPlaceholder="Write your content (markdown supported)"
             editorRows="25"
             editorValue={body}
@@ -84,7 +85,15 @@ const PostCreate = (props) => {
           ) : null}
         </div>
         <div className="form-group row justify-content-center">
-          <button type="submit" className="btn">
+          <button type="submit" className="btn"
+           style={{padding:"10px 10px 10px 10px",
+                  fontSize:"20px",
+                  fontWeight:"600",
+                  color:"white",
+                  backgroundColor:"#072f5f",
+                  border: "2px solid #072f5f",
+                  borderRadius:"5px"
+                 }}>
             Publish Post
           </button>
         </div>
