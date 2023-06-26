@@ -11,3 +11,14 @@ export function usePreventAuthUser(route, auth) {
     }
   }, [auth, location.pathname, navigate, route]);
 }
+
+export function usePreventUnAuthUser(route, auth) {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!auth && location.pathname.split("/")[1] === route) {
+      navigate("/");
+    }
+  }, [auth, location.pathname, navigate, route]);
+}
