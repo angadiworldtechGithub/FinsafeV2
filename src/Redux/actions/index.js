@@ -45,13 +45,8 @@ export const editPost = (id, data) => {
 
 export const deletePost = (id) => {
   return async (dispatch) => {
-    await deleteDataById(POST_COLL_NAME, id)
-      .then(() => {
-        dispatch({ type: ACTIONS.DELETE_POST, payload: id });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    await deleteDataById(POST_COLL_NAME, id);
+    dispatch({ type: ACTIONS.DELETE_POST, payload: id });
   };
 };
 
