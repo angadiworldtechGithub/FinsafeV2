@@ -88,39 +88,31 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
               className="hover_click"
               style={{ aspectRatio: 1, height: "21px" }}
             />
-           <span className="mobile_hide">Sign In</span>
-           </button>
+            <span className="mobile_hide">Sign In</span>
           </>
         ),
         onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
       },
       {
         text: (
-          <> <button className="signin-button">
-           {" "}
-           <img
-           alt="Google sign in"
-           src="assets/images/email.png"
-           className="hover_click"
-           style={{ aspectRatio: 1, height: "21px" }}
-         />
-          <span className="mobile-hide">Sign In</span>
-           </button>
-           </>
+          <>
+            {" "}
+            <button className="signin-button">
+              {" "}
+              <i className="fa fa-envelope-o" aria-hidden="true"></i>{" "}
+              <span className="mobile-hide">Sign In</span>
+            </button>
+          </>
         ),
         to: "/login",
       },
       {
         text: (
           <>
-          <button className="signin-button">
-          <img
-          alt="Google sign in"
-          src="assets/images/ph.png"
-          className="hover_click"
-          style={{ aspectRatio: 1, height: "21px" }}
-        /><span className="mobile-hide">Sign In</span>
-        </button>
+            <button className="signin-button">
+              <i className="fa fa-mobile" aria-hidden="true"></i>
+              <span className="mobile-hide">Sign In</span>
+            </button>
           </>
         ),
         to: "/phonelogin",
@@ -207,7 +199,7 @@ export default function Header() {
       <div className="mid_header">
         <div className="mid-left">
           <img
-            src="assets/images/logo.png"
+            src="/assets/images/logo.png"
             alt="logonot loaded"
             className="logo"
           />

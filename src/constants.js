@@ -5,6 +5,7 @@ export const COMPANY_COLL_NAME = "company_data";
 export const NOTIF_COLL_NAME = "notif_data";
 export const USER_NOTIF_COLL_NAME = "user_notif_data";
 export const POST_COLL_NAME = "posts_data";
+export const COMMENT_COLL_NAME = "comment_data";
 export const DEFAULT_DOCUMENT_LIST = [
   "GST File",
   "PAN Card",
