@@ -81,13 +81,15 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       {
         text: (
           <>
+          <button  className="signin-button">
             <img
               alt="Google sign in"
-              src="/assets/images/google_g_logo.svg"
+              src="assets/images/google.png"
               className="hover_click"
               style={{ aspectRatio: 1, height: "21px" }}
             />
             <span className="mobile_hide">Sign In</span>
+            </button>
           </>
         ),
         onClick: isClicked ? () => {} : signInClick(setAuth, setIsClicked),
