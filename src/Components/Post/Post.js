@@ -11,7 +11,9 @@ export default function Post(props) {
 
   const { isAdmin } = useContext(AuthContext);
 
-  const { id, title, bodyMeta, identifier, comments } = props.post;
+  const { id, title, bodyMeta, identifier, comment } = props.post;
+
+  console.log(comment);
 
   function renderAdmin() {
     return (
@@ -22,7 +24,7 @@ export default function Post(props) {
           </div>
 
           <div className="dropdown-menu">
-            <Link className="dropdown-item" to={`/posts/edit/${id}`}>
+            <Link className="dropdown-item" to={`/postedit/${id}`}>
               Edit
             </Link>
             <div className="dropdown-item">
@@ -36,7 +38,7 @@ export default function Post(props) {
 
   return (
     <div className="card">
-      {isAdmin && renderAdmin()}
+      {isAdmin ? renderAdmin() : <></>}
       <div className="card-body mr-1">
         <h5 className="card-title">
           <Link to={`/post/${id}`}>{title}</Link>
@@ -47,7 +49,7 @@ export default function Post(props) {
           <div className="col-12 col-sm-6">
             <span className="ml-4">
               <i className="far fa-comment"></i>
-              {comments ? comments.length : 0} Comments
+              {comment ? comment.length : 0} Comments
             </span>
           </div>
         </div>

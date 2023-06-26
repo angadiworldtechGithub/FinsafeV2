@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import Modal from "../Modal";
-// import { deletePost } from "../../redux/actions";
-import "../../styles/Posts/Post.css";
+import { deletePost } from "../../Redux/actions";
 
-export default function PostDelete(props) {
+function PostDelete(props) {
   const { id, title } = props;
   const [show, setShow] = useState(false);
 
@@ -44,4 +43,4 @@ export default function PostDelete(props) {
   );
 }
 
-// export default connect(null, { deletePost })(PostDelete);
+export default connect(null, { deletePost })(PostDelete);

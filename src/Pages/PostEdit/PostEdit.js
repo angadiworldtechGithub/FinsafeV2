@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import MarkdownEditor from "../components/MarkdownEditor";
-import { fetchPost, editPost } from "../../redux/actions";
-import { isBlank, isEmptyObj } from "../utilities/dataValidation";
+import MarkdownEditor from "../../Components/MarkdownEditor";
+import { fetchPost, editPost } from "../../Redux/actions";
+import { isBlank, isEmptyObj } from "../utilities";
+import { useParams } from "react-router-dom";
 
 const PostEdit = (props) => {
   const [title, setTitle] = useState("");
@@ -10,14 +11,17 @@ const PostEdit = (props) => {
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState({});
 
+  const { id } = useParams();
+
   useEffect(() => {
-    props.fetchPost(props.match.params.id);
+    props.fetchPost(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (props.post) {
       const { body, bodyMeta, title } = props.post;
+      console.log(props.post);
       setTitle(title);
       setBodyMeta(bodyMeta);
       setBody(body);
@@ -42,14 +46,14 @@ const PostEdit = (props) => {
     if (isBlank(post.bodyMeta)) err.bodyMeta = "This can't be empty!";
     if (isBlank(post.body)) err.body = "This can't be empty!";
 
-    if (isEmptyObj(err)) props.editPost(props.post.postId, post);
+    if (isEmptyObj(err)) props.editPost(props.post.id, post);
 
     setErrors(err);
   }
 
   return (
     <div className="container">
-      <form className="blog-form mt-2" onSubmit={onEditPost}>
+      <form className="blog-form mt-2">
         <h2>Edit your post</h2>
         <div className="form-group mt-4">
           <label>Title</label>
@@ -95,7 +99,7 @@ const PostEdit = (props) => {
           ) : null}
         </div>
         <div className="form-group row justify-content-center">
-          <button type="submit" className="btn">
+          <button type="button" className="btn" onClick={onEditPost}>
             Save Changes
           </button>
         </div>
@@ -106,7 +110,6 @@ const PostEdit = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    authenticated: state.user.authenticated,
     post: state.data.post,
   };
 };

@@ -23,7 +23,7 @@ const CommentForm = (props) => {
     if (isBlank(data.body)) err.comment = "Can't be empty!";
 
     if (isEmptyObj(err)) {
-      props.submitComment(props.post.id, data);
+      props.submitComment(data, props.post.id);
       setComment("");
     }
 

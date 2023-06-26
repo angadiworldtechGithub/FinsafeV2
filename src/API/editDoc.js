@@ -4,6 +4,7 @@ import {
   getDocs,
   updateDoc,
   where,
+  doc,
 } from "firebase/firestore";
 import { firestore } from "../firebase";
 
@@ -19,6 +20,17 @@ export const editData = (collectionName, filter, newPayload) => {
             console.log("Updated");
           });
         });
+        resolve(true);
+      })
+      .catch((error) => reject(error));
+  });
+};
+
+export const editDataById = (collectionName, id, newPayload) => {
+  return new Promise((resolve, reject) => {
+    updateDoc(doc(collection(firestore, collectionName), id), newPayload)
+      .then(() => {
+        console.log("Updated");
         resolve(true);
       })
       .catch((error) => reject(error));

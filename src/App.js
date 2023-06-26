@@ -182,6 +182,7 @@ import AdminNotification from "./Pages/AdminNotification";
 import { NotificationsContextProvider } from "./Context/NotificationsContext";
 import PostCreate from "./Pages/PostCreate";
 import PostShow from "./Pages/PostShow";
+import PostEdit from "./Pages/PostEdit";
 
 const Base = () => {
   return (
@@ -701,6 +702,10 @@ const router = createBrowserRouter([
       {
         path: "/post/:id",
         element: <PostShow />,
+      },
+      {
+        path: "/postedit/:id",
+        element: <PostEdit />,
       },
     ],
   },

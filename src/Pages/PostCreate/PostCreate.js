@@ -4,6 +4,7 @@ import MarkdownEditor from "../../Components/MarkdownEditor";
 import { createPost } from "../../Redux/actions";
 import { isBlank, isEmptyObj } from "../utilities";
 import { AuthContext } from "../../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const PostCreate = (props) => {
   const [title, setTitle] = useState("");
@@ -11,7 +12,7 @@ const PostCreate = (props) => {
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState({});
   const { getIdentifier } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   // page title
   useEffect(() => {
     document.title = "Create a New Post";
@@ -29,6 +30,7 @@ const PostCreate = (props) => {
       identifier: getIdentifier(),
       bodyMeta,
       body,
+      comment: [],
     };
 
     let err = {};
@@ -36,14 +38,17 @@ const PostCreate = (props) => {
     if (isBlank(post.bodyMeta)) err.bodyMeta = "This can't be empty!";
     if (isBlank(post.body)) err.body = "This can't be empty!";
 
-    if (isEmptyObj(err)) props.createPost(post);
-
-    setErrors(err);
+    if (isEmptyObj(err)) {
+      props.createPost(post);
+      navigate("/blog");
+    } else {
+      setErrors(err);
+    }
   };
 
   return (
     <div className="container">
-      <form className="post-create-form mt-2" onSubmit={onCreatePost}>
+      <form className="post-create-form mt-2">
         <h2>Publish a new post</h2>
         <div className="form-group mt-4">
           <label>Title</label>
@@ -84,7 +89,7 @@ const PostCreate = (props) => {
           ) : null}
         </div>
         <div className="form-group row justify-content-center">
-          <button type="submit" className="btn">
+          <button type="button" className="btn" onClick={onCreatePost}>
             Publish Post
           </button>
         </div>
