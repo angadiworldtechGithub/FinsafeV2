@@ -19,6 +19,21 @@
     }
 }
 
+.contact-box{
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+    background-color: #F8F1F1;
+}
+.contact-boxheader{
+    color: #923304;
+}
+.contact-boxtext{
+    color: #072f5f;
+}
+.contact-boxtext1{
+    color: #000;
+    font-weight: 500;
+}
 
 .contact1{
     background: #dddddd;
