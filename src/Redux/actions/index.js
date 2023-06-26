@@ -18,9 +18,7 @@ export const fetchPosts = () => {
 export const fetchPost = (id) => {
   return async (dispatch) => {
     dispatch({ type: ACTIONS.LOADING_DATA });
-
     const post = await getDocById(POST_COLL_NAME, id);
-
     dispatch({ type: ACTIONS.FETCH_POST, payload: post });
     dispatch({ type: ACTIONS.CLEAR_ERROR });
   };
