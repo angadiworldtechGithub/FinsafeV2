@@ -4,6 +4,7 @@
     padding: 1.5rem;
     padding-bottom: 0.75rem;
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
+
 }
 
 .post-show .post-body {
@@ -12,6 +13,7 @@
 
 .post-show .post-text p {
     color: var(--font-gray-color);
+    font-size: 18px;
 }
 
 .post-show .post-meta {
@@ -38,5 +40,7 @@
     .post-show {
         margin: 1rem 0;
         padding: 1rem 0.5rem;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }

@@ -28,13 +28,14 @@ const BlogShow = (props) => {
 
   return (
     <div>
+     <h1 style={{textAlign: "center",color:"#923304"}}>Latest News & Upadates</h1>
       {loading && <Loader />}
       {!loading && (
         <div className="post-show">
           <div className="row justify-content-center">
             <div className="col-12 post-body">
-              <h1 className="post-title">{title}</h1>
-              <h5 className="mt-3">{bodyMeta}</h5>
+              <h1 className="post-title" style={{color:"#337AB7"}}>{title}</h1>
+              <h3 className="mt-3">{bodyMeta}</h3>
               <div className="post-text mt-4">
                 <MarkdownRenderer content={body} />
               </div>

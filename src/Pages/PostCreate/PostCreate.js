@@ -47,10 +47,10 @@ const PostCreate = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{padding:"20px 40px 20px 20px",margin:"20px 20px 20px 20px",border:"2px solid #000",backgroundColor:"#f2f2f2"}}>
       <form className="post-create-form mt-2">
-        <h2>Publish a new post</h2>
-        <div className="form-group mt-4">
+        <h1 style={{textAlign:"center",color:"#923304"}}>Publish a new post</h1>
+        <div className="form-group mt-4" style={{padding:"10px 10px 10px 10px",fontSize:"25px",fontWeight:"600"}}>
           <label>Title</label>
           <input style={{borderBottom: "2px solid #072f5f"}}
             type="text"

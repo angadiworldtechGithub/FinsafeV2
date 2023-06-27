@@ -5,7 +5,9 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import PostDelete from "../PostDelete";
 import "./Post.css";
 import { AuthContext } from "../../Context/AuthContext";
-
+import { MdArticle,MdCircleNotifications,MdNewspaper } from "react-icons/md";
+import { ImHammer2 } from "react-icons/im";
+import{AiOutlineDoubleRight} from "react-icons/ai";
 export default function Post(props) {
   dayjs.extend(relativeTime);
 
@@ -37,12 +39,21 @@ export default function Post(props) {
   }
 
   return (
-    <div className="card">
+    <div>
+     <h1 style={{textAlign:"center",paddingBottom:"30px",fontSize:"30px",color:"#923304"}}>Latest News & Upadates</h1>
+     <center>
+     <button className="post-button1"><MdArticle/>Articles</button>
+     <button className="post-button2"><MdNewspaper/>News</button>
+     <button className="post-button3"><ImHammer2/>Judiciary</button>
+     <button className="post-button4"><MdCircleNotifications/>Notification</button>
+     </center>
+     <hr></hr>
+    <div className="post-card">
       {isAdmin ? renderAdmin() : <></>}
       <div className="card-body mr-1">
-        <h5 className="card-title">
-          <Link to={`/post/${id}`}>{title}</Link>
-        </h5>
+        <h3 className="card-title">
+          <AiOutlineDoubleRight/> <Link to={`/post/${id}`}>{title}</Link>
+        </h3 >
         <p className="card-text">{bodyMeta}</p>
         <div className="row meta-data align-items-center">
           <div className="col-12 col-sm-6">{identifier}</div>
@@ -54,6 +65,7 @@ export default function Post(props) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
