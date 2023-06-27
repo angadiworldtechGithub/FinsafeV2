@@ -52,13 +52,13 @@ const PostEdit = (props) => {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{padding:"20px 40px 20px 20px",margin:"20px 20px 20px 20px",border:"2px solid #000",backgroundColor:"#f2f2f2"}}>
       <form className="blog-form mt-2">
-        <h2>Edit your post</h2>
-        <div className="form-group mt-4">
+        <h1 style={{textAlign:"center",color:"#923304"}}>Edit your post</h1>
+        <div className="form-group mt-4" style={{padding:"10px 10px 10px 10px",fontSize:"25px",fontWeight:"600"}}>
           <label>Title</label>
           <textarea
-            type="textarea"
+            type="textarea" style={{borderBottom: "2px solid #072f5f"}}
             className="form-control"
             rows="2"
             value={title}
@@ -70,10 +70,10 @@ const PostEdit = (props) => {
             <small className="error-message">{errors.title}</small>
           ) : null}
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{padding:"10px 10px 10px 10px",fontSize:"25px",fontWeight:"600"}}>
           <label>Short Description</label>
           <textarea
-            type="textarea"
+            type="textarea" style={{borderBottom: "2px solid #072f5f"}}
             className="form-control"
             rows="2"
             value={bodyMeta}
@@ -85,9 +85,9 @@ const PostEdit = (props) => {
             <small className="error-message">{errors.bodyMeta}</small>
           ) : null}
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{padding:"10px 10px 10px 10px",fontSize:"25px",fontWeight:"600"}}>
           <label>Post Content</label>
-          <MarkdownEditor
+          <MarkdownEditor style={{borderBottom: "2px solid #072f5f"}}
             editorPlaceholder="Write your content (markdown supported)"
             editorRows="25"
             editorValue={body}
@@ -99,7 +99,14 @@ const PostEdit = (props) => {
           ) : null}
         </div>
         <div className="form-group row justify-content-center">
-          <button type="button" className="btn" onClick={onEditPost}>
+          <button type="button" className="btn" onClick={onEditPost} style={{padding:"10px 10px 10px 10px",
+          fontSize:"20px",
+          fontWeight:"600",
+          color:"white",
+          backgroundColor:"#072f5f",
+          border: "2px solid #072f5f",
+          borderRadius:"5px"
+         }}>
             Save Changes
           </button>
         </div>
