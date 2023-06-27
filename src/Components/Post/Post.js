@@ -5,8 +5,6 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import PostDelete from "../PostDelete";
 import "./Post.css";
 import { AuthContext } from "../../Context/AuthContext";
-import { MdArticle,MdCircleNotifications,MdNewspaper } from "react-icons/md";
-import { ImHammer2 } from "react-icons/im";
 import{AiOutlineDoubleRight} from "react-icons/ai";
 export default function Post(props) {
   dayjs.extend(relativeTime);
@@ -41,13 +39,7 @@ export default function Post(props) {
   return (
     <div>
     <div>
-    <h1 style={{textAlign:"center",paddingBottom:"30px",fontSize:"30px",color:"#923304"}}>Latest News & Upadates</h1>
-    <center>
-    <button className="post-button1"><MdArticle/>Articles</button>
-    <button className="post-button2"><MdNewspaper/>News</button>
-    <button className="post-button3"><ImHammer2/>Judiciary</button>
-    <button className="post-button4"><MdCircleNotifications/>Notification</button>
-    </center>
+    <h1 style={{paddingBottom:"30px",fontSize:"30px",color:"#923304"}}>Latest News & Upadates</h1>
     <hr></hr>
     </div>
     <div className="post-card">
