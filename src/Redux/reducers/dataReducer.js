@@ -9,7 +9,7 @@ const initialState = {
   errorCode: null,
 };
 
-export default (state = initialState, action) => {
+export default function dataReduceer(state = initialState, action) {
   switch (action.type) {
     case ACTIONS.FETCH_POSTS:
       return {
@@ -35,25 +35,21 @@ export default (state = initialState, action) => {
     case ACTIONS.EDIT_POST:
       return {
         ...state,
-        posts: {
-          ...state.posts,
-          [action.payload.postId]: action.payload,
-        },
+        posts: [...state.posts, { ...action.payload }],
       };
 
     case ACTIONS.DELETE_POST:
       return {
         ...state,
-        posts: _.omit(state.posts, action.payload),
+        posts: [...state.posts.filter((post) => post.id !== action.payload.id)],
       };
 
     case ACTIONS.SUBMIT_COMMENT:
-      // console.log(action)
       return {
         ...state,
         post: {
           ...state.post,
-          comments: [action.payload, ...state.post.comments],
+          comment: [action.payload, ...state.post.comment],
         },
       };
 
@@ -73,4 +69,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-};
+}

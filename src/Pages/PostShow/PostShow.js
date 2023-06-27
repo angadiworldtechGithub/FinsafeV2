@@ -23,7 +23,7 @@ const BlogShow = (props) => {
 
   const {
     loading,
-    post: { title, bodyMeta, body, comments },
+    post: { title, bodyMeta, body, comment },
   } = props.data;
 
   return (
@@ -48,7 +48,7 @@ const BlogShow = (props) => {
                   onClick={() => setShowComments((prevState) => !prevState)}
                 >
                   <i className="far fa-comment"></i>{" "}
-                  {comments ? comments.length : 0} Comments
+                  {comment ? comment.length : 0} Comments
                 </span>
               </div>
             </div>
@@ -57,7 +57,7 @@ const BlogShow = (props) => {
               <>
                 <hr />
                 <CommentForm />
-                <Comments comments={comments} />
+                <Comments comments={comment} />
               </>
             )}
           </div>

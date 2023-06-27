@@ -4,7 +4,7 @@ import MarkdownEditor from "../../Components/MarkdownEditor";
 import { createPost } from "../../Redux/actions";
 import { isBlank, isEmptyObj } from "../utilities";
 import { AuthContext } from "../../Context/AuthContext";
-import "./PostCreate.css";
+import { useNavigate } from "react-router-dom";
 
 const PostCreate = (props) => {
   const [title, setTitle] = useState("");
@@ -12,7 +12,7 @@ const PostCreate = (props) => {
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState({});
   const { getIdentifier } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   // page title
   useEffect(() => {
     document.title = "Create a New Post";
@@ -30,6 +30,7 @@ const PostCreate = (props) => {
       identifier: getIdentifier(),
       bodyMeta,
       body,
+      comment: [],
     };
 
     let err = {};
@@ -37,16 +38,19 @@ const PostCreate = (props) => {
     if (isBlank(post.bodyMeta)) err.bodyMeta = "This can't be empty!";
     if (isBlank(post.body)) err.body = "This can't be empty!";
 
-    if (isEmptyObj(err)) props.createPost(post);
-
-    setErrors(err);
+    if (isEmptyObj(err)) {
+      props.createPost(post);
+      navigate("/blog");
+    } else {
+      setErrors(err);
+    }
   };
 
   return (
-    <div className="container" style={{border:"2px solid #000", margin: "20px 20px 20px 20px",padding:"20px 40px 20px 20px",backgroundColor:"#F8F1F1"}}>
-      <form className="post-create-form mt-2" onSubmit={onCreatePost}>
-        <center><h1>Publish A New Post</h1></center>
-        <div className="form-group mt-4" style={{padding:"10px 10px 10px 10px",fontSize:"25px",fontWeight:"600"}}>
+    <div className="container">
+      <form className="post-create-form mt-2">
+        <h2>Publish a new post</h2>
+        <div className="form-group mt-4">
           <label>Title</label>
           <input style={{borderBottom: "2px solid #072f5f"}}
             type="text"
@@ -85,15 +89,15 @@ const PostCreate = (props) => {
           ) : null}
         </div>
         <div className="form-group row justify-content-center">
-          <button type="submit" className="btn"
-           style={{padding:"10px 10px 10px 10px",
-                  fontSize:"20px",
-                  fontWeight:"600",
-                  color:"white",
-                  backgroundColor:"#072f5f",
-                  border: "2px solid #072f5f",
-                  borderRadius:"5px"
-                 }}>
+          <button type="button" className="btn" onClick={onCreatePost}
+          style={{padding:"10px 10px 10px 10px",
+          fontSize:"20px",
+          fontWeight:"600",
+          color:"white",
+          backgroundColor:"#072f5f",
+          border: "2px solid #072f5f",
+          borderRadius:"5px"
+         }}>
             Publish Post
           </button>
         </div>

@@ -1,6 +1,7 @@
 // read document from firebase
 import {
   collection,
+  collectionGroup,
   query,
   getDocs as getDocs_,
   getDoc,
@@ -11,13 +12,20 @@ import { firestore } from "../firebase";
 
 // add rate limiters!
 
-export const getAllDocs = (collectionName, limit) => {
+export const getAllDocs = (
+  collectionName,
+  limit,
+  isCollectionGroup = false
+) => {
   const queryArgs = [];
   if (limit) {
     queryArgs.push(limit(limit));
   }
+  const collection_ = isCollectionGroup
+    ? collectionGroup(firestore, collectionName)
+    : collection(firestore, collectionName);
   return new Promise((resolve, reject) => {
-    getDocs_(query(collection(firestore, collectionName), ...queryArgs))
+    getDocs_(query(collection_, ...queryArgs))
       .then((querySnapshot) => {
         const dataList = [];
         querySnapshot.forEach((doc) => {
