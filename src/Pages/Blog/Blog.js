@@ -14,10 +14,24 @@ export default function Blog() {
         <PostList />
       </section>
 
-      <button type="button" class="btn" style={{ margin:"10px 10px 10px 50px", padding:"10px 10px 10px 10px",fontsize: "15px", fontweight: "400", color: "white", backgroundColor: "rgb(7, 47, 95)",border: "2px solid rgb(7, 47, 95)", borderRadius: "5px"}}>
-      <Link to="/createpost" style={{fontSize:"20px",color:"#FFF"}}><center>Create Post</center></Link>
+      <button
+        type="button"
+        class="btn"
+        style={{
+          margin: "10px 10px 10px 50px",
+          padding: "10px 10px 10px 10px",
+          fontsize: "15px",
+          fontweight: "400",
+          color: "white",
+          backgroundColor: "rgb(7, 47, 95)",
+          border: "2px solid rgb(7, 47, 95)",
+          borderRadius: "5px",
+        }}
+      >
+        <Link to="/createpost" style={{ fontSize: "20px", color: "#FFF" }}>
+          <center>Create Post</center>
+        </Link>
       </button>
-
     </div>
   );
 }
