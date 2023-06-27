@@ -19,8 +19,10 @@ const PostList = (props) => {
       return postsValues.map((post) => {
         return <Post key={post.id} post={post} />;
       });
-    } else {
-      return <h2>No posts yet!</h2>;
+    } 
+    
+    else {
+      return <h1><center>Not yet Posted!</center></h1>;
     }
   }
 

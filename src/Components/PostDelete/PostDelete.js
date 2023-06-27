@@ -22,7 +22,7 @@ function PostDelete(props) {
 
   function renderContent() {
     return (
-      <span>
+      <span style={{backgroundcolor:"#fff"}}>
         Are you sure you want to delete the post <strong>{title}</strong> ?
       </span>
     );

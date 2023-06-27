@@ -37,17 +37,19 @@ export default function Post(props) {
       </div>
     );
   }
-
+ 
   return (
     <div>
-     <h1 style={{textAlign:"center",paddingBottom:"30px",fontSize:"30px",color:"#923304"}}>Latest News & Upadates</h1>
-     <center>
-     <button className="post-button1"><MdArticle/>Articles</button>
-     <button className="post-button2"><MdNewspaper/>News</button>
-     <button className="post-button3"><ImHammer2/>Judiciary</button>
-     <button className="post-button4"><MdCircleNotifications/>Notification</button>
-     </center>
-     <hr></hr>
+    <div>
+    <h1 style={{textAlign:"center",paddingBottom:"30px",fontSize:"30px",color:"#923304"}}>Latest News & Upadates</h1>
+    <center>
+    <button className="post-button1"><MdArticle/>Articles</button>
+    <button className="post-button2"><MdNewspaper/>News</button>
+    <button className="post-button3"><ImHammer2/>Judiciary</button>
+    <button className="post-button4"><MdCircleNotifications/>Notification</button>
+    </center>
+    <hr></hr>
+    </div>
     <div className="post-card">
       {isAdmin ? renderAdmin() : <></>}
       <div className="card-body mr-1">
