@@ -55,10 +55,6 @@
 }
 
 @media only screen and (max-width: 575px) {
-    .card-body {
-        padding: 0.75rem;
-    }
-
     .meta-data > div:last-child {
         text-align: center;
         margin-top: 1rem;
@@ -76,6 +72,7 @@
     border-radius: 10px;
     height: auto;
     font-size: 16px;
+    width:"60%";
     margin: 2rem 3.5rem;
     background-color: var(--primary-light-color);
     padding: 1.5rem;
@@ -89,74 +86,120 @@
 }
 
 .post-button1{
-    height: 40px;
+    height: 50px;
     width: 180px;
     margin-left: 30px;
     font-size: 20px;
     font-weight: 600;
     background-color: #337AB7;
+    color: #fff;
+    border: none;
 }
 .post-button4{
-    height: 40px;
+    height: 50px;
     width: 180px;
     margin-left: 30px;
     font-size: 20px;
     font-weight: 600;
     background-color: #D9534F;
+    color: #fff;
+    border: none;
 }
 .post-button2{
-    height: 40px;
+    height: 50px;
     width: 180px;
     margin-left: 30px;
     font-size: 20px;
+    color: #fff;
     font-weight: 600;
     background-color: #449D44;
+    border: none;
 }
 .post-button3{
-    height: 40px;
+    height: 50px;
     width: 180px;
     margin-left: 30px;
     font-size: 20px;
     font-weight: 600;
+    color: #fff;
     background-color: #5DC0DE;
+    border: none;
 }
-@media only screen and (max-width: 575px) {
 
-    .post-button1{
-        height: 40px;
-        width: 180px;
-        margin-left: 30px;
-        margin-bottom: 5px;
-        font-size: 20px;
-        font-weight: 600;
+
+
+.grid {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .box1 {
+    display: flex; 
+    flex-basis: calc(70.33% - 18px);  
+    justify-content: center;
+    flex-direction: column;
+  }
+  .box2 {
+    display: flex; 
+    flex-basis: calc(30.00% - 18px);  
+    flex-direction: column;
+  }
+  
+  .grid > div > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #fff;
+  }
+  
+  
+  
+  .box { margin: 10px 0 10px 10px}
+  .box1 {
+     background-color: #F8F1F1;
+     }
+  .box2 {
+     background-color: #F8F1F1;
+     border: 2px solid #337AB7;
+    }
+    .post-header{
+        width: 100%;
+        height: 50px;
+    }
+    .card-inside .mr-1{
+        border:2px solid #000;
+        margin: 20px 20px 20px 20px;
+        background-Color:#F8F1F1;
+        width:"100%"
+    }
+
+    @media only screen and (max-width: 575px) {
+        .box2 {
+            background-color: #F8F1F1;
+            border: 2px solid #337AB7;
+            width:100%;
+           }
+           .box2-header{
+            height: 50px;
+            background-color: #337AB7;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .box2-header{
+        height: 50px;
         background-color: #337AB7;
-    }
-    .post-button4{
-        height: 40px;
-        width: 180px;
-        margin-left: 30px;
-        margin-bottom: 5px;
+        color: #fff;
+        border: none;
         font-size: 20px;
-        font-weight: 600;
-        background-color: #D9534F;
+        font-weight: 500;
     }
-    .post-button2{
-        height: 40px;
-        width: 180px;
-        margin-left: 30px;
-        margin-bottom: 5px;
-        font-size: 20px;
-        font-weight: 600;
-        background-color: #449D44;
+    .box2-body{
+        background-color: #A4E19B;
+        font-size: 15px;
+        font-weight: 400;
     }
-    .post-button3{
-        height: 40px;
-        width: 180px;
-        margin-left: 30px;
-        margin-bottom: 5px;
-        font-size: 20px;
-        font-weight: 600;
-        background-color: #5DC0DE;
-    }
-}
-

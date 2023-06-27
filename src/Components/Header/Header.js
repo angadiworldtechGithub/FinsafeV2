@@ -46,7 +46,7 @@ const getButton = (auth, setAuth, isClicked, setIsClicked) => {
       onClick: isClicked ? () => {} : signOutClick(setAuth, setIsClicked),
     };
     const blog = {
-      text: "Blog Page",
+      text: "Blog",
       to: "/blog",
     };
     if (ADMIN_EMAILS.includes(auth.email)) {
