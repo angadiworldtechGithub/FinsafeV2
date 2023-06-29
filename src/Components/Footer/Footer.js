@@ -14,16 +14,16 @@ export default function Footer() {
           />
           <div className="col">
             <div className="social-icons">
-              <Link to="/">
+              <Link to="https://www.facebook.com/finsafegroupblr">
                 <i className="fab fa-facebook-f"></i>
               </Link>
-              <Link to="/">
+              <Link to="https://twitter.com/finsafegroupblr">
                 <i className="fab fa-twitter"></i>
               </Link>
-              <Link to="/">
+              <Link to="">
                 <i className="fab fa-whatsapp"></i>
               </Link>
-              <Link to="/">
+              <Link to="https://www.instagram.com/finsafegroupblr/">
                 <i className="fab fa-instagram"></i>
               </Link>
             </div>
