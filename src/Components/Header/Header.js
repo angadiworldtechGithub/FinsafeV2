@@ -152,7 +152,7 @@ export default function Header() {
           </div>
           <div>
             <Link to="#">
-              <HiMail className="mail social_icons" />
+              <a href = "contact@finsafegroup.com"><HiMail className="mail social_icons" /></a>
             </Link>
           </div>
           <div>
